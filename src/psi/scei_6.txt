@@ -1,0 +1,41 @@
+S;Puissance Alpha;EFREI Paris;2;402;454;17;64
+S;Puissance Alpha;ELISA Aerospace Bordeaux;7;202;194;10;10
+S;Puissance Alpha;ELISA Aerospace Hauts de France;3;216;204;4;7
+T;Puissance Alpha;Concours ELISA AEROSPACE;867;737;96;10;14;17
+S;Puissance Alpha;ESAIP Angers / Aix-en-Provence;1;198;220;8;8
+S;Puissance Alpha;ESEO Angers - Paris - Dijon;2;147;154;4;15
+S;Puissance Alpha;ESIEA Paris - Laval;0;443;507;6;16
+S;Puissance Alpha;ESIEE Paris;31;315;321;85;110
+S;Puissance Alpha;ESIEE Paris - filière data - statut étudiant (1 an) + statut apprenti (2 ans);2;254;268;8;18
+T;Puissance Alpha;Concours ESIEE Paris;867;756;172;33;93;128
+S;Puissance Alpha;ESTIA Bidart;20;242;258;41;50
+S;Puissance Alpha;ISEN Méditerranée Toulon;1;672;563;3;12
+S;Puissance Alpha;ISEN Ouest - Brest - Caen - Nantes;1;227;402;5;18
+S;Puissance Alpha;ISEP;4;317;421;23;21
+S;Puissance Alpha;HEI JUNIA – Lille;9;252;435;30;72
+S;Puissance Alpha;ISEN JUNIA Lille-BORDEAUX;1;365;760;6;13
+S;Puissance Alpha;3iL Ingénieurs Limoges;0;203;203;1;6
+S;Avenir Prépas;BUILDERS Lyon;0;0;0;;4
+S;Avenir Prépas;BUILDERS Caen;2;20;20;;12
+T;Avenir Prépas;Concours BUILDERS (Caen / Lyon) PSI;1271;1100;51;2;;16
+S;Avenir Prépas;ECE BORDEAUX;0;0;0;;5
+S;Avenir Prépas;ECE LYON;1;108;108;;10
+S;Avenir Prépas;ECE PARIS;3;153;137;;25
+S;Avenir Prépas;ECE Paris Apprentissage;3;136;121;;13
+T;Avenir Prépas;Concours ECE Paris - Lyon - Bordeaux PSI;1271;1071;171;7;;53
+S;Avenir Prépas;EIGSI Casablanca;0;0;0;;1
+S;Avenir Prépas;EIGSI La Rochelle;9;176;174;;30
+S;Avenir Prépas;ESIGELEC Rouen/Poitiers;3;40;45;;25
+S;Avenir Prépas;ESILV Nantes;9;284;262;;13
+S;Avenir Prépas;ESILV Paris;63;200;168;;66
+S;Avenir Prépas;ESILV Paris FISEA Finance;3;131;104;;4
+T;Avenir Prépas;Concours ESILV PSI;1271;1143;297;75;;83
+S;Avenir Prépas;ESTACA Bordeaux - Filière Aéronautique;21;330;289;;18
+S;Avenir Prépas;ESTACA Laval - Filière Aéronautique;4;217;181;;2
+S;Avenir Prépas;ESTACA Laval - Filière Automobile;3;54;58;;3
+S;Avenir Prépas;ESTACA Laval - Filière Naval;3;420;393;;3
+S;Avenir Prépas;ESTACA Paris-Saclay - Filière Aéronautique;1;67;67;;1
+S;Avenir Prépas;ESTACA Paris-Saclay - Filière Automobile;2;212;212;;1
+S;Avenir Prépas;ESTACA Paris-Saclay - Filière Ferroviaire;2;402;402;;2
+S;Avenir Prépas;ESTACA Paris-Saclay - Filière Spatial;1;174;174;;1
+T;Avenir Prépas;Concours ESTACA PSI;1271;1071;613;37;;31

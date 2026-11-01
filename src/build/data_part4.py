@@ -1,0 +1,343 @@
+# -*- coding: utf-8 -*-
+from data_common import *
+from data_part1 import E
+
+PI = 3199  # inscrits concours Polytech 2025 (MP), d'après loic.website
+
+def pv(lib, pl, it, med):
+    return V(lib, pl, it, med, None, ins=PI, inter=True)
+
+def poly(id, nom, complet, campus, dom, desc, p26, mpi, stats, alias=None, note=None):
+    txt = "MP, PC et PSI confondus" + (f" (+ {mpi} en MPI)" if mpi else "")
+    return E(id, nom, complet, (alias or []) + ["Polytech", "e3a"], "Public", campus, dom, "Spécialisée", desc, nat(), B_NAT,
+             [A("e3a_poly", p26, "MP+PC+PSI", txt, stats, ["ccinp", "e3a_poly"], src26=S_E3A26,
+                note="Classement commun à plusieurs filières : places et rangs mélangent MP, PC et PSI.")], note)
+
+SCHOOLS_POLY = [
+poly("poly_angers", "Polytech Angers", "École polytechnique de l'Université d'Angers", [C("Angers", "49", "pdl")], ["btp", "indus", "info", "elec"],
+     "Bâtiments durables, qualité-fiabilité, systèmes automatisés et informatique", 9, None,
+     [pv("Bâtiments durables", 2, 1, 3237), pv("Qualité, innovation, fiabilité", 2, 0, None), pv("Systèmes automatisés et génie informatique", 4, 5, 4701)]),
+poly("poly_annecy", "Polytech Annecy-Chambéry", "École polytechnique de l'Université Savoie Mont Blanc", [C("Annecy", "74", "ara"), C("Le Bourget-du-Lac (Chambéry)", "73", "ara")],
+     ["btp", "env", "info", "meca", "elec"], "Bâtiment-énergie, écologie industrielle, informatique, mécanique-matériaux, instrumentation", 29, 2,
+     [pv("Bâtiment, éco-construction, énergie", 6, 3, 4958), pv("Écologie industrielle et territoriale", 4, 1, 4414), pv("Informatique, données, usages", 7, 6, 4390),
+      pv("Mécanique, mécatronique, matériaux composites", 8, 3, 3583), pv("Systèmes numériques, instrumentation", 3, 1, 5274)]),
+poly("poly_clermont", "Polytech Clermont", "École polytechnique de l'Université Clermont Auvergne", [C("Aubière (Clermont-Ferrand)", "63", "ara")],
+     ["bio", "btp", "physique", "math", "elec"], "Génie biologique, génie civil, génie physique, maths et data science, systèmes embarqués-robotique", 55, 3,
+     [pv("Génie biologique", 5, 0, 3161), pv("Génie civil", 16, 8, 5052), pv("Génie physique", 12, 3, 4193),
+      pv("Ingénierie mathématique et data science", 16, 13, 4521), pv("Systèmes embarqués, énergie électrique, robotique", 6, 5, 5037)]),
+poly("poly_dijon", "Polytech Dijon", "École polytechnique de l'Université de Bourgogne", [C("Dijon", "21", "bfc")], ["elec", "info", "physique", "meca"],
+     "Électronique, informatique-réseaux, matériaux, robotique", 23, 4,
+     [pv("Électronique et systèmes numériques", 3, 3, 5181), pv("Informatique et réseaux", 7, 4, 4484), pv("Matériaux", 6, 3, 5069), pv("Robotique", 4, 5, 5237)]),
+poly("poly_grenoble", "Polytech Grenoble", "École polytechnique de l'Université Grenoble Alpes", [C("Saint-Martin-d'Hères (Grenoble)", "38", "ara")],
+     ["btp", "env", "info", "elec", "physique", "bio"], "Géotechnique-génie civil, risques, informatique, systèmes embarqués, matériaux, santé", 37, 8,
+     [pv("Géotechnique et génie civil", 6, 4, 4297), pv("Gestion des risques (QHSE)", 4, 1, 4721), pv("Informatique", 10, 6, 3318),
+      pv("Informatique et électronique des systèmes embarqués", 6, 7, 3542), pv("Matériaux", 7, 4, 3784), pv("Technologies de l'information pour la santé", 4, 3, 5301)]),
+poly("poly_lille", "Polytech Lille", "École polytechnique de l'Université de Lille", [C("Villeneuve-d'Ascq", "59", "hdf")],
+     ["energie", "bio", "btp", "info", "math", "elec", "physique", "meca"], "Énergie, agroalimentaire, génie civil, informatique-statistique, IoT, matériaux, mécanique", 70, 6,
+     [pv("Énergie et industrie du futur", 5, 1, 4418), pv("Génie biologique et alimentaire", 2, 0, 2881), pv("Génie civil", 11, 9, 3296),
+      pv("Informatique et statistique", 13, 15, 3493), pv("Instrumentation et ingénierie d'affaires", 7, 5, 4573), pv("Internet des objets et cybersécurité", 5, 6, 3777),
+      pv("Matériaux", 10, 1, 4216), pv("Mécanique", 12, 7, 3300)]),
+poly("poly_lyon", "Polytech Lyon", "École polytechnique de l'Université Lyon 1", [C("Villeurbanne", "69", "ara")], ["bio", "info", "physique", "math", "meca", "indus"],
+     "Biomédical, informatique, matériaux, maths appliquées, mécanique, robotique", 24, 8,
+     [pv("Génie biomédical", 4, 2, 3155), pv("Informatique", 4, 3, 2532), pv("Matériaux", 4, 3, 4539),
+      pv("Mathématiques appliquées et modélisation", 4, 5, 2961), pv("Mécanique", 4, 4, 2766), pv("Systèmes industriels, robotique", 4, 4, 4461)]),
+poly("poly_marseille", "Polytech Marseille", "École polytechnique universitaire de Marseille (Aix-Marseille Université)", [C("Marseille", "13", "pac")],
+     ["env", "bio", "btp", "indus", "info", "physique", "meca", "energie", "elec"], "Biomédical, génie civil, informatique, matériaux, mécanique-énergétique, microélectronique", 60, 2,
+     [pv("Écologie industrielle et environnement (FISEA)", 5, 0, 4684), pv("Génie biomédical", 7, 5, 3942), pv("Génie civil", 7, 1, 4166),
+      pv("Génie industriel et informatique", 12, 7, 4741), pv("Informatique", 2, 2, 2634), pv("Matériaux", 8, 0, 4786),
+      pv("Mécanique, énergétique", 18, 7, 4060), pv("Microélectronique, télécommunications", 7, 2, 4846)]),
+poly("poly_montpellier", "Polytech Montpellier", "École polytechnique universitaire de Montpellier", [C("Montpellier", "34", "occ")],
+     ["bio", "info", "physique", "meca", "elec", "env"], "Agroalimentaire, informatique-gestion, matériaux, mécanique, microélectronique, eau", 32, 5,
+     [pv("Génie biologique et agroalimentaire", 5, 0, 4206), pv("Informatique et gestion", 3, 3, 2049), pv("Matériaux", 7, 0, 3332),
+      pv("Mécanique et interactions", 2, 0, 2220), pv("Microélectronique et automatique", 6, 6, 3597), pv("Sciences et technologies de l'eau", 9, 2, 4471)]),
+poly("poly_nancy", "Polytech Nancy", "École polytechnique de l'Université de Lorraine", [C("Vandœuvre-lès-Nancy", "54", "ges")],
+     ["energie", "meca", "physique", "info", "elec", "indus"], "Énergie-mécanique-matériaux, informatique-robotique-réseaux, maintenance et risques", 36, 3,
+     [pv("Énergie, mécanique, matériaux, environnement", 18, 9, 4570), pv("Informatique, automatique, robotique, réseaux", 10, 8, 4452),
+      pv("Management opérationnel, maintenance, maîtrise des risques", 5, 4, 4381)]),
+poly("poly_nantes", "Polytech Nantes", "École polytechnique de l'Université de Nantes", [C("Nantes", "44", "pdl")],
+     ["elec", "btp", "chimie", "energie", "info", "physique", "meca"], "Électronique, génie civil, procédés, génie électrique, informatique, matériaux, thermique", 60, 7,
+     [pv("Électronique et technologies numériques", 8, 8, 5282), pv("Génie civil", 12, 2, 3956), pv("Génie des procédés et bioprocédés", 4, 0, 4871),
+      pv("Génie électrique", 6, 3, 5065), pv("Informatique", 11, 8, 3555), pv("Matériaux", 11, 2, 4343), pv("Thermique, énergétique, mécanique", 9, 8, 4098)]),
+poly("poly_nice", "Polytech Nice Sophia", "École polytechnique universitaire de l'Université Côte d'Azur", [C("Biot (Sophia Antipolis)", "06", "pac")],
+     ["btp", "elec", "env", "info", "math", "meca"], "Bâtiments, électronique, eau, informatique, maths appliquées, robotique", 72, 16,
+     [pv("Bâtiments", 16, 4, 3780), pv("Électronique et systèmes embarqués", 15, 3, 3648), pv("Génie de l'eau", 10, 1, 4730), pv("Informatique", 12, 12, 3066),
+      pv("Maths appliquées et modélisation (FISE)", 12, 9, 3745), pv("Maths appliquées (FISEA)", 2, 1, 2483), pv("Robotique, systèmes autonomes", 11, 4, 3957)]),
+poly("poly_orleans", "Polytech Orléans", "École polytechnique de l'Université d'Orléans", [C("Orléans", "45", "cvl")],
+     ["btp", "env", "indus", "physique", "elec", "meca", "energie", "aero"], "Génie civil, génie industriel, physique-embarqué, mécanique, énergie-aérospatial-motorisation", 45, 2,
+     [pv("Génie civil et environnement", 7, 7, 5044), pv("Génie industriel", 8, 5, 5129), pv("Génie physique et systèmes embarqués", 7, 2, 5059),
+      pv("Matériaux, mécanique, mécatronique", 3, 1, 4273), pv("Technologies pour l'énergie, l'aérospatial et la motorisation", 15, 9, 2430)]),
+poly("poly_saclay", "Polytech Paris-Saclay", "École polytechnique de l'Université Paris-Saclay", [C("Orsay", "91", "idf")],
+     ["elec", "info", "math", "meca", "energie", "physique"], "Électronique-informatique embarquée, informatique et maths, mécanique-énergie, photonique", 21, 2,
+     [pv("Électronique et informatique pour l'embarqué", 10, 8, 3421), pv("Informatique et ingénierie mathématique", 2, 2, 1034),
+      pv("Mécanique et énergie", 2, 0, 1980), pv("Photonique et systèmes optroniques", 8, 4, 4432)]),
+poly("poly_sorbonne", "Polytech Sorbonne", "École polytechnique universitaire de Sorbonne Université", [C("Paris 5e", "75", "idf")],
+     ["elec", "info", "physique", "math", "meca", "env"], "Électronique-informatique, matériaux, maths appliquées-informatique, robotique, sciences de la Terre", 29, 3,
+     [pv("Électronique et informatique", 3, 2, 2970), pv("Matériaux", 6, 1, 3848), pv("Mathématiques appliquées et informatique", 6, 6, 1227),
+      pv("Robotique", 3, 3, 2626), pv("Sciences de la Terre : aménagement, risques, géo-énergies", 9, 7, 5028)]),
+poly("poly_tours", "Polytech Tours", "École polytechnique de l'Université de Tours", [C("Tours", "37", "cvl")], ["elec", "env", "info", "meca"],
+     "Électronique-génie électrique, aménagement-environnement, informatique, mécanique", 24, 4,
+     [pv("Électronique et génie électrique", 3, 5, 4384), pv("Génie de l'aménagement et de l'environnement", 6, 1, 5233),
+      pv("Informatique", 7, 8, 4720), pv("Mécanique, conception de systèmes", 7, 0, 3635)]),
+poly("ensibs", "ENSIBS", "École nationale supérieure d'ingénieurs de Bretagne-Sud (Université Bretagne Sud)", [C("Lorient", "56", "bre"), C("Vannes", "56", "bre")],
+     ["info", "indus", "meca"], "Cybersécurité, génie industriel, mécatronique", 19, 4,
+     [pv("Cybersécurité du logiciel", 10, 6, 4711), pv("Génie industriel", 4, 1, 4082), pv("Mécatronique", 4, 2, 4898)]),
+poly("ensim", "ENSIM", "École nationale supérieure d'ingénieurs du Mans (Le Mans Université)", [C("Le Mans", "72", "pdl")], ["physique", "info", "elec"],
+     "Acoustique, vibrations, capteurs, informatique", 8, 2, [pv("ENSIM", 8, 4, 4944)]),
+poly("enstbb", "ENSTBB (Bordeaux INP)", "École nationale supérieure de technologie des biomolécules de Bordeaux", [C("Bordeaux", "33", "naq")], ["bio"],
+     "Biotechnologies", 2, None, [pv("ENSTBB", 2, 0, 1026)]),
+poly("episen", "EPISEN", "École d'ingénieurs de l'Université Paris-Est Créteil", [C("Créteil", "94", "idf")], ["bio", "info"],
+     "Génie biomédical, systèmes d'information, technologies pour la santé", 22, 5,
+     [pv("Génie biomédical et santé", 10, 2, 4228), pv("Systèmes d'information", 6, 5, 5179), pv("Technologies pour la santé", 6, 0, 5253)]),
+poly("esbs", "ESBS", "École supérieure de biotechnologie de Strasbourg", [C("Illkirch-Graffenstaden", "67", "ges")], ["bio"], "Biotechnologies", 4, None, [pv("ESBS", 4, 0, 1543)]),
+poly("esgt", "ESGT", "École supérieure des géomètres et topographes (Cnam)", [C("Le Mans", "72", "pdl")], ["btp", "env"], "Géomètre-topographe, foncier, géomatique", 5, None, [pv("ESGT", 5, 0, 3298)]),
+poly("esiab", "ESIAB", "École supérieure d'ingénieurs en agroalimentaire de Bretagne atlantique (Bretagne INP)", [C("Brest", "29", "bre"), C("Quimper", "29", "bre")], ["bio"],
+     "Agroalimentaire, microbiologie, biotechnologies", 4, None, [pv("ESIAB", 4, 0, 4332)]),
+poly("esir", "ESIR", "École supérieure d'ingénieurs de Rennes (Université de Rennes)", [C("Rennes", "35", "bre")], ["info", "physique", "bio"],
+     "Informatique, matériaux, technologies pour la santé", 12, 4, [pv("Informatique", 4, 5, 4411), pv("Matériaux", 3, 1, 4777), pv("Technologies de l'information pour la santé", 7, 2, 4432)]),
+poly("esireims", "ESIReims", "École supérieure d'ingénieurs de Reims (Université de Reims Champagne-Ardenne)", [C("Reims", "51", "ges")], ["energie", "btp", "env", "indus"],
+     "Énergétique, génie urbain et environnement, packaging", 16, None, [pv("Énergétique", 5, 3, 4107), pv("Génie urbain et environnement", 6, 1, 5244), pv("Packaging", 5, 1, 4304)]),
+poly("esiroi", "ESIROI", "École supérieure d'ingénieurs Réunion océan Indien (Université de La Réunion)", [C("Saint-Denis / Saint-Pierre", "974", "reu")],
+     ["bio", "btp", "energie", "info"], "Agroalimentaire, bâtiment-énergie, informatique-télécoms", 2, 1, [pv("ESIROI", 2, 0, None)]),
+poly("esix", "ESIX Normandie", "École d'ingénieurs de l'Université de Caen Normandie", [C("Caen", "14", "nor"), C("Cherbourg-en-Cotentin", "50", "nor")],
+     ["bio", "meca", "elec", "indus", "energie"], "Agroalimentaire, mécatronique-embarqué, génie industriel, génie nucléaire (Cherbourg)", 18, 2,
+     [pv("Agroalimentaire (Caen)", 4, 0, 4556), pv("Mécatronique et systèmes embarqués (Caen)", 8, 1, 5224), pv("Génie industriel (Cherbourg)", 3, 1, 4518),
+      pv("Génie nucléaire (Cherbourg)", 3, 1, 3120)]),
+poly("isat", "ISAT", "Institut supérieur de l'automobile et des transports (Université de Bourgogne)", [C("Nevers", "58", "bfc")], ["transport", "meca", "energie"],
+     "Automobile et transports, mécanique, énergie", 10, None, [pv("ISAT", 10, 4, 2343)]),
+poly("isel", "ISEL", "Institut supérieur d'études logistiques (Université Le Havre Normandie)", [C("Le Havre", "76", "nor")], ["indus", "transport"],
+     "Logistique, supply chain, transport", 12, 4, [pv("ISEL", 12, 1, 5034)]),
+poly("isifc", "ISIFC", "Institut supérieur d'ingénieurs de Franche-Comté (Université Marie et Louis Pasteur)", [C("Besançon", "25", "bfc")], ["bio"],
+     "Génie biomédical", 10, None, [pv("Génie biomédical", 10, 4, 4212)]),
+poly("isty", "ISTY", "Institut des sciences et techniques des Yvelines (UVSQ)", [C("Vélizy-Villacoublay", "78", "idf")], ["info", "elec", "meca"],
+     "Informatique, systèmes électroniques embarqués, mécatronique", 5, 2, [pv("ISTY", 6, 0, 4986)]),
+poly("supgalilee", "Sup Galilée", "École d'ingénieurs Sup Galilée (Université Sorbonne Paris Nord)", [C("Villetaneuse", "93", "idf")], ["info", "elec", "math", "energie"],
+     "Informatique, télécoms-réseaux, instrumentation, maths appliquées, énergétique", 18, None, [pv("Sup Galilée", 20, 5, 5115)]),
+]
+
+# ============================================================ e3a : écoles indépendantes
+def iv(lib, pl, it, med, ins_, c25):
+    return V(lib, pl, it, med, None, ins=ins_, c25=c25)
+
+PA = "Puissance Alpha"   # concours disparu pour les CPGE en 2026
+AE = None   # en 2025, ces écoles recrutaient déjà par e3a (rubrique « Autres écoles E3A » du SCEI) : chiffres comparables
+
+# Écoles dont les places sont communes à toutes les filières (liste « INTER » de la notice e3a-Polytech 2026)
+INTER = {"aflokkat", "efrei", "eidd", "elisa", "esaip", "eseo", "isen_ouest", "isep"}
+NOTE_INTER = "Places communes à toutes les filières (liste « INTER » de la notice e3a-Polytech)."
+
+def ind(id, nom, complet, statut, campus, dom, profil, desc, fr, bo, p26, fee, stats, alias=None, note=None, src26=None):
+    scope = "MP"
+    if id in INTER:
+        scope = "MP+MPI+PC+PSI"
+        note = (note + " " if note else "") + NOTE_INTER
+    return E(id, nom, complet, alias or [], statut, campus, dom, profil, desc, fr, bo,
+             [A("e3a_ind", p26, scope, None, stats, ["ccinp", fee], src26=src26 or S_E3A26, note=note)])
+
+def ofr(txt, mn, mx, an, url):
+    return frais(txt, mn, mx, an, [onisep(url)])
+
+NOTE_PA = "En 2025, l'école recrutait via Puissance Alpha (places toutes filières) : rangs non comparables à ceux d'e3a-Polytech."
+
+SCHOOLS_IND = [
+ind("trois_il", "3iL Ingénieurs", "Institut d'ingénierie informatique de Limoges", "Privé", [C("Limoges", "87", "naq"), C("Nantes", "44", "pdl"), C("Rodez", "12", "occ")],
+    ["info"], "Spécialisée", "Informatique", ofr("7 750 €/an (2026) ; gratuit en apprentissage", 7750, 7750, "2026",
+    "https://www.onisep.fr/ressources/structures-enseignement/nouvelle-aquitaine/haute-vienne/3il-ingenieurs-site-de-limoges/diplome-d-ingenieur-de-l-institut-d-ingenierie-informatique-de-limoges"),
+    B_PRIV, 5, "ind_3il", [iv("3iL", 6, 1, 203, 895, PA)], ["3iL"], NOTE_PA),
+ind("aflokkat", "Aflokkat MIRA", "Mediterranean Institute of Robotics and Automation (Aflokkat)", "Privé", [C("Ajaccio", "2A", "cor")],
+    ["info", "elec"], "Spécialisée", "Robotique et informatique", ofr("7 500 € en 1re année puis 8 000 €/an (2026) ; gratuit en apprentissage", 7500, 8000, "2026",
+    "https://www.onisep.fr/ressources/structures-enseignement/corse/corse-du-sud/mediterranean-institute-of-robotics-and-automation-aflokkat-ajaccio/diplome-d-ingenieur-d-aflokkat-specialite-robotique-et-informatique"),
+    B_PRIV, 20, "ind_aflokkat", [], ["MIRA", "Aflokkat"], "Nouvelle école sur e3a-Polytech en 2026 : pas de statistiques 2025."),
+ind("efrei", "EFREI Paris", "EFREI Paris Panthéon-Assas Université", "Privé", [C("Villejuif", "94", "idf"), C("Bordeaux", "33", "naq")],
+    ["info"], "Spécialisée", "Numérique : informatique, data, IA, cybersécurité", ofr("9 250 €/an en 1re et 2e années, 10 250 € en 3e (2026)", 9250, 10250, "2026",
+    "https://www.onisep.fr/ressources/structures-enseignement/ile-de-france/val-de-marne/efrei-paris-campus-de-villejuif-universite-paris-pantheon-assas/diplome-d-ingenieur-d-efrei-paris"),
+    B_PRIV, 50, "ind_efrei", [iv("EFREI Paris", 64, 7, 402, 895, PA)], ["EFREI"], NOTE_PA + " Les 50 places 2026 couvrent Paris et Bordeaux."),
+ind("eia", "EIA Béthune", "École d'ingénieurs de l'Artois (Université d'Artois)", "Public", [C("Béthune", "62", "hdf")],
+    ["elec", "btp"], "Spécialisée", "Génie électrique (et génie civil)", nat(), B_NAT, 8, "ind_eia",
+    [iv("EIA Béthune – génie électrique", 5, 5, 230, 751, AE)], ["EIA", "Université d'Artois"]),
+ind("eidd", "EIDD", "École d'ingénieurs Denis Diderot (Université Paris Cité)", "Public", [C("Paris 13e", "75", "idf")],
+    ["info", "physique"], "Spécialisée", "Numérique, matériaux, physique appliquée", nat(), B_NAT, 55, "ind_eidd",
+    [V("EIDD Paris", 55, 22, 857, None, ins=571, inter=True)], ["EIDD", "Université Paris Cité"]),
+ind("eijv", "EIJV", "École d'ingénieurs Jules Verne (Université de Picardie Jules Verne)", "Public", [C("Amiens", "80", "hdf"), C("Saint-Quentin", "02", "hdf")],
+    ["energie", "info", "bio", "indus"], "Spécialisée", "Énergie-environnement, cybersécurité, technologies pour la santé, logistique", nat(), B_NAT, 9, "ind_eijv",
+    [iv("Génie énergétique et environnement", 2, 0, None, 513, AE), iv("Technologies de l'information pour la santé", 2, 1, 30, 513, AE),
+     iv("Cybersécurité (Amiens)", 2, 3, 19, 513, AE), iv("Logistique innovante (Saint-Quentin)", 3, 0, None, 513, AE)], ["EIJV", "UPJV"]),
+ind("eil", "EIL Côte d'Opale", "École d'ingénieurs du Littoral Côte d'Opale (ULCO)", "Public",
+    [C("Calais", "62", "hdf"), C("Dunkerque", "59", "hdf"), C("Longuenesse (Saint-Omer)", "62", "hdf")],
+    ["info", "energie", "indus"], "Spécialisée", "Informatique (Calais), énergie-environnement (Dunkerque), génie industriel (Saint-Omer)", nat(), B_NAT, 24, "ind_eil",
+    [iv("Calais – informatique", 10, 2, 117, 385, AE), iv("Dunkerque – génie énergétique et environnement", 6, 1, 114, 385, AE),
+     iv("Saint-Omer – génie industriel", 8, 3, 121, 385, AE)], ["EIL", "ULCO"]),
+ind("elisa", "ELISA Aerospace", "École d'ingénieurs des sciences aérospatiales", "Privé", [C("Bordeaux", "33", "naq"), C("Saint-Quentin", "02", "hdf")],
+    ["aero"], "Spécialisée", "Aéronautique et spatial", ofr("9 200 €/an (2026)", 9200, 9200, "2026",
+    "https://www.onisep.fr/ressources/structures-enseignement/nouvelle-aquitaine/gironde/ecole-d-ingenieurs-des-sciences-aerospatiales-campus-de-bordeaux/diplome-d-ingenieur-de-l-ecole-d-ingenieurs-des-sciences-aerospatiales"),
+    B_PRIV, 30, "ind_elisa", [iv("Bordeaux", 10, 2, 202, 895, PA), iv("Hauts-de-France", 7, 1, 216, 895, PA)], ["ELISA"], NOTE_PA),
+ind("enit", "ENIT – UTTOP", "École nationale d'ingénieurs de Tarbes (UTTOP, Toulouse INP)", "Public", [C("Tarbes", "65", "occ")],
+    ["meca", "indus"], "Spécialisée", "Mécanique, génie industriel, matériaux", nat(), B_NAT, 2, "ind_enit",
+    [iv("ENIT Tarbes – UTTOP", 2, 0, None, 287, AE)], ["ENIT", "ENI Tarbes", "UTTOP", "Toulouse INP"]),
+ind("ensait", "ENSAIT", "École nationale supérieure des arts et industries textiles", "Public", [C("Roubaix", "59", "hdf")],
+    ["physique", "chimie"], "Spécialisée", "Textile, matériaux, chimie", nat(), B_NAT, 9, "ind_ensait",
+    [iv("ENSAIT Roubaix", 8, 13, 73, 501, AE)], ["ENSAIT"]),
+ind("esaip", "ESAIP", "École supérieure angevine d'informatique et de productique", "Privé", [C("Saint-Barthélemy-d'Anjou (Angers)", "49", "pdl"), C("Aix-en-Provence", "13", "pac")],
+    ["info", "env"], "Spécialisée", "Informatique-réseaux, gestion des risques et environnement",
+    frais("Environ 6 000 à 8 300 €/an (source non officielle, année non précisée)", 6000, 8300, "?", [src("Choose & Connect, fiche ESAIP", "https://www.chooseandconnect.com/choose-your-spot/esaip")], "Non officiel, à vérifier"),
+    B_PRIV, 24, "ind_esaip", [iv("ESAIP Angers / Aix-en-Provence", 8, 6, 198, 895, PA)], ["ESAIP"], NOTE_PA),
+ind("esb", "ESB", "École supérieure du bois", "Privé", [C("Nantes", "44", "pdl")],
+    ["meca", "btp", "env"], "Spécialisée", "Bois, matériaux biosourcés, construction", ofr("5 950 €/an (2026) ; gratuit en apprentissage", 5950, 5950, "2026",
+    "https://www.onisep.fr/ressources/structures-enseignement/pays-de-la-loire/loire-atlantique/ecole-superieure-du-bois-campus-de-nantes/diplome-d-ingenieur-de-l-ecole-superieure-du-bois"),
+    B_PRIV, 12, "ind_esb", [iv("ESB Nantes", 15, 3, 3, 182, AE)], ["ESB"]),
+ind("eseo", "ESEO", "École supérieure d'électronique de l'Ouest", "Privé", [C("Angers", "49", "pdl"), C("Vélizy-Villacoublay", "78", "idf"), C("Dijon", "21", "bfc")],
+    ["elec", "info"], "Spécialisée", "Électronique, informatique, systèmes embarqués", ofr("9 390 €/an (2026) ; gratuit en apprentissage", 9390, 9390, "2026",
+    "https://www.onisep.fr/ressources/structures-enseignement/pays-de-la-loire/maine-et-loire/ecole-superieure-d-electronique-de-l-ouest-site-angers/diplome-d-ingenieur-de-l-ecole-superieure-d-electronique-de-l-ouest"),
+    B_PRIV, 20, "ind_eseo", [iv("ESEO Angers – Paris – Dijon", 15, 2, 147, 895, PA)], ["ESEO"], NOTE_PA),
+ind("esiea", "ESIEA", "École supérieure d'informatique, électronique, automatique", "Privé", [C("Ivry-sur-Seine", "94", "idf"), C("Laval", "53", "pdl")],
+    ["info"], "Spécialisée", "Informatique, cybersécurité, IA", ofr("11 700 €/an (2026) ; gratuit en apprentissage", 11700, 11700, "2026",
+    "https://www.onisep.fr/ressources/structures-enseignement/ile-de-france/val-de-marne/ecole-superieure-d-informatique-electronique-automatique-campus-d-ivry-sur-seine/diplome-d-ingenieur-de-l-ecole-superieure-d-informatique-electronique-automatique"),
+    B_PRIV, 10, "ind_esiea", [iv("ESIEA Paris – Laval", 16, 4, 443, 895, PA)], ["ESIEA"], NOTE_PA),
+ind("estia", "ESTIA", "École supérieure des technologies industrielles avancées", "Consulaire (CCI)", [C("Bidart", "64", "naq")],
+    ["gen", "meca", "indus"], "Généraliste", "Généraliste à dominante industrielle, international", ofr("8 000 €/an (2026) ; gratuit en apprentissage", 8000, 8000, "2026",
+    "https://www.onisep.fr/ressources/structures-enseignement/nouvelle-aquitaine/pyrenees-atlantiques/ecole-superieure-des-technologies-industrielles-avancees/diplome-d-ingenieur-de-l-ecole-superieure-des-technologies-industrielles-avancees"),
+    B_PRIV, 15, "ind_estia", [iv("ESTIA Bidart", 50, 14, 242, 895, PA)], ["ESTIA"], NOTE_PA),
+ind("isen_med", "ISEN Méditerranée", "ISEN Méditerranée (Yncréa Méditerranée)", "Privé", [C("Toulon", "83", "pac"), C("Marseille", "13", "pac")],
+    ["elec", "info"], "Spécialisée", "Électronique, numérique",
+    frais("Environ 8 700 €/an en moyenne (Campus France, 2022, ancien)", 8700, 8700, "2022", [src("Campus France, fiche ISEN Toulon", "https://ressources.campusfrance.org/pratique/etablissements/fr/ing_isen_toulon_fr.pdf")], "Ancien, à vérifier"),
+    B_PRIV, 6, "ind_isenmed", [iv("ISEN Méditerranée Toulon", 12, 1, 672, 895, PA)], ["ISEN", "Yncréa"], NOTE_PA),
+ind("isen_ouest", "ISEN Ouest", "ISEN Ouest (Yncréa Ouest)", "Privé", [C("Brest", "29", "bre"), C("Nantes", "44", "pdl"), C("Caen", "14", "nor")],
+    ["elec", "info"], "Spécialisée", "Électronique, numérique", ofr("9 400 €/an pour les années 3 à 5 (2026) ; gratuit en apprentissage", 9400, 9400, "2026",
+    "https://www.onisep.fr/ressources/structures-enseignement/bretagne/finistere/institut-superieur-de-l-electronique-et-du-numerique-yncrea-ouest-campus-de-brest/diplome-d-ingenieur-de-l-institut-superieur-de-l-electronique-et-du-numerique-yncrea-ouest"),
+    B_PRIV, 25, "ind_isenouest", [iv("ISEN Ouest Brest – Caen – Nantes", 18, 4, 227, 895, PA)], ["ISEN", "Yncréa"], NOTE_PA),
+ind("isep", "ISEP", "Institut supérieur d'électronique de Paris", "Privé", [C("Paris 6e", "75", "idf"), C("Issy-les-Moulineaux", "92", "idf")],
+    ["info", "elec"], "Spécialisée", "Numérique : électronique, informatique, télécoms", ofr("10 800 €/an (2025) ; gratuit en apprentissage", 10800, 10800, "2025",
+    "https://www.onisep.fr/ressources/structures-enseignement/ile-de-france/paris/isep-ecole-d-ingenieurs-du-numerique-site-de-paris/diplome-d-ingenieur-de-l-institut-superieur-d-electronique-de-paris"),
+    B_PRIV, 30, "ind_isep", [iv("ISEP", 21, 12, 317, 895, PA)], ["ISEP"], NOTE_PA),
+ind("ismans", "ISMANS CESI", "Institut supérieur des matériaux du Mans (groupe CESI)", "Privé", [C("Le Mans", "72", "pdl")],
+    ["meca", "physique"], "Spécialisée", "Matériaux, mécanique, sport mécanique", ofr("8 500 €/an (2024)", 8500, 8500, "2024",
+    "https://www.onisep.fr/ressources/structures-enseignement/pays-de-la-loire/sarthe/institut-superieur-des-materiaux-du-mans-ismans-cesi-le-mans/diplome-d-ingenieur-de-l-institut-superieur-des-materiaux-du-mans"),
+    B_PRIV, 10, "ind_ismans", [iv("ISMANS-Groupe CESI Le Mans", 20, 0, None, 160, AE)], ["ISMANS", "CESI"]),
+ind("hei", "JUNIA HEI", "JUNIA École des hautes études d'ingénieur (Lille)", "Privé", [C("Lille", "59", "hdf")],
+    ["gen"], "Généraliste", "Généraliste", ofr("8 750 € en 1re année puis 9 000 €/an (2026) ; gratuit en apprentissage", 8750, 9000, "2026",
+    "https://www.onisep.fr/ressources/structures-enseignement/hauts-de-france/nord/junia-ecole-des-hautes-etudes-d-ingenieur-campus-de-lille-institut-catholique-de-lille/diplome-d-ingenieur-de-l-ecole-des-hautes-etudes-d-ingenieur-junia"),
+    B_PRIV, 20, "ind_hei", [iv("HEI JUNIA Lille", 72, 13, 252, 895, PA)], ["HEI", "JUNIA"], NOTE_PA),
+ind("isen_lille", "JUNIA ISEN", "JUNIA Institut supérieur de l'électronique et du numérique", "Privé", [C("Lille", "59", "hdf"), C("Bordeaux", "33", "naq")],
+    ["elec", "info"], "Spécialisée", "Électronique, numérique",
+    frais("Non trouvé (JUNIA HEI : 8 750 à 9 000 €/an)", None, None, "", [], "À vérifier"),
+    B_PRIV, 5, "ind_isenlille", [iv("ISEN JUNIA Lille – Bordeaux", 13, 4, 365, 895, PA)], ["ISEN", "JUNIA"], NOTE_PA),
+ind("paolitech", "Paoli Tech", "École d'ingénieurs Paoli Tech (Università di Corsica)", "Public", [C("Corte", "2B", "cor")],
+    ["energie", "bio"], "Spécialisée", "Énergétique, agronomie", nat(), B_NAT, 5, "ind_paoli",
+    [iv("Paoli Tech", 5, 1, 192, 422, AE)], ["Paoli Tech", "Université de Corse"]),
+]
+
+# ============================================================ Avenir Prépas (e3a)
+def av(lib, pl, it, med):
+    return V(lib, pl, it, med, None, ins=1077)
+
+SCHOOLS_AV = [
+E("builders", "Builders", "Builders École d'ingénieurs (ex-ESITC)", ["ESITC", "Builders"], "Privé", [C("Épron (Caen)", "14", "nor"), C("Lyon", "69", "ara")],
+  ["btp"], "Spécialisée", "Construction, BTP",
+  frais("8 150 €/an (2025) ; gratuit en apprentissage", 8150, 8150, "2025", [onisep("https://www.onisep.fr/ressources/structures-enseignement/normandie/calvados/builders-ecole-d-ingenieurs-site-de-caen-ex-esitc-caen/diplome-d-ingenieur-de-builders-ecole-d-ingenieurs")]),
+  B_PRIV,
+  [A("avenir", 6, "MP", None, [av("Builders Caen", 6, 3, 28)], ["ccinp", "avenir"], lib="Campus de Caen", src26=S_AV26),
+   A("avenir", 3, "MP", None, [av("Builders Lyon", 2, 0, None)], ["ccinp", "avenir"], lib="Campus de Lyon", src26=S_AV26)]),
+E("eigsi", "EIGSI", "École d'ingénieurs généralistes (EIGSI La Rochelle)", ["EIGSI"], "Privé", [C("La Rochelle", "17", "naq")],
+  ["gen", "energie"], "Généraliste", "Généraliste ; énergie, mobilité, industrie",
+  frais("8 280 €/an (2026) ; gratuit en apprentissage", 8280, 8280, "2026", [onisep("https://www.onisep.fr/ressources/structures-enseignement/nouvelle-aquitaine/charente-maritime/ecole-d-ingenieurs-generalistes/diplome-d-ingenieur-de-l-ecole-d-ingenieurs-en-genie-des-systemes-industriels")]),
+  B_PRIV, [A("avenir", 18, "MP", None, [av("EIGSI La Rochelle", 20, 8, 181)], ["ccinp", "avenir"], src26=S_AV26)],
+  note="Le campus de Casablanca (1 place MP) n'est pas listé : hors de France."),
+E("esigelec", "ESIGELEC", "École supérieure d'ingénieurs en génie électrique", ["ESIGELEC"], "Privé", [C("Saint-Étienne-du-Rouvray (Rouen)", "76", "nor"), C("Poitiers", "86", "naq")],
+  ["elec", "info", "energie"], "Spécialisée", "Électronique, numérique, énergie, systèmes embarqués",
+  frais("8 050 €/an (2025) + 150 € d'inscription ; gratuit en apprentissage", 8200, 8200, "2025", [onisep("https://www.onisep.fr/ressources/structures-enseignement/normandie/seine-maritime/esigelec-site-de-rouen/diplome-d-ingenieur-de-l-esigelec")]),
+  B_PRIV, [A("avenir", 15, "MP", None, [av("ESIGELEC Rouen / Poitiers", 20, 4, 83)], ["ccinp", "avenir"], src26=S_AV26,
+               note="Onisep annonce 30 places MP (80 toutes filières) ; L'Étudiant et Dimension Ingénieur, 15 (45 toutes filières). Nous retenons 15.")]),
+E("esilv", "ESILV", "École supérieure d'ingénieurs Léonard-de-Vinci", ["ESILV", "De Vinci"], "Privé", [C("Courbevoie (Paris-La Défense)", "92", "idf"), C("Nantes", "44", "pdl")],
+  ["info", "math", "meca", "energie"], "Généraliste", "Numérique, data, finance, mécanique, énergie",
+  frais("11 400 €/an (2026-2027)", 11400, 11400, "2026-2027", [src("ESILV : tarifs et financement", "https://www.esilv.fr/admissions/tarifs-et-financement/")], "Officiel (site ESILV, repris du tableau Île-de-France)"),
+  bours("part", "Réductions selon l'échelon de bourse (à voir avec l'école)."),
+  [A("avenir", 73, "MP", None, [av("ESILV Paris", 57, 65, 113), av("ESILV Paris – FISEA finance", 7, 8, 125)], ["ccinp", "avenir"], lib="Campus de Paris-La Défense", src26=S_AV26),
+   A("avenir", 7, "MP", None, [av("ESILV Nantes", 10, 10, 247)], ["ccinp", "avenir"], lib="Campus de Nantes", src26=S_AV26)]),
+E("estaca", "ESTACA", "École supérieure des techniques aéronautiques et de construction automobile", ["ESTACA"], "Privé",
+  [C("Montigny-le-Bretonneux (Paris-Saclay)", "78", "idf"), C("Laval", "53", "pdl"), C("Bordeaux", "33", "naq")],
+  ["aero", "transport"], "Spécialisée", "Aéronautique, automobile, ferroviaire, naval, spatial",
+  frais("9 950 €/an (2025-2026)", 9950, 9950, "2025-2026", [src("L'Étudiant, fiche ESTACA", "https://www.letudiant.fr/fiches/etudes/fiche/estaca.html")], "Presse spécialisée"),
+  B_PRIV,
+  [A("avenir", 4, "MP", None, [av("Paris-Saclay – aéronautique", 1, 1, 109), av("Paris-Saclay – automobile", 1, 1, 130),
+                                av("Paris-Saclay – ferroviaire", 2, 2, 188), av("Paris-Saclay – spatial", 1, 2, 137)], ["ccinp", "avenir"], lib="Campus de Paris-Saclay", src26=S_AV26),
+   A("avenir", 9, "MP", None, [av("Laval – aéronautique", 2, 2, 319), av("Laval – automobile", 3, 3, 300), av("Laval – naval", 3, 4, 326)], ["ccinp", "avenir"], lib="Campus de Laval", src26=S_AV26),
+   A("avenir", 18, "MP", None, [av("Bordeaux – aéronautique", 15, 19, 325)], ["ccinp", "avenir"], lib="Campus de Bordeaux", src26=S_AV26)]),
+]
+
+# ============================================================ Ingéni'Up (e3a)
+def iu(lib, pl, it, med, moy=None, iint=None):
+    # Le SCEI ne donne pas les intégrés par filière pour ce concours interfilière (it ignoré) : seulement le total toutes filières.
+    return V(lib, pl, None, med, moy, ins=1499, inter=True, iint=iint)
+
+IU_NOTE = "Places 2026 données pour MP, MPI, PC et PSI ensemble. Le SCEI ne publie pas les intégrés de chaque filière pour ce concours."
+
+SCHOOLS_IU = [
+E("ecam_epmi", "ECAM-EPMI", "ECAM-EPMI, école d'ingénieurs généralistes", ["ECAM", "EPMI"], "Privé", [C("Cergy", "95", "idf")],
+  ["gen", "energie", "elec"], "Généraliste", "Généraliste ; énergie, systèmes",
+  frais("8 300 €/an en 1re année du cycle (2025) ; gratuit en apprentissage", 8300, 8300, "2025", [onisep("https://www.onisep.fr/ressources/structures-enseignement/ile-de-france/val-d-oise/ecam-epmi-site-de-cergy/diplome-d-ingenieur-ecam-epmi")]),
+  B_PRIV, [A("ingeniup", 40, "MP+MPI+PC+PSI", None, [iu("ECAM-EPMI Cergy-Pontoise", 38, 0, 1366, 1317, 12)], ["ccinp", "ingeniup"], src26=S_IU26, note=IU_NOTE)]),
+E("ecam_rennes", "ECAM Louis de Broglie", "ECAM Rennes – Louis de Broglie", ["ECAM", "ECAM Rennes"], "Privé", [C("Bruz (Rennes)", "35", "bre")],
+  ["gen"], "Généraliste", "Généraliste",
+  frais("9 500 €/an (2026)", 9500, 9500, "2026", [onisep("https://www.onisep.fr/ressources/structures-enseignement/bretagne/ille-et-vilaine/ecam-louis-de-broglie-campus-de-rennes/diplome-d-ingenieur-de-l-ecam-rennes-louis-de-broglie")]),
+  B_PRIV, [A("ingeniup", 20, "MP+MPI+PC+PSI", None, [iu("ECAM Louis de Broglie", 36, 0, 697, 768, 4)], ["ccinp", "ingeniup"], src26=S_IU26, note=IU_NOTE)]),
+E("icam", "Icam Strasbourg-Europe", "Institut catholique d'arts et métiers, site de Strasbourg-Europe", ["Icam", "ICAM"], "Privé", [C("Schiltigheim (Strasbourg)", "67", "ges")],
+  ["gen"], "Généraliste", "Généraliste",
+  frais("9 700 €/an (2026) + 620 € de frais de vie collective ; gratuit en apprentissage", 10320, 10320, "2026", [onisep("https://www.onisep.fr/ressources/structures-enseignement/grand-est/bas-rhin/institut-catholique-d-arts-et-metiers-site-de-strasbourg-europe/diplome-d-ingenieur-de-l-institut-catholique-d-arts-et-metiers")]),
+  bours("part", "Les boursiers d'État reçoivent une bourse complémentaire de l'école."),
+  [A("ingeniup", 35, "MP+MPI+PC+PSI", None, [iu("Icam Strasbourg-Europe", 30, 0, 1084, 1045, 7)], ["ccinp", "ingeniup"], src26=S_IU26, note=IU_NOTE)]),
+E("unilasalle", "UniLaSalle", "Institut polytechnique UniLaSalle", ["UniLaSalle", "ESIEE Amiens", "EME"], "Privé",
+  [C("Beauvais", "60", "hdf"), C("Amiens", "80", "hdf"), C("Rennes", "35", "bre"), C("Rouen", "76", "nor")],
+  ["bio", "env", "energie"], "Spécialisée", "Agronomie et agro-industries, géosciences-environnement, énergie, environnement",
+  frais("8 500 €/an en cycle ingénieur (2025, campus de Beauvais, géosciences) ; gratuit en apprentissage", 8500, 8500, "2025",
+        [onisep("https://www.onisep.fr/ressources/structures-enseignement/hauts-de-france/oise/institut-polytechnique-unilasalle-campus-de-beauvais/diplome-d-ingenieur-de-l-institut-polytechnique-unilasalle-specialite-geosciences-et-environnement")]),
+  B_PRIV,
+  [A("ingeniup", 20, "MP+MPI+PC+PSI", None, [iu("Beauvais – agronomie et agro-industries", 4, 0, 1207, 1207, 1), iu("Beauvais – géosciences et environnement", 18, 0, 1161, 1161, 2)],
+     ["ccinp", "ingeniup"], lib="Campus de Beauvais", src26=S_IU26, note=IU_NOTE),
+   A("ingeniup", 20, "MP+MPI+PC+PSI", None, [iu("UniLaSalle Amiens", 29, 0, 1366, 1366, 2)], ["ccinp", "ingeniup"], lib="Campus d'Amiens", src26=S_IU26),
+   A("ingeniup", 5, "MP+MPI+PC+PSI", None, [iu("UniLaSalle Rennes EME", 4, 0, 1300, 1300, 1)], ["ccinp", "ingeniup"], lib="Campus de Rennes", src26=S_IU26),
+   A("ingeniup", 5, "MP+MPI+PC+PSI", None, [iu("UniLaSalle Rouen", 4, 0, None, None, 0)], ["ccinp", "ingeniup"], lib="Campus de Rouen", src26=S_IU26)]),
+]
+
+# ============================================================ EPITA - IPSA - ESME, CESI, UT
+def ep(lib, pl, it, med):
+    return V(lib, pl, it, med, None, ins=620)
+
+SCHOOLS_OTHER = [
+E("epita", "EPITA", "École pour l'informatique et les techniques avancées", ["EPITA"], "Privé",
+  [C("Le Kremlin-Bicêtre", "94", "idf"), C("Lyon", "69", "ara"), C("Rennes", "35", "bre"), C("Strasbourg", "67", "ges"), C("Toulouse", "31", "occ")],
+  ["info"], "Spécialisée", "Informatique, IA, cybersécurité",
+  frais("12 780 €/an (2024) ; gratuit en apprentissage", 12780, 12780, "2024", [onisep("https://www.onisep.fr/ressources/structures-enseignement/ile-de-france/val-de-marne/ecole-pour-l-informatique-et-les-techniques-avancees-site-du-kremlin-bicetre/diplome-d-ingenieur-de-l-ecole-pour-l-informatique-et-les-techniques-avancees")]),
+  B_PRIV, [A("epita", 100, "toutes filières", "100 places toutes filières, 5 campus", [
+      ep("Paris", 30, 22, 193), ep("Paris – apprentissage (FISA)", 5, 2, 298), ep("Lyon", 7, 3, 66), ep("Rennes", 5, 1, 213),
+      ep("Strasbourg", 4, 1, 37), ep("Toulouse", 6, 3, 93)], ["epita"], src26=S_EP26)]),
+E("ipsa", "IPSA", "Institut polytechnique des sciences avancées", ["IPSA"], "Privé", [C("Ivry-sur-Seine", "94", "idf"), C("Toulouse", "31", "occ")],
+  ["aero"], "Spécialisée", "Aéronautique et spatial",
+  frais("11 394 €/an (2026) ; gratuit en apprentissage", 11394, 11394, "2026", [onisep("https://www.onisep.fr/ressources/structures-enseignement/ile-de-france/val-de-marne/institut-polytechnique-des-sciences-avancees-campus-d-ivry-sur-seine/diplome-d-ingenieur-de-l-institut-polytechnique-des-sciences-avancees")]),
+  B_PRIV, [A("epita", 100, "toutes filières", "100 places toutes filières, Paris et Toulouse", [
+      ep("Paris", 15, 21, 204), ep("Paris – apprentissage (FISA)", 2, 2, 35), ep("Toulouse", 14, 14, 142)], ["epita"], src26=S_EP26)]),
+E("esme", "ESME", "École spéciale de mécanique et d'électricité (ESME Sudria)", ["ESME Sudria"], "Privé",
+  [C("Ivry-sur-Seine / Paris", "94", "idf"), C("Bordeaux", "33", "naq"), C("Lille", "59", "hdf"), C("Lyon", "69", "ara")],
+  ["elec", "info", "energie"], "Généraliste", "Électronique, numérique, énergie",
+  frais("11 685 €/an en 1re et 2e années, 11 880 € en 3e (2024) ; gratuit en apprentissage", 11685, 11880, "2024", [onisep("https://www.onisep.fr/ressources/structures-enseignement/ile-de-france/val-de-marne/esme-campus-d-ivry-sur-seine/diplome-d-ingenieur-de-l-ecole-speciale-de-mecanique-et-d-electricite")]),
+  B_PRIV, [A("epita", 50, "toutes filières", "50 places toutes filières, 4 campus", [ep("ESME", 15, 8, 204), ep("ESME – apprentissage (FISA)", 3, 2, 247)], ["epita"], src26=S_EP26)]),
+E("cesi", "CESI École d'ingénieurs", "CESI École d'ingénieurs (cursus en 3 ans après CPGE)", ["CESI"], "Privé",
+  [C("Paris-Nanterre", "92", "idf"), C("Lyon", "69", "ara"), C("Bordeaux", "33", "naq"), C("Lille", "59", "hdf"), C("Toulouse", "31", "occ"), C("Strasbourg", "67", "ges"),
+   C("Aix-en-Provence", "13", "pac"), C("Nice", "06", "pac"), C("Rouen", "76", "nor"), C("Caen", "14", "nor"), C("Saint-Nazaire", "44", "pdl"), C("Nancy", "54", "ges"),
+   C("Reims", "51", "ges"), C("Orléans", "45", "cvl"), C("La Rochelle", "17", "naq"), C("Angoulême", "16", "naq"), C("Arras", "62", "hdf")],
+  ["gen", "info"], "Généraliste", "Généraliste (industrie, génie civil) ou informatique (data-IA, embarqué, cybersécurité) ; 17 campus",
+  frais("Environ 8 500 à 9 500 €/an (Onisep 2025, détail ambigu)", 8500, 9500, "2025", [onisep("https://www.onisep.fr/ressources/structures-enseignement/ile-de-france/hauts-de-seine/cesi-ecole-d-ingenieurs-campus-de-paris-nanterre/diplome-d-ingenieur-du-cesi")], "Officiel mais ambigu"),
+  B_PRIV, [A("cesi", None, "toutes filières", "« Plus de 100 places » sur de nombreux campus (2026)", [V("26 parcours et campus (2025)", 128, 1, None, None)], ["cesi"], src26=S_CESI26,
+             note="Concours propre (maths, physique, anglais, français + entretien). En 2025, 1 élève de MP a intégré le CESI par ce concours.")]),
+E("utc", "UTC", "Université de technologie de Compiègne", ["UTC", "Groupe UT"], "Public", [C("Compiègne", "60", "hdf")],
+  ["gen", "meca", "info", "bio", "chimie", "btp"], "Généraliste", "Mécanique, informatique, génie biologique, procédés, génie urbain",
+  frais("628 €/an (Onisep 2026) ; gratuit en apprentissage", 628, 628, "2026", [S_UT]), B_NAT,
+  [A("ut", 450, "toutes origines", "450 places toutes spécialités, pour tous les bac+2 et bac+3 (pas seulement les prépas)", [], ["ut"], src26=S_UT,
+     note="Hors SCEI : sélection commune aux UT (dossier + entretien) sur groupe-ut.fr, avec son propre calendrier.")]),
+E("utt", "UTT", "Université de technologie de Troyes", ["UTT", "Groupe UT"], "Public", [C("Troyes", "10", "ges")],
+  ["info", "meca", "indus", "physique"], "Généraliste", "Informatique, mécanique, génie industriel, matériaux",
+  nat(), B_NAT, [A("ut", None, "toutes origines", "Places non trouvées (sélection commune aux UT)", [], ["ut"], src26=S_UT,
+                   note="Hors SCEI : sélection commune aux UT (dossier + entretien) sur groupe-ut.fr.")]),
+E("utbm", "UTBM", "Université de technologie de Belfort-Montbéliard", ["UTBM", "Groupe UT"], "Public", [C("Belfort / Sevenans", "90", "bfc")],
+  ["info", "energie", "meca", "transport"], "Généraliste", "Informatique, énergie, mécanique, automobile",
+  nat(), B_NAT, [A("ut", None, "toutes origines", "Places non trouvées (sélection commune aux UT)", [], ["ut"], src26=S_UT,
+                   note="Hors SCEI : sélection commune aux UT (dossier + entretien) sur groupe-ut.fr.")]),
+]

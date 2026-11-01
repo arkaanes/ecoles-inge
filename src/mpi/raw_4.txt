@@ -1,0 +1,43 @@
+S;PA;EFREI Paris;5;402;454;17;64
+S;PA;ELISA Aerospace Bordeaux;0;202;194;10;10
+S;PA;ELISA Aerospace Hauts de France;0;216;204;4;7
+S;PA;ESAIP Angers / Aix-en-Provence;0;198;220;8;8
+S;PA;ESEO Angers - Paris - Dijon;0;147;154;4;15
+S;PA;ESIEA Paris - Laval;1;443;507;6;16
+S;PA;ESIEE Paris;12;315;321;85;110
+S;PA;ESIEE Paris - filière data - statut étudiant (1 an) + statut apprenti (2 ans);1;254;268;8;18
+S;PA;ESTIA Bidart;0;242;258;41;50
+S;PA;ISEN Méditerranée Toulon;1;672;563;3;12
+S;PA;ISEN Ouest - Brest - Caen - Nantes;0;227;402;5;18
+S;PA;ISEP;1;317;421;23;21
+S;PA;HEI JUNIA – Lille;0;252;435;30;72
+S;PA;ISEN JUNIA Lille-BORDEAUX;0;365;760;6;13
+S;PA;3iL Ingénieurs Limoges;0;203;203;1;6
+T;PA;Concours ESIEE Paris;169;129;39;13;93;128
+S;AV;EIGSI La Rochelle;0;0;0;;5
+S;AV;ESIGELEC Rouen/Poitiers;0;0;0;;5
+S;AV;ESILV Nantes;2;10;10;;2
+S;AV;ESILV Paris;8;29;27;;15
+S;AV;ESILV Paris FISEA Finance;1;10;10;;2
+S;AV;ESTACA Bordeaux - Filière Aéronautique;1;43;43;;4
+S;AE;EIA Bethune - Génie électrique;0;0;0;;1
+S;AE;EIJV Amiens - Cybersécurité;2;3;3;;6
+S;AE;EIJV - Technologie de l'Information pour la santé;0;0;0;;2
+S;AE;EIJV Saint Quentin - Logistique innovante;0;0;0;;3
+S;AE;EIL Côte d'Opale - Boulogne (Agroalimentaire);0;0;0;;2
+S;AE;EIL Côte d'Opale - Calais (informatique);0;0;0;;5
+S;AE;EIL Côte d'Opale - Dunkerque (Génie Energétique et Environnement);0;0;0;;5
+S;AE;EIL Côte d'Opale - Saint-Omer (Génie Industriel);0;0;0;;5
+S;AE;IMT Nord Europe (en partenariat avec ISPA);0;0;0;;5
+S;EI;EIDD Paris;0;857;830;45;55
+S;EP;EPITA Paris - FISA;0;0;0;;4
+S;EP;EPITA campus Rennes;1;55;55;;2
+S;EP;EPITA campus Toulouse;2;73;73;;3
+S;EP;EPITA campus Paris;15;72;77;;12
+S;EP;EPITA campus Strasbourg;1;38;38;;2
+S;EP;EPITA campus Lyon;4;103;81;;3
+S;EP;IPSA Paris;3;93;100;;3
+S;EP;IPSA Toulouse;3;67;56;;2
+S;EP;IPSA Paris - FISA;0;0;0;;1
+S;EP;ESME - FISA;0;0;0;;3
+S;EP;ESME;0;0;0;;2

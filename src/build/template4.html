@@ -1,0 +1,1451 @@
+<title>Écoles d'ingé</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+/* Terre cuite sur blanc cassé : titres à empattements (Fraunces), texte en Source Sans 3. Une couleur par famille de concours. */
+:root {
+  --bg: #FAF7F2; --surface: #FFFFFF; --surface-2: #F3ECE2; --surface-3: #EBE1D3;
+  --ink: #3A2A1F; --ink-2: #5A4637; --ink-3: #6B5646;
+  --line: #EAE1D5; --line-2: #D9C6B1;
+  --accent: #B0502A; --on-accent: #FFFFFF; --accent-ink: #8F3E1E; --accent-strong: #8F3E1E; --accent-soft: rgba(176, 80, 42, .10);
+  --inv-bg: #3A2A1F; --inv-ink: #FAF7F2; --inv-ink-2: #E7D8C6; --inv-line: #5E4A3C; --inv-accent: #E39A72;
+  --ok: #2F6B3A; --ok-soft: rgba(47, 107, 58, .12); --warn: #8A5300; --warn-soft: rgba(138, 83, 0, .12);
+  --t1-bg: #DCEBD8; --t1-ink: #24562E; --t2-bg: #F6E3B8; --t2-ink: #7A4C00; --t3-bg: #F2D3C8; --t3-ink: #8F2E14;
+  --f-x: #7B2D3B; --f-ens: #94485F; --f-mp: #2E5274; --f-mt: #3F6582; --f-cs: #5B4596;
+  --f-inp: #85590F; --f-poly: #4E6A2A; --f-e3a: #66612A; --f-autres: #6E655C;
+  --m1: #F1E2D0; --m2: #E7C9A9; --m3: #DCAA82; --m4: #CC8A5F; --m5: #B9683F;
+  --shadow: 0 1px 2px rgba(58, 42, 31, .05);
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Source Sans 3", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --r: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1F1813; --surface: #2A211A; --surface-2: #33281F; --surface-3: #3D3026;
+    --ink: #F3E9DD; --ink-2: #D9C7B4; --ink-3: #BCA894;
+    --line: #3E3128; --line-2: #56463A;
+    --accent: #DB7B4F; --on-accent: #1F1813; --accent-ink: #F0A27C; --accent-strong: #C4673E; --accent-soft: rgba(219, 123, 79, .14);
+    --inv-bg: #3A2D24; --inv-ink: #F3E9DD; --inv-ink-2: #D9C7B4; --inv-line: #56463A; --inv-accent: #F0A27C;
+    --ok: #86C994; --ok-soft: rgba(134, 201, 148, .14); --warn: #E9B566; --warn-soft: rgba(233, 181, 102, .14);
+    --t1-bg: rgba(134, 201, 148, .18); --t1-ink: #A3D9AE; --t2-bg: rgba(233, 181, 102, .18); --t2-ink: #F0C887; --t3-bg: rgba(236, 132, 104, .18); --t3-ink: #F4AE97;
+    --f-x: #E08C9B; --f-ens: #E6A6BA; --f-mp: #8DB5E0; --f-mt: #ABC8E5; --f-cs: #B9A8EC;
+    --f-inp: #E2B35E; --f-poly: #AACB7D; --f-e3a: #D3CB80; --f-autres: #C4BAAE;
+    --m1: #3A2D24; --m2: #573D2D; --m3: #774E36; --m4: #985F40; --m5: #BA744E;
+    --shadow: none; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1F1813; --surface: #2A211A; --surface-2: #33281F; --surface-3: #3D3026;
+  --ink: #F3E9DD; --ink-2: #D9C7B4; --ink-3: #BCA894;
+  --line: #3E3128; --line-2: #56463A;
+  --accent: #DB7B4F; --on-accent: #1F1813; --accent-ink: #F0A27C; --accent-strong: #C4673E; --accent-soft: rgba(219, 123, 79, .14);
+  --inv-bg: #3A2D24; --inv-ink: #F3E9DD; --inv-ink-2: #D9C7B4; --inv-line: #56463A; --inv-accent: #F0A27C;
+  --ok: #86C994; --ok-soft: rgba(134, 201, 148, .14); --warn: #E9B566; --warn-soft: rgba(233, 181, 102, .14);
+  --t1-bg: rgba(134, 201, 148, .18); --t1-ink: #A3D9AE; --t2-bg: rgba(233, 181, 102, .18); --t2-ink: #F0C887; --t3-bg: rgba(236, 132, 104, .18); --t3-ink: #F4AE97;
+  --f-x: #E08C9B; --f-ens: #E6A6BA; --f-mp: #8DB5E0; --f-mt: #ABC8E5; --f-cs: #B9A8EC;
+  --f-inp: #E2B35E; --f-poly: #AACB7D; --f-e3a: #D3CB80; --f-autres: #C4BAAE;
+  --m1: #3A2D24; --m2: #573D2D; --m3: #774E36; --m4: #985F40; --m5: #BA744E;
+  --shadow: none; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+a { color: var(--accent-ink); text-underline-offset: 2px; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2.5px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+h1[tabindex="-1"]:focus { outline: none; }
+h1, h2, h3 { text-wrap: balance; }
+.wrap { max-width: 1216px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 720px) { .wrap { padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); } }
+.narrow { max-width: 780px; margin: 0 auto; width: 100%; }
+.serif { font-family: var(--serif); }
+.muted { color: var(--ink-3); }
+.small { font-size: 14px; }
+.num { font-variant-numeric: tabular-nums; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+[id] { scroll-margin-top: 84px; }
+
+/* ---------- en-tête et navigation ---------- */
+.top { background: var(--bg); }
+.top-in { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-block: 10px; }
+.brand { display: inline-flex; align-items: center; min-height: 44px; margin-right: auto; border: 0; background: none; padding: 0; font-family: var(--serif); font-weight: 600; font-size: 19px; color: var(--ink); letter-spacing: -.01em; white-space: nowrap; }
+.brand span { color: var(--accent-ink); margin-left: 6px; }
+.nav-links, .nav-search, .nav-searchbtn { display: none; }
+.filsw { display: inline-flex; align-items: center; gap: 2px; padding: 3px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); }
+.filsw button { min-height: 38px; min-width: 44px; padding: 0 10px; border: 0; border-radius: 999px; background: none; font-weight: 700; font-size: 15px; color: var(--ink-2); }
+.filsw button:hover { color: var(--ink); }
+.filsw button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.filpick { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.filpick .chips { gap: 6px; }
+.filpick .chip { min-width: 56px; padding: 0 12px; justify-content: center; }
+.chip[disabled] { opacity: .5; cursor: default; gap: 5px; }
+.chip .soon { font-size: 12px; font-weight: 600; }
+.filnote { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+.nl { display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; border: 0; border-radius: 10px; background: none; font-size: 15.5px; font-weight: 600; color: var(--ink-2); white-space: nowrap; }
+.nl:hover { background: var(--surface-2); }
+.nl[aria-current="page"] { background: var(--surface-2); color: var(--accent-ink); font-weight: 700; }
+.nav-search { position: relative; align-items: center; gap: 8px; height: 44px; padding: 0 12px; background: var(--bg); border: 1.5px solid var(--line-2); border-radius: 12px; }
+.nav-search:focus-within { border-color: var(--accent); }
+.nav-search input { flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font-size: 15.5px; }
+.nav-search input::placeholder { color: var(--ink-3); }
+.nsuggest { position: absolute; top: calc(100% + 6px); right: -1.5px; width: min(380px, 80vw); max-height: 70vh; overflow: auto; padding: 6px; background: var(--surface); border: 1px solid var(--line-2); border-radius: 14px; box-shadow: 0 10px 30px rgba(40, 25, 15, .16); z-index: 40; }
+.ns-item { display: flex; flex-direction: column; gap: 1px; width: 100%; padding: 9px 10px; border: 0; border-radius: 10px; background: none; text-align: left; color: var(--ink); }
+.ns-item:hover, .ns-item:focus-visible { background: var(--surface-2); }
+.ns-item .nm { font-weight: 700; font-size: 15px; }
+.ns-item .sub { font-size: 13.5px; color: var(--ink-3); }
+.ns-all { width: 100%; min-height: 44px; margin-top: 4px; border: 0; border-radius: 10px; background: var(--surface-2); color: var(--accent-ink); font-weight: 700; }
+.ns-empty { margin: 8px 10px; }
+.nav-searchbtn { align-items: center; justify-content: center; width: 44px; height: 44px; border: 1.5px solid var(--line-2); border-radius: 12px; background: var(--bg); color: var(--ink-2); }
+.pill-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px; border-radius: 999px; border: 0; background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: 15px; white-space: nowrap; }
+.pill-btn[aria-current="page"] { background: var(--accent-strong); }
+.pill-btn .count { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px; background: var(--on-accent); color: var(--accent); font-size: 13px; }
+.icon { width: 18px; height: 18px; flex: none; }
+@media (min-width: 720px) {
+  .filsw { margin-right: 6px; }
+  body::before { background: var(--surface); }
+  .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--surface); border-bottom: 1px solid var(--line); }
+  .brand { margin-right: 6px; }
+  .nav-links { display: flex; flex: 0 0 auto; gap: 2px; }
+  .nav-searchbtn { display: inline-flex; margin-left: auto; }
+}
+@media (min-width: 800px) {
+  .nav-searchbtn { display: none; }
+  .nav-search { display: flex; margin-left: auto; flex: 1 1 140px; max-width: 300px; min-width: 140px; }
+}
+body[data-view="home"] .nav-search, body[data-view="home"] .nav-searchbtn { display: none; }
+
+/* ---------- éléments communs ---------- */
+main { padding-block: 8px 72px; }
+.crumbs { display: flex; align-items: center; min-height: 44px; margin-bottom: 6px; }
+.back { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 6px 0 0; border: 0; background: none; color: var(--accent-ink); font-weight: 600; font-size: 15px; }
+.trail { display: none; }
+.trail button { min-height: 44px; padding: 0; border: 0; background: none; color: var(--accent-ink); font-weight: 600; font-size: 15px; }
+.trail .sep { color: var(--ink-3); }
+.trail [aria-current] { font-weight: 600; color: var(--ink-2); }
+@media (min-width: 720px) {
+  main { padding-top: 14px; }
+  .crumbs .back { display: none; }
+  .trail { display: flex; flex-wrap: wrap; align-items: center; gap: 0 8px; font-size: 15px; }
+}
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 6.4vw, 50px); line-height: 1.06; letter-spacing: -.015em; margin: 0; }
+.h2 { font-family: var(--serif); font-weight: 600; font-size: 23px; line-height: 1.2; margin: 0; }
+.h3 { font-family: var(--serif); font-weight: 600; font-size: 19px; line-height: 1.25; margin: 0; }
+.lede { margin: 0; font-size: 17.5px; line-height: 1.5; color: var(--ink-2); max-width: 62ch; }
+.stack { display: flex; flex-direction: column; gap: 14px; }
+.section { margin-top: 32px; display: flex; flex-direction: column; gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); }
+.soft { background: var(--surface-2); border-radius: 18px; padding: 20px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 16px; border-radius: 12px; border: 1.5px solid var(--line-2); background: var(--surface); color: var(--ink); font-weight: 600; font-size: 15px; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 700; }
+.btn.full { width: 100%; }
+.btn[disabled] { opacity: .45; cursor: default; }
+.linkbtn { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; border: 0; background: none; padding: 0; color: var(--accent-ink); font-weight: 700; font-size: 15px; text-align: left; }
+.swatch { display: inline-block; flex: none; width: 14px; height: 14px; border-radius: 4px; background: var(--c); }
+.swatch.lg { width: 48px; height: 48px; border-radius: 13px; }
+.swatch.md { width: 28px; height: 28px; border-radius: 8px; }
+.tag { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; background: var(--surface-2); font-size: 14px; font-weight: 600; color: var(--ink-2); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1.5px solid var(--line-2); background: var(--surface); color: var(--ink); font-weight: 600; font-size: 15px; }
+.chip .n { opacity: .72; font-weight: 600; }
+.chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.chip .dot { width: 11px; height: 11px; border-radius: 999px; background: var(--c); box-shadow: 0 0 0 2px var(--surface); }
+.chip[aria-pressed="true"] .dot { box-shadow: 0 0 0 2px var(--ink); }
+.label { font-size: 15px; font-weight: 700; margin: 0; }
+.warnpill { display: inline-flex; align-items: center; padding: 2px 9px; border-radius: 999px; background: var(--warn-soft); color: var(--warn); font-size: 13px; font-weight: 700; }
+.okpill { display: inline-flex; align-items: center; padding: 2px 9px; border-radius: 999px; background: var(--ok-soft); color: var(--ok); font-size: 13px; font-weight: 700; }
+.rtag { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; font-size: 13.5px; font-weight: 700; white-space: nowrap; }
+.rtag.t1 { background: var(--t1-bg); color: var(--t1-ink); }
+.rtag.t2 { background: var(--t2-bg); color: var(--t2-ink); }
+.rtag.t3 { background: var(--t3-bg); color: var(--t3-ink); }
+details.more { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+details.more > summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 50px; padding: 0 16px; font-weight: 700; cursor: pointer; }
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary::after { content: "+"; font-size: 20px; color: var(--accent-ink); }
+details.more[open] > summary::after { content: "–"; }
+details.more .in { padding: 0 16px 16px; display: flex; flex-direction: column; gap: 8px; }
+details.more ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: var(--ink-2); font-size: 15px; }
+.srcs { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; }
+select.sel { min-height: 44px; max-width: 100%; padding: 0 10px; border: 1.5px solid var(--line-2); border-radius: 12px; background: var(--surface); font-size: 15px; }
+
+/* ---------- accueil ---------- */
+.hero { display: flex; flex-wrap: wrap; gap: 28px 40px; align-items: flex-start; padding-top: 8px; }
+.hero-main { flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.hero-side { flex: 1 1 340px; min-width: 0; }
+.field { display: flex; align-items: center; gap: 12px; height: 56px; padding: 0 16px; background: var(--surface); border: 1.5px solid var(--line-2); border-radius: 14px; }
+.field:focus-within { border-color: var(--accent); }
+.field input { flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font-size: 17.5px; }
+.field input::placeholder { color: var(--ink-3); }
+.hero-acts { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; }
+.hero-acts .btn { flex: 1 1 150px; }
+@media (min-width: 720px) { .hero-acts .btn { flex: 0 0 auto; padding: 0 18px; } }
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (min-width: 760px) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; } }
+.tile { display: flex; flex-direction: column; gap: 8px; min-height: 140px; padding: 14px; text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; color: var(--ink); box-shadow: var(--shadow); }
+.tile:hover { border-color: var(--c); }
+.tile .t { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; line-height: 1.15; }
+.tile .d { font-size: 14.5px; line-height: 1.38; color: var(--ink-3); }
+.tile .k { margin-top: auto; font-size: 14px; font-weight: 700; color: var(--c); }
+@media (min-width: 760px) { .tile { min-height: 150px; padding: 18px 20px; gap: 10px; } .tile .t { font-size: 19px; } .tile .d { font-size: 15.5px; } .tile .k { font-size: 15px; } }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.steps li { display: flex; gap: 12px; align-items: flex-start; font-size: 15.5px; line-height: 1.42; }
+.steps .i, .ep-h .i { flex: none; width: 26px; height: 26px; border-radius: 999px; background: var(--ink); color: var(--bg); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; }
+.suggest { display: flex; flex-direction: column; gap: 8px; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 12px; }
+
+/* ---------- lignes d'école (recherche, régions) ---------- */
+.rows { display: flex; flex-direction: column; gap: 10px; }
+.row { display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px; text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); color: var(--ink); box-shadow: var(--shadow); }
+.row:hover { border-color: var(--line-2); }
+.row .main { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }
+.row .nm, .srow .nm { font-weight: 700; font-size: 16px; line-height: 1.25; }
+.row .sub, .srow .sub { font-size: 14px; color: var(--ink-3); }
+.fams { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.fams span { display: inline-flex; align-items: center; gap: 5px; }
+.chev { flex: none; color: var(--accent-ink); }
+
+/* ---------- page concours ---------- */
+.fam-top { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 18px 32px; }
+.fam-id { flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.fam-head { display: flex; align-items: center; gap: 14px; }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; flex: 1 1 100%; }
+@media (min-width: 720px) { .facts { flex: 0 1 492px; gap: 10px; } }
+.fact { display: flex; flex-direction: column; gap: 3px; padding: 12px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+.fact .v { font-family: var(--serif); font-weight: 600; font-size: 22px; line-height: 1.12; overflow-wrap: anywhere; }
+.fact .s { font-size: 13.5px; line-height: 1.32; color: var(--ink-3); }
+@media (max-width: 480px) { .fact .v { font-size: 18px; } .fact { padding: 10px 8px; } .fact .s { font-size: 13px; } }
+.style-card { padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.style-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px 28px; }
+.style-grid > div { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.style-grid p { margin: 0; font-size: 15.5px; line-height: 1.5; }
+.style-grid .srcs { font-size: 13.5px; }
+.fam-cols { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px; }
+.fam-schools { flex: 7 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.fam-ep { flex: 5 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.rk-box { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 14px 16px; background: var(--inv-bg); color: var(--inv-ink); border-radius: 16px; }
+.rk-box label { font-weight: 700; font-size: 16px; }
+.rk-box input { width: 140px; height: 48px; padding: 0 14px; border: 0; border-radius: 12px; background: var(--bg); color: var(--ink); font-size: 20px; font-weight: 700; }
+.rk-box span { flex: 1 1 200px; font-size: 14.5px; line-height: 1.4; color: var(--inv-ink-2); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px 12px; }
+.filters label { display: inline-flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 600; color: var(--ink-2); }
+.slist { display: flex; flex-direction: column; gap: 10px; }
+.slist-head { display: none; }
+.srow { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "main rk" "tag pl"; align-items: center; gap: 4px 12px; width: 100%; padding: 14px; text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); color: var(--ink); box-shadow: var(--shadow); }
+.srow:hover { border-color: var(--line-2); }
+.s-main { grid-area: main; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.s-rk { grid-area: rk; display: flex; flex-direction: column; align-items: flex-end; text-align: right; max-width: 150px; }
+.s-rk .big { font-family: var(--serif); font-weight: 600; font-size: 21px; line-height: 1.1; }
+.s-rk .lbl { font-size: 12.5px; color: var(--ink-3); }
+.s-rk .info { font-size: 13px; font-weight: 700; line-height: 1.25; color: var(--accent-ink); }
+.s-pl { grid-area: pl; text-align: right; font-size: 13px; font-weight: 700; color: var(--c, var(--ink-2)); }
+.s-pl .sc { display: block; font-size: 12.5px; font-weight: 400; line-height: 1.3; color: var(--ink-3); }
+.s-tag { grid-area: tag; }
+.s-tag:empty { display: none; }
+.srow .chev { display: none; grid-area: chev; }
+@media (min-width: 720px) {
+  .slist { gap: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .slist-head, .srow { grid-template-columns: minmax(0, 1fr) 96px 128px 18px; grid-template-areas: "main pl rk chev"; }
+  .slist.tagged .slist-head, .slist.tagged .srow { grid-template-columns: minmax(0, 1fr) 88px 120px 138px 18px; grid-template-areas: "main pl rk tag chev"; }
+  .slist-head { display: grid; gap: 12px; align-items: end; padding: 12px 16px 10px; border-bottom: 2px solid var(--line-2); font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-3); }
+  .slist-head .r { text-align: right; }
+  .srow { gap: 12px; min-height: 62px; padding: 10px 16px; border: 0; border-bottom: 1px solid var(--surface-2); border-radius: 0; box-shadow: none; }
+  .srow:last-child { border-bottom: 0; }
+  .srow:hover { background: var(--bg); }
+  .srow .chev { display: block; }
+  .s-pl { font-size: 16px; font-weight: 400; color: var(--ink); }
+  .s-pl .u, .s-rk .l-rm { display: none; }
+  .s-tag:empty { display: block; }
+}
+.ep { display: flex; flex-direction: column; gap: 16px; }
+.ep + .ep { padding-top: 18px; border-top: 1px solid var(--line); }
+.ep-grid { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 18px 24px; }
+.ep-col { flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+.ep-step { display: flex; flex-direction: column; gap: 8px; }
+.ep-step p { margin: 0; font-size: 15.5px; line-height: 1.45; }
+.ep-h { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 16.5px; }
+.ep-tab { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.ep-row { display: grid; grid-template-columns: minmax(0, 1fr) auto 44px; gap: 10px; align-items: baseline; padding: 8px 14px; border-bottom: 1px solid var(--surface-2); font-size: 15px; line-height: 1.35; }
+.ep-row:last-child { border-bottom: 0; }
+.ep-row small { display: block; margin-top: 1px; font-size: 13px; color: var(--ink-3); }
+.ep-row .d { color: var(--ink-3); text-align: right; white-space: nowrap; }
+.ep-row .c { font-weight: 700; text-align: right; white-space: nowrap; }
+p.ep-note { font-size: 14.5px; color: var(--ink-3); }
+
+/* ---------- fiche école ---------- */
+.ecole-top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; }
+.ecole-id { flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.ecole-cols { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px 32px; }
+.ecole-main { flex: 3 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.ecole-side { flex: 2 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.aff { padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+.camps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.camps li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; min-height: 42px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.camps li:last-child { border-bottom: 0; }
+.camps .cv { color: var(--ink-3); font-size: 15px; }
+.camps .y1 .cv { color: var(--ink); font-weight: 700; font-size: 16px; }
+.camps .tag { font-size: 13px; font-weight: 600; background: transparent; padding: 0; color: var(--ink-3); }
+.rules { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: var(--ink-2); font-size: 15px; line-height: 1.45; }
+.voie { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.voie .head { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--c); }
+.voie .places { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.voie .places .v { font-family: var(--serif); font-weight: 600; font-size: 34px; line-height: 1; }
+.voie p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+.note { margin: 0; font-size: 14px; line-height: 1.45; padding: 10px 12px; border-radius: 10px; background: var(--accent-soft); color: var(--ink); }
+.tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table.stats { border-collapse: collapse; width: 100%; min-width: 440px; font-size: 14px; }
+table.stats th, table.stats td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+table.stats th:first-child, table.stats td:first-child { text-align: left; white-space: normal; min-width: 150px; }
+table.stats th { font-size: 12px; font-weight: 700; color: var(--ink-3); text-transform: uppercase; letter-spacing: .04em; }
+table.stats td { font-variant-numeric: tabular-nums; }
+.flag { display: block; font-size: 12.5px; color: var(--warn); }
+.costs { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.costs .big { font-family: var(--serif); font-weight: 600; font-size: 30px; line-height: 1; }
+.kv { display: flex; justify-content: space-between; gap: 12px; padding-top: 8px; border-top: 1px solid var(--line); font-size: 15px; }
+.kv b { white-space: nowrap; }
+
+/* ---------- côte à côte ---------- */
+.ctab { overflow-x: auto; -webkit-overflow-scrolling: touch; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+.ctab-in { min-width: 1090px; }
+.crow { display: grid; grid-template-columns: 196px 72px 168px 170px 176px 150px minmax(158px, 1fr); border-bottom: 1px solid var(--surface-2); font-size: 15.5px; line-height: 1.4; }
+.crow:last-child { border-bottom: 0; }
+.crow > span { display: flex; align-items: center; padding: 12px; min-width: 0; }
+.crow > span:first-child { position: sticky; left: 0; z-index: 1; padding: 0; background: var(--surface); border-right: 1px solid var(--line); }
+.crow.head { border-bottom: 2px solid var(--line-2); font-size: 12px; font-weight: 700; letter-spacing: .05em; line-height: 1.3; text-transform: uppercase; color: var(--ink-3); }
+.crow.head > span { align-items: flex-end; padding-top: 14px; }
+.crow.head > span:first-child { padding: 14px 12px 12px 18px; }
+.crow .cname { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 56px; padding: 10px 12px 10px 18px; border: 0; background: none; text-align: left; font-weight: 700; color: var(--ink); }
+.crow .cname:hover { color: var(--accent-ink); }
+.crow .r { justify-content: flex-end; text-align: right; }
+@media (min-width: 1140px) { .crow > span:first-child { position: static; } }
+
+/* ---------- carte ---------- */
+.map { width: 100%; max-width: 620px; margin: 0 auto; display: block; height: auto; }
+.map .rg { stroke: var(--bg); stroke-width: 2.5; stroke-linejoin: round; cursor: pointer; transition: opacity .15s; }
+.map .rg:hover { opacity: .82; }
+.map .rg.sel { stroke: var(--ink); stroke-width: 5; }
+.map .badge circle { fill: var(--surface); stroke: var(--line-2); stroke-width: 2; }
+.map .badge text { fill: var(--ink); font-family: var(--sans); font-weight: 700; font-size: 26px; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.map .badge { pointer-events: none; }
+.map .inset { fill: none; stroke: var(--line-2); stroke-width: 2; stroke-dasharray: 6 6; }
+.legend { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13.5px; color: var(--ink-3); }
+.legend .sc { display: inline-flex; }
+.legend .sc i { width: 22px; height: 12px; display: inline-block; }
+
+/* ---------- divers ---------- */
+.empty { padding: 22px 18px; border: 1.5px dashed var(--line-2); border-radius: var(--r); background: var(--surface); display: flex; flex-direction: column; gap: 10px; }
+.empty h2 { margin: 0; font-size: 18px; }
+.prose { max-width: 68ch; }
+.prose h2 { font-family: var(--serif); font-weight: 600; font-size: 24px; margin: 26px 0 8px; }
+.prose ul { padding-left: 20px; margin: 6px 0; }
+.prose li { margin: 6px 0; }
+.foot { margin-top: 36px; font-size: 14px; color: var(--ink-3); }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 12px; font-size: 15px; z-index: 50; max-width: calc(100vw - 32px); }
+@media (prefers-reduced-motion: no-preference) {
+  .toast { animation: rise .2s ease-out; }
+  @keyframes rise { from { transform: translate(-50%, 8px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; } }
+}
+</style>
+
+<header class="top">
+  <div class="wrap top-in">
+    <button class="brand" data-go="home" aria-label="Accueil, Écoles d'ingé">Écoles d'ingé<span id="brandfil">· MP</span></button>
+    <div class="filsw" role="group" aria-label="Ta filière">
+      <button data-fil="MP" aria-pressed="true">MP</button>
+      <button data-fil="PC" aria-pressed="false">PC</button>
+      <button data-fil="PSI" aria-pressed="false">PSI</button>
+      <button data-fil="MPI" aria-pressed="false">MPI</button>
+    </div>
+    <nav class="nav-links" aria-label="Sections">
+      <button class="nl" data-go="lieu" data-nav="lieu">Carte</button>
+      <button class="nl" data-go="specialite" data-nav="specialite">Spécialités</button>
+      <button class="nl" data-go="cote" data-nav="cote">Côte à côte</button>
+    </nav>
+    <form class="nav-search" data-form="nsearch" role="search">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--ink-3)"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+      <input id="nq" type="search" enterkeyhint="search" autocomplete="off" aria-label="Chercher une école" placeholder="Chercher">
+      <div class="nsuggest" id="nsuggest" hidden></div>
+    </form>
+    <button class="nav-searchbtn" data-go="home" data-focus="q" aria-label="Chercher une école">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+    </button>
+  </div>
+</header>
+<main class="wrap" id="view" aria-live="off"></main>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script type="application/json" id="data">/*__DATA__*/</script>
+<script type="application/json" id="mapdata">/*__MAP__*/</script>
+<script>
+(function () {
+  "use strict";
+  var D = JSON.parse(document.getElementById("data").textContent);
+  var MAP = JSON.parse(document.getElementById("mapdata").textContent);
+  // Filières disponibles.
+  var FILS = [{ id: "MP", ok: true }, { id: "PC", ok: true }, { id: "PSI", ok: true }, { id: "MPI", ok: true }];
+  var FIL = "MP";
+  try { var saved = localStorage.getItem("ecoles-filiere"); if (D.parFil[saved]) FIL = saved; } catch (e) { /* stockage indisponible */ }
+  var ALL = D.ecoles, ALLBY = {};
+  ALL.forEach(function (s) { ALLBY[s.id] = s; });
+  // Vue de la filière choisie (recalculée par applyFil) : écoles, voies d'accès et concours.
+  var SCH = [], BY = {}, CONC = {}, CONC_LINE = {};
+
+  /* ---------- outils ---------- */
+  function $(id) { return document.getElementById(id); }
+  function esc(v) { return String(v == null ? "" : v).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function fmt(n) { return n == null ? "—" : Number(n).toLocaleString("fr-FR"); }
+  function norm(s) { return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+  function plural(n, one, many) { return fmt(n) + " " + (n > 1 ? many : one); }
+  function dot(t) { t = String(t || "").trim(); return /[.!?)»]$/.test(t) ? t : t + "."; }
+  var toastTimer;
+  function toast(msg) { var t = $("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.hidden = true; }, 2600); }
+  var I = {
+    back: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
+    chev: '<svg class="icon chev" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>',
+    arrow: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+    ext: '<svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
+    search: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>',
+    map: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>',
+    tag: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4h8l10 10-8 8L3 12z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>',
+    star: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z"/></svg>',
+    starO: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z"/></svg>',
+    up: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg>',
+    down: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>',
+    copy: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>'
+  };
+
+  /* ---------- familles de concours (tuiles de l'accueil) ---------- */
+  var FAMS = [
+    { id: "x", nom: "X", conc: ["x"], tile: "L'X et l'ESPCI",
+      intro: "Le concours de l'École polytechnique. L'ESPCI recrute aussi par ce concours, parmi les candidats admissibles à l'X.",
+      PC: { tile: "L'X et l'ESPCI", intro: "En PC, le concours est commun à l'École polytechnique et à l'ESPCI : mêmes écrits, mais chaque école a ses coefficients et sa liste de classement." },
+      PSI: { tile: "L'École polytechnique", intro: "Le concours de l'École polytechnique. En PSI, l'ESPCI ne recrute pas ; les écrits sont communs avec les ENS." },
+      MPI: { tile: "L'École polytechnique", intro: "Le concours de l'École polytechnique. En MPI, l'ESPCI ne recrute pas ; les écrits sont communs avec les ENS." } },
+    { id: "ens", nom: "ENS", conc: ["ens"], tile: "Écoles de recherche : Ulm, Paris-Saclay, Lyon, Rennes",
+      intro: "Les quatre écoles normales supérieures forment par la recherche. Admis par concours, tu es payé pendant tes études, en échange de 10 ans dans la fonction publique (études comprises).",
+      PC: { tile: "Écoles de recherche : Ulm, Paris-Saclay, Lyon", intro: "Trois écoles normales supérieures recrutent en PC : Ulm, Paris-Saclay et Lyon. Elles forment par la recherche. Admis par concours, tu es payé pendant tes études, en échange de 10 ans dans la fonction publique (études comprises)." },
+      PSI: { tile: "Écoles de recherche : Paris-Saclay, Rennes, Ulm", intro: "Trois écoles normales supérieures recrutent en PSI : Paris-Saclay, Rennes et Ulm. Elles forment par la recherche. Admis par concours, tu es payé pendant tes études, en échange de 10 ans dans la fonction publique (études comprises)." } },
+    { id: "mp", nom: "Mines-Ponts", conc: ["ccmp"], tile: "Mines Paris, Ponts, SUPAERO, Télécom Paris…",
+      intro: "Un concours commun à 9 écoles : une seule inscription, une seule liste de classement. Ses écrits servent aussi au concours Mines-Télécom.",
+      PC: { tile: "Mines Paris, Ponts, Chimie ParisTech, SUPAERO…", intro: "Un concours commun à 10 écoles, dont Chimie ParisTech qui recrute presque seulement en PC : une seule inscription, une seule liste de classement. Ses écrits servent aussi au concours Mines-Télécom." },
+      PSI: { tile: "Mines Paris, Ponts, SUPAERO, Télécom Paris…", intro: "Un concours commun à 10 écoles : une seule inscription, une seule liste de classement. Ses écrits servent aussi au concours Mines-Télécom." } },
+    { id: "mt", nom: "Mines-Télécom", conc: ["cmt"], tile: "Écoles de l'IMT, Télécom SudParis, ENSIIE…",
+      intro: "Un concours pour 20 écoles. Il reprend les écrits de Mines-Ponts, avec une barre d'admissibilité plus basse.",
+      MPI: { tile: "Télécom SudParis, Télécom Nancy, EURECOM…", intro: "Un concours pour 18 écoles en MPI. Il reprend les écrits de Mines-Ponts, avec une barre d'admissibilité plus basse." } },
+    { id: "cs", nom: "Centrale-Supélec", conc: ["ccs"], tile: "CentraleSupélec, les Centrales, Arts et Métiers…",
+      intro: "Un concours pour 12 écoles, sur les mêmes écrits. Tu paies chaque école que tu coches à l'inscription, et chacune fait son propre classement.",
+      PSI: { tile: "CentraleSupélec, les Centrales, Arts et Métiers…", intro: "Un concours pour 11 écoles en PSI, sur les mêmes écrits. Tu paies chaque école que tu coches à l'inscription, et chacune fait son propre classement." },
+      MPI: { tile: "CentraleSupélec, les Centrales, ENSEA…", intro: "Un concours pour 10 écoles en MPI, sur les mêmes écrits. Tu paies chaque école que tu coches à l'inscription, et chacune fait son propre classement." } },
+    { id: "inp", nom: "CCINP", conc: ["ccinp", "ccinp_chi", "insa", "bccinp"], tile: "Le plus grand : INP, INSA, Ensimag, ENSEEIHT…",
+      intro: "Le plus grand en nombre d'écoles. Ses écrits servent au concours commun, au Groupe INSA et à une « banque » d'écoles qui font leur propre classement.",
+      PC: { tile: "Le plus grand : écoles de chimie, INP, INSA…", intro: "Le plus grand en nombre d'écoles. En PC, deux concours sur les mêmes copies, PC-Physique et PC-Chimie, plus le Groupe INSA et une « banque » d'écoles qui font leur propre classement." } },
+    { id: "poly", nom: "Polytech", conc: ["e3a_poly"], tile: "Les Polytech de Lille, Nantes, Sorbonne… et 16 écoles associées",
+      intro: "Le concours Polytech, de la banque e3a-Polytech : 32 écoles publiques. MP, PC et PSI y sont classés ensemble.",
+      MPI: { tile: "Les Polytech de Nice, Nantes, Lyon… et des écoles associées", intro: "Le concours Polytech, de la banque e3a-Polytech. En MPI, une liste à part : 99 places en 2026, sans mélange avec les MP, PC et PSI." } },
+    { id: "e3a", nom: "e3a", conc: ["e3a_ind", "avenir", "ingeniup"], tile: "EFREI, ISEP, ESILV, ESTACA… publiques et privées",
+      intro: "Trois concours qui utilisent les écrits e3a-Polytech : les écoles indépendantes, Avenir Prépas et Ingéni'Up." },
+    { id: "autres", nom: "Autres", conc: ["epita", "cesi", "ut"], tile: "EPITA, IPSA, ESME, CESI, et les UT sur dossier",
+      intro: "Des concours propres à quelques écoles, et les universités de technologie (UT), qui recrutent sur dossier en dehors du SCEI." }
+  ];
+  var FAM = {}, FAM_OF = {};
+  FAMS.forEach(function (f) {
+    FAM[f.id] = f; f.color = "var(--f-" + f.id + ")";
+    f.conc.forEach(function (c) { FAM_OF[c] = f.id; });
+    f.MP = { tile: f.tile, intro: f.intro };
+  });
+  var CONC_LINES = {};
+  CONC_LINES.MP = {
+    x: "Deux options en MP (informatique ; physique et sciences de l'ingénieur), classées séparément.",
+    ens: "Chaque ENS a sa propre liste de classement.",
+    ccmp: "Une seule liste de classement pour toutes ses écoles.",
+    cmt: "Une liste pour les élèves civils, une autre pour les fonctionnaires.",
+    ccs: "Chaque école fait son propre classement, sur les mêmes écrits.",
+    ccinp: "Le concours commun : une seule liste de classement.",
+    insa: "Sélection sur dossier, écrits CCINP et entretien ; places et classements par domaine.",
+    bccinp: "Ces écoles utilisent les écrits du CCINP mais font leur propre classement.",
+    e3a_poly: "Une seule liste, commune à MP, PC et PSI.",
+    e3a_ind: "Chaque école fait son propre classement.",
+    avenir: "Cinq écoles privées, une seule liste.",
+    ingeniup: "Écoles privées ; MP, MPI, PC et PSI sont classés ensemble.",
+    epita: "Concours commun à l'EPITA, l'IPSA et l'ESME, avec ses propres épreuves.",
+    cesi: "Concours propre au CESI : épreuves écrites puis entretien.",
+    ut: "Recrutement sur dossier et entretien, en dehors du SCEI."
+  };
+  CONC_LINES.PC = Object.assign({}, CONC_LINES.MP, {
+    x: "Concours commun à l'X et à l'ESPCI : chaque école a ses coefficients et sa liste de classement.",
+    ens: "Chaque ENS, et chaque option (physique ou chimie), a sa propre liste de classement.",
+    ccinp: "Concours PC-Physique : une seule liste de classement, la physique au coefficient 13.",
+    ccinp_chi: "Concours PC-Chimie : une seule liste de classement, la chimie au coefficient 13."
+  });
+  CONC_LINES.PSI = Object.assign({}, CONC_LINES.MP, {
+    x: "Une seule liste de classement pour l'X.",
+    ens: "Chaque ENS, et chaque concours (à Paris-Saclay, Physique-PSI et SI-PSI), a sa propre liste de classement."
+  });
+  CONC_LINES.MPI = Object.assign({}, CONC_LINES.MP, {
+    x: "Une seule liste de classement pour l'X.",
+    ens: "Chaque ENS, et chaque option (maths ou info), a sa propre liste de classement.",
+    e3a_poly: "Une liste propre à la MPI, séparée des MP, PC et PSI.",
+    avenir: "Quatre écoles privées en MPI, une seule liste."
+  });
+  var ECR_FACT = { e3a: ["e3a-Polytech", "les écrits de la banque e3a-Polytech, avec des coefficients propres à chaque concours"], autres: ["Propres", "des épreuves propres à chaque concours"] };
+  var DOM_SHORT = { gen: "Généraliste", info: "Informatique", elec: "Électronique", math: "Maths & data", meca: "Mécanique", energie: "Énergie",
+    aero: "Aéro & spatial", btp: "BTP & ville", chimie: "Chimie", physique: "Physique", bio: "Bio & santé", env: "Environnement",
+    indus: "Industrie", transport: "Transports", defense: "Défense", rech: "Recherche" };
+  var REG_ORDER = Object.keys(D.regions);
+
+  /* ---------- index des écoles ---------- */
+  function ownLines(a) { return a.stats.filter(function (v) { return !v.c25 && !v.prev; }); }
+  function listKey(v) { return String(v.cl || v.ins || ""); }
+  var MAIN_LIST = {}, SINGLE = {};
+  function reindex() {
+  SCH.forEach(function (s) {
+    var fams = [];
+    s.acces.forEach(function (a) { var f = FAM_OF[a.c]; if (fams.indexOf(f) === -1) fams.push(f); });
+    s._fams = FAMS.filter(function (f) { return fams.indexOf(f.id) !== -1; }).map(function (f) { return f.id; });
+    var parts = [s.nom, s.complet, s.desc].concat(s.alias || []);
+    s.campus.forEach(function (c) { parts.push(c.v, c.d, D.regions[c.r]); });
+    s._c1 = s.aff ? s.campus.filter(function (c) { return s.aff.y1.indexOf(c.v) !== -1; }) : s.campus;
+    s.acces.forEach(function (a) { parts.push(a.lib || "", CONC[a.c].nom, CONC[a.c].court); a.stats.forEach(function (v) { parts.push(v.lib); }); });
+    s.dom.forEach(function (d) { parts.push(DOM_SHORT[d]); if (d !== "energie") parts.push(D.domaines[d]); });
+    s._fams.forEach(function (f) { parts.push(FAM[f].nom); });
+    s._q = norm(parts.join(" | "));
+    s._pub = /^Public/.test(s.statut);
+    s._free = s.bours.cat === "exo" || s.bours.cat === "remu";
+    var f = s.frais;
+    s._fee = s.bours.cat === "remu" && f.min == null ? 0 : (f.min != null ? f.min : (f.ref != null ? f.ref : null));
+    s._unsure = /vérifier|confirmer|non officiel|ancien|ambigu/i.test(f.fiab);
+  });
+  // Liste de classement principale de chaque concours (celle qui compte le plus d'écoles).
+  MAIN_LIST = {}; SINGLE = {};
+  Object.keys(CONC).map(function (k) { return CONC[k]; }).forEach(function (c) {
+    var lists = {};
+    SCH.forEach(function (s) { s.acces.forEach(function (a) {
+      if (a.c !== c.id) return;
+      ownLines(a).forEach(function (v) { if (v.med) { var k = listKey(v); (lists[k] = lists[k] || {})[s.id] = 1; } });
+    }); });
+    var best = null, bestN = 0;
+    Object.keys(lists).forEach(function (k) { var n = Object.keys(lists[k]).length; if (n > bestN) { best = k; bestN = n; } });
+    MAIN_LIST[c.id] = best;
+    SINGLE[c.id] = bestN >= 3; // au moins 3 écoles sur la même liste : on peut les trier par rang
+  });
+  }
+  // Ligne 2025 de référence d'une école dans un concours (sur la liste donnée, ou la plus fournie en places).
+  function refLine(s, cid, list) {
+    var best = null;
+    s.acces.forEach(function (a) {
+      if (a.c !== cid) return;
+      ownLines(a).forEach(function (v) {
+        if (!v.med || (list && listKey(v) !== list)) return;
+        if (!best || v.pl > best.pl || (v.pl === best.pl && v.med < best.med)) best = v;
+      });
+    });
+    return best;
+  }
+  function mainLine(s, cid) { return refLine(s, cid, SINGLE[cid] ? MAIN_LIST[cid] : null) || refLine(s, cid, null); }
+  function rankRange(s, cid) {
+    var meds = [];
+    s.acces.forEach(function (a) { if (a.c === cid) ownLines(a).forEach(function (v) { if (v.med) meds.push(v.med); }); });
+    if (!meds.length) return null;
+    return [Math.min.apply(null, meds), Math.max.apply(null, meds)];
+  }
+  function placesIn(s, cids) {
+    var p = 0, known = false, scopes = {};
+    s.acces.forEach(function (a) { if (cids.indexOf(a.c) === -1) return; scopes[a.scope] = 1; if (a.p26 != null) { p += a.p26; known = true; } });
+    return { n: known ? p : null, scopes: Object.keys(scopes) };
+  }
+  function scopeShort(scopes) {
+    if (scopes.length !== 1) return "";
+    var s = scopes[0];
+    if (s === FIL) return "";
+    if (s === "toutes origines") return " (tous profils)";
+    if (s === "toutes filières") return " (toutes filières)";
+    return " (" + s.replace(/\+/g, ", ") + ")";
+  }
+  function campusTxt(s) {
+    var c = s.campus;
+    if (s.aff) return s.aff.y1.join(" ou ") + " en 1re année · " + c.length + " campus";
+    var first = c[0].v + " (" + c[0].d + ")";
+    return c.length > 1 ? first + " + " + plural(c.length - 1, "autre campus", "autres campus") : first;
+  }
+  function feeText(s) {
+    var f = s.frais;
+    if (s.bours.cat === "remu") return (f.min === 0 ? "Gratuit, " : "") + "payé pendant les études";
+    if (f.min == null && f.ref == null) return "Frais non trouvés";
+    var t;
+    if (f.min == null) t = "≈ " + fmt(f.ref) + " €/an";
+    else if (f.max != null && f.max !== f.min) t = fmt(f.min) + " à " + fmt(f.max) + " €/an";
+    else t = (s._unsure ? "≈ " : "") + fmt(f.min) + " €/an";
+    return t;
+  }
+  function famDots(s) {
+    return '<span class="fams">' + s._fams.map(function (f) { return '<span><i class="swatch" style="--c:' + FAM[f].color + '"></i>' + esc(FAM[f].nom) + "</span>"; }).join("") + "</span>";
+  }
+  function domTxt(s) { return s.dom.slice(0, 3).map(function (d) { return DOM_SHORT[d]; }).join(" · "); }
+  function srcLinks(list) {
+    return (list || []).filter(Boolean).map(function (x) { return '<a href="' + esc(x.u) + '" target="_blank" rel="noopener">' + esc(x.t) + "</a>"; }).join("");
+  }
+
+  /* ---------- rang saisi (gardé le temps de la visite, jamais enregistré) ---------- */
+  var rangs = {}, rang = {}, RANK_CONC = ["ccmp", "cmt", "ccs", "ccinp", "ccinp_chi"];
+  function dateFr(iso) {
+    var m = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"], p = String(iso).split("-");
+    return p.length === 3 ? (+p[2] === 1 ? "1er" : +p[2]) + " " + m[+p[1] - 1] + " " + p[0] : String(iso);
+  }
+  function repCids(rep) { return rep ? (rep.cids || [rep.cid]) : []; }
+
+  /* ---------- changement de filière ---------- */
+  function applyFil(fil) {
+    FIL = fil;
+    var P = D.parFil[fil];
+    D.familles = P.familles; D.fees = P.fees; D.repere = P.repere; D.exclus = P.exclus; D.sources = P.sources; D.maj = P.maj;
+    CONC = {};
+    D.concours.forEach(function (c) {
+      if (c.seul && c.seul !== fil) return;
+      CONC[c.id] = c[fil] ? Object.assign({}, c, c[fil]) : c;
+    });
+    SCH = []; BY = {};
+    ALL.forEach(function (raw) {
+      var acc = raw.acces.filter(function (a) { return a.f === fil; });
+      if (!acc.length) return;
+      var s = Object.assign({}, raw, { acces: acc });
+      if (raw.descF && raw.descF[fil]) s.desc = raw.descF[fil];
+      if (raw.domF && raw.domF[fil]) s.dom = raw.domF[fil];
+      if (raw.noteF && Object.prototype.hasOwnProperty.call(raw.noteF, fil)) s.note = raw.noteF[fil];
+      SCH.push(s); BY[s.id] = s;
+    });
+    FAMS.forEach(function (f) { var tx = f[fil] || f.MP; f.tile = tx.tile; f.intro = tx.intro; });
+    CONC_LINE = CONC_LINES[fil] || CONC_LINES.MP;
+    rang = rangs[fil] || (rangs[fil] = {});
+    reindex();
+    document.title = "Écoles d'ingé " + fil;
+    var b = $("brandfil"); if (b) b.textContent = "· " + fil;
+  }
+  function setFil(fil) {
+    if (fil === FIL || !D.parFil[fil]) return;
+    applyFil(fil);
+    try { localStorage.setItem("ecoles-filiere", fil); } catch (e) { /* stockage indisponible */ }
+    ui.fam = { reg: "all", dom: "all", more: {} };
+    closeNavSuggest(true);
+    render("keep");
+    toast("Filière " + fil + " : écoles, places, rangs et épreuves mis à jour.");
+  }
+  function filPicker() {
+    return '<div class="filpick"><span class="label">Ta filière</span><div class="chips" role="group" aria-label="Ta filière">' + FILS.map(function (f) {
+      if (!f.ok) return '<button class="chip" disabled>' + f.id + ' <span class="soon">bientôt</span></button>';
+      return '<button class="chip" data-fil="' + f.id + '" aria-pressed="' + (f.id === FIL) + '">' + f.id + "</button>";
+    }).join("") + "</div></div>";
+  }
+
+  /* ---------- repère de rang ---------- */
+  function repere(s, cid) {
+    var r = rang[cid]; if (!r) return null;
+    var v = SINGLE[cid] ? refLine(s, cid, MAIN_LIST[cid]) : refLine(s, cid, null);
+    if (!v || !v.med) return null;
+    if (r <= v.med) return ["t1", "Dans tes cordes"];
+    if (r <= v.med * 1.5) return ["t2", "Juste"];
+    return ["t3", "Ambitieux"];
+  }
+  function tagHtml(s, cid) { var t = repere(s, cid); return t ? '<span class="rtag ' + t[0] + '">' + t[1] + "</span>" : ""; }
+  function updateTags(cid) {
+    var els = document.querySelectorAll('[data-tag^="' + cid + '|"]');
+    Array.prototype.forEach.call(els, function (el) { var s = BY[el.getAttribute("data-tag").split("|")[1]]; if (s) el.innerHTML = tagHtml(s, cid); });
+  }
+
+  /* ---------- navigation ---------- */
+  var nav = [{ v: "home" }];
+  var ui = {
+    fam: { reg: "all", dom: "all", more: {} },
+    res: null,
+    lieu: { reg: null },
+    guide: { fams: [], loc: "any", doms: [] },
+    open: {},
+    q: ""
+  };
+  function cur() { return nav[nav.length - 1]; }
+  function go(v, arg) {
+    var c = cur();
+    c.scroll = window.scrollY;
+    closeNavSuggest(true);
+    if (v === "home") { nav = [{ v: "home" }]; }
+    else {
+      if (v === "famille") ui.fam = { reg: "all", dom: "all", more: {} };
+      if (v === "lieu" && arg) ui.lieu.reg = arg;
+      if (c.v === v && c.arg === arg) { render("top"); return; }
+      nav.push({ v: v, arg: arg });
+    }
+    render("top");
+  }
+  function back() {
+    if (nav.length > 1) nav.pop();
+    render("restore");
+  }
+  function popTo(i) {
+    if (i < 0 || i >= nav.length - 1) return;
+    nav = nav.slice(0, i + 1);
+    render("restore");
+  }
+  function navLabel(n) {
+    switch (n.v) {
+      case "home": return "Accueil";
+      case "famille": return FAM[n.arg] ? FAM[n.arg].nom : "Concours";
+      case "ecole": return ALLBY[n.arg] ? ALLBY[n.arg].nom : "École";
+      case "cote": return "Côte à côte";
+      case "guide": return "Tes critères";
+      case "resultats": return n.title || "Résultats";
+      case "lieu": return "Par région";
+      case "specialite": return "Par spécialité";
+      case "comprendre": return "Comprendre";
+      default: return "Retour";
+    }
+  }
+  // Retour (téléphone) et fil d'Ariane (iPad, ordinateur)
+  function crumbs() {
+    if (nav.length < 2) return "";
+    var p = nav[nav.length - 2];
+    var h = '<div class="crumbs"><button class="back" data-back="1">' + I.back + esc(navLabel(p)) + "</button>";
+    var start = nav.length > 4 ? nav.length - 3 : 0;
+    var parts = [];
+    if (start > 0) parts.push('<button data-pop="0">Accueil</button>', '<span class="sep" aria-hidden="true">…</span>');
+    for (var i = start; i < nav.length; i++) {
+      if (i === nav.length - 1) parts.push('<span aria-current="page">' + esc(navLabel(nav[i])) + "</span>");
+      else parts.push('<button data-pop="' + i + '">' + esc(navLabel(nav[i])) + "</button>");
+    }
+    h += '<nav class="trail" aria-label="Fil d\'Ariane">' + parts.join('<span class="sep" aria-hidden="true">›</span>') + "</nav></div>";
+    return h;
+  }
+  // mode : "top" (nouvelle page), "restore" (retour), "keep" (même page, on garde la position)
+  function render(mode) {
+    var c = cur(), h, y = window.scrollY;
+    if (c.v === "resultats" && ui.res) c.title = ui.res.title;
+    switch (c.v) {
+      case "famille": h = viewFamille(c.arg); break;
+      case "ecole": h = viewEcole(c.arg); break;
+      case "cote": h = viewCote(); break;
+      case "guide": h = viewGuide(); break;
+      case "resultats": h = viewResultats(); break;
+      case "lieu": h = viewLieu(); break;
+      case "specialite": h = viewSpecialite(); break;
+      case "comprendre": h = viewComprendre(); break;
+      default: h = viewHome();
+    }
+    document.body.setAttribute("data-view", c.v);
+    $("view").innerHTML = h;
+    chrome();
+    if (mode === "top") {
+      window.scrollTo(0, 0);
+      var h1 = document.querySelector("#view h1");
+      if (h1) { h1.setAttribute("tabindex", "-1"); try { h1.focus({ preventScroll: true }); } catch (e) { /* ancien navigateur */ } }
+    } else if (mode === "restore") {
+      window.scrollTo(0, c.scroll || 0);
+    } else {
+      window.scrollTo(0, y);
+    }
+    if (c.v === "home" && ui.q) { var q = $("q"); if (q) { q.value = ui.q; renderSuggest(); } }
+  }
+  function chrome() {
+    var c = cur();
+    Array.prototype.forEach.call(document.querySelectorAll("[data-fil]"), function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-fil") === FIL ? "true" : "false"); });
+    Array.prototype.forEach.call(document.querySelectorAll(".nl"), function (b) {
+      if (b.getAttribute("data-nav") === c.v) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
+    });
+  }
+
+  /* ---------- recherche ---------- */
+  function searchSchools(q) {
+    var words = norm(q).split(/\s+/).filter(Boolean);
+    if (!words.length) return [];
+    return SCH.filter(function (s) { return words.every(function (w) { return s._q.indexOf(w) !== -1; }); })
+      .sort(function (a, b) {
+        var qa = norm(a.nom).indexOf(words[0]) === 0 ? 0 : 1, qb = norm(b.nom).indexOf(words[0]) === 0 ? 0 : 1;
+        return (qa - qb) || a.nom.localeCompare(b.nom, "fr");
+      });
+  }
+  function renderSuggest() {
+    var box = $("suggest"); if (!box) return;
+    var q = ui.q.trim();
+    if (!q) { box.innerHTML = ""; return; }
+    var r = searchSchools(q);
+    if (!r.length) { box.innerHTML = '<p class="muted" style="margin:0">Aucune école ne correspond à « ' + esc(q) + " ». Essaie un sigle, une ville ou une spécialité.</p>"; return; }
+    box.innerHTML = '<div class="rows">' + r.slice(0, 5).map(function (s) { return schoolRow(s); }).join("") + "</div>" +
+      (r.length > 5 ? '<button class="btn full" data-go="resultats" data-arg="q">Voir les ' + r.length + " résultats</button>" : "");
+  }
+  function renderNavSuggest() {
+    var box = $("nsuggest"), inp = $("nq"); if (!box || !inp) return;
+    var q = inp.value.trim();
+    if (!q) { box.hidden = true; box.innerHTML = ""; return; }
+    var r = searchSchools(q);
+    box.hidden = false;
+    box.innerHTML = r.length ? r.slice(0, 6).map(function (s) {
+      return '<button class="ns-item" data-go="ecole" data-arg="' + s.id + '"><span class="nm">' + esc(s.nom) + '</span><span class="sub">' + esc(campusTxt(s)) + "</span></button>";
+    }).join("") + (r.length > 6 ? '<button class="ns-all" data-nsall="1">Voir les ' + r.length + " résultats</button>" : "")
+      : '<p class="muted ns-empty">Aucune école pour « ' + esc(q) + " ».</p>";
+  }
+  function closeNavSuggest(clear) {
+    var box = $("nsuggest"); if (box) { box.hidden = true; box.innerHTML = ""; }
+    if (clear && $("nq")) $("nq").value = "";
+  }
+
+  /* ---------- accueil ---------- */
+  function famCount(f) { return SCH.filter(function (s) { return s._fams.indexOf(f.id) !== -1; }).length; }
+  function viewHome() {
+    var nEng = SCH.filter(function (s) { return s._fams.indexOf("ens") === -1; }).length;
+    var nEns = SCH.length - nEng;
+    var h = '<section class="hero">';
+    h += '<div class="hero-main">';
+    h += filPicker();
+    h += '<h1 class="h1">Trouve ton école</h1>';
+    h += '<p class="lede">' + nEng + " écoles d'ingénieurs et les " + nEns + " ENS recrutent après une prépa " + FIL + ".</p>";
+    h += '<form class="stack" style="gap:6px" data-form="search" role="search"><label class="label" for="q">Chercher une école</label>';
+    h += '<div class="field">' + I.search + '<input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="Nom, ville ou spécialité (ex. aéronautique)"></div></form>';
+    h += '<div class="suggest" id="suggest"></div>';
+    h += '<div class="hero-acts"><button class="btn" data-go="lieu">' + I.map + "Par région</button>";
+    h += '<button class="btn" data-go="specialite">' + I.tag + "Par spécialité</button>";
+    h += '<button class="linkbtn" data-go="guide">Je ne sais pas par où commencer ' + I.arrow + "</button></div>";
+    h += "</div>";
+    h += '<aside class="hero-side"><div class="soft stack" style="gap:12px">';
+    h += '<h2 class="h2">Tu débutes ?</h2>';
+    h += '<ol class="steps">';
+    h += '<li><span class="i">1</span><span><b>Décembre-janvier</b> : tu t\'inscris aux concours sur le site du SCEI.</span></li>';
+    h += '<li><span class="i">2</span><span><b>Avril-mai</b> : les écrits. <b>Juin-juillet</b> : les oraux, si tu es admissible.</span></li>';
+    h += '<li><span class="i">3</span><span><b>Jusqu\'à fin juillet</b> : tu classes tes écoles dans ta liste de vœux.</span></li>';
+    h += '<li><span class="i">4</span><span><b>Fin juillet</b> : les propositions d\'admission arrivent.</span></li>';
+    h += "</ol>";
+    h += '<button class="linkbtn" data-go="comprendre">Comment marchent les concours ' + I.arrow + "</button>";
+    h += "</div></aside></section>";
+    h += '<section class="section" id="concours"><div class="sec-head"><h2 class="h2" style="font-size:26px">Par concours</h2><button class="linkbtn" data-go="cote">Tous côte à côte ' + I.arrow + "</button></div>";
+    h += '<div class="tiles">' + FAMS.map(function (f) {
+      var n = famCount(f);
+      return '<button class="tile" style="--c:' + f.color + '" data-go="famille" data-arg="' + f.id + '">' +
+        '<span class="t"><span class="swatch md"></span>' + esc(f.nom) + '</span><span class="d">' + esc(f.tile) + '</span><span class="k">' + plural(n, "école", "écoles") + "</span></button>";
+    }).join("") + "</div></section>";
+    h += '<p class="foot">Chiffres : statistiques SCEI 2025 et notices des concours 2026, relevés en octobre 2026. <button class="linkbtn" style="min-height:0;display:inline;font-size:14px" data-go="comprendre">Sources et méthode</button></p>';
+    return h;
+  }
+
+  /* ---------- lignes d'école ---------- */
+  function schoolRow(s) {
+    var h = '<button class="row" data-go="ecole" data-arg="' + s.id + '">';
+    h += '<span class="main"><span class="nm">' + esc(s.nom) + "</span>";
+    h += '<span class="sub">' + esc(campusTxt(s)) + "</span>";
+    h += famDots(s) + '<span class="sub">' + esc(feeText(s)) + "</span>";
+    h += "</span>" + I.chev + "</button>";
+    return h;
+  }
+  function noRankTxt(s, cid) {
+    var c25 = null, prev = null, own = 0, ownInt = 0;
+    s.acces.forEach(function (a) {
+      if (a.c !== cid) return;
+      a.stats.forEach(function (v) { if (v.c25) c25 = v.c25; if (v.prev) prev = v.prev; });
+      ownLines(a).forEach(function (v) { own++; ownInt += v.int || 0; });
+    });
+    if (c25) return "Nouvelle sur ce concours";
+    if (prev) return "Nouvelle formation en 2026";
+    if (own && ownInt > 0) return "Rang non publié";
+    if (own) return "Aucun intégré " + FIL + " en 2025";
+    if (CONC[cid].g === "hors") return "Sur dossier, sans rang";
+    return "Pas de chiffres 2025";
+  }
+  // Ligne d'école dans la page d'un concours : tableau sur grand écran, carte sur téléphone.
+  function famRow(s, cid, tagged) {
+    var pl = placesIn(s, [cid]);
+    var h = '<button class="srow" data-go="ecole" data-arg="' + s.id + '" style="--c:' + FAM[FAM_OF[cid]].color + '">';
+    h += '<span class="s-main"><span class="nm">' + esc(s.nom) + "</span>";
+    h += '<span class="sub">' + esc(campusTxt(s)) + '</span><span class="sub">' + esc(domTxt(s)) + "</span></span>";
+    h += '<span class="s-pl num">' + (pl.n != null ? fmt(pl.n) + '<span class="u"> ' + (pl.n > 1 ? "places" : "place") + "</span>" + (scopeShort(pl.scopes) ? '<span class="sc">' + esc(scopeShort(pl.scopes).replace(/^ \(|\)$/g, "")) + "</span>" : "") : '<span class="muted">—</span>') + "</span>";
+    h += '<span class="s-rk">';
+    if (cid === "insa") {
+      var rr = rankRange(s, cid);
+      h += rr ? '<span class="info">' + fmt(rr[0]) + (rr[1] !== rr[0] ? " à " + fmt(rr[1]) : "") + '</span><span class="lbl">selon le domaine</span>' : '<span class="info">Pas de rang ' + FIL + ' 2025</span>';
+    } else {
+      var v = mainLine(s, cid);
+      if (v) {
+        h += '<span class="big num">' + fmt(v.med) + '</span><span class="lbl l-rm">rang médian</span>';
+        if (!SINGLE[cid] && v.cl && !v.inter) h += '<span class="lbl">sur ' + fmt(v.cl) + "</span>";
+        if (v.int === 0) h += '<span class="lbl">0 intégré ' + FIL + '</span>';
+      } else h += '<span class="info">' + esc(noRankTxt(s, cid)) + "</span>";
+    }
+    h += "</span>";
+    if (tagged) h += '<span class="s-tag" data-tag="' + cid + "|" + s.id + '">' + tagHtml(s, cid) + "</span>";
+    h += I.chev + "</button>";
+    return h;
+  }
+
+  /* ---------- page d'une famille de concours ---------- */
+  function famSchools(f) { return SCH.filter(function (s) { return s._fams.indexOf(f.id) !== -1; }); }
+  function famPlaces(f, all) {
+    var mp = 0, shared = 0, unknown = 0, scopes = {};
+    all.forEach(function (s) { s.acces.forEach(function (a) {
+      if (f.conc.indexOf(a.c) === -1) return;
+      if (a.p26 == null) unknown++;
+      else if (a.scope === FIL) mp += a.p26; else { shared += a.p26; scopes[a.scope] = 1; }
+    }); });
+    return { mp: mp, shared: shared, unknown: unknown, scopes: Object.keys(scopes) };
+  }
+  function famFacts(f, all) {
+    var P = famPlaces(f, all), FD = D.familles[f.id] || {};
+    var pv, ps;
+    if (f.id === "autres") { pv = String(all.length); ps = "écoles, dont 3 UT sur dossier"; }
+    else if (P.mp && !P.shared) { pv = fmt(P.mp); ps = "places " + FIL + " en 2026" + (P.unknown ? " (certaines non publiées)" : ""); }
+    else if (P.mp) { pv = fmt(P.mp); ps = "places " + FIL + " en 2026, + " + fmt(P.shared) + " partagées avec d'autres filières"; }
+    else if (P.shared) { pv = fmt(P.shared); ps = "places 2026, partagées avec d'autres filières"; }
+    else { pv = String(all.length); ps = "écoles"; }
+    var fee = FD.insc || ["—", ""];
+    var third = FD.poids != null ? [FD.poids + " %", FD.poidsFait] : (ECR_FACT[f.id] || ["—", ""]);
+    return '<div class="fact"><span class="v num">' + pv + '</span><span class="s">' + esc(ps) + "</span></div>" +
+      '<div class="fact"><span class="v num">' + esc(fee[0]) + '</span><span class="s">' + esc(fee[1]) + "</span></div>" +
+      '<div class="fact"><span class="v num">' + esc(third[0]) + '</span><span class="s">' + esc(third[1]) + "</span></div>";
+  }
+  // Niveau des admis, en phrase : rang médian 2025 le plus bas et le plus haut.
+  function niveauTxt(f) {
+    var cid = famConcs(f)[0], lines = [];
+    SCH.forEach(function (s) {
+      if (!s.acces.some(function (a) { return a.c === cid; })) return;
+      if (SINGLE[cid]) { var v = refLine(s, cid, MAIN_LIST[cid]); if (v) lines.push({ s: s, v: v }); }
+      else s.acces.forEach(function (a) { if (a.c === cid) ownLines(a).forEach(function (v) { if (v.med && v.int) lines.push({ s: s, v: v }); }); });
+    });
+    if (!lines.length) return "";
+    lines.sort(function (a, b) { return a.v.med - b.v.med; });
+    var lo = lines[0], hi = lines[lines.length - 1];
+    if (lines.length === 1) return "En 2025, la moitié des élèves de " + FIL + " admis à " + lo.s.nom + " étaient classés avant le " + fmt(lo.v.med) + "e rang.";
+    var sameSchool = lines.every(function (x) { return x.s.id === lo.s.id; });
+    if (sameSchool) return "En 2025, la moitié des admis à " + lo.s.nom + " étaient classés avant le " + fmt(lo.v.med) + "e rang (" + lo.v.lib + ", sur " + fmt(lo.v.cl) + ") ou avant le " + fmt(hi.v.med) + "e (" + hi.v.lib + ", sur " + fmt(hi.v.cl) + ").";
+    if (SINGLE[cid]) {
+      var tail = lo.v.inter ? ", sur une liste commune aux MP, PC et PSI." : (lo.v.cl ? ", sur " + fmt(lo.v.cl) + " candidats de " + FIL + " classés." : ".");
+      return "En 2025, la moitié des élèves de " + FIL + " admis à " + lo.s.nom + " étaient classés avant le " + fmt(lo.v.med) + "e rang ; à " + hi.s.nom + ", avant le " + fmt(hi.v.med) + "e" + tail;
+    }
+    var ex = lines.slice().sort(function (a, b) { return ((a.v.inter ? 1 : 0) - (b.v.inter ? 1 : 0)) || (b.v.pl - a.v.pl); })[0];
+    if (ex.v.inter) return "Chaque école a sa propre liste. Par exemple, en 2025, la moitié des admis à " + ex.s.nom + " étaient classés avant le " + fmt(ex.v.med) + "e rang, sur une liste commune à plusieurs filières.";
+    return "Chaque école a sa propre liste. Par exemple, en 2025, la moitié des élèves de " + FIL + " admis à " + ex.s.nom + " étaient classés avant le " + fmt(ex.v.med) + "e rang" + (ex.v.cl ? ", sur " + fmt(ex.v.cl) + " classés." : ".");
+  }
+  function styleCard(f) {
+    var st = (D.familles[f.id] || {}).style;
+    if (!st || !st.sujets) return "";
+    var h = '<section class="card style-card" aria-labelledby="h-style"><h2 class="h2" id="h-style">Le style de ce concours</h2><div class="style-grid">';
+    h += '<div><span class="eyebrow muted">Les sujets</span><p>' + esc(st.sujets) + '</p><div class="srcs">' + srcLinks(st.sujetsSrc) + "</div></div>";
+    h += '<div><span class="eyebrow muted">Les oraux</span><p>' + esc(st.oraux) + '</p><div class="srcs">' + srcLinks(st.orauxSrc) + "</div></div>";
+    var niv = niveauTxt(f);
+    if (niv) h += '<div><span class="eyebrow muted">Le niveau des admis</span><p>' + esc(niv) + "</p></div>";
+    h += '<div><span class="eyebrow muted">Pour qui</span><p><b>Avis</b> : ' + esc(st.pourqui) + "</p></div>";
+    return h + "</div></section>";
+  }
+  function rankBox(fid) {
+    var rep = D.repere[fid]; if (!rep) return "";
+    var cids = repCids(rep).filter(function (c) { return CONC[c]; }), h = '<div class="rk-box">';
+    cids.forEach(function (cid) {
+      var v = rang[cid] || "", lab = cids.length > 1 ? "Ton rang, liste " + CONC[cid].court.replace(/^CCINP /, "") : "Ton rang à " + CONC[cid].court;
+      h += '<label for="rk-' + cid + '">' + esc(lab) + '</label>' +
+        '<input id="rk-' + cid + '" type="number" inputmode="numeric" min="1" max="99999" placeholder="ex. 700" autocomplete="off" data-rank="' + cid + '" value="' + esc(v) + '">';
+    });
+    return h + "<span>" + (rep.approx ? "Réel ou visé. Chaque école a sa propre liste, de taille proche : c'est un ordre de grandeur." : "Réel ou visé. Comparé au rang médian des admis 2025" + (cids.length > 1 ? ", liste par liste." : ".")) + "</span></div>";
+  }
+  function epRows(l) {
+    return '<div class="ep-tab">' + l.map(function (e) {
+      return '<div class="ep-row"><span>' + esc(e[0]) + (e[3] ? "<small>" + esc(e[3]) + "</small>" : "") + '</span><span class="d">' + esc(e[1] || "") + '</span><span class="c">' + (e[2] ? "× " + esc(e[2]) : "") + "</span></div>";
+    }).join("") + "</div>";
+  }
+  function epreuves(f) {
+    var FD = D.familles[f.id] || {};
+    if (!FD.blocs) return "";
+    var h = '<h2 class="h2" id="h-ep">Les épreuves</h2>';
+    FD.blocs.forEach(function (b) {
+      var n = 0;
+      var step = function (t) { n++; return '<span class="ep-h"><span class="i" aria-hidden="true">' + n + "</span>" + t + "</span>"; };
+      var note = function (t) { return t ? '<p class="ep-note">' + esc(t) + "</p>" : ""; };
+      h += '<div class="ep">';
+      if (b.titre) h += '<h3 class="h3">' + esc(b.titre) + "</h3>";
+      if (b.txt) h += '<p style="margin:0">' + esc(b.txt) + "</p>";
+      var left = "", right = "";
+      if (b.ecrits) left += '<div class="ep-step">' + step("Écrits" + (b.ecrits.quand ? " · " + esc(b.ecrits.quand) : "")) + epRows(b.ecrits.l) + note(b.ecrits.note) + "</div>";
+      if (b.adm) right += '<div class="ep-step">' + step("Admissibilité") + "<p>Résultats " + esc(b.adm.quand) + "." + (b.adm.txt ? " " + esc(b.adm.txt) : "") + "</p></div>";
+      if (b.oraux) right += '<div class="ep-step">' + step("Oraux" + (b.oraux.quand ? " · " + esc(b.oraux.quand) : "")) + (b.oraux.l.length ? epRows(b.oraux.l) : "") + note(b.oraux.note) + "</div>";
+      if (left || right) h += '<div class="ep-grid">' + (left ? '<div class="ep-col">' + left + "</div>" : "") + (right ? '<div class="ep-col">' + right + "</div>" : "") + "</div>";
+      if (b.classement) h += '<div class="ep-step">' + step("Classement final") + "<p>" + esc(b.classement) + "</p></div>";
+      if (b.notice) h += '<a href="' + esc(b.notice.u) + '" target="_blank" rel="noopener" class="linkbtn">' + esc(b.notice.t) + " " + I.ext + "</a>";
+      if (b.src && b.src.length) h += '<div class="srcs">' + srcLinks(b.src) + "</div>";
+      h += "</div>";
+    });
+    return h;
+  }
+  function famConcs(f) {
+    return f.conc.filter(function (cid) { return CONC[cid] && SCH.some(function (s) { return s.acces.some(function (a) { return a.c === cid; }); }); });
+  }
+  function bonAsavoir(f) {
+    var cs = famConcs(f);
+    return cs.map(function (cid) {
+      var c = CONC[cid];
+      return '<details class="more"><summary>Bon à savoir' + (cs.length > 1 ? " : " + esc(c.court) : "") + '</summary><div class="in"><p style="margin:0"><b>Inscription :</b> ' + esc(c.frais) + "</p><ul>" +
+        c.savoir.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + '</ul><div class="srcs">' + srcLinks(c.src) + "</div></div></details>";
+    }).join("");
+  }
+  function viewFamille(fid) {
+    var f = FAM[fid]; if (!f) return viewHome();
+    var all = famSchools(f), st = ui.fam, rep = D.repere[fid];
+    var regOk = function (s) { return st.reg === "all" || s._c1.some(function (c) { return c.r === st.reg; }); };
+    var domOk = function (s) { return st.dom === "all" || s.dom.indexOf(st.dom) !== -1; };
+    var list = all.filter(function (s) { return regOk(s) && domOk(s); });
+    var h = crumbs();
+    h += '<div class="stack" style="gap:26px">';
+    h += '<div class="fam-top"><div class="fam-id"><div class="fam-head" style="--c:' + f.color + '"><span class="swatch lg"></span><div><span class="eyebrow" style="color:var(--c)">' + (famConcs(f).length > 1 ? "Concours et banques" : "Concours") + ' · ' + FIL + '</span><h1 class="h1" style="font-size:clamp(30px,5.6vw,46px)">' + esc(f.nom) + "</h1></div></div>";
+    h += '<p class="lede">' + esc(f.intro) + "</p></div>";
+    h += '<div class="facts">' + famFacts(f, all) + "</div></div>";
+    h += styleCard(f);
+    h += '<div class="fam-cols"><section class="fam-schools" aria-labelledby="h-ecoles">';
+    h += '<h2 class="h2" id="h-ecoles">' + (all.length > 1 ? "Les " + all.length + " écoles" : "L'école") + "</h2>";
+    h += rankBox(fid);
+    if (all.length > 6) {
+      var regCount = {}, domCount = {};
+      all.filter(domOk).forEach(function (s) { var seen = {}; s._c1.forEach(function (c) { if (!seen[c.r]) { seen[c.r] = 1; regCount[c.r] = (regCount[c.r] || 0) + 1; } }); });
+      all.filter(regOk).forEach(function (s) { s.dom.forEach(function (d) { domCount[d] = (domCount[d] || 0) + 1; }); });
+      var regKeys = REG_ORDER.filter(function (r) { return regCount[r] || st.reg === r; }).sort(function (a, b) { return (regCount[b] || 0) - (regCount[a] || 0); });
+      var domKeys = Object.keys(DOM_SHORT).filter(function (d) { return domCount[d] || st.dom === d; }).sort(function (a, b) { return (domCount[b] || 0) - (domCount[a] || 0); });
+      h += '<div class="filters"><label>Région <select class="sel" data-freg="1"><option value="all">Partout (' + all.filter(domOk).length + ")</option>" +
+        regKeys.map(function (r) { return '<option value="' + r + '"' + (st.reg === r ? " selected" : "") + ">" + esc(D.regions[r]) + " (" + (regCount[r] || 0) + ")</option>"; }).join("") + "</select></label>";
+      h += '<label>Spécialité <select class="sel" data-fdom="1"><option value="all">Toutes (' + all.filter(regOk).length + ")</option>" +
+        domKeys.map(function (d) { return '<option value="' + d + '"' + (st.dom === d ? " selected" : "") + ">" + esc(DOM_SHORT[d]) + " (" + (domCount[d] || 0) + ")</option>"; }).join("") + "</select></label></div>";
+    }
+    if (!list.length) h += '<div class="empty"><h2>Aucune école avec ces filtres</h2><p class="muted" style="margin:0">Choisis « Partout » ou « Toutes » pour élargir.</p></div>';
+    var fcs = famConcs(f);
+    fcs.forEach(function (cid) {
+      var c = CONC[cid];
+      var rows = list.filter(function (s) { return s.acces.some(function (a) { return a.c === cid; }); });
+      var total = all.filter(function (s) { return s.acces.some(function (a) { return a.c === cid; }); }).length;
+      if (!total || (!rows.length && list.length)) return;
+      var sorted = SINGLE[cid];
+      rows.sort(function (a, b) {
+        if (sorted) {
+          var x = refLine(a, cid, MAIN_LIST[cid]), y = refLine(b, cid, MAIN_LIST[cid]);
+          var xa = x ? x.med : Infinity, yb = y ? y.med : Infinity;
+          if (xa !== yb) return xa < yb ? -1 : 1;
+        }
+        return a.nom.localeCompare(b.nom, "fr");
+      });
+      var tagged = repCids(rep).indexOf(cid) !== -1;
+      h += '<div class="stack" style="gap:10px">';
+      if (fcs.length > 1) h += '<h3 class="h3" style="margin-top:6px">' + esc(c.nom) + "</h3>";
+      h += '<p class="muted" style="margin:0">' + esc(CONC_LINE[cid] || "") + "</p>";
+      if (rows.length) {
+        var LIMIT = 12, open = !!st.more[cid];
+        var shown = open ? rows : rows.slice(0, LIMIT);
+        h += '<div class="slist' + (tagged ? " tagged" : "") + '"><div class="slist-head" aria-hidden="true"><span>École</span><span class="r">Places 2026</span><span class="r">Rang médian 2025</span>' + (tagged ? "<span>Ton repère</span>" : "") + "<span></span></div>";
+        h += shown.map(function (s) { return famRow(s, cid, tagged); }).join("") + "</div>";
+        if (rows.length > LIMIT) h += '<button class="btn" data-more="' + cid + '">' + (open ? "Voir moins" : "Voir les " + (rows.length - LIMIT) + " autres écoles") + "</button>";
+      }
+      h += "</div>";
+    });
+    h += "</section>";
+    h += '<section class="fam-ep" aria-labelledby="h-ep">' + epreuves(f) + bonAsavoir(f) + "</section></div>";
+    h += "</div>";
+    return h;
+  }
+
+  /* ---------- les concours côte à côte ---------- */
+  function viewCote() {
+    var h = crumbs() + '<div class="stack" style="gap:18px"><h1 class="h1">Les concours côte à côte, filière ' + FIL + '</h1>';
+    var heads = ["Concours", "Écoles", "Places " + FIL + " 2026", "Inscription", "Écrits", "Poids des oraux", "Style"];
+    h += '<div class="ctab"><div class="ctab-in" role="table" aria-label="Les concours côte à côte">';
+    h += '<div class="crow head" role="row">' + heads.map(function (t, i) { return '<span role="columnheader"' + (i === 1 ? ' class="r"' : "") + ">" + t + "</span>"; }).join("") + "</div>";
+    FAMS.forEach(function (f) {
+      var all = famSchools(f), P = famPlaces(f, all), FD = D.familles[f.id] || {};
+      var pl;
+      if (f.id === "autres") pl = "—";
+      else if (P.mp && P.shared) pl = fmt(P.mp) + " + " + fmt(P.shared) + " partagées";
+      else if (P.mp) pl = fmt(P.mp) + (P.unknown ? " (" + plural(P.unknown, "voie non publiée", "voies non publiées") + ")" : "");
+      else if (P.shared) pl = fmt(P.shared) + (P.scopes.length === 1 ? " (" + P.scopes[0].replace(/\+/g, ", ") + ")" : " partagées");
+      else pl = "—";
+      h += '<div class="crow" role="row"><span role="rowheader"><button class="cname" data-go="famille" data-arg="' + f.id + '"><i class="swatch" style="--c:' + f.color + '"></i>' + esc(f.nom) + "</button></span>";
+      h += '<span role="cell" class="r num">' + all.length + "</span>";
+      h += '<span role="cell" class="num">' + esc(pl) + "</span>";
+      h += '<span role="cell">' + esc(FD.inscCourt || "—") + "</span>";
+      h += '<span role="cell">' + esc(FD.ecritsCourt || "—") + "</span>";
+      h += '<span role="cell"' + (FD.poids != null ? ' style="font-weight:700"' : "") + ">" + esc(FD.poidsCourt || "—") + "</span>";
+      h += '<span role="cell">' + esc((FD.style && FD.style.mots) || "—") + "</span></div>";
+    });
+    h += "</div></div>";
+    h += '<p class="small muted" style="margin:0">Sources : notices des concours 2026 et barème du SCEI 2026, détaillés sur chaque page de concours.</p>';
+    h += "</div>";
+    return h;
+  }
+
+  /* ---------- fiche école ---------- */
+  function scopeSentence(a) {
+    if (a.p26 == null) return null;
+    var n = fmt(a.p26);
+    if (a.scope === FIL) return { v: n, s: (a.p26 > 1 ? "places" : "place") + " pour les " + FIL + " en 2026" };
+    if (a.scope === "toutes origines") return { v: n, s: "places en 2026, pour tous les profils (pas seulement la prépa)" };
+    if (a.scope === "toutes filières") return { v: n, s: "places en 2026, toutes filières confondues" };
+    return { v: n, s: "places en 2026, partagées entre " + a.scope.replace(/\+/g, ", ").replace(/, ([^,]+)$/, " et $1") };
+  }
+  function line2025(a) {
+    var own = ownLines(a), c25 = a.stats.filter(function (v) { return v.c25; }), prev = a.stats.filter(function (v) { return v.prev; });
+    if (!a.stats.length) return a.c === "ut" ? "Recrutement sur dossier : pas de rang publié." : "Pas de chiffres " + FIL + " pour 2025 sur cette voie.";
+    if (c25.length && !own.length) return "En 2025, l'école recrutait par un autre concours (« " + esc(c25[0].c25) + " ») : ses chiffres ne se comparent pas directement à ceux de 2026.";
+    if (prev.length && !own.length) return "Formation nouvelle en 2026. Pour comparaison, voici les chiffres 2025 de l'" + esc(prev[0].prev) + ".";
+    if (own.length === 1) {
+      var v = own[0], one = "élève de " + FIL + " y est entré", many = "élèves de " + FIL + " y sont entrés";
+      if (v.int == null) return "Le SCEI ne publie pas le nombre d'élèves de " + FIL + " entrés par cette voie en 2025." + (v.med ? " Rang médian des admis de la liste commune à plusieurs filières : " + fmt(v.med) + "." : "");
+      if (!v.int && v.med) return "En 2025, aucun élève de " + FIL + " n'y est entré. Rang médian des admis de la liste commune à plusieurs filières : " + fmt(v.med) + ".";
+      if (!v.int) return "En 2025, aucun élève de " + FIL + " n'y est entré.";
+      if (!v.med) return "En 2025, " + plural(v.int, one, many) + " (rang non publié).";
+      if (v.inter) return "En 2025, " + plural(v.int, one, many) + ". Rang médian des admis : " + fmt(v.med) + ", sur une liste commune à plusieurs filières.";
+      if (v.int === 1) return "En 2025, 1 " + one + ", classé au " + fmt(v.med) + "<sup>e</sup> rang" +
+        (v.cl ? ", sur " + fmt(v.cl) + " candidats de " + FIL + " classés." : (v.ins ? ", sur " + fmt(v.ins) + " inscrits." : "."));
+      return "En 2025, " + plural(v.int, one, many) + ". La moitié d'entre eux étaient classés avant le " + fmt(v.med) + "<sup>e</sup> rang" +
+        (v.cl ? ", sur " + fmt(v.cl) + " candidats de " + FIL + " classés." : (v.ins ? ", sur " + fmt(v.ins) + " inscrits." : "."));
+    }
+    return "Chiffres 2025, voie par voie :";
+  }
+  function statsTable(stats) {
+    var hasMoy = stats.some(function (v) { return v.moy; }), hasCl = stats.some(function (v) { return v.cl; }), hasIns = stats.some(function (v) { return v.ins; });
+    var h = '<div class="tablewrap"><table class="stats"><thead><tr><th>Voie (2025)</th><th>Places</th><th>Intégrés ' + FIL + '</th><th>Rang médian</th>' + (hasMoy ? "<th>Rang moyen</th>" : "") + (hasCl ? "<th>Classés</th>" : "") + (hasIns ? "<th>Inscrits</th>" : "") + "</tr></thead><tbody>";
+    stats.forEach(function (v) {
+      var flags = "";
+      if (v.inter) flags += '<span class="flag">liste commune à plusieurs filières' + (v.iint != null ? " · " + v.iint + " intégrés toutes filières" : "") + "</span>";
+      if (v.c25) flags += '<span class="flag">classement 2025 « ' + esc(v.c25) + " »</span>";
+      h += "<tr><td>" + esc(v.lib) + flags + "</td><td>" + fmt(v.pl) + "</td><td>" + fmt(v.int) + "</td><td>" + fmt(v.med) + "</td>" + (hasMoy ? "<td>" + fmt(v.moy) + "</td>" : "") + (hasCl ? "<td>" + fmt(v.cl) + "</td>" : "") + (hasIns ? "<td>" + fmt(v.ins) + "</td>" : "") + "</tr>";
+    });
+    return h + "</tbody></table></div>";
+  }
+  function boursShort(s) {
+    var c = s.bours.cat;
+    if (c === "remu") return "payé pendant les études";
+    if (c === "exo") return "0 € de frais";
+    if (c === "part") return "réduction";
+    return "non précisé";
+  }
+  function affSection(s) {
+    var a = s.aff;
+    var c1 = s._c1, rest = s.campus.filter(function (c) { return c1.indexOf(c) === -1; });
+    var h = '<section class="stack" style="gap:10px"><h2 class="h2">Où tu seras</h2><div class="card aff">';
+    h += '<ul class="camps">';
+    c1.forEach(function (c) { h += '<li class="y1"><span class="cv">' + esc(c.v) + ' <span class="muted">(' + esc(c.d) + ')</span></span><span class="okpill">1re année</span></li>'; });
+    rest.forEach(function (c) { h += '<li><span class="cv">' + esc(c.v) + ' <span class="muted">(' + esc(c.d) + ')</span></span><span class="tag">' + esc(a.later) + '</span></li>'; });
+    h += "</ul>";
+    h += '<ul class="rules">' + a.regle.map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ul>";
+    if (a.src) h += '<div class="srcs">' + srcLinks(a.src) + "</div>";
+    return h + "</div></section>";
+  }
+  function viewEcole(id) {
+    var s = BY[id];
+    if (!s) {
+      var raw = ALLBY[id]; if (!raw) return viewHome();
+      var others = FILS.filter(function (f) { return f.ok && f.id !== FIL && raw.acces.some(function (a) { return a.f === f.id; }); });
+      return crumbs() + '<div class="narrow stack" style="gap:16px"><h1 class="h1">' + esc(raw.nom) + '</h1><div class="empty"><h2>Pas de voie en ' + FIL + " en 2026</h2>" +
+        '<p class="muted" style="margin:0">Cette école ne recrute pas d\'élèves de ' + FIL + " par les concours de cet outil." + (others.length ? " Elle recrute en " + others.map(function (f) { return f.id; }).join(", ").replace(/, ([^,]*)$/, " et $1") + "." : "") + "</p>" +
+        '<div class="chips">' + others.map(function (f) { return '<button class="btn" data-fil="' + f.id + '">Voir la fiche en ' + f.id + "</button>"; }).join("") + "</div></div></div>";
+    }
+    var h = crumbs();
+    h += '<div class="stack" style="gap:24px">';
+    h += '<div class="ecole-top"><div class="ecole-id">';
+    h += '<div class="chips" style="gap:4px 16px">' + s._fams.map(function (f) { return '<button class="linkbtn" style="color:' + FAM[f].color + ';min-height:36px" data-go="famille" data-arg="' + f + '"><i class="swatch" style="--c:' + FAM[f].color + '"></i>' + esc(FAM[f].nom) + "</button>"; }).join("") + "</div>";
+    h += '<h1 class="h1">' + esc(s.nom) + "</h1>";
+    h += '<p class="lede">' + esc(s.aff ? campusTxt(s) : s.campus.map(function (c) { return c.v + " (" + c.d + ")"; }).join(" · ")) + " · " + esc(s.statut) + "</p>";
+    h += '<div class="chips" style="gap:6px">' + s.dom.map(function (d) { return '<span class="tag">' + esc(DOM_SHORT[d]) + "</span>"; }).join("") + "</div></div></div>";
+    h += '<div class="ecole-cols"><div class="ecole-main">';
+    h += '<section class="stack" style="gap:8px"><h2 class="h2">En bref</h2><p style="margin:0">' + esc(dot(s.desc)) + "</p>";
+    h += '<p class="small muted" style="margin:0">' + esc(s.complet) + (s.alias && s.alias.length ? " · aussi appelée : " + esc(s.alias.join(", ")) : "") + "</p>";
+    if (s.note) h += '<p class="note">' + esc(s.note) + "</p>";
+    h += "</section>";
+    if (s.aff) h += affSection(s);
+    h += '<section class="stack" style="gap:10px"><h2 class="h2">Pour y entrer</h2>';
+    s.acces.forEach(function (a, i) {
+      var f = FAM[FAM_OF[a.c]], sc = scopeSentence(a), key = id + ":" + i;
+      h += '<div class="card voie" style="--c:' + f.color + '"><span class="head"><i class="swatch" style="--c:' + f.color + '"></i>' + esc(CONC[a.c].nom) + "</span>";
+      if (a.lib) h += '<span style="font-weight:700;margin-top:-4px">' + esc(a.lib) + "</span>";
+      if (sc) h += '<div class="places"><span class="v num">' + sc.v + '</span><span class="muted">' + esc(sc.s) + "</span></div>";
+      else h += '<p><b>Places 2026 :</b> non trouvées' + (a.txt ? " · " + esc(a.txt) : "") + "</p>";
+      if (sc && a.txt) h += '<p class="small">' + esc(a.txt) + "</p>";
+      h += "<p>" + line2025(a) + "</p>";
+      var t = RANK_CONC.indexOf(a.c) !== -1 ? repere(s, a.c) : null;
+      if (t) h += '<p>Avec ton rang (' + fmt(rang[a.c]) + ') : <span class="rtag ' + t[0] + '">' + t[1] + "</span></p>";
+      var multi = ownLines(a).length > 1 || (a.stats.length && !ownLines(a).length);
+      if (a.stats.length) {
+        if (multi) h += statsTable(a.stats);
+        else h += '<details class="more" style="border:0;background:transparent"' + (ui.open[key] ? " open" : "") + '><summary style="padding:0;min-height:40px;font-size:15px">Détail des chiffres 2025</summary><div class="in" style="padding:0">' + statsTable(a.stats) + "</div></details>";
+      }
+      if (a.note) h += '<p class="note">' + esc(a.note) + "</p>";
+      if (a.src) h += '<div class="srcs">Places 2026 : ' + srcLinks([a.src]) + "</div>";
+      h += "</div>";
+    });
+    h += "</section>";
+    if (s.acces.some(function (a) { return a.stats.length; })) {
+      var viaLoic = s.acces.some(function (a) { return ["e3a_poly", "e3a_ind", "avenir", "ingeniup", "epita", "cesi"].indexOf(a.c) !== -1 || a.stats.some(function (v) { return v.c25 && v.c25 !== "CCINP"; }); });
+      var scei = D.sources.filter(function (x) { return /scei-concours\.fr\/stat/.test(x.u); }), loic = D.sources.filter(function (x) { return /loic\.website/.test(x.u); });
+      h += '<section class="stack" style="gap:6px"><h2 class="label">D\'où viennent les chiffres 2025</h2><div class="srcs">' + srcLinks(viaLoic ? scei.concat(loic) : scei) + "</div></section>";
+    }
+    h += '</div><div class="ecole-side">';
+    h += '<section class="stack" style="gap:10px"><h2 class="h2">Combien ça coûte</h2><div class="card costs">';
+    var fz = s.frais;
+    if (s.bours.cat === "remu") h += '<div><span class="okpill">' + esc(feeText(s)) + "</span></div><p style=\"margin:0\">" + esc(dot(fz.txt)) + "</p>";
+    else if (fz.min == null && fz.ref == null) h += '<div><span class="warnpill">Frais non trouvés</span></div><p style="margin:0">' + esc(dot(fz.txt)) + "</p>";
+    else {
+      h += '<div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap"><span class="big num">' + esc(feeText(s).replace("/an", "")) + '</span><span class="muted">par an' + (fz.an && fz.an !== "?" ? " · " + esc(fz.an) : "") + "</span>" + (s._unsure ? '<span class="warnpill">à vérifier</span>' : "") + "</div>";
+      h += '<p class="small" style="margin:0">' + esc(dot(fz.txt)) + "</p>";
+    }
+    h += '<div class="kv"><span>Si tu es boursier</span><b>' + boursShort(s) + "</b></div>";
+    h += '<p class="small muted" style="margin:0">' + esc(dot(s.bours.txt)) + "</p>";
+    var keys = [];
+    s.acces.forEach(function (a) { a.fee.forEach(function (k) { if (keys.indexOf(k) === -1) keys.push(k); }); });
+    keys.forEach(function (k) {
+      var fe = D.fees[k]; if (!fe) return;
+      h += '<div class="kv"><span>Inscription : ' + esc(fe[0]) + "</span><b>" + (fe[1] == null ? "?" : fmt(fe[1]) + " €" + (fe[2] != null && fe[2] !== fe[1] ? " (" + (fe[2] === 0 ? "0 €" : fmt(fe[2]) + " €") + " boursier)" : "")) + "</b></div>";
+    });
+    h += '<p class="small muted" style="margin:0">Fiabilité des frais : ' + esc(fz.fiab) + "." + (s.bours.cat === "remu" ? "" : " La CVEC (105 €) s'ajoute en général, sauf pour les boursiers.") + "</p>";
+    if (fz.src && fz.src.length) h += '<div class="srcs">' + srcLinks(fz.src) + "</div>";
+    h += "</div></section>";
+    if (s.liens && s.liens.length) h += '<section class="stack" style="gap:6px"><h2 class="label">Pour aller plus loin</h2><div class="srcs">' + srcLinks(s.liens) + "</div></section>";
+    h += "</div></div></div>";
+    return h;
+  }
+
+  /* ---------- accueil guidé ---------- */
+  function guideCount(g) {
+    return SCH.filter(function (s) {
+      if (g.fams.length && !s._fams.some(function (f) { return g.fams.indexOf(f) !== -1; })) return false;
+      if (g.doms.length && !s.dom.some(function (d) { return g.doms.indexOf(d) !== -1; })) return false;
+      if (g.loc === "idf" && !s._c1.some(function (c) { return c.r === "idf"; })) return false;
+      if (g.loc === "hors" && !s._c1.some(function (c) { return c.r !== "idf"; })) return false;
+      return true;
+    }).length;
+  }
+  function viewGuide() {
+    var g = ui.guide, h = crumbs();
+    h += '<div class="narrow stack" style="gap:16px"><h1 class="h1">On t\'aide à trouver</h1><p class="lede">Trois questions, et on te montre les écoles qui te correspondent. Saute celles où tu ne sais pas.</p>';
+    h += '<section class="card stack" style="padding:18px 16px;gap:12px"><h2 class="label" style="font-size:17px">1. Quels concours vas-tu passer ?</h2><div class="chips">';
+    h += FAMS.map(function (f) { var on = g.fams.indexOf(f.id) !== -1; return '<button class="chip" style="--c:' + f.color + '" data-gfam="' + f.id + '" aria-pressed="' + on + '"><span class="dot"></span>' + esc(f.nom) + "</button>"; }).join("");
+    h += '<button class="chip" data-gfam="none" aria-pressed="' + (g.fams.length === 0) + '">Je ne sais pas encore</button></div></section>';
+    h += '<section class="card stack" style="padding:18px 16px;gap:12px"><h2 class="label" style="font-size:17px">2. Où veux-tu étudier ?</h2><div class="chips">';
+    [["idf", "Île-de-France"], ["hors", "Hors Île-de-France"], ["any", "Peu importe"]].forEach(function (o) { h += '<button class="chip" data-gloc="' + o[0] + '" aria-pressed="' + (g.loc === o[0]) + '">' + o[1] + "</button>"; });
+    h += "</div></section>";
+    h += '<section class="card stack" style="padding:18px 16px;gap:12px"><h2 class="label" style="font-size:17px">3. Qu\'est-ce qui t\'attire ?</h2><div class="chips">';
+    ["info", "gen", "aero", "energie", "elec", "math", "meca", "btp", "bio", "chimie", "env", "physique", "indus", "transport", "rech", "defense"].forEach(function (d) {
+      h += '<button class="chip" data-gdom="' + d + '" aria-pressed="' + (g.doms.indexOf(d) !== -1) + '">' + esc(DOM_SHORT[d]) + "</button>";
+    });
+    h += '<button class="chip" data-gdom="none" aria-pressed="' + (g.doms.length === 0) + '">Je ne sais pas</button></div></section>';
+    var n = guideCount(g);
+    h += '<button class="btn primary full" style="min-height:56px;font-size:17px;border-radius:999px" data-guidego="1"' + (n ? "" : " disabled") + ">" + (n ? "Voir " + (n > 1 ? "les " + n + " écoles" : "l'école") : "Aucune école : enlève un critère") + " " + I.arrow + "</button>";
+    h += "</div>";
+    return h;
+  }
+
+  /* ---------- résultats ---------- */
+  function resFilter(f) {
+    return SCH.filter(function (s) {
+      if (f.q) { var words = norm(f.q).split(/\s+/).filter(Boolean); if (!words.every(function (w) { return s._q.indexOf(w) !== -1; })) return false; }
+      if (f.fams.length && !s._fams.some(function (x) { return f.fams.indexOf(x) !== -1; })) return false;
+      if (f.doms.length && !s.dom.some(function (d) { return f.doms.indexOf(d) !== -1; })) return false;
+      if (f.regs.length && !s._c1.some(function (c) { return f.regs.indexOf(c.r) !== -1; })) return false;
+      if (f.loc === "idf" && !s._c1.some(function (c) { return c.r === "idf"; })) return false;
+      if (f.loc === "hors" && !s._c1.some(function (c) { return c.r !== "idf"; })) return false;
+      if (f.pub && !s._pub) return false;
+      if (f.bours && !s._free) return false;
+      return true;
+    });
+  }
+  function newRes(o) { var f = { q: "", fams: [], doms: [], regs: [], loc: null, pub: false, bours: false, sort: "nom", title: "Résultats", refine: false }; Object.keys(o || {}).forEach(function (k) { f[k] = o[k]; }); return f; }
+  function viewResultats() {
+    var f = ui.res || newRes(), h = crumbs();
+    var r = resFilter(f);
+    if (f.sort === "frais") r.sort(function (a, b) { var x = a._fee == null ? 1e9 : a._fee, y = b._fee == null ? 1e9 : b._fee; return (x - y) || a.nom.localeCompare(b.nom, "fr"); });
+    else r.sort(function (a, b) { return a.nom.localeCompare(b.nom, "fr"); });
+    h += '<div class="narrow stack" style="gap:14px"><h1 class="h1" style="font-size:clamp(28px,5.6vw,42px)">' + esc(f.title) + "</h1>";
+    var act = [];
+    if (f.q) act.push(["q", "", "« " + f.q + " »"]);
+    f.fams.forEach(function (x) { act.push(["fam", x, FAM[x].nom]); });
+    f.regs.forEach(function (x) { act.push(["reg", x, D.regions[x]]); });
+    if (f.loc) act.push(["loc", f.loc, f.loc === "idf" ? "Île-de-France" : "Hors Île-de-France"]);
+    f.doms.forEach(function (x) { act.push(["dom", x, DOM_SHORT[x]]); });
+    if (f.pub) act.push(["pub", "", "Public"]);
+    if (f.bours) act.push(["bours", "", "Gratuit si boursier"]);
+    if (act.length) h += '<div class="chips">' + act.map(function (a) { return '<button class="chip" aria-pressed="true" data-rdel="' + a[0] + "|" + esc(a[1]) + '" aria-label="Retirer le critère ' + esc(a[2]) + '">' + esc(a[2]) + " ×</button>"; }).join("") + "</div>";
+    h += '<div class="sec-head"><span style="font-weight:700">' + plural(r.length, "école", "écoles") + '</span><label class="small muted" style="display:inline-flex;align-items:center;gap:6px">Trier <select class="sel" data-rsort="1" style="min-height:40px">' +
+      '<option value="nom"' + (f.sort === "nom" ? " selected" : "") + ">par nom</option><option value=\"frais\"" + (f.sort === "frais" ? " selected" : "") + ">par frais</option></select></label></div>";
+    h += '<details class="more"' + (f.refine ? " open" : "") + ' data-refine="1"><summary>Affiner</summary><div class="in" style="gap:12px">';
+    h += '<p class="label">Concours</p><div class="chips">' + FAMS.map(function (x) { return '<button class="chip" style="--c:' + x.color + '" data-radd="fam|' + x.id + '" aria-pressed="' + (f.fams.indexOf(x.id) !== -1) + '"><span class="dot"></span>' + esc(x.nom) + "</button>"; }).join("") + "</div>";
+    h += '<p class="label">Spécialité</p><div class="chips">' + Object.keys(DOM_SHORT).map(function (d) { return '<button class="chip" data-radd="dom|' + d + '" aria-pressed="' + (f.doms.indexOf(d) !== -1) + '">' + esc(DOM_SHORT[d]) + "</button>"; }).join("") + "</div>";
+    h += '<p class="label">Statut et coût</p><div class="chips"><button class="chip" data-radd="pub|1" aria-pressed="' + f.pub + '">Public</button><button class="chip" data-radd="bours|1" aria-pressed="' + f.bours + '">Gratuit si boursier</button></div>';
+    h += "</div></details>";
+    if (!r.length) h += '<div class="empty"><h2>Aucune école ne correspond</h2><p class="muted" style="margin:0">Retire un critère pour élargir.</p></div>';
+    else h += '<div class="rows">' + r.map(function (s) { return schoolRow(s); }).join("") + "</div>";
+    h += "</div>";
+    return h;
+  }
+
+  /* ---------- par région : carte + liste ---------- */
+  function regionCounts() {
+    var n = {};
+    SCH.forEach(function (s) { var seen = {}; s._c1.forEach(function (c) { if (!seen[c.r]) { seen[c.r] = 1; n[c.r] = (n[c.r] || 0) + 1; } }); });
+    return n;
+  }
+  function level(n) { return n >= 26 ? 5 : n >= 18 ? 4 : n >= 10 ? 3 : n >= 5 ? 2 : 1; }
+  function chip(kind, val, label, n, on) {
+    return '<button class="chip" data-' + kind + '="' + esc(val) + '" aria-pressed="' + (on ? "true" : "false") + '">' + esc(label) + (n != null ? ' <span class="n">' + n + "</span>" : "") + "</button>";
+  }
+  function viewLieu() {
+    var n = regionCounts(), sel = ui.lieu.reg, h = crumbs();
+    h += '<div class="stack" style="gap:16px"><h1 class="h1">Par région</h1><p class="lede">Touche une région sur la carte ou dans la liste. Une école avec plusieurs campus compte dans chaque région.</p>';
+    h += '<svg class="map" viewBox="' + MAP.vb.join(" ") + '" role="img" aria-label="Carte des régions de France, avec le nombre d\'écoles dans chacune">';
+    Object.keys(MAP.regions).forEach(function (k) {
+      h += '<path class="rg' + (sel === k ? " sel" : "") + '" data-region="' + k + '" d="' + MAP.regions[k].d + '" fill="var(--m' + level(n[k] || 0) + ')"><title>' + esc(MAP.regions[k].nom) + " : " + plural(n[k] || 0, "école", "écoles") + "</title></path>";
+    });
+    var b = MAP.reuBox;
+    h += '<rect class="inset" x="' + b[0] + '" y="' + b[1] + '" width="' + b[2] + '" height="' + b[3] + '" rx="8"></rect>';
+    Object.keys(MAP.labels).forEach(function (k) {
+      var p = MAP.labels[k], c = n[k] || 0, r = c >= 10 ? 24 : 20;
+      if (k === "reu") p = [b[0] + b[2] - 6, b[1] + 6];
+      h += '<g class="badge" aria-hidden="true"><circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + r + '"></circle><text x="' + p[0] + '" y="' + p[1] + '">' + c + "</text></g>";
+    });
+    h += "</svg>";
+    h += '<div class="legend" aria-hidden="true"><span>Moins d\'écoles</span><span class="sc"><i style="background:var(--m1)"></i><i style="background:var(--m2)"></i><i style="background:var(--m3)"></i><i style="background:var(--m4)"></i><i style="background:var(--m5)"></i></span><span>Plus</span></div>';
+    h += '<div class="narrow stack" style="gap:12px">';
+    if (sel) {
+      var list = SCH.filter(function (s) { return s._c1.some(function (c) { return c.r === sel; }); }).sort(function (a, b) { return a.nom.localeCompare(b.nom, "fr"); });
+      h += '<div class="sec-head" id="regsel"><h2 class="h2">' + esc(D.regions[sel]) + '</h2><span class="small muted">' + plural(list.length, "école", "écoles") + "</span></div>";
+      h += '<div class="rows">' + list.map(function (s) { return schoolRow(s); }).join("") + "</div>";
+      h += '<button class="btn" data-lieu="">Voir toutes les régions</button>';
+    }
+    h += '<h2 class="label" style="margin-top:8px">Toutes les régions</h2><div class="chips">';
+    REG_ORDER.slice().sort(function (a, b) { return (n[b] || 0) - (n[a] || 0); }).forEach(function (r) {
+      h += chip("lieu", r, D.regions[r], n[r] || 0, sel === r);
+    });
+    h += "</div></div></div>";
+    return h;
+  }
+
+  /* ---------- par spécialité ---------- */
+  function viewSpecialite() {
+    var n = {};
+    SCH.forEach(function (s) { s.dom.forEach(function (d) { n[d] = (n[d] || 0) + 1; }); });
+    var h = crumbs() + '<div class="narrow stack" style="gap:16px"><h1 class="h1">Par spécialité</h1><p class="lede">Choisis un domaine : tu verras toutes les écoles qui le proposent, tous concours confondus. Pour un mot précis (nucléaire, cybersécurité, robotique…), utilise la recherche.</p><div class="chips">';
+    Object.keys(DOM_SHORT).sort(function (a, b) { return (n[b] || 0) - (n[a] || 0); }).forEach(function (d) {
+      h += '<button class="chip" data-spec="' + d + '">' + esc(D.domaines[d]) + ' <span class="n">' + (n[d] || 0) + "</span></button>";
+    });
+    h += "</div></div>";
+    return h;
+  }
+
+  /* ---------- comprendre ---------- */
+  function viewComprendre() {
+    var own = SCH.filter(function (s) { return s._pub && s.bours.cat !== "remu" && s._fee != null && s._fee > 700; }).sort(function (a, b) { return a._fee - b._fee; });
+    var pa = SCH.filter(function (s) { return s.acces.some(function (a) { return a.c === "e3a_ind" && a.stats.some(function (v) { return v.c25 === "Puissance Alpha"; }); }); });
+    var h = crumbs() + '<div class="narrow prose"><h1 class="h1">Comprendre les concours</h1>';
+    h += "<h2>Concours, banque, liste de vœux</h2><ul>";
+    h += "<li><b>Un concours</b> classe les candidats après des écrits, puis des oraux pour les admissibles. Une <b>banque</b> regroupe des écoles qui utilisent les mêmes écrits mais font chacune leur classement.</li>";
+    h += "<li>Tu t'inscris sur le site du SCEI en décembre-janvier, puis tu classes tes écoles dans ta <b>liste de vœux</b> jusqu'à fin juillet. Une école que tu mets au-dessus d'une autre passe avant : si elle t'est proposée, tu perds celles d'en dessous.</li>";
+    h += "<li>Certains concours partagent leurs écrits : X et ENS, Mines-Ponts et Mines-Télécom, et en partie Polytech et le CCINP. Chaque page de concours détaille ses épreuves et renvoie vers sa notice officielle.</li></ul>";
+    h += "<h2>Lire les chiffres</h2><ul>";
+    h += "<li><b>Places 2026</b> : places offertes à la session 2026, la dernière publiée (notices des concours, L'Étudiant, Onisep). « Pour les " + FIL + " » : places réservées à la " + FIL + ". Sinon, elles sont partagées avec d'autres filières.</li>";
+    h += "<li><b>Rang médian 2025</b> : la moitié des élèves de " + FIL + " admis en 2025 étaient classés avant ce rang (statistiques du SCEI, les dernières publiées). Le SCEI ne publie pas le rang du dernier appelé.</li>";
+    h += "<li><b>Un rang ne se compare qu'à l'intérieur d'une même liste de classement.</b> Mines-Ponts, le CCINP ou Polytech ont une seule liste : on peut trier leurs écoles par rang. À Centrale-Supélec, dans la banque CCINP, aux ENS ou dans les écoles indépendantes d'e3a, chaque école a sa propre liste : les rangs ne se comparent pas d'une école à l'autre.</li>";
+    h += "<li><b>Ton repère</b> : sur les pages Mines-Ponts, Mines-Télécom, Centrale-Supélec et CCINP, tu peux entrer ton rang, réel ou visé. « Dans tes cordes » : ton rang est meilleur que le rang médian des admis 2025. « Juste » : jusqu'à une fois et demie ce rang. « Ambitieux » : au-delà. C'est un ordre de grandeur, pas une prédiction : les rangs bougent d'une année sur l'autre.</li>";
+    h += "<li><b>Poids des oraux</b> : part des coefficients de l'oral dans le total du classement final, d'après les notices 2026.</li>";
+    if (FIL === "MPI") h += "<li><b>Liste commune à plusieurs filières</b> (Ingéni'Up, certaines écoles indépendantes d'e3a, quelques domaines INSA) : les filières sont classées ensemble ; places et rangs ne sont pas propres à la MPI. Polytech, lui, a une liste MPI à part.</li>";
+    else h += "<li><b>Liste commune à plusieurs filières</b> (Polytech, Ingéni'Up, plusieurs domaines INSA) : MP, PC et PSI sont classés ensemble ; places et rangs ne sont pas propres à la " + FIL + ".</li>";
+    if (FIL === "PC") h += "<li><b>Deux listes au CCINP</b> : en PC, le CCINP fait deux concours sur les mêmes copies, PC-Physique et PC-Chimie, avec des coefficients inversés. Une école peut recruter sur l'une, sur l'autre, ou sur les deux selon la spécialité : compare les rangs liste par liste.</li>";
+    h += "<li><b>Peu de places, rangs instables</b> : avec 2 à 6 places, un rang 2025 peut beaucoup bouger en 2026.</li>";
+    h += "<li><b>« Classement 2025 … »</b> : en 2025, l'école figurait dans une autre section du SCEI (autre concours ou autre liste) ; son rang ne se compare pas directement à ceux de 2026.</li></ul>";
+    h += "<h2>Le style des concours</h2><ul>";
+    h += "<li>« Les sujets » résume le rapport du jury cité en lien (le dernier publié, en général en maths). « Pour qui » est un avis, déduit de ces rapports et du poids des épreuves : à prendre comme tel.</li></ul>";
+    h += "<h2>Frais et boursiers</h2><ul>";
+    h += "<li>Frais par an pour un étudiant français, au montant le plus récent trouvé, avec son année. La CVEC (105 €) s'ajoute en général, sauf pour les boursiers.</li>";
+    if (own.length) h += "<li>La plupart des écoles publiques appliquent le droit national (630 €/an en 2026-2027). " + own.length + " écoles publiques demandent plus, de " + fmt(own[0]._fee) + " € (" + esc(own[0].nom) + ") à " + fmt(own[own.length - 1]._fee) + " € (" + esc(own[own.length - 1].nom) + ").</li>";
+    h += "<li>À l'X, aux ENS et dans les écoles militaires, les élèves sont payés pendant leurs études, en échange d'un engagement à servir l'État.</li>";
+    h += "<li>« À vérifier » : source ancienne, non officielle, ambiguë ou absente. Chaque fiche donne ses sources.</li></ul>";
+    h += "<h2>Ce qui a changé en 2026</h2><ul>";
+    h += "<li>ENSTA Paris et ENSTA Bretagne ont fusionné : places à Palaiseau et à Brest via Mines-Ponts, et nouvelle formation défense et sécurité (FIDS), codélivrée avec l'ISAE-SUPAERO, via Mines-Télécom.</li>";
+    h += "<li>L'ENAC et l'ISAE-ENSMA ont quitté le CCINP pour Mines-Télécom.</li>";
+    h += "<li>Les écoles de l'ex-concours Puissance Alpha recrutent maintenant les " + FIL + " via e3a-Polytech (" + esc(pa.map(function (s) { return s.nom; }).join(", ")) + ") ; l'ESIEE Paris, via la banque CCINP.</li>";
+    h += "<li>Nouvelles venues : Centrale Lyon ENISE (banque CCINP) et Aflokkat MIRA (e3a-Polytech). L'ECE n'est plus dans Avenir Prépas.</li>";
+    h += "<li>Noms récents, que la recherche reconnaît aussi sous l'ancien nom : Géodata Paris (ex-ENSG Géomatique), Centrale Méditerranée (ex-Centrale Marseille).</li></ul>";
+    h += "<h2>Pas dans cette liste</h2><ul>" + D.exclus.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>";
+    h += '<h2 id="sources">Sources principales</h2><ul>' + D.sources.map(function (x) { return '<li><a href="' + esc(x.u) + '" target="_blank" rel="noopener">' + esc(x.t) + "</a></li>"; }).join("") + "</ul>";
+    h += '<p class="small muted">Données ' + FIL + ' relevées le ' + esc(dateFr(D.maj)) + '. Les notices de la session 2027 ne sont pas encore publiées : épreuves, places et tarifs sont ceux de 2026 et peuvent changer.</p></div>';
+    return h;
+  }
+
+  /* ---------- événements ---------- */
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".nav-search")) closeNavSuggest(false);
+    var t = e.target.closest("button, path[data-region]"); if (!t) return;
+    var d = t.dataset;
+    if (t.tagName.toLowerCase() === "path") { ui.lieu.reg = d.region; render("keep"); var rs = $("regsel"); if (rs) rs.scrollIntoView({ block: "start", behavior: "smooth" }); return; }
+    if (d.fil) { setFil(d.fil); return; }
+    if (d.back) { back(); return; }
+    if (d.pop != null) { popTo(+d.pop); return; }
+    if (d.nsall) { var nq = $("nq").value.trim(); ui.res = newRes({ q: nq, title: "Recherche « " + nq + " »" }); go("resultats"); return; }
+    if (d.go) {
+      if (d.go === "resultats" && d.arg === "q") { ui.res = newRes({ q: ui.q.trim(), title: "Recherche « " + ui.q.trim() + " »" }); go("resultats"); return; }
+      go(d.go, d.arg);
+      if (d.focus && $(d.focus)) { try { $(d.focus).focus(); } catch (err) { /* rien */ } }
+      return;
+    }
+    if (d.more) { ui.fam.more[d.more] = !ui.fam.more[d.more]; render("keep"); return; }
+    if (d.lieu != null) { ui.lieu.reg = d.lieu || null; render("keep"); if (d.lieu) { var rsel = $("regsel"); if (rsel) rsel.scrollIntoView({ block: "start", behavior: "smooth" }); } return; }
+    if (d.spec) { ui.res = newRes({ doms: [d.spec], title: D.domaines[d.spec] }); go("resultats"); return; }
+    if (d.gfam) { var g = ui.guide; if (d.gfam === "none") g.fams = []; else toggleIn(g.fams, d.gfam); render("keep"); return; }
+    if (d.gloc) { ui.guide.loc = d.gloc; render("keep"); return; }
+    if (d.gdom) { var gg = ui.guide; if (d.gdom === "none") gg.doms = []; else toggleIn(gg.doms, d.gdom); render("keep"); return; }
+    if (d.guidego) { var G = ui.guide; ui.res = newRes({ fams: G.fams.slice(), doms: G.doms.slice(), loc: G.loc === "any" ? null : G.loc, title: "Écoles pour toi" }); go("resultats"); return; }
+    if (d.rdel) {
+      var p = d.rdel.split("|"), f = ui.res;
+      if (p[0] === "q") f.q = ""; else if (p[0] === "fam") toggleIn(f.fams, p[1]); else if (p[0] === "reg") toggleIn(f.regs, p[1]);
+      else if (p[0] === "loc") f.loc = null; else if (p[0] === "dom") toggleIn(f.doms, p[1]); else if (p[0] === "pub") f.pub = false; else if (p[0] === "bours") f.bours = false;
+      render("keep"); return;
+    }
+    if (d.radd) {
+      var q = d.radd.split("|"), r = ui.res; r.refine = true;
+      if (q[0] === "fam") toggleIn(r.fams, q[1]); else if (q[0] === "dom") toggleIn(r.doms, q[1]); else if (q[0] === "pub") r.pub = !r.pub; else if (q[0] === "bours") r.bours = !r.bours;
+      render("keep"); return;
+    }
+  });
+  document.addEventListener("toggle", function (e) {
+    var t = e.target;
+    if (t.dataset && t.dataset.refine && ui.res) ui.res.refine = t.open;
+  }, true);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && e.target && e.target.id === "nq") closeNavSuggest(false);
+  });
+  function toggleIn(arr, v) { var i = arr.indexOf(v); if (i === -1) arr.push(v); else arr.splice(i, 1); }
+  document.addEventListener("submit", function (e) {
+    var form = e.target.dataset.form;
+    if (form === "search") {
+      e.preventDefault();
+      var q = ($("q") && $("q").value || "").trim(); if (!q) return;
+      ui.q = q; ui.res = newRes({ q: q, title: "Recherche « " + q + " »" }); go("resultats");
+    } else if (form === "nsearch") {
+      e.preventDefault();
+      var nq = ($("nq").value || "").trim(); if (!nq) return;
+      ui.res = newRes({ q: nq, title: "Recherche « " + nq + " »" }); go("resultats");
+    }
+  });
+  var qTimer, nqTimer;
+  document.addEventListener("input", function (e) {
+    var t = e.target;
+    if (t.id === "q") { clearTimeout(qTimer); qTimer = setTimeout(function () { ui.q = t.value; renderSuggest(); }, 120); return; }
+    if (t.id === "nq") { clearTimeout(nqTimer); nqTimer = setTimeout(renderNavSuggest, 120); return; }
+    if (t.dataset && t.dataset.rank) {
+      var cid = t.dataset.rank, n = parseInt(t.value, 10);
+      if (n > 0 && n < 100000) rang[cid] = n; else delete rang[cid];
+      updateTags(cid);
+      return;
+    }
+  });
+  document.addEventListener("change", function (e) {
+    var t = e.target;
+    if (t.dataset && t.dataset.rsort && ui.res) { ui.res.sort = t.value; render("keep"); return; }
+    if (t.dataset && t.dataset.freg) { ui.fam.reg = t.value; render("keep"); return; }
+    if (t.dataset && t.dataset.fdom) { ui.fam.dom = t.value; render("keep"); return; }
+  });
+
+  /* ---------- démarrage ---------- */
+  applyFil(FIL);
+  var hash = (location.hash || "").replace("#", "");
+  if (hash === "comprendre" || hash === "guide" || hash === "cote") nav.push({ v: hash });
+  render("top");
+})();
+</script>
+

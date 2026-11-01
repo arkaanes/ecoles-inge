@@ -1,0 +1,49 @@
+Concours Commun INP;Bordeaux INP - ENSC Cognitique;;;;9;;10;3066;2980
+Concours Commun INP;Bordeaux INP - ENSEIRB-MATMECA Electronique;;;;31;;24;2340;2322
+Concours Commun INP;Bordeaux INP - ENSEIRB-MATMECA Informatique;;;;10;;10;2207;2207
+Concours Commun INP;Bordeaux INP - ENSEIRB-MATMECA Mathématiques et Mécanique;;;;24;;20;1860;1745
+Concours Commun INP;Bordeaux INP - ENSEIRB-MATMECA Telecom.;;;;19;;18;2696;2673
+Concours Commun INP;Bordeaux INP - ENSPIMA;;;;6;;8;1904;1820
+Concours Commun INP;Clermont Auverge INP - SIGMA Clermont  Mécanique;;;;51;;58;2720;2606
+Concours Commun INP;Clermont Auvergne INP - ISIMA;;;;6;;7;3349;3223
+Concours Commun INP;CPE ETI : Electronique , Télécommunications, Informatique;;;;3;;5;2912;2724
+Concours Commun INP;CY TECH Cergy - Génie Civil;;;;4;;8;2956;2823
+Concours Commun INP;CY TECH Cergy-Pau - Informatique;;;;7;;10;2819;2889
+Concours Commun INP;CY TECH Cergy-Pau - Mathématiques;;;;14;;10;3008;2941
+Concours Commun INP;École nationale du génie de l'eau et de l'environnement de Strasbourg (ENGEES) - Apprenti;;;;1;;2;3058;3058
+Concours Commun INP;École nationale du génie de l'eau et de l'environnement de Strasbourg (ENGEES) - Etudiant;;;;11;;10;2886;2838
+Concours Commun INP;École nationale du génie de l'eau et de l'environnement de Strasbourg (ENGEES) - Fonctionnaire;;;;4;;4;2331;2437
+Concours Commun INP;ENAC Toulouse Civil;;;;28;;30;1055;996
+Concours Commun INP;ENAC Toulouse Fonctionnaire;;;;7;;7;736;616
+Concours Commun INP;ENSAI Rennes Civil;;;;6;;5;1684;1667
+Concours Commun INP;ENSAI Rennes Fonctionnaire (Attaché INSEE);;;;4;;4;2195;2204
+Concours Commun INP;ENSGTI Pau - Energétique;;;;6;;12;3228;3108
+Concours Commun INP;ENSI Poitiers - Génie de l'Eau et Génie Civil;;;;6;;7;2960;2916
+Concours Commun INP;ENSI Poitiers Energétique et Environnement;;;;7;;20;3129;3178
+Concours Commun INP;ENSICAEN Génie Physique et systèmes Embarqués;;;;8;;14;2472;2356
+Concours Commun INP;ENSICAEN Informatique;;;;10;;5;2729;2764
+Concours Commun INP;ENSIL - ENSCI Limoges Céramique Industrielle;;;;0;;8;0;0
+Concours Commun INP;ENSIL - ENSCI Limoges Electronique et Télécommunications;;;;2;;7;2493;2493
+Concours Commun INP;ENSIL - ENSCI Limoges Génie civil;;;;0;;4;0;0
+Concours Commun INP;ENSIL - ENSCI Limoges Matériaux;;;;1;;4;2746;2746
+Concours Commun INP;ENSIL - ENSCI Limoges Mécatronique;;;;10;;10;2813;2668
+Concours Commun INP;ENSIL - ENSCI Limoges Photonique;;;;0;;2;0;0
+Concours Commun INP;Grenoble INP - ENSE3;;;;77;;80;1904;1810
+Concours Commun INP;Grenoble INP - ENSIMAG;;;;5;;5;505;436
+Concours Commun INP;Grenoble INP - Esisar;;;;10;;12;3161;3123
+Concours Commun INP;Grenoble INP - Pagora;;;;3;;6;3348;3339
+Concours Commun INP;Grenoble INP - Phelma (Physique Electronique Télécoms);;;;47;;37;1712;1596
+Concours Commun INP;Grenoble INP - Phelma (Physique Matériaux Procédés);;;;33;;30;1046;955
+Concours Commun INP;ISAE-ENSMA Poitiers;;;;60;;58;1104;1058
+Concours Commun INP;Lorraine INP - ENSEM - Energie;;;;35;;36;2822;2804
+Concours Commun INP;Lorraine INP - ENSEM - Spécialité des systèmes numériques;;;;5;;16;3109;3011
+Concours Commun INP;Lorraine INP - ENSIC;;;;3;;6;3332;3279
+Concours Commun INP;SeaTech Toulon;;;;34;;30;2439;2368
+Concours Commun INP;SUPMICROTECH ENSMM Besançon;;;;43;;54;2699;2516
+Concours Commun INP;TELECOM PHYSIQUE Strasbourg;;;;19;;22;1756;1738
+Concours Commun INP;Toulouse INP - ENSEEIHT - Electronique-Energie-Automatique (EEA);;;;37;;37;1435;1281
+Concours Commun INP;Toulouse INP - ENSEEIHT - Mécanique des Fluides-Energetique-Environnement (MFEE);;;;14;;15;987;918
+Concours Commun INP;Toulouse INP - ENSEEIHT - Sciences du Numérique;;;;33;;36;1652;1509
+Concours Commun INP;Toulouse INP - ENSIACET - Génie des Procédés;;;;11;;11;2645;2523
+Concours Commun INP;Toulouse INP - ENSIACET - Génie Industriel;;;;13;;15;2261;2127
+Concours Commun INP;Concours CCINP PSI;5311;3893;3410;777;;849;;

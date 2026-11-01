@@ -1,0 +1,113 @@
+ENSIBS Cybersécurité du logiciel;3;4711;4003;9;10
+ENSIBS Génie Industriel;1;4082;4082;2;4
+ENSIBS Mécatronique;3;4898;4677;5;4
+ENSIM Le Mans;0;4944;3883;7;8
+ENSTBB Bordeaux - Biotechnologie;0;1026;1026;2;2
+EPISEN - Génie Biomédical et santé (ISBS);1;4228;4009;10;10
+EPISEN - Système d'information;0;5179;5180;7;6
+EPISEN - Technologie pour la santé;1;5253;5253;1;6
+ESBS Strasbourg;0;1543;1680;3;4
+ESGT le Mans;1;3298;3298;1;5
+ESI Reims - Energetique;0;4107;3997;4;5
+ESI Reims - Génie Urbain et Environnement;1;5244;4835;4;6
+ESI Reims - Packaging;1;4304;4304;2;5
+ESIAB - Microbiologie et Qualité / Production, Innovation , Biotechnologies en agro-alimentaire;0;4332;4251;3;4
+ESIR Rennes - Informatique;0;4411;4216;5;4
+ESIR Rennes - Matériaux;0;4777;4777;1;3
+ESIR Rennes - Technologies de l'information pour la santé;0;4432;4203;4;7
+ESIROI La Réunion;0;0;0;0;2
+ESIX Caen Agroalimentaire;0;4556;4556;2;4
+ESIX Caen Mécatronique et Systèmes Embarqués;4;5224;5210;5;8
+ESIX Cherbourg - Génie Industriel;0;4518;4518;1;3
+ESIX Cherbourg - Génie nucléaire;0;3120;2635;4;3
+ISAT Nevers;5;2343;2157;10;10
+ISEL Le Havre;1;5034;5034;2;12
+ISIFC Besançon - Génie Biomédical;2;4212;4108;9;10
+ISTY Vélizy;2;4986;5061;2;6
+Polytech Angers - Bâtiments Durables;1;3237;3237;2;2
+Polytech Angers - Qualité Innovation Fiabilité;0;0;0;0;2
+Polytech Angers - Systèmes Automatisés et Génie Informatique;0;4701;4523;5;4
+Polytech Annecy-Chambéry - Bâtiment Eco-construction Energie;3;4958;4793;7;6
+Polytech Annecy-Chambéry - Ecologie industrielle et territoriale;1;4414;4388;4;4
+Polytech Annecy-Chambéry - Informatique données Usages;0;4390;4261;6;7
+Polytech Annecy-Chambéry - Mécanique Mécatronique Matériaux composites;3;3583;3406;7;8
+Polytech Annecy-Chambéry - Systèmes Numériques – Instrumentation;2;5274;5237;3;3
+Polytech Clermont - Génie Biologique;0;3161;3231;4;5
+Polytech Clermont - Génie Civil;3;5052;4495;14;16
+Polytech Clermont - Génie Physique;2;4193;4062;10;12
+Polytech Clermont - Ingénierie Mathématique et Data Science;2;4521;4054;16;16
+Polytech Clermont - Systèmes Embarqués, Energie Electrique et Robotique;3;5037;5022;9;6
+Polytech Dijon - Electronique et systèmes numériques;0;5181;5184;4;3
+Polytech Dijon - Informatique et réseaux;2;4484;3905;6;7
+Polytech Dijon - Matériaux;0;5069;4890;4;6
+Polytech Dijon - Robotique;1;5237;5029;6;4
+Polytech Grenoble - Géotechnique et génie civil;1;4297;4318;7;6
+Polytech Grenoble - Gestion des risques QHSE;2;4721;4662;3;4
+Polytech Grenoble - Informatique;5;3318;3155;11;10
+Polytech Grenoble - Informatique et électronique des systèmes embarqués;1;3542;3656;9;6
+Polytech Grenoble - Matériaux Innovations Transitions;2;3784;3546;10;7
+Polytech Grenoble - Technologies de l'information pour la santé;1;5301;5268;5;4
+Polytech Lille - Énergie et industrie du futur;3;4418;4422;7;5
+Polytech Lille - Génie biologique et alimentaire;1;2881;2881;2;2
+Polytech Lille - Génie civil;2;3296;3094;14;11
+Polytech Lille - Informatique et statistique;0;3493;3285;15;13
+Polytech Lille - Instrumentation et ingénierie d'affaires;2;4573;4505;8;7
+Polytech Lille - Internet des objets et cybersécurité;1;3777;3398;8;5
+Polytech Lille - Matériaux;0;4216;3979;10;10
+Polytech Lille - Mécanique;5;3300;3106;12;12
+Polytech Lyon - Génie Biomédical;1;3155;3234;4;4
+Polytech Lyon - Informatique;0;2532;2735;3;4
+Polytech Lyon - Matériaux;0;4539;4449;7;4
+Polytech Lyon - Mathématiques Appliquées et Modélisation;0;2961;3058;5;4
+Polytech Lyon - Mécanique;0;2766;2550;4;4
+Polytech Lyon - Systèmes industriels, Robotique;1;4461;4162;5;4
+Polytech Marseille - Écologie Industrielle et Environnement (FISEA : 1 an Etudiant, 2 ans Apprenti);0;4684;4684;1;5
+Polytech Marseille - Génie Biomédical;1;3942;4124;7;7
+Polytech Marseille - Génie Civil;2;4166;4019;6;7
+Polytech Marseille - Génie Industriel et Informatique;2;4741;4437;9;12
+Polytech Marseille - Informatique;1;2634;2420;3;2
+Polytech Marseille - Matériaux;3;4786;4707;6;8
+Polytech Marseille - Mécanique, Energétique;8;4060;3919;17;18
+Polytech Marseille - Microélectronique,Télécommunications;2;4846;4514;5;7
+Polytech Montpellier - Génie biologique et agroalimentaire;0;4206;4137;6;5
+Polytech Montpellier - Informatique et Gestion;0;2049;2166;3;3
+Polytech Montpellier - Matériaux;3;3332;3207;8;7
+Polytech Montpellier - Mécanique et Interactions;1;2220;2220;2;2
+Polytech Montpellier - Microélectronique et Automatique;1;3597;3245;8;6
+Polytech Montpellier - Sciences et technologies de l'eau;3;4471;4314;8;9
+Polytech Nancy - Energie, Mécanique, Matériaux, Environnement;8;4570;4279;22;18
+Polytech Nancy - Informatique, Automatique, Robotique, Réseaux;0;4452;4361;8;10
+Polytech Nancy - Management opérationnel, Maintenance, Maîtrise des risques;2;4381;4195;6;5
+Polytech Nantes - Électronique et technologies numériques;0;5282;5003;8;8
+Polytech Nantes - Génie civil;4;3956;3871;6;12
+Polytech Nantes - Génie des Procédés et Bioprocédés;0;4871;4608;6;4
+Polytech Nantes - Génie électrique;4;5065;4950;8;6
+Polytech Nantes - Informatique;0;3555;3531;8;11
+Polytech Nantes - Matériaux;3;4343;4336;7;11
+Polytech Nantes - Thermique, Énergétique, Mécanique;4;4098;3878;15;9
+Polytech Nice-Sophia - Bâtiments;5;3780;3214;13;16
+Polytech Nice-Sophia - Électronique et Systèmes Embarqués;4;3648;3555;10;15
+Polytech Nice-Sophia - Génie de l'eau;5;4730;4527;8;10
+Polytech Nice-Sophia - Informatique;1;3066;2943;14;12
+Polytech Nice-Sophia - Mathématiques Appliquées et Modélisation sous statut étudiant (FISE);1;3745;3725;11;12
+Polytech Nice-Sophia – Maths Appliquées – Etudiant en 3A puis Apprenti en 4A et 5A (FISEA);1;2483;2483;2;2
+Polytech Nice-Sophia - Robotique – Systèmes Autonomes;3;3957;3684;10;11
+Polytech Orléans - Génie Civil et Environnement;3;5044;4914;11;7
+Polytech Orléans - Génie industriel;1;5129;4725;8;8
+Polytech Orléans - Génie physique et systèmes embarqués;3;5059;5021;6;7
+Polytech Orléans - Matériaux, Mécanique, Mécatronique;3;4273;4160;5;3
+Polytech Orléans - Technologies pour l'Énergie, l'Aérospatial et la Motorisation;5;2430;2402;14;15
+Polytech Paris-Saclay - Electronique et Informatique pour l'Embarqué;3;3421;3370;11;10
+Polytech Paris-Saclay - Informatique et ingénierie mathématique;0;1034;1034;2;2
+Polytech Paris-Saclay - Mécanique et Energie;2;1980;2270;3;2
+Polytech Paris-Saclay - Photonique et systèmes optroniques;3;4432;4081;10;8
+Polytech Sorbonne - Electronique et Informatique;1;2970;2941;3;3
+Polytech Sorbonne - Matériaux;2;3848;3811;7;6
+Polytech Sorbonne - Mathématiques Appliquées et Informatique;0;1227;1290;6;6
+Polytech Sorbonne - Robotique;0;2626;2558;3;3
+Polytech Sorbonne - Sciences de la Terre : Aménagement, Risques, géo-Energies;3;5028;4842;11;9
+Polytech Tours - Électronique et génie électrique;2;4384;4447;7;3
+Polytech Tours - Génie de l'aménagement et de l'environnement;2;5233;5013;3;6
+Polytech Tours - Informatique;1;4720;4403;9;7
+Polytech Tours - Mécanique, Conception de systèmes;5;3635;3488;8;7
+Sup Galilée Villetaneuse;4;5115;4747;14;20

@@ -1,0 +1,43 @@
+Banque ECOLE POLYTECHNIQUE - interENS;ECOLE POLYTECHNIQUE;299;40;29;23;;23;16;16
+Banque ECOLE POLYTECHNIQUE - interENS;ENS de Lyon - Math;191;59;22;4;;4;12;11
+Banque ECOLE POLYTECHNIQUE - interENS;ENS de Lyon - Info;268;86;66;13;;13;39;38
+Banque ECOLE POLYTECHNIQUE - interENS;ENS Paris-Saclay;461;114;88;12;;12;37;35
+Banque ECOLE POLYTECHNIQUE - interENS;ENS Rennes Info.;407;97;84;7;;7;75;72
+Banque ECOLE POLYTECHNIQUE - interENS;ENS Ulm;450;68;37;12;;12;11;10
+Banque CENTRALE-SUPELEC;EPF Saint Nazaire;83;62;25;0;;4;0;0
+Banque CENTRALE-SUPELEC;Centrale Casablanca;174;37;28;0;;2;0;0
+Banque CENTRALE-SUPELEC;Centrale Lille;8;;;;;10;136;126
+Banque CENTRALE-SUPELEC;Centrale Lille - IG2I Lens;0;;;;;5;0;0
+Banque CENTRALE-SUPELEC;Concours ECLille MPI;615;166;147;;8;15;;
+Banque CENTRALE-SUPELEC;Centrale Lyon;685;176;158;17;;15;129;127
+Banque CENTRALE-SUPELEC;Centrale Méditerranée;481;134;116;1;;10;108;108
+Banque CENTRALE-SUPELEC;Centrale Nantes;601;142;130;5;;5;111;110
+Banque CENTRALE-SUPELEC;CentraleSupélec - Ingénieur de spécialité Cybersécurité - campus de Rennes;3;;;;;3;122;109
+Banque CENTRALE-SUPELEC;CentraleSupélec - Ingénieur de spécialité Informatique - campus de Metz;3;;;;;3;108;111
+Banque CENTRALE-SUPELEC;CentraleSupélec - Ingénieur généraliste - statut étudiant – campus de Paris-Saclay;33;;;;;30;67;60
+Banque CENTRALE-SUPELEC;Concours CentraleSupélec MPI;690;147;131;;39;36;;
+Banque CENTRALE-SUPELEC;ECOLE NAVALE Brest;111;23;11;3;;3;4;4
+Banque CENTRALE-SUPELEC;ENSEA Cergy;330;249;177;11;;15;162;155
+Banque CENTRALE-SUPELEC;EPF Cachan;0;;;;;2;0;0
+Banque CENTRALE-SUPELEC;EPF Montpellier;1;;;;;2;25;25
+Banque CENTRALE-SUPELEC;EPF Troyes;0;;;;;6;0;0
+Banque CENTRALE-SUPELEC;Concours EPF Paris - Cachan - Troyes - Montpellier - Saint-Nazaire - MPI;83;62;25;;1;10;;
+Banque CENTRALE-SUPELEC;ESTP - campus de Cachan;1;;;;;5;40;40
+Banque CENTRALE-SUPELEC;ESTP - campus de Dijon;0;;;;;2;0;0
+Banque CENTRALE-SUPELEC;ESTP - campus de d'Orléans;0;;;;;2;0;0
+Banque CENTRALE-SUPELEC;ESTP - campus de Troyes;0;;;;;2;0;0
+Banque CENTRALE-SUPELEC;Concours ESTP MPI;75;67;60;;1;11;;
+Banque CENTRALE-SUPELEC;Institut d'optique Graduate School (SupOptique);277;108;87;4;;8;77;71
+Concours Commun MINES-PONTS;Chimie ParisTech;0;;;;;0;0;0
+Concours Commun MINES-PONTS;ENSAE Paris;11;;;;;10;186;162
+Concours Commun MINES-PONTS;ENSTA Paris;16;;;;;10;173;160
+Concours Commun MINES-PONTS;ENSTA Paris - apprentissage;1;;;;;1;193;193
+Concours Commun MINES-PONTS;IMT Atlantique;19;;;;;20;261;259
+Concours Commun MINES-PONTS;ISAE - SUPAERO Toulouse;9;;;;;10;90;103
+Concours Commun MINES-PONTS;MINES de NANCY;10;;;;;8;224;224
+Concours Commun MINES-PONTS;MINES SAINT-ETIENNE;19;;;;;20;320;298
+Concours Commun MINES-PONTS;MINES Paris;4;;;;;5;17;17
+Concours Commun MINES-PONTS;Ecole Nationale des Ponts et Chaussées;4;;;;;5;137;142
+Concours Commun MINES-PONTS;TELECOM Paris - Apprentissage;1;;;;;1;147;147
+Concours Commun MINES-PONTS;TELECOM Paris;47;;;;;38;108;108
+Concours Commun MINES-PONTS;Concours CCMP MPI;985;361;348;;141;128;;

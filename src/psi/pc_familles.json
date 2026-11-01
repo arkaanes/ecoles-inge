@@ -1,0 +1,1198 @@
+{
+ "x": {
+  "insc": [
+   "220 €",
+   "par école (X, ESPCI), gratuit si boursier"
+  ],
+  "inscCourt": "220 € par école",
+  "ecritsCourt": "Communs avec l'ESPCI et les ENS",
+  "poids": 66,
+  "poidsFait": "du classement final de l'X vient des oraux, sport non compris",
+  "poidsCourt": "66 %",
+  "style": {
+   "sujets": "En maths 2026, un problème en trois parties sur des modèles d'aimants (convexité, algèbre linéaire, probabilités) : peu de gros calculs, mais des justifications exigeantes, et beaucoup de questions traitées seulement en partie. Le jury demande de prendre le temps de bien rédiger plutôt que de picorer les questions faciles. En physique A, un sujet guidé et progressif : la plupart des candidats sont allés au bout, mais ont perdu des points sur des calculs de base et les unités.",
+   "sujetsSrc": [
+    {
+     "t": "Rapport du jury, maths PC 2026 (École polytechnique)",
+     "u": "https://www.polytechnique.edu/admission-cycle-ingenieur/sites/admission/files/content/PC_Maths%20OK.pdf"
+    },
+    {
+     "t": "Rapport du jury, physique A PC 2026 (École polytechnique)",
+     "u": "https://www.polytechnique.edu/admission-cycle-ingenieur/sites/admission/files/content/PC_Physique%20A%20OK.pdf"
+    }
+   ],
+   "oraux": "Les oraux comptent 92 points sur 140 : maths (20), physique (16), chimie (9), analyse de documents (15) et deux TP de 3 h et 3 h 30. Au TP de physique, la manipulation compte plus que les calculs, qui ne valent que 4 à 6 points sur 20.",
+   "orauxSrc": [
+    {
+     "t": "Notice du concours 2026 (École polytechnique)",
+     "u": "https://www.polytechnique.edu/admission-cycle-ingenieur/sites/admission/files/content/Notice%20du%20concours%202026%20publi%C3%A9e.pdf"
+    },
+    {
+     "t": "Rapport de l'oral de TP de physique PC 2025 (École polytechnique)",
+     "u": "https://www.polytechnique.edu/admission-cycle-ingenieur/sites/admission/files/content/Oral_PC_TP%20Physique%20OK.pdf"
+    }
+   ],
+   "pourqui": "pour les très bons profils en physique et en maths, rigoureux sur les calculs de base et à l'aise en TP.",
+   "mots": "Deux TP, oraux décisifs"
+  },
+  "blocs": [
+   {
+    "titre": "École polytechnique",
+    "ecrits": {
+     "quand": "13-17 avril 2026",
+     "l": [
+      [
+       "Mathématiques",
+       "4 h",
+       "9"
+      ],
+      [
+       "Physique A",
+       "4 h",
+       "6"
+      ],
+      [
+       "Physique B",
+       "4 h",
+       "6"
+      ],
+      [
+       "Chimie",
+       "4 h",
+       "6"
+      ],
+      [
+       "Français",
+       "4 h",
+       "6"
+      ],
+      [
+       "Langue vivante",
+       "4 h",
+       "6"
+      ],
+      [
+       "Informatique B",
+       "2 h",
+       "4",
+       "compte seulement pour l'admission"
+      ]
+     ],
+     "note": "Mêmes copies pour l'X et l'ESPCI, avec des coefficients différents."
+    },
+    "adm": {
+     "quand": "le 27 mai en 2026",
+     "txt": "La barre est fixée par le jury sur le total des écrits."
+    },
+    "oraux": {
+     "quand": "15 juin - 12 juillet 2026",
+     "l": [
+      [
+       "Mathématiques",
+       "50 min",
+       "20"
+      ],
+      [
+       "Physique",
+       "50 min",
+       "16"
+      ],
+      [
+       "Chimie",
+       "50 min",
+       "9"
+      ],
+      [
+       "Analyse de documents scientifiques",
+       "40 min",
+       "15",
+       "après 2 h de préparation"
+      ],
+      [
+       "TP de physique",
+       "3 h",
+       "8"
+      ],
+      [
+       "TP de chimie",
+       "3 h 30",
+       "8"
+      ],
+      [
+       "Français",
+       "30 min",
+       "8",
+       "après 45 min de préparation"
+      ],
+      [
+       "Langue vivante",
+       "20 min",
+       "8",
+       "après 30 min de préparation"
+      ],
+      [
+       "Sport : 100 m, 1 000 m et 50 m nage libre",
+       "",
+       "5"
+      ]
+     ],
+     "note": "Pas de TIPE à l'X."
+    },
+    "classement": "Écrits (39 + 4 d'informatique B) + oraux (92) + sport (5) : 140 de coefficients.",
+    "notice": {
+     "t": "Notice du concours 2026 (École polytechnique)",
+     "u": "https://www.polytechnique.edu/admission-cycle-ingenieur/sites/admission/files/content/Notice%20du%20concours%202026%20publi%C3%A9e.pdf"
+    },
+    "src": [
+     {
+      "t": "Calendrier des concours 2026 (Hadamard)",
+      "u": "https://www.hadamard.fr/actualites/calendrier-concours-prepa-2026-x-mines-centrale-ccinp"
+     }
+    ]
+   },
+   {
+    "titre": "ESPCI (même concours, autres coefficients)",
+    "ecrits": {
+     "quand": "13-17 avril 2026",
+     "l": [
+      [
+       "Mathématiques",
+       "4 h",
+       "9"
+      ],
+      [
+       "Physique A",
+       "4 h",
+       "5"
+      ],
+      [
+       "Physique B",
+       "4 h",
+       "5"
+      ],
+      [
+       "Chimie",
+       "4 h",
+       "9"
+      ],
+      [
+       "Français",
+       "4 h",
+       "5"
+      ],
+      [
+       "Langue vivante",
+       "4 h",
+       "4"
+      ],
+      [
+       "Informatique B",
+       "2 h",
+       "4",
+       "compte seulement pour l'admission"
+      ]
+     ]
+    },
+    "oraux": {
+     "quand": "",
+     "l": [
+      [
+       "Mathématiques",
+       "",
+       "14"
+      ],
+      [
+       "Physique",
+       "",
+       "14"
+      ],
+      [
+       "Chimie",
+       "",
+       "14"
+      ],
+      [
+       "Analyse de documents scientifiques",
+       "",
+       "15"
+      ],
+      [
+       "TP de physique",
+       "",
+       "12"
+      ],
+      [
+       "TP de chimie",
+       "",
+       "12"
+      ],
+      [
+       "Français",
+       "",
+       "6"
+      ],
+      [
+       "Langue vivante",
+       "",
+       "7"
+      ]
+     ],
+     "note": "Admissible à l'ESPCI seule : pas d'épreuves de sport."
+    },
+    "classement": "Écrits (37 + 4) + oraux (94) : 135 de coefficients, dont près de 70 % pour les oraux.",
+    "notice": {
+     "t": "Notice X-ESPCI 2026",
+     "u": "https://www.polytechnique.edu/admission-cycle-ingenieur/sites/admission/files/content/Notice%202026%20ESPCI_Fili%C3%A8res%20PC%20et%20MP.pdf"
+    },
+    "src": [
+     {
+      "t": "Notice inter-ENS 2026 (banque PC, p. 16)",
+      "u": "https://ens-paris-saclay.fr/sites/default/files/CONCOURS/CONCOURS_2026/notice_interens_2026_mise_en_ligne_vf260212.pdf"
+     }
+    ]
+   }
+  ]
+ },
+ "ens": {
+  "insc": [
+   "0 €",
+   "d'inscription"
+  ],
+  "inscCourt": "Gratuit",
+  "ecritsCourt": "Communs avec l'X et l'ESPCI",
+  "poids": 76,
+  "poidsFait": "du classement vient des oraux à Ulm, option physique",
+  "poidsCourt": "76 % à Ulm (option physique)",
+  "style": {
+   "sujets": "Des épreuves longues propres aux ENS : à Ulm, une composition de 6 h de physique (option physique) ou de chimie (option chimie) ; à Lyon et Paris-Saclay, une épreuve de physique-chimie de 5 h. Les autres écrits viennent de la banque commune avec l'X.",
+   "sujetsSrc": [
+    {
+     "t": "Notice inter-ENS 2026 (banque PC, p. 16)",
+     "u": "https://ens-paris-saclay.fr/sites/default/files/CONCOURS/CONCOURS_2026/notice_interens_2026_mise_en_ligne_vf260212.pdf"
+    }
+   ],
+   "oraux": "À Ulm, option physique, les oraux font 76 % du total : physique 26, chimie 20, maths 20, TP de physique 12, TIPE 8. En option chimie, la chimie passe à 28, la physique à 22, et le TP est un TP de chimie.",
+   "orauxSrc": [
+    {
+     "t": "Notice inter-ENS 2026 (banque PC, p. 16)",
+     "u": "https://ens-paris-saclay.fr/sites/default/files/CONCOURS/CONCOURS_2026/notice_interens_2026_mise_en_ligne_vf260212.pdf"
+    }
+   ],
+   "pourqui": "pour les passionnés de physique ou de chimie attirés par la recherche, prêts à creuser une question longtemps.",
+   "mots": "Recherche, oraux décisifs"
+  },
+  "blocs": [
+   {
+    "titre": "Exemple : ENS Ulm, option physique",
+    "ecrits": {
+     "quand": "13-17 avril 2026",
+     "l": [
+      [
+       "Mathématiques",
+       "4 h",
+       "5"
+      ],
+      [
+       "Chimie A",
+       "4 h",
+       "5"
+      ],
+      [
+       "Physique C",
+       "6 h",
+       "7"
+      ],
+      [
+       "Français",
+       "4 h",
+       "8",
+       "compte pour l'admission"
+      ],
+      [
+       "Langue vivante",
+       "4 h",
+       "3",
+       "compte pour l'admission"
+      ]
+     ],
+     "note": "Option chimie : physique B (4 h, ×5) et chimie B (6 h, ×8) à la place de chimie A et physique C. Lyon et Paris-Saclay prennent maths, chimie A, physique B, une physique-chimie de 5 h et l'informatique B, avec leurs propres coefficients."
+    },
+    "adm": {
+     "quand": "le 27 mai en 2026",
+     "txt": "Chaque ENS fixe sa barre."
+    },
+    "oraux": {
+     "quand": "15 juin - 11 juillet 2026",
+     "l": [
+      [
+       "Physique",
+       "",
+       "26"
+      ],
+      [
+       "Chimie",
+       "",
+       "20"
+      ],
+      [
+       "Mathématiques",
+       "",
+       "20"
+      ],
+      [
+       "TP de physique",
+       "",
+       "12"
+      ],
+      [
+       "TIPE",
+       "",
+       "8",
+       "analyse de documents et présentation du travail de l'année"
+      ],
+      [
+       "Langue vivante",
+       "",
+       "3"
+      ]
+     ]
+    },
+    "classement": "Écrits (17 + 11 pour l'admission) + oraux (89) : 117 de coefficients. Chaque ENS, et chaque option, a sa propre liste.",
+    "notice": {
+     "t": "Notice inter-ENS 2026 (banque PC, p. 16)",
+     "u": "https://ens-paris-saclay.fr/sites/default/files/CONCOURS/CONCOURS_2026/notice_interens_2026_mise_en_ligne_vf260212.pdf"
+    },
+    "src": [
+     {
+      "t": "Calendrier des concours 2026 (Hadamard)",
+      "u": "https://www.hadamard.fr/actualites/calendrier-concours-prepa-2026-x-mines-centrale-ccinp"
+     }
+    ]
+   }
+  ]
+ },
+ "mp": {
+  "insc": [
+   "360 €",
+   "d'inscription, gratuit si boursier"
+  ],
+  "inscCourt": "360 €",
+  "ecritsCourt": "Communs avec Mines-Télécom",
+  "poids": 58,
+  "poidsFait": "du classement final vient des oraux",
+  "poidsCourt": "58 %",
+  "style": {
+   "sujets": "Des sujets qui balaient le programme : en 2025, le problème de chimie PC (synthèse organique, puis séparation par pervaporation) touchait de très nombreux chapitres, sans calculatrice, et le jury conseille de ne faire aucune impasse. En maths, la difficulté était progressive ; le jury demande d'« éviter toute tentative de bluff » et refuse les applications numériques laissées en fractions.",
+   "sujetsSrc": [
+    {
+     "t": "Rapport du jury sur les écrits 2025 (Mines-Ponts)",
+     "u": "https://concoursminesponts.fr/wp-content/uploads/2025/10/Rapport-Ecrit-2025-VF.pdf"
+    }
+   ],
+   "oraux": "Coefficient 41 à l'oral contre 30 à l'écrit. Les oraux de maths (8) et de physique (10) durent environ 1 h 15 chacun ; s'y ajoute un TP de 3 h 30, de physique ou de chimie, tiré au sort (6).",
+   "orauxSrc": [
+    {
+     "t": "Règlement 2026 du concours Mines-Ponts",
+     "u": "https://concoursminesponts.fr/wp-content/uploads/2025/12/reglement-2026-09.12.25.pdf"
+    }
+   ],
+   "pourqui": "pour les profils solides en physique et en chimie, endurants sur des sujets longs et à l'aise au tableau.",
+   "mots": "Programme large, TP tiré au sort"
+  },
+  "blocs": [
+   {
+    "ecrits": {
+     "quand": "27-30 avril 2026",
+     "l": [
+      [
+       "Mathématiques I",
+       "3 h",
+       "4"
+      ],
+      [
+       "Mathématiques II",
+       "3 h",
+       "3"
+      ],
+      [
+       "Physique I",
+       "3 h",
+       "4"
+      ],
+      [
+       "Physique II",
+       "4 h",
+       "5"
+      ],
+      [
+       "Chimie",
+       "4 h",
+       "4"
+      ],
+      [
+       "Informatique (commune)",
+       "2 h",
+       "2"
+      ],
+      [
+       "Français",
+       "3 h",
+       "5"
+      ],
+      [
+       "Langue vivante",
+       "1 h 30",
+       "3"
+      ]
+     ]
+    },
+    "adm": {
+     "quand": "le 3 juin en 2026",
+     "txt": "Il faut atteindre deux minimums fixés par le jury : sur le total des écrits, et sur les quatre épreuves de maths et de physique. Moins de 3/20 en français : pas admissible."
+    },
+    "oraux": {
+     "quand": "22 juin - 17 juillet 2026",
+     "l": [
+      [
+       "Mathématiques",
+       "≈ 1 h 15",
+       "8",
+       "dont 15 min de préparation"
+      ],
+      [
+       "Physique",
+       "≈ 1 h 15",
+       "10",
+       "dont 15 min de préparation"
+      ],
+      [
+       "TP de physique ou de chimie",
+       "≈ 3 h 30",
+       "6",
+       "tiré au sort, avec un compte rendu"
+      ],
+      [
+       "TIPE",
+       "30 min",
+       "6"
+      ],
+      [
+       "Français",
+       "30 min",
+       "6",
+       "après 30 min de préparation"
+      ],
+      [
+       "Anglais",
+       "20 min",
+       "5",
+       "après 20 min de préparation"
+      ]
+     ],
+     "note": "Admissible aussi à Mines-Télécom ? Tu ne passes que les oraux Mines-Ponts, et Mines-Télécom reprend tes notes."
+    },
+    "classement": "Écrits (30) + oraux (41) : 71 de coefficients.",
+    "notice": {
+     "t": "Règlement 2026 du concours Mines-Ponts",
+     "u": "https://concoursminesponts.fr/wp-content/uploads/2025/12/reglement-2026-09.12.25.pdf"
+    }
+   }
+  ]
+ },
+ "mt": {
+  "insc": [
+   "325 €",
+   "d'inscription, gratuit si boursier"
+  ],
+  "inscCourt": "325 €",
+  "ecritsCourt": "Ceux de Mines-Ponts",
+  "poids": 50,
+  "poidsFait": "du classement final vient des oraux",
+  "poidsCourt": "50 %",
+  "style": {
+   "sujets": "Les mêmes sujets que Mines-Ponts, mais une barre d'admissibilité plus basse.",
+   "sujetsSrc": [
+    {
+     "t": "Rapport du jury sur les écrits 2025 (Mines-Ponts)",
+     "u": "https://concoursminesponts.fr/wp-content/uploads/2025/10/Rapport-Ecrit-2025-VF.pdf"
+    }
+   ],
+   "oraux": "Quatre oraux courts en une journée : maths et physique de 30 minutes sans préparation, anglais, et un entretien de 25 minutes. Moins de 4/20 en anglais ou à l'entretien est éliminatoire.",
+   "orauxSrc": [
+    {
+     "t": "Notice Mines-Télécom 2026",
+     "u": "https://cahier-de-prepa.fr/pc-descartes/download?id=260"
+    }
+   ],
+   "pourqui": "une suite naturelle si tu passes Mines-Ponts : aucun écrit en plus.",
+   "mots": "Écrits des Mines, oraux courts"
+  },
+  "blocs": [
+   {
+    "ecrits": {
+     "quand": "27-30 avril 2026",
+     "l": [
+      [
+       "Mathématiques I",
+       "3 h",
+       "4"
+      ],
+      [
+       "Mathématiques II",
+       "3 h",
+       "3"
+      ],
+      [
+       "Physique I",
+       "3 h",
+       "4"
+      ],
+      [
+       "Physique II",
+       "4 h",
+       "5"
+      ],
+      [
+       "Chimie",
+       "4 h",
+       "4"
+      ],
+      [
+       "Informatique (commune)",
+       "2 h",
+       "2"
+      ],
+      [
+       "Français",
+       "3 h",
+       "5"
+      ],
+      [
+       "Langue vivante",
+       "1 h 30",
+       "3"
+      ]
+     ],
+     "note": "Les mêmes copies que Mines-Ponts, avec les mêmes coefficients."
+    },
+    "adm": {
+     "quand": "le 4 juin en 2026",
+     "txt": "Une barre plus basse que celle de Mines-Ponts."
+    },
+    "oraux": {
+     "quand": "23 juin - 10 juillet 2026",
+     "l": [
+      [
+       "Mathématiques",
+       "30 min",
+       "8",
+       "sans préparation"
+      ],
+      [
+       "Physique",
+       "30 min",
+       "8",
+       "sans préparation"
+      ],
+      [
+       "Anglais",
+       "20 min",
+       "7"
+      ],
+      [
+       "Entretien",
+       "25 min",
+       "7"
+      ]
+     ],
+     "note": "Pas de TIPE. Admissible aussi à Mines-Ponts : tu passes seulement les oraux Mines-Ponts, et tes notes sont reprises."
+    },
+    "classement": "Écrits (30) + oraux (30).",
+    "notice": {
+     "t": "Notice Mines-Télécom 2026",
+     "u": "https://cahier-de-prepa.fr/pc-descartes/download?id=260"
+    },
+    "src": [
+     {
+      "t": "Les épreuves orales (site du concours Mines-Télécom)",
+      "u": "https://www.concours-mines-telecom.fr/le-concours-mines-telecom/les-epreuves-orales/"
+     }
+    ]
+   }
+  ]
+ },
+ "cs": {
+  "insc": [
+   "0 à 140 €",
+   "par école cochée, gratuit si boursier (15 € pour EPF et ESTP)"
+  ],
+  "inscCourt": "0 à 140 € par école",
+  "ecritsCourt": "Propres au concours",
+  "poids": 50,
+  "poidsFait": "du classement final vient des oraux",
+  "poidsCourt": "50 %",
+  "style": {
+   "sujets": "Des sujets qui demandent de l'autonomie : en 2025, le jury décrit l'épreuve de physique 1 (ondes et vitesses, 35 questions) comme ayant « peu de questions de cours ou d’applications directes », avec six questions ouvertes ; peu de candidats l'ont abordée en entier. En chimie (synthèse d'un médicament, cinétique avec Python), les meilleurs ont traité environ 90 % du sujet.",
+   "sujetsSrc": [
+    {
+     "t": "Rapport du jury PC 2025 (Centrale-Supélec)",
+     "u": "https://www.concours-centrale-supelec.fr/sites/default/files/documents/Rapports_Jury_2025_PC_1.pdf"
+    }
+   ],
+   "oraux": "Moitié écrit, moitié oral. Trois oraux se passent avec Python (maths, physique et chimie), et le TP de physique ou de chimie dure 3 heures (coefficient 16).",
+   "orauxSrc": [
+    {
+     "t": "Épreuves orales (site du concours Centrale-Supélec)",
+     "u": "https://www.concours-centrale-supelec.fr/epreuves-orales"
+    }
+   ],
+   "pourqui": "pour les candidats autonomes face aux questions ouvertes, à l'aise avec Python et en travaux pratiques.",
+   "mots": "Questions ouvertes, Python et TP"
+  },
+  "blocs": [
+   {
+    "ecrits": {
+     "quand": "4-7 mai 2026",
+     "l": [
+      [
+       "Mathématiques 1",
+       "4 h",
+       "15"
+      ],
+      [
+       "Rédaction (français)",
+       "4 h",
+       "17"
+      ],
+      [
+       "Physique 1",
+       "4 h",
+       "14"
+      ],
+      [
+       "Chimie",
+       "4 h",
+       "14"
+      ],
+      [
+       "Physique 2",
+       "4 h",
+       "14"
+      ],
+      [
+       "Langue vivante",
+       "4 h",
+       "11"
+      ],
+      [
+       "Mathématiques 2",
+       "4 h",
+       "15"
+      ]
+     ]
+    },
+    "adm": {
+     "quand": "début juin en 2026",
+     "txt": "Les « grands admissibles », très bien classés à l'écrit, sont dispensés d'oraux."
+    },
+    "oraux": {
+     "quand": "22 juin - 19 juillet 2026",
+     "l": [
+      [
+       "Mathématiques",
+       "30 min",
+       "12"
+      ],
+      [
+       "Mathématiques et informatique (Python)",
+       "30 min",
+       "12",
+       "après 30 min de préparation"
+      ],
+      [
+       "Physique",
+       "30 min",
+       "12"
+      ],
+      [
+       "Physique et informatique",
+       "30 min",
+       "12",
+       "après 30 min de préparation"
+      ],
+      [
+       "Chimie et informatique",
+       "30 min",
+       "12",
+       "après 30 min de préparation"
+      ],
+      [
+       "TP de physique ou de chimie",
+       "3 h",
+       "16"
+      ],
+      [
+       "TIPE",
+       "30 min",
+       "11"
+      ],
+      [
+       "Langue vivante",
+       "20 min",
+       "13",
+       "après 20 min de préparation"
+      ]
+     ],
+     "note": "Coefficients des écoles Centrale, de SupOptique et d'AgroParisTech. Arts et Métiers et les autres écoles du concours ont leurs propres oraux."
+    },
+    "classement": "Écrits (100) + oraux (100). Chaque école fait son propre classement.",
+    "notice": {
+     "t": "Notice Centrale-Supélec 2026, filière PC",
+     "u": "https://www.concours-centrale-supelec.fr/sites/default/files/documents/CCS_2026_PC.pdf"
+    },
+    "src": [
+     {
+      "t": "Épreuves écrites (site du concours Centrale-Supélec)",
+      "u": "https://www.concours-centrale-supelec.fr/epreuves-ecrites"
+     },
+     {
+      "t": "Épreuves orales (site du concours Centrale-Supélec)",
+      "u": "https://www.concours-centrale-supelec.fr/epreuves-orales"
+     }
+    ]
+   }
+  ]
+ },
+ "inp": {
+  "insc": [
+   "240 €",
+   "de dossier, gratuit si boursier ; + 0 à 105 € pour l'INSA ou la banque"
+  ],
+  "inscCourt": "240 € + 0 à 105 €",
+  "ecritsCourt": "Propres au concours",
+  "poids": 41,
+  "poidsFait": "du classement final vient des oraux",
+  "poidsCourt": "41 %",
+  "style": {
+   "sujets": "Des sujets faits pour être traités en entier : en maths PC 2025, trois exercices indépendants, et le jury explique que « Le sujet était d’une longueur raisonnable » pour qu'on puisse tout aborder. En physique, un problème en trois parties indépendantes, avec des résultats intermédiaires donnés pour ne pas rester bloqué ; le jury sanctionne les raisonnements qui forcent le résultat.",
+   "sujetsSrc": [
+    {
+     "t": "Rapport du jury, maths PC 2025 (CCINP)",
+     "u": "https://www.concours-commun-inp.fr/_resource/annales%20%C3%A9crits/2025/PC/CCINP_PC_RAPPORT_MATHEMATIQUES_2025.pdf?download=true"
+    },
+    {
+     "t": "Rapport du jury, physique PC 2025 (CCINP)",
+     "u": "https://www.concours-commun-inp.fr/_resource/annales%20%C3%A9crits/2025/PC/CCINP_PC_RAPPORT_PHYSIQUE_2025.pdf?download=true"
+    }
+   ],
+   "oraux": "Les oraux comptent 40 sur 98 : maths (8), un oral de physique ou de chimie (9) et un TP de 3 h dans l'autre matière (9), tirés au sort. Grand admissible, tu en es dispensé.",
+   "orauxSrc": [
+    {
+     "t": "Règlement 2026 du CCINP",
+     "u": "https://www.concours-commun-inp.fr/_resource/R%C3%A8glement_VF_23-06.pdf?download=true"
+    }
+   ],
+   "pourqui": "pour les candidats réguliers et rigoureux, qui connaissent bien leur cours ; vise la liste PC-Chimie si la chimie est ton point fort.",
+   "mots": "Proche du cours, deux listes"
+  },
+  "blocs": [
+   {
+    "ecrits": {
+     "quand": "20-23 avril 2026",
+     "l": [
+      [
+       "Mathématiques",
+       "4 h",
+       "12"
+      ],
+      [
+       "Physique",
+       "4 h",
+       "13 / 7",
+       "PC-Physique / PC-Chimie"
+      ],
+      [
+       "Chimie",
+       "4 h",
+       "7 / 13",
+       "PC-Physique / PC-Chimie"
+      ],
+      [
+       "Modélisation de systèmes physiques ou chimiques",
+       "4 h",
+       "7"
+      ],
+      [
+       "Français-philosophie",
+       "4 h",
+       "9"
+      ],
+      [
+       "Informatique",
+       "3 h",
+       "6"
+      ],
+      [
+       "Langue vivante A",
+       "3 h",
+       "4"
+      ],
+      [
+       "Langue vivante B (facultative)",
+       "1 h",
+       "2",
+       "seuls les points au-dessus de 10 comptent"
+      ]
+     ],
+     "note": "Mêmes copies pour les deux concours : seuls les coefficients de physique et de chimie changent."
+    },
+    "adm": {
+     "quand": "le 3 juin en 2026",
+     "txt": "La barre est fixée par le jury, pour chacune des deux listes. Les « grands admissibles » sont dispensés d'oraux, pour les écoles du concours commun seulement."
+    },
+    "oraux": {
+     "quand": "22 juin - 18 juillet 2026",
+     "l": [
+      [
+       "Mathématiques",
+       "30 min",
+       "8",
+       "après 30 min de préparation"
+      ],
+      [
+       "Physique ou chimie",
+       "30 min",
+       "9",
+       "tirée au sort, après 30 min de préparation"
+      ],
+      [
+       "TP de chimie ou de physique",
+       "≈ 3 h",
+       "9",
+       "dans l'autre matière que l'oral"
+      ],
+      [
+       "Langue vivante A",
+       "30 min",
+       "6",
+       "après 30 min de préparation"
+      ],
+      [
+       "TIPE",
+       "30 min",
+       "8"
+      ]
+     ],
+     "note": "Groupe INSA : dossier, écrits du CCINP et entretien. Écoles de la banque : écrits du CCINP, puis leurs propres oraux."
+    },
+    "classement": "Écrits (58, sans la langue B) + oraux (40) : 98 de coefficients, pour chacune des deux listes.",
+    "notice": {
+     "t": "Règlement 2026 du CCINP",
+     "u": "https://www.concours-commun-inp.fr/_resource/R%C3%A8glement_VF_23-06.pdf?download=true"
+    },
+    "src": [
+     {
+      "t": "Places PC 2026 (site du CCINP)",
+      "u": "https://www.concours-commun-inp.fr/fr/les-ecoles/les-places-dans-les-ecoles/places-pc.html"
+     }
+    ]
+   }
+  ]
+ },
+ "poly": {
+  "insc": [
+   "370 €",
+   "dossier CCINP compris, gratuit si boursier"
+  ],
+  "inscCourt": "370 €",
+  "ecritsCourt": "Maths et physique-chimie propres, le reste avec le CCINP",
+  "poids": 20,
+  "poidsFait": "du classement final vient du TIPE, le seul oral",
+  "poidsCourt": "20 % (TIPE seul)",
+  "style": {
+   "sujets": "Maths et physique-chimie sont des sujets propres à e3a-Polytech. En 2025, l'épreuve de physique-chimie PC mêlait une partie de physique guidée par des résultats intermédiaires et deux problèmes de chimie ; le jury relève des résultats plus faibles en physique et conseille de ne pas s'acharner sur une question.",
+   "sujetsSrc": [
+    {
+     "t": "Notice 2026 de la banque e3a-Polytech",
+     "u": "https://esigelec.fr/sites/default/files/2025-12/VF-Notice-2026-Banque-e3a-Polytech.pdf"
+    },
+    {
+     "t": "Rapport du jury, physique-chimie PC 2025 (e3a-Polytech)",
+     "u": "https://www.doc-solus.fr/prepa/sci/adc/pdf/rapports.pdf/2025/PC_PHYSIQUE_E3A_1_2025.rapport.pdf"
+    }
+   ],
+   "oraux": "Un seul oral, le TIPE, qui compte 8 sur 40. Pas d'entretien de motivation.",
+   "orauxSrc": [
+    {
+     "t": "Notice 2026 de la banque e3a-Polytech",
+     "u": "https://esigelec.fr/sites/default/files/2025-12/VF-Notice-2026-Banque-e3a-Polytech.pdf"
+    }
+   ],
+   "pourqui": "pour les candidats réguliers, solides en physique-chimie, qui veulent un concours où l'écrit pèse presque tout.",
+   "mots": "Physique-chimie, peu d'oral"
+  },
+  "blocs": [
+   {
+    "ecrits": {
+     "quand": "21-24 avril 2026",
+     "l": [
+      [
+       "Mathématiques (e3a-Polytech)",
+       "4 h",
+       "7"
+      ],
+      [
+       "Physique-chimie (e3a-Polytech)",
+       "4 h",
+       "9"
+      ],
+      [
+       "Français-philosophie",
+       "4 h",
+       "5",
+       "même copie que le CCINP"
+      ],
+      [
+       "Langue vivante A",
+       "3 h",
+       "5",
+       "même copie que le CCINP"
+      ],
+      [
+       "Modélisation de systèmes physiques ou chimiques",
+       "4 h",
+       "3",
+       "même copie que le CCINP"
+      ],
+      [
+       "Informatique",
+       "3 h",
+       "3",
+       "même copie que le CCINP"
+      ],
+      [
+       "Langue vivante B (facultative)",
+       "1 h",
+       "2",
+       "seuls les points au-dessus de 10 comptent"
+      ]
+     ]
+    },
+    "adm": {
+     "quand": "le 3 juin en 2026",
+     "txt": "La barre est fixée par le jury. Les « grands admissibles » sont dispensés du TIPE."
+    },
+    "oraux": {
+     "quand": "22 juin - 18 juillet 2026",
+     "l": [
+      [
+       "TIPE",
+       "30 min",
+       "8"
+      ]
+     ]
+    },
+    "classement": "Écrits (32, sans la langue B) + TIPE (8). Les PC sont ensuite classés avec les MP et les PSI sur une liste commune.",
+    "notice": {
+     "t": "Notice 2026 de la banque e3a-Polytech",
+     "u": "https://esigelec.fr/sites/default/files/2025-12/VF-Notice-2026-Banque-e3a-Polytech.pdf"
+    }
+   }
+  ]
+ },
+ "e3a": {
+  "insc": [
+   "240 €",
+   "de dossier CCINP, gratuit si boursier ; + 0 à 65 € selon le concours"
+  ],
+  "inscCourt": "240 € + 0 à 65 €",
+  "ecritsCourt": "Ceux de Polytech",
+  "poids": null,
+  "poidsFait": "",
+  "poidsCourt": "Selon l'école",
+  "style": {
+   "sujets": "Les mêmes sujets que Polytech : maths et physique-chimie propres à e3a-Polytech, le reste en commun avec le CCINP.",
+   "sujetsSrc": [
+    {
+     "t": "Notice 2026 de la banque e3a-Polytech",
+     "u": "https://esigelec.fr/sites/default/files/2025-12/VF-Notice-2026-Banque-e3a-Polytech.pdf"
+    }
+   ],
+   "oraux": "Surtout des entretiens, propres à chaque école.",
+   "orauxSrc": [
+    {
+     "t": "Notice 2026 de la banque e3a-Polytech",
+     "u": "https://esigelec.fr/sites/default/files/2025-12/VF-Notice-2026-Banque-e3a-Polytech.pdf"
+    }
+   ],
+   "pourqui": "pour viser des écoles souvent privées ou spécialisées, où ton projet compte à l'entretien.",
+   "mots": "Écrits de Polytech, entretiens"
+  },
+  "blocs": [
+   {
+    "ecrits": {
+     "quand": "21-24 avril 2026",
+     "l": [
+      [
+       "Mathématiques (e3a-Polytech)",
+       "4 h",
+       ""
+      ],
+      [
+       "Physique-chimie (e3a-Polytech)",
+       "4 h",
+       ""
+      ],
+      [
+       "Français-philosophie",
+       "4 h",
+       ""
+      ],
+      [
+       "Langue vivante A",
+       "3 h",
+       ""
+      ],
+      [
+       "Modélisation de systèmes physiques ou chimiques",
+       "4 h",
+       ""
+      ],
+      [
+       "Informatique",
+       "3 h",
+       ""
+      ],
+      [
+       "Langue vivante B (facultative)",
+       "1 h",
+       ""
+      ]
+     ],
+     "note": "Coefficients en maths, physique-chimie, modélisation, informatique, français et langue A : Avenir Prépas 5, 5, 4, 2, 3, 3 ; Ingéni'Up 5, 5, 2, 2, 3, 2. Chaque école indépendante a les siens."
+    },
+    "adm": {
+     "quand": "le 3 juin en 2026",
+     "txt": "Avenir Prépas, Ingéni'Up et chaque école indépendante ont leur propre jury."
+    },
+    "oraux": {
+     "quand": "mi-juin - mi-juillet 2026",
+     "l": [],
+     "note": "Avenir Prépas : un entretien dans les écoles (coefficient 10 en PC). Ingéni'Up : un entretien (coefficient 7). Écoles indépendantes : un oral ou un entretien, de coefficient 10 à 28 selon l'école ; l'EIDD n'en a pas."
+    },
+    "notice": {
+     "t": "Notice 2026 de la banque e3a-Polytech",
+     "u": "https://esigelec.fr/sites/default/files/2025-12/VF-Notice-2026-Banque-e3a-Polytech.pdf"
+    }
+   }
+  ]
+ },
+ "autres": {
+  "insc": [
+   "100 €",
+   "EPITA ou CESI ; UT : non trouvé"
+  ],
+  "inscCourt": "100 € ; UT : non trouvé",
+  "ecritsCourt": "Propres à chaque concours",
+  "poids": null,
+  "poidsFait": "",
+  "poidsCourt": "Selon le concours",
+  "style": {
+   "mots": "Épreuves propres"
+  },
+  "blocs": [
+   {
+    "titre": "Concours EPITA-IPSA-ESME",
+    "ecrits": {
+     "quand": "avril 2026",
+     "l": [
+      [
+       "Mathématiques",
+       "3 h",
+       "6"
+      ],
+      [
+       "Anglais",
+       "2 h 30",
+       "3"
+      ],
+      [
+       "Option au choix",
+       "2 h",
+       "5"
+      ]
+     ]
+    },
+    "oraux": {
+     "quand": "4-14 juin 2026",
+     "l": [
+      [
+       "Entretien, en français et en anglais",
+       "30 min",
+       "7"
+      ],
+      [
+       "Oral d'innovation, en groupe",
+       "3 h 30",
+       "6"
+      ]
+     ]
+    },
+    "notice": {
+     "t": "Concours EPITA-IPSA-ESME 2026 (L'Étudiant)",
+     "u": "https://www.letudiant.fr/etudes/ecole-ingenieur/ecoles-d-ingenieurs-post-prepa-le-concours-cpge-epita-ipsa-esme.html"
+    }
+   },
+   {
+    "titre": "Concours CESI",
+    "ecrits": {
+     "quand": "8-9 avril 2026",
+     "l": [
+      [
+       "Mathématiques",
+       "",
+       ""
+      ],
+      [
+       "Physique",
+       "",
+       ""
+      ],
+      [
+       "Anglais",
+       "",
+       ""
+      ],
+      [
+       "Français",
+       "",
+       ""
+      ]
+     ]
+    },
+    "oraux": {
+     "quand": "",
+     "l": [
+      [
+       "Entretien",
+       "",
+       ""
+      ]
+     ]
+    },
+    "notice": {
+     "t": "Concours CESI CPGE",
+     "u": "https://www.cesi.fr/concours-cesi-cpge/"
+    }
+   },
+   {
+    "titre": "Groupe UT (UTC, UTT, UTBM)",
+    "txt": "Sur dossier, puis entretien, en dehors du SCEI : calendrier et démarches à part.",
+    "notice": {
+     "t": "UTC, voies d'admission 2026 (Onisep)",
+     "u": "https://www.onisep.fr/ressources/structures-enseignement/hauts-de-france/oise/universite-de-technologie-de-compiegne/diplome-d-ingenieur-de-l-universite-de-technologie-de-compiegne-specialite-informatique"
+    }
+   }
+  ]
+ }
+}

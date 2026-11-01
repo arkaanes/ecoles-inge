@@ -1,0 +1,65 @@
+Concours Mines - Télécom;ISAE-Supméca Paris;1083;750;706;1;;1;428;428
+Concours Mines - Télécom;ENSG-Géomatique Marne la Vallée;1083;750;706;1;;4;553;553
+Concours Mines - Télécom;ENSG-Géomatique Marne la Vallée Fonctionnaire;1032;723;681;1;;1;658;658
+Concours Mines - Télécom;ECOLE METEOROLOGIE (fonctionnaire);1032;723;681;2;;2;651;651
+Concours Mines - Télécom;ENSIIE Evry;1083;750;706;21;;14;413;404
+Concours Mines - Télécom;ENSSAT Lannion;1083;750;706;15;;16;682;623
+Concours Mines - Télécom;ENSTA Bretagne (filière sous statut étudiant);1083;750;706;4;;3;148;172
+Concours Mines - Télécom;ENSTA Bretagne (filière sous statut IETA - Direction Générale de l'Armement);1010;710;670;4;;4;275;274
+Concours Mines - Télécom;ENTPE Lyon Civil;1083;750;706;3;;2;326;410
+Concours Mines - Télécom;ENTPE Lyon Fonctionnaire;1032;723;681;3;;3;540;517
+Concours Mines - Télécom;EURECOM;1083;750;706;22;;16;560;533
+Concours Mines - Télécom;IMT Mines Albi;1083;750;706;4;;5;549;550
+Concours Mines - Télécom;IMT Mines Alès;1083;750;706;6;;5;423;410
+Concours Mines - Télécom;IMT Nord Europe;1083;750;706;6;;5;428;443
+Concours Mines - Télécom;Mines Saint Etienne-ISMIN;1083;750;706;7;;5;425;401
+Concours Mines - Télécom;TELECOM Nancy;1083;750;706;31;;26;450;442
+Concours Mines - Télécom;Télécom Physique Strasbourg Informatique et Réseaux;1083;750;706;12;;10;628;608
+Concours Mines - Télécom;TELECOM St Etienne;1083;750;706;15;;10;604;590
+Concours Mines - Télécom;TELECOM SudParis;1083;750;706;40;;30;245;240
+Concours Mines - Télécom;Concours Mines-Télécom MPI;1083;;;198;;162;;
+Concours Commun INP;Bordeaux INP - ENSC Cognitique;;;;1;;5;673;673
+Concours Commun INP;Bordeaux INP - ENSEIRB-MATMECA Electronique;;;;2;;2;599;599
+Concours Commun INP;Bordeaux INP - ENSEIRB-MATMECA Informatique;;;;16;;15;467;447
+Concours Commun INP;Bordeaux INP - ENSEIRB-MATMECA Mathématiques et Mécanique;;;;3;;2;408;342
+Concours Commun INP;Bordeaux INP - ENSEIRB-MATMECA Télecom.;;;;3;;7;517;488
+Concours Commun INP;Bordeaux INP - ENSPIMA;;;;1;;1;600;600
+Concours Commun INP;Clermont Auvergne INP - ISIMA;;;;15;;16;630;594
+Concours Commun INP;CPE ETI : Electronique, Télécommunications, Informatique;;;;0;;5;0;0
+Concours Commun INP;CY TECH Cergy-Pau - Informatique;;;;2;;8;639;639
+Concours Commun INP;CY TECH Cergy-Pau - Mathématiques;;;;1;;4;447;447
+Concours Commun INP;École nationale du génie de l'eau et de l'environnement de Strasbourg (ENGEES) - Etudiant;;;;0;;2;0;0
+Concours Commun INP;ENAC Toulouse Civil;;;;5;;5;442;454
+Concours Commun INP;ENAC Toulouse Fonctionnaire;;;;1;;1;469;469
+Concours Commun INP;ENSAI Rennes Civil;;;;8;;8;523;485
+Concours Commun INP;ENSAI Rennes Fonctionnaire (Attaché INSEE);;;;3;;3;323;401
+Concours Commun INP;ENSI Poitiers Energétique et Environnement;;;;0;;5;0;0
+Concours Commun INP;ENSICAEN Informatique;;;;4;;3;402;417
+Concours Commun INP;ENSIL - ENSCI Limoges Electronique et Télécommunications;;;;1;;2;510;510
+Concours Commun INP;ENSIL - ENSCI Limoges Mécatronique;;;;1;;2;407;407
+Concours Commun INP;Grenoble INP - ENSE3;;;;4;;5;572;524
+Concours Commun INP;Grenoble INP - ENSIMAG;;;;41;;40;197;183
+Concours Commun INP;Grenoble INP - Esisar;;;;6;;6;630;614
+Concours Commun INP;Grenoble INP - Pagora;;;;1;;1;672;672
+Concours Commun INP;Grenoble INP - Phelma (Physique Electronique Télécoms);;;;10;;8;468;422
+Concours Commun INP;ISAE-ENSMA Poitiers;;;;4;;3;395;418
+Concours Commun INP;Lorraine INP - ENSEM - Spécialité des systèmes numériques;;;;7;;5;572;573
+Concours Commun INP;SeaTech Toulon;;;;1;;2;404;404
+Concours Commun INP;TELECOM PHYSIQUE Strasbourg;;;;6;;10;481;448
+Concours Commun INP;Toulouse INP - ENSEEIHT - Electronique-Energie-Automatique (EEA);;;;7;;5;511;506
+Concours Commun INP;Toulouse INP - ENSEEIHT - Mécanique des Fluides-Energetique-Environnement (MFEE);;;;5;;5;433;409
+Concours Commun INP;Toulouse INP - ENSEEIHT - Sciences du Numérique;;;;28;;26;338;326
+Concours Commun INP;Toulouse INP - ENSIACET - Génie Industriel;;;;2;;2;646;646
+Concours Commun INP;Concours CCINP MPI;1133;773;678;189;;214;;
+Banque épreuves CCINP Inter-Filière;Grenoble INP - Génie industriel;88;44;2;0;77;76;117;147
+Banque épreuves CCINP Inter-Filière;Lorraine INP - ENSGSI;73;42;13;0;40;36;121;142
+Banque épreuves CCINP;ECOLE DE L'AIR Base;121;49;4;0;;0;0;0
+Banque épreuves CCINP;ECOLE DE L'AIR Méca;113;46;4;0;;0;0;0
+Banque épreuves CCINP;ECOLE DE L'AIR Pilote;112;41;1;0;;0;0;0
+Banque épreuves CCINP;ENAC Toulouse - Contrôleurs aériens;154;43;16;4;;4;5;6
+Banque épreuves CCINP;ENSISA Mulhouse Automatique et Systèmes Embarqués;;;;0;;2;0;0
+Banque épreuves CCINP;ENSISA Mulhouse Informatique et réseaux;;;;1;;2;9;9
+Banque épreuves CCINP;Concours ENSISA MPI;135;79;10;1;;4;;
+Banque épreuves CCINP;EOST Strasbourg;37;30;2;1;;3;2;2
+Banque épreuves CCINP;ESM Saint-Cyr;106;20;4;0;;0;0;0
+Banque épreuves CCINP;Lorraine INP - ENSTIB;51;36;0;0;;2;0;0

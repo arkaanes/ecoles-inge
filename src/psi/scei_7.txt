@@ -1,0 +1,59 @@
+S;Autres écoles E3A;EIA Bethune - Génie électrique;8;237;231;;7
+S;Autres écoles E3A;EIJV - Technologie de l'Information pour la santé;0;0;0;;2
+S;Autres écoles E3A;EIJV - Génie Énergétique et Environnement;0;0;0;;2
+S;Autres écoles E3A;EIJV Amiens - Cybersécurité;1;14;14;;3
+S;Autres écoles E3A;EIJV Saint Quentin - Logistique innovante;0;0;0;;3
+T;Autres écoles E3A;Concours EIJV Amiens - Saint Quentin PSI;567;399;20;1;;10
+S;Autres écoles E3A;EIL Côte d'Opale - Boulogne (Agroalimentaire);0;0;0;;2
+S;Autres écoles E3A;EIL Côte d'Opale - Calais (informatique);6;104;106;;10
+S;Autres écoles E3A;EIL Côte d'Opale - Dunkerque (Génie Energétique et Environnement);2;107;107;;8
+S;Autres écoles E3A;EIL Côte d'Opale - Saint-Omer (Génie Industriel);0;0;0;;12
+T;Autres écoles E3A;Concours EIL Côte d'Opale PSI;348;313;117;8;;32
+S;Autres écoles E3A;ENIT Tarbes - UTTOP;3;125;120;;8
+S;Autres écoles E3A;ENSAIT Roubaix;11;80;82;;12
+S;Autres écoles E3A;ESB Nantes;0;0;0;;15
+S;Autres écoles E3A;IMT Nord Europe (en partenariat avec ISPA);4;15;16;;20
+S;Autres écoles E3A;ISMANS-Groupe CESI Le Mans;4;13;12;;50
+S;Autres écoles E3A;Paoli Tech;1;183;183;;5
+S;E3A - Inter-Filière;EIDD Paris;15;857;830;45;55
+T;E3A - Inter-Filière;EIDD Paris (concours);507;369;369;15;45;55
+S;EPITA - ESME - IPSA;EPITA campus Rennes;0;0;0;;3
+S;EPITA - ESME - IPSA;EPITA campus Lyon;1;251;251;;6
+S;EPITA - ESME - IPSA;EPITA campus Strasbourg;2;160;160;;3
+S;EPITA - ESME - IPSA;EPITA campus Paris;8;153;175;;12
+S;EPITA - ESME - IPSA;EPITA campus Toulouse;6;200;179;;4
+S;EPITA - ESME - IPSA;EPITA Paris - FISA;1;59;59;;4
+S;EPITA - ESME - IPSA;IPSA Paris;21;134;121;;13
+S;EPITA - ESME - IPSA;IPSA Toulouse;19;71;74;;14
+S;EPITA - ESME - IPSA;IPSA Paris - FISA;2;88;88;;2
+S;EPITA - ESME - IPSA;ESME;8;203;183;;13
+S;EPITA - ESME - IPSA;ESME - FISA;1;226;226;;3
+T;EPITA - ESME - IPSA;Concours EPITA / IPSA / ESME PSI;539;362;273;69;;77
+S;CESI;CESI Angoulême - Généraliste Parcours FISE;;0;0;0;5
+S;CESI;CESI Arras - Généraliste Parcours FISE;;0;0;0;7
+S;CESI;CESI Bordeaux - Généraliste Parcours FISE;;0;0;0;5
+S;CESI;CESI Lyon - Généraliste Parcours FISE;;0;0;0;10
+S;CESI;CESI Nancy - Généraliste Parcours FISE;;83;83;1;5
+S;CESI;CESI Nice - Généraliste Parcours FISE;;74;74;1;5
+S;CESI;CESI Paris-Nanterre - Généraliste Parcours FISE;;56;56;1;15
+S;CESI;CESI Rouen - Généraliste Parcours FISE;;0;0;0;7
+S;CESI;CESI Saint-Nazaire - Généraliste Parcours FISE;;117;117;1;6
+T;CESI;Concours CESI Ecole d'Ingénieurs - Ingénieur Généraliste;106;32;32;2;4;65
+S;CESI;CESI Aix-en-Provence - Informatique Parcours FISE;;35;35;1;5
+S;CESI;CESI Arras - Informatique Parcours FISE;;0;0;0;0
+S;CESI;CESI Bordeaux - Informatique Parcours FISE;;45;45;1;3
+S;CESI;CESI Caen - Informatique Parcours FISE;;0;0;0;3
+S;CESI;CESI La Rochelle - Informatique Parcours FISE;;0;0;0;3
+S;CESI;CESI Lille - Informatique Parcours FISE;;18;18;1;4
+S;CESI;CESI Lyon - Informatique Parcours FISE;;0;0;0;5
+S;CESI;CESI Montpellier - Informatique Parcours FISE;;0;0;0;3
+S;CESI;CESI Nancy - Informatique Parcours FISE;;0;0;0;3
+S;CESI;CESI Nice - Informatique Parcours FISE;;0;0;0;0
+S;CESI;CESI Orléans;;0;0;0;3
+S;CESI;CESI Paris-Nanterre - Informatique Parcours FISE;;0;0;0;10
+S;CESI;CESI Reims- Informatique Parcours FISE;;0;0;0;3
+S;CESI;CESI Rouen - Informatique Parcours FISE;;0;0;0;3
+S;CESI;CESI Saint-Nazaire - Informatique Parcours FISE;;0;0;0;5
+S;CESI;CESI Strasbourg - Informatique Parcours FISE;;0;0;0;5
+S;CESI;CESI Toulouse - Informatique Parcours FISE;;0;0;0;5
+T;CESI;Concours CESI Ecole d'Ingénieurs - Ingénieur en Informatique;16;9;9;0;3;63

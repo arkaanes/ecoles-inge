@@ -1,0 +1,72 @@
+S;POLY;ENSIBS Cybersécurité du logiciel;3;344;329;;3
+S;POLY;ENSIM Le Mans;0;0;0;;2
+S;POLY;EPISEN - Système d'information;0;0;0;;2
+S;POLY;EPISEN - Technologie pour la santé;0;0;0;;3
+S;POLY;ESIR Rennes - Informatique;2;158;158;;2
+S;POLY;ESIROI La Réunion;0;0;0;;1
+S;POLY;ESIX Caen Mécatronique et Systèmes Embarqués;0;0;0;;2
+S;POLY;ISEL Le Havre;0;0;0;;4
+S;POLY;ISTY Vélizy;0;0;0;;2
+S;POLY;Polytech Annecy-Chambéry - Informatique données Usages;1;383;383;;2
+S;POLY;Polytech Clermont - Ingénierie Mathématique et Data Science;0;0;0;;4
+S;POLY;Polytech Dijon - Informatique et réseaux;3;302;299;;2
+S;POLY;Polytech Dijon - Robotique;0;0;0;;3
+S;POLY;Polytech Grenoble - Informatique;3;309;301;;2
+S;POLY;Polytech Grenoble - Informatique et électronique des systèmes embarqués;5;354;350;;3
+S;POLY;Polytech Grenoble - Technologies de l'information pour la santé;0;0;0;;2
+S;POLY;Polytech Lille - Informatique et statistique;3;350;326;;3
+S;POLY;Polytech Lille - Internet des objets et cybersécurité;3;352;359;;3
+S;POLY;Polytech Lyon - Génie Biomédical;1;122;122;;2
+S;POLY;Polytech Lyon - Informatique;4;339;294;;3
+S;POLY;Polytech Lyon - Mathématiques Appliquées et Modélisation;1;243;243;;2
+S;POLY;Polytech Lyon - Systèmes industriels, Robotique;0;0;0;;2
+S;POLY;Polytech Marseille - Informatique;1;378;378;;2
+S;POLY;Polytech Montpellier - Informatique et Gestion;4;366;355;;3
+S;POLY;Polytech Nancy - Informatique, Automatique, Robotique, Réseaux;4;267;270;;3
+S;POLY;Polytech Nantes - Électronique et technologies numériques;3;298;323;;1
+S;POLY;Polytech Nantes - Informatique;3;216;223;;4
+S;POLY;Polytech Nice-Sophia - Informatique;9;322;290;;12
+S;POLY;Polytech Nice-Sophia - Mathématiques Appliquées et Modélisation sous statut étudiant (FISE);2;333;333;;4
+S;POLY;Polytech Nice-Sophia – Maths Appliquées – Etudiant en 3A puis Apprenti en 4A et 5A (FISEA);3;385;363;;2
+S;POLY;Polytech Orléans - Génie physique et systèmes embarqués;1;364;364;;2
+S;POLY;Polytech Paris-Saclay - Informatique et ingénierie mathématique;2;233;233;;2
+S;POLY;Polytech Sorbonne - Electronique et Informatique;2;208;208;;2
+S;POLY;Polytech Sorbonne - Robotique;1;375;375;;1
+S;POLY;Polytech Tours - Informatique;5;325;321;;3
+T;POLY;Concours Polytech MPI;587;442;398;69;;95
+S;INSA;ESITech Rouen - Physique pour la Santé;0;2229;2362;3;4
+S;INSA;INSA Lyon Biotechnologies et Bioinformatique;1;903;732;13;16
+S;INSA;INSA Toulouse Génie Biologique;0;938;938;1;1
+T;INSA;Concours INSA Domaine Biotechnologies-santé MP-PC-PSI-MPI;228;124;124;1;17;21
+S;INSA;INSA Lyon Génie Energétique et Génie de l'Environnement;1;50;50;;1
+S;INSA;INSA Rouen Normandie Génie des Procédés et Gestion des Risques;0;0;0;;2
+S;INSA;INSA Rouen Normandie Génie Energétique (Parcours énergétique et propulsion);0;0;0;;3
+S;INSA;INSA Strasbourg Génie Thermique, Energétique et Environnement;0;0;0;;1
+T;INSA;Concours INSA Domaine Energétique – Génie Chimique – Environnement MPI;241;139;139;1;;7
+S;INSA;INSA Centre Val de Loire Sécurité et Technologies Informatiques;0;0;0;;3
+S;INSA;INSA Hauts de France Informatique et Cybersécurité;2;245;245;;1
+S;INSA;INSA Lyon Informatique;3;38;43;;3
+S;INSA;INSA Lyon Télécommunications;4;207;190;;4
+S;INSA;INSA Rennes Informatique;2;143;143;;2
+S;INSA;INSA Rouen Normandie Informatique et technologies de l'information;3;361;333;;6
+S;INSA;INSA Rouen Normandie Mathématiques appliquées;3;238;236;;4
+S;INSA;INSA Toulouse Informatique et Réseaux;5;159;154;;5
+S;INSA;ISIS Castres Informatique pour la Santé;0;0;0;;2
+S;INSA;INSA Toulouse Mathématiques appliquées;1;110;110;;1
+T;INSA;Concours INSA Domaine Informatique, mathématique, modélisation MPI;640;392;392;23;;31
+S;INSA;INSA Hauts-de- France Systèmes Embarqués et Télécommunications;0;3632;3653;5;4
+S;INSA;INSA Hauts de France Informatique Industrielle et Automatique;1;3775;3389;3;5
+S;INSA;INSA Hauts-de-France Audiovisuel et Multimédia;0;3678;3678;1;4
+S;INSA;INSA Lyon Génie Electrique;0;624;624;11;9
+S;INSA;INSA Rennes Electronique et Informatique Industrielle;0;2420;2278;6;6
+S;INSA;INSA Rennes Electronique et Télécommunications;2;1901;2222;9;9
+S;INSA;INSA Strasbourg Génie Electrique;1;2604;2529;8;11
+S;INSA;INSA Toulouse Automatique et Electronique;0;1309;1257;4;4
+T;INSA;Concours INSA Domaine Génie électrique, électronique, automatique MP-PC-PSI-MPI;355;211;211;4;47;52
+S;INSA;INSA Rouen Normandie Génie Civil et Urbain;0;0;0;;1
+S;INSA;INSA Strasbourg Génie Civil;0;0;0;;1
+S;INSA;INSA Strasbourg Topographie;0;0;0;;2
+T;INSA;Concours INSA Domaine Génie civil, urbanisme, topographie MPI;251;139;139;0;;4
+S;INSA;INSA Centre Val de Loire Maîtrise des Risques Industriels;0;0;0;;2
+S;INSA;INSA Lyon Matériaux;1;61;61;;1
+T;INSA;Concours INSA Domaine Génie physique et matériaux MPI;281;168;168;1;;3
