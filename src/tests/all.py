@@ -10,7 +10,8 @@ errs = []
 CHECK = """() => {
   const vw = document.documentElement.clientWidth;
   const txt = document.getElementById('view').innerText;
-  return { over: document.documentElement.scrollWidth > vw + 1, bad: (txt.match(/undefined|NaN|\\[object|\\bnull\\b/) || [null])[0], h1: (document.querySelector('#view h1') || {}).textContent };
+  const side = vw < 720 ? [...document.querySelectorAll('#view *')].filter(e => /auto|scroll/.test(getComputedStyle(e).overflowX) && e.scrollWidth > e.clientWidth + 1 && e.offsetParent).length : 0;
+  return { over: document.documentElement.scrollWidth > vw + 1 || side > 0, bad: (txt.match(/undefined|NaN|\\[object|\\bnull\\b/) || [null])[0], h1: (document.querySelector('#view h1') || {}).textContent };
 }"""
 NAV = """([go, arg]) => { const b = document.createElement('button'); b.dataset.go = go; if (arg) b.dataset.arg = arg; b.hidden = true; document.body.appendChild(b); b.click(); b.remove(); }"""
 with sync_playwright() as p:

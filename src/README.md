@@ -17,7 +17,7 @@ cp ecoles.html ../../index.html   # page publiée
 
 ```sh
 cd src
-python3 tests/all.py    # Playwright sur ../index.html : 4 filières × 3 largeurs (390 en mode téléphone, 820, 1280), toutes les fiches ; doit finir par errors: []
+python3 tests/all.py    # Playwright sur ../index.html : 4 filières × 3 largeurs (390 en mode téléphone, 820, 1280), toutes les fiches, sans défilement horizontal sur téléphone ; doit finir par errors: []
 python3 tests/leak.py   # mentions d'autres filières dans chaque version (relecture manuelle)
 ```
 

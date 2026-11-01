@@ -306,6 +306,19 @@ table.stats td { font-variant-numeric: tabular-nums; }
 .flag { display: block; font-size: 12.5px; color: var(--warn); }
 .costs { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
 .costs .big { font-family: var(--serif); font-weight: 600; font-size: 30px; line-height: 1; }
+@media (max-width: 719px) {
+  .tablewrap { overflow: visible; }
+  table.stats, table.stats tbody, table.stats tr, table.stats td { display: block; min-width: 0; }
+  table.stats thead { display: none; }
+  table.stats tr { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 22px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  table.stats td:first-child { grid-column: 1 / -1; }
+  table.stats tr:last-child { border-bottom: 0; }
+  table.stats td { border: 0; padding: 2px 0; white-space: normal; }
+  table.stats td:first-child { font-weight: 700; padding-bottom: 6px; }
+  table.stats td[data-l] { display: flex; justify-content: space-between; gap: 12px; }
+  table.stats td[data-l]::before { content: attr(data-l); color: var(--ink-3); }
+  body[data-view="home"] .filsw { display: none; }
+}
 .kv { display: flex; justify-content: space-between; gap: 12px; padding-top: 8px; border-top: 1px solid var(--line); font-size: 15px; }
 .kv b { white-space: nowrap; }
 
@@ -323,6 +336,17 @@ table.stats td { font-variant-numeric: tabular-nums; }
 .crow .cname:hover { color: var(--accent-ink); }
 .crow .r { justify-content: flex-end; text-align: right; }
 @media (min-width: 1140px) { .crow > span:first-child { position: static; } }
+@media (max-width: 719px) {
+  .ctab { overflow: visible; background: none; border: 0; border-radius: 0; }
+  .ctab-in { min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+  .crow.head { display: none; }
+  .crow { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding-bottom: 6px; }
+  .crow:last-child { border-bottom: 1px solid var(--line); }
+  .crow > span:first-child { position: static; border-right: 0; background: none; }
+  .crow .cname { min-height: 52px; padding: 12px 16px 6px; font-size: 17px; }
+  .crow > span[data-l] { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 12px; align-items: baseline; padding: 6px 16px; text-align: left; }
+  .crow > span[data-l]::before { content: attr(data-l); font-size: 13.5px; font-weight: 600; color: var(--ink-3); }
+}
 
 /* ---------- carte ---------- */
 .map { width: 100%; max-width: 620px; margin: 0 auto; display: block; height: auto; }
@@ -1058,12 +1082,12 @@ table.stats td { font-variant-numeric: tabular-nums; }
       else if (P.shared) pl = fmt(P.shared) + (P.scopes.length === 1 ? " (" + P.scopes[0].replace(/\+/g, ", ") + ")" : " partagées");
       else pl = "—";
       h += '<div class="crow" role="row"><span role="rowheader"><button class="cname" data-go="famille" data-arg="' + f.id + '"><i class="swatch" style="--c:' + f.color + '"></i>' + esc(f.nom) + "</button></span>";
-      h += '<span role="cell" class="r num">' + all.length + "</span>";
-      h += '<span role="cell" class="num">' + esc(pl) + "</span>";
-      h += '<span role="cell">' + esc(FD.inscCourt || "—") + "</span>";
-      h += '<span role="cell">' + esc(FD.ecritsCourt || "—") + "</span>";
-      h += '<span role="cell"' + (FD.poids != null ? ' style="font-weight:700"' : "") + ">" + esc(FD.poidsCourt || "—") + "</span>";
-      h += '<span role="cell">' + esc((FD.style && FD.style.mots) || "—") + "</span></div>";
+      h += '<span role="cell" class="r num" data-l="' + heads[1] + '">' + all.length + "</span>";
+      h += '<span role="cell" class="num" data-l="' + heads[2] + '">' + esc(pl) + "</span>";
+      h += '<span role="cell" data-l="' + heads[3] + '">' + esc(FD.inscCourt || "—") + "</span>";
+      h += '<span role="cell" data-l="' + heads[4] + '">' + esc(FD.ecritsCourt || "—") + "</span>";
+      h += '<span role="cell" data-l="' + heads[5] + '"' + (FD.poids != null ? ' style="font-weight:700"' : "") + ">" + esc(FD.poidsCourt || "—") + "</span>";
+      h += '<span role="cell" data-l="' + heads[6] + '">' + esc((FD.style && FD.style.mots) || "—") + "</span></div>";
     });
     h += "</div></div>";
     h += '<p class="small muted" style="margin:0">Sources : notices des concours 2026 et barème du SCEI 2026, détaillés sur chaque page de concours.</p>';
@@ -1101,12 +1125,14 @@ table.stats td { font-variant-numeric: tabular-nums; }
   }
   function statsTable(stats) {
     var hasMoy = stats.some(function (v) { return v.moy; }), hasCl = stats.some(function (v) { return v.cl; }), hasIns = stats.some(function (v) { return v.ins; });
-    var h = '<div class="tablewrap"><table class="stats"><thead><tr><th>Voie (2025)</th><th>Places</th><th>Intégrés ' + FIL + '</th><th>Rang médian</th>' + (hasMoy ? "<th>Rang moyen</th>" : "") + (hasCl ? "<th>Classés</th>" : "") + (hasIns ? "<th>Inscrits</th>" : "") + "</tr></thead><tbody>";
+    var L = { pl: "Places", int: "Intégrés " + FIL, med: "Rang médian", moy: "Rang moyen", cl: "Classés", ins: "Inscrits" };
+    var td = function (k, v) { return '<td data-l="' + L[k] + '">' + fmt(v) + "</td>"; };
+    var h = '<div class="tablewrap"><table class="stats"><thead><tr><th>Voie (2025)</th><th>' + L.pl + "</th><th>" + L.int + "</th><th>" + L.med + "</th>" + (hasMoy ? "<th>" + L.moy + "</th>" : "") + (hasCl ? "<th>" + L.cl + "</th>" : "") + (hasIns ? "<th>" + L.ins + "</th>" : "") + "</tr></thead><tbody>";
     stats.forEach(function (v) {
       var flags = "";
       if (v.inter) flags += '<span class="flag">liste commune à plusieurs filières' + (v.iint != null ? " · " + v.iint + " intégrés toutes filières" : "") + "</span>";
       if (v.c25) flags += '<span class="flag">classement 2025 « ' + esc(v.c25) + " »</span>";
-      h += "<tr><td>" + esc(v.lib) + flags + "</td><td>" + fmt(v.pl) + "</td><td>" + fmt(v.int) + "</td><td>" + fmt(v.med) + "</td>" + (hasMoy ? "<td>" + fmt(v.moy) + "</td>" : "") + (hasCl ? "<td>" + fmt(v.cl) + "</td>" : "") + (hasIns ? "<td>" + fmt(v.ins) + "</td>" : "") + "</tr>";
+      h += "<tr><td>" + esc(v.lib) + flags + "</td>" + td("pl", v.pl) + td("int", v.int) + td("med", v.med) + (hasMoy ? td("moy", v.moy) : "") + (hasCl ? td("cl", v.cl) : "") + (hasIns ? td("ins", v.ins) : "") + "</tr>";
     });
     return h + "</tbody></table></div>";
   }
