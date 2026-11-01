@@ -3,7 +3,7 @@ import json
 import os
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..") + "/"
 os.makedirs(D + "tests/screens", exist_ok=True)
-BUILD = D + "build/preview.html"
+BUILD = D + "../index.html"
 data = json.load(open(D + "build/data.json"))
 ids = [s["id"] for s in data["ecoles"]]
 errs = []
@@ -16,10 +16,13 @@ NAV = """([go, arg]) => { const b = document.createElement('button'); b.dataset.
 with sync_playwright() as p:
     br = p.chromium.launch()
     for w in (390, 820, 1280):
-        page = br.new_context(viewport={"width": w, "height": 900}).new_page()
+        mob = {"is_mobile": True, "has_touch": True, "device_scale_factor": 3} if w < 720 else {}
+        page = br.new_context(viewport={"width": w, "height": 900}, **mob).new_page()
         page.on("pageerror", lambda e: errs.append(str(e)))
         page.route("**/fonts.g*/**", lambda r: r.abort())
         page.goto("file://" + BUILD); page.wait_for_timeout(300)
+        cw = page.evaluate("document.documentElement.clientWidth")
+        if cw != w: errs.append(f"largeur de mise en page {cw} au lieu de {w} (balise viewport manquante ?)")
         for fil in ("MP", "PC", "PSI", "MPI"):
             page.evaluate("f => document.querySelector('.filsw [data-fil=\"' + f + '\"]').click()", fil); page.wait_for_timeout(200)
             title = page.title()
