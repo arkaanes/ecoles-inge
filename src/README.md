@@ -32,6 +32,17 @@ python3 tests/leak.py   # mentions d'autres filières dans chaque version (relec
 
 Lignes de stats : `lib, pl, int, med, moy, cl|ins, inter, iint, c25, prev`. Ordre des lignes brutes SCEI : nom | Intégrés | F% | 5/2% | Rg médian | Rg moyen | [interfilières] | Places.
 
+## Prototype de la refonte
+
+Publié à part, dans `prototype/` (https://arkaanes.github.io/ecoles-inge/prototype/) ; le site actuel (`index.html`) n'est pas touché.
+
+- Sources : `src/proto/` (`index.html`, `app.css`, `app.js`). Données lues au chargement : `prototype/data.json` et `prototype/map.json`.
+- Reconstruire : `python3 src/proto/build.py` (après `build_data.py`), puis tester : `python3 src/tests/proto.py` (toutes les pages, 5 classes, téléphone et PC ; doit finir par `pages en défaut : 0` et `errors: []`).
+- Navigation : adresses en `#/` (`#/c/mp`, `#/c/mp/epreuves`, `#/e/minesparis`, `#/carte/idf`, `#/domaines/info`, `#/chercher?q=lyon`, `#/comprendre`).
+- Transitions : View Transitions API (glissement selon le sens, titres qui se transforment d'une page à l'autre), repli animé ailleurs ; onglets animés et balayables ; `prefers-reduced-motion` respecté.
+- Plus de repère de rang : seul le rang médian est affiché.
+- Style provisoire, à refaire sur les références de Sami.
+
 ## Données
 
 - Places : notices 2026 des concours (et L'Étudiant / Onisep quand la notice n'est pas accessible).
