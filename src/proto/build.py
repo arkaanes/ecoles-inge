@@ -28,6 +28,11 @@ for t in ("b", "mix"):
     os.makedirs(os.path.join(OUT, t), exist_ok=True)
     open(os.path.join(OUT, t, "index.html"), "w", encoding="utf-8").write(page(t))
     shutil.copyfile(os.path.join(HERE, "theme-%s.css" % t), os.path.join(OUT, t, "theme.css"))
+# Prototype v2 (nouvelles fonctions), isolé des pages de vote : prototype/v2/, données de prototype/.
+LABO = os.path.join(HERE, "..", "labo")
+os.makedirs(os.path.join(OUT, "v2"), exist_ok=True)
+for f in ("index.html", "app.css", "app.js"):
+    shutil.copyfile(os.path.join(LABO, f), os.path.join(OUT, "v2", f))
 def mini(src, dst):
     d = json.load(open(src, encoding="utf-8"))
     with open(dst, "w", encoding="utf-8") as fh:

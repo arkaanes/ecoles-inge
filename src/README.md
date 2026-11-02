@@ -42,6 +42,8 @@ Publié à part, dans `prototype/` (https://arkaanes.github.io/ecoles-inge/proto
 - Navigation : adresses en `#/` (`#/c/mp`, `#/c/mp/epreuves`, `#/e/minesparis`, `#/carte/idf`, `#/domaines/info`, `#/chercher?q=lyon`, `#/comprendre`).
 - Transitions : View Transitions API (glissement selon le sens, titres qui se transforment d'une page à l'autre), repli animé ailleurs ; onglets animés et balayables ; `prefers-reduced-motion` respecté.
 - Plus de repère de rang : seul le rang médian est affiché.
+- **Prototype v2** (`prototype/v2/`, sources `src/labo/`, isolé des pages de vote) : mêmes données, plus Préparer mon inscription (`#/inscription` : coût selon boursier, écoles et places couvertes, écrits, export .ics), Le calendrier 2027 (`#/calendrier` : frise, étapes, « mes concours », export .ics), Après la MPSI/MP2I/PCSI (`#/filiere`), Explorer (`#/explorer?c=mp,cs&r=idf&d=info&pub=1&b=1`), Comprendre en récit (`#/comprendre`). `?style=b` ou `?style=mix` pour l'habillage. Test : `python3 src/tests/v2.py`.
+- Dates 2027 (dans `src/labo/app.js`, tableau `CAL`) : officielles pour le SCEI (site de l'X), Mines-Ponts et Mines-Télécom ; secondaires et signalées pour X-ENS (ViragePrépa) et CCINP (L'Express) ; Centrale-Supélec, e3a-Polytech et propositions d'intégration pas encore publiées (2026 affiché). À mettre à jour dès publication.
 - Style provisoire, à refaire sur les références de Sami.
 
 ## Données
