@@ -2,6 +2,7 @@
 :root {
   --bg: #FFFFFF; --ink: #15171C; --ink-2: #363B46; --mut: #5B6270; --line: #E5E7EB; --line-2: #CDD1D8; --soft: #F4F5F7; --soft-2: #EBEDF0;
   --c-xens: #B3261E; --c-mines: #1D5FB4; --c-cs: #6B3FA0; --c-inp: #A86400; --c-e3a: #237A40; --c-autres: #646B78;
+  --f-x: #7B2D3B; --f-ens: #94485F; --f-mp: #2E5274; --f-mt: #3F6582; --f-cs: #5B4596; --f-inp: #85590F; --f-poly: #4E6A2A; --f-e3a: #66612A; --f-autres: #6E655C;
   --m1: #E3EAF4; --m2: #C3D3EA; --m3: #94B2DB; --m4: #5F8BC6; --m5: #2E62A8;
   --ease: cubic-bezier(.2, .8, .2, 1); --spring: cubic-bezier(.16, 1, .3, 1);
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -98,6 +99,7 @@ svg { display: block; }
 .stn:hover .chev { transform: translateX(3px); stroke: var(--ink); }
 .stn:active { background: var(--soft); }
 .joint { margin: 2px 0 -6px 13px; height: 22px; border-left: 4px dotted #A3AAB6; }
+.joint span, .bloc-note { display: none; }
 .quick { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .qk { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; min-height: 92px; padding: 14px; border: 1.5px solid var(--line); border-radius: 16px; background: var(--soft); text-decoration: none; font-size: 16px; font-weight: 800; transition: transform .3s var(--spring), border-color .2s, background .2s; }
 .qk:hover { transform: translateY(-2px); border-color: var(--line-2); background: var(--bg); }

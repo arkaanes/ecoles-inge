@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr"{{THEME_ATTR}}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#FFFFFF">
 <title>Écoles d'ingénieurs</title>
 <meta name="description" content="Les écoles d'ingénieurs après une prépa scientifique : concours, épreuves, places, rangs médians, frais. Chaque chiffre est sourcé.">
-<link rel="stylesheet" href="app.css">
+{{HEAD}}
 </head>
 <body>
 <a class="skip" href="#view">Aller au contenu</a>
@@ -49,6 +49,6 @@
   </div>
 </div>
 
-<script src="app.js" defer></script>
+<script src="{{BASE}}app.js" data-base="{{BASE}}" defer></script>
 </body>
 </html>

@@ -19,41 +19,43 @@ CHECK = """() => {
 try:
     with sync_playwright() as p:
         br = p.chromium.launch()
-        for w, mob in ((390, True), (1280, False)):
-            ctx = br.new_context(viewport={"width": w, "height": 860}, is_mobile=mob, has_touch=mob)
-            pg = ctx.new_page()
-            pg.on("pageerror", lambda e: errs.append(str(e)))
-            pg.on("console", lambda m: errs.append(m.text) if m.type == "error" else None)
-            pg.goto(URL); pg.wait_for_function("document.querySelector('#view h1')")
-            assert pg.evaluate("document.documentElement.clientWidth") == w, "viewport"
-            for classe in ("MP", "PC", "PSI", "MPI", "MPSI"):
-                pg.evaluate("c => { localStorage.setItem('ecoles-proto', JSON.stringify({classe: c, fil: c === 'MPSI' ? 'PSI' : c})); }", classe)
-                pg.goto(URL + "#/"); pg.wait_for_function("document.querySelector('#view h1')")
-                routes = ["#/", "#/carte", "#/carte/idf", "#/domaines", "#/domaines/info", "#/chercher?q=lyon", "#/comprendre"]
-                for f in ("x", "ens", "mp", "mt", "cs", "inp", "poly", "e3a", "autres"):
-                    for t in ("", "/epreuves", "/style", "/inscription"):
-                        routes.append("#/c/" + f + t)
-                routes += ["#/e/" + i for i in ids]
-                for r in routes:
-                    pg.evaluate("h => { location.hash = h; }", r)
-                    pg.wait_for_timeout(15 if r.startswith("#/e/") else 40)
-                    res = pg.evaluate(CHECK)
-                    if res["over"] or res["bad"] or res["dup"] or not res["h1"]:
-                        bad.append((w, classe, r, res))
-                # navigation réelle par clics : accueil → concours → école → retour, onglets
-                pg.goto(URL + "#/"); pg.wait_for_function("document.querySelector('.stn')")
-                pg.click(".stn >> nth=2"); pg.wait_for_timeout(700)
-                for tb in pg.query_selector_all(".tab"):
-                    tb.click(); pg.wait_for_timeout(600)
-                pg.click(".tab >> nth=0"); pg.wait_for_timeout(600)
-                pg.click(".srow >> nth=0"); pg.wait_for_timeout(700)
-                h1 = pg.evaluate("document.querySelector('#view h1').textContent")
-                pg.click(".back"); pg.wait_for_timeout(700)
-                back = pg.evaluate("location.hash")
-                print(w, classe, "| clics : école", h1, "| retour", back)
-                if classe in ("MP", "MPSI"):
-                    pg.screenshot(path=os.path.join(ROOT, "src", "tests", "screens", "proto-%d-%s.png" % (w, classe)), full_page=True)
-            ctx.close()
+        for theme, classes in (("", ("MP", "PC", "PSI", "MPI", "MPSI")), ("b/", ("MP", "MPSI")), ("mix/", ("MP", "MPSI"))):
+         URLT = URL + theme
+         for w, mob in ((390, True), (1280, False)):
+             ctx = br.new_context(viewport={"width": w, "height": 860}, is_mobile=mob, has_touch=mob)
+             pg = ctx.new_page()
+             pg.on("pageerror", lambda e: errs.append(str(e)))
+             pg.on("console", lambda m: errs.append(m.text) if m.type == "error" else None)
+             pg.goto(URLT); pg.wait_for_function("document.querySelector('#view h1')")
+             assert pg.evaluate("document.documentElement.clientWidth") == w, "viewport"
+             for classe in classes:
+                 pg.evaluate("c => { localStorage.setItem('ecoles-proto', JSON.stringify({classe: c, fil: c === 'MPSI' ? 'PSI' : c})); }", classe)
+                 pg.goto(URLT + "#/"); pg.wait_for_function("document.querySelector('#view h1')")
+                 routes = ["#/", "#/carte", "#/carte/idf", "#/domaines", "#/domaines/info", "#/chercher?q=lyon", "#/comprendre"]
+                 for f in ("x", "ens", "mp", "mt", "cs", "inp", "poly", "e3a", "autres"):
+                     for t in ("", "/epreuves", "/style", "/inscription"):
+                         routes.append("#/c/" + f + t)
+                 routes += ["#/e/" + i for i in ids]
+                 for r in routes:
+                     pg.evaluate("h => { location.hash = h; }", r)
+                     pg.wait_for_timeout(15 if r.startswith("#/e/") else 40)
+                     res = pg.evaluate(CHECK)
+                     if res["over"] or res["bad"] or res["dup"] or not res["h1"]:
+                         bad.append((theme, w, classe, r, res))
+                 # navigation réelle par clics : accueil → concours → école → retour, onglets
+                 pg.goto(URLT + "#/"); pg.wait_for_function("document.querySelector('.stn')")
+                 pg.click(".stn >> nth=2"); pg.wait_for_timeout(700)
+                 for tb in pg.query_selector_all(".tab"):
+                     tb.click(); pg.wait_for_timeout(600)
+                 pg.click(".tab >> nth=0"); pg.wait_for_timeout(600)
+                 pg.click(".srow >> nth=0"); pg.wait_for_timeout(700)
+                 h1 = pg.evaluate("document.querySelector('#view h1').textContent")
+                 pg.click(".back"); pg.wait_for_timeout(700)
+                 back = pg.evaluate("location.hash")
+                 print(theme or "neutre", w, classe, "| clics : école", h1, "| retour", back)
+                 if classe in ("MP", "MPSI"):
+                     pg.screenshot(path=os.path.join(ROOT, "src", "tests", "screens", "proto-%s%d-%s.png" % (theme.strip("/") + "-" if theme else "", w, classe)), full_page=True)
+             ctx.close()
         br.close()
 finally:
     srv.terminate()

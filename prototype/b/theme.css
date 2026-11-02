@@ -1,0 +1,148 @@
+/* Habillage B, « l'énoncé » : noir sur blanc, typographie de sujet de concours, stylo rouge du correcteur. */
+:root {
+  --bg: #FFFFFF; --ink: #000000; --ink-2: #1E1E1E; --mut: #4D4D4D; --line: #D9D9D9; --line-2: #000000; --soft: #F4F4F4; --soft-2: #EDEDED;
+  --red: #C1121F;
+  --m1: #F2F2F2; --m2: #D9D9D9; --m3: #B3B3B3; --m4: #808080; --m5: #4D4D4D;
+  --font: "Newsreader", Georgia, "Times New Roman", serif;
+}
+body { font-size: 17px; }
+:focus-visible { outline-color: var(--red); }
+a { text-decoration-color: var(--red); text-underline-offset: 3px; }
+.sc, .brand-name { font-variant: small-caps; letter-spacing: .05em; }
+
+/* en-tête et barre du bas */
+.top { background: rgba(255, 255, 255, .95); border-bottom: 3px double #000; }
+.brand-name { font-size: 18px; font-weight: 500; }
+.brand-cat { font-style: italic; font-size: 14px; }
+.topnav a { font-size: 17px; font-weight: 400; color: var(--mut); }
+.topnav a[aria-current="page"] { color: #000; }
+.topnav .ind { background: var(--red); height: 2px; }
+.filbtn { border: 0; border-bottom: 1.5px solid #000; border-radius: 0; padding: 0 4px; font-size: 17px; font-weight: 600; }
+.tabbar { background: rgba(255, 255, 255, .96); border-top: 3px double #000; }
+.tabbar a { font-size: 13px; font-weight: 400; }
+.tabbar a[aria-current="page"] { font-weight: 600; color: #000; }
+.tabbar .ind::before { height: 2px; margin: calc(var(--tab-h) - 20px) 26px 0; border-radius: 0; background: var(--red); }
+
+/* titres et texte */
+.h1 { font-weight: 500; letter-spacing: -.012em; font-size: clamp(38px, 8.4vw, 60px); }
+.h2 { font-weight: 500; font-size: 27px; letter-spacing: 0; }
+.lede { font-size: 18.5px; line-height: 1.55; color: var(--ink-2); }
+.back { font-size: 16.5px; font-weight: 400; color: #000; }
+.srcs { font-style: italic; }
+.tag { background: none; color: #000; padding: 0; font-weight: 400; font-size: 16px; font-variant: small-caps; letter-spacing: .06em; border-radius: 0; }
+
+/* accueil : ta classe entourée au stylo rouge */
+.classe-h { font-weight: 400; font-style: italic; font-size: 18px; }
+.classe-row > span { font-style: italic; }
+.seg { position: relative; border: 0; background: none; border-radius: 0; font-size: 20px; font-weight: 500; min-width: 50px; padding: 0 8px; }
+.seg:hover { border: 0; }
+.seg[aria-pressed="true"] { background: none; color: #000; }
+.seg[aria-pressed="true"]::after { content: ""; position: absolute; left: -1px; right: -1px; top: 5px; bottom: 5px; border: 2px solid var(--red); border-radius: 50%; transform: rotate(-4deg); animation: pen .45s cubic-bezier(.3, .7, .2, 1); }
+@keyframes pen { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+.vue { background: none; padding: 4px 0; border-top: 1px solid var(--line); border-radius: 0; }
+.vue > span { font-style: italic; padding-left: 0; }
+.vue .seg, .vue .seg[aria-pressed="true"] { background: none; border: 0; box-shadow: none; }
+.searchbox { border: 0; border-bottom: 1.5px solid #000; border-radius: 0; padding: 0 2px; font-style: italic; min-height: 50px; }
+.searchbox:hover { box-shadow: none; }
+.searchbox svg { stroke: #000; }
+
+/* les concours : accolades pour les écrits communs */
+.bloc { padding-top: 16px; }
+.bloc-h { justify-content: flex-start; gap: 14px; }
+.bloc-h .tag { display: none; }
+.bloc-note { display: inline; font-style: italic; font-size: 15px; color: var(--mut); padding-left: 28px; }
+.bloc-h .date { margin-left: auto; font-style: italic; font-size: 15px; }
+.rail { left: 6px; width: 12px; top: 16px; bottom: 16px; background: none; border: 1.5px solid #000; border-right: 0; border-radius: 7px 0 0 7px; }
+.stn { grid-template-columns: 28px minmax(0, 1fr) 18px; min-height: 58px; border-radius: 0; border-bottom: 1px solid var(--line); }
+.stn .dot { visibility: hidden; }
+.stn > span:nth-child(2) { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.stn .nm { font-size: 23px; font-weight: 600; letter-spacing: -.005em; }
+.stn .fg { display: block; margin: 0; font-size: 15px; text-align: right; font-variant-numeric: tabular-nums; }
+.stn .fg span + span::before { content: ", "; }
+.stn .chev { stroke: #000; width: 15px; }
+.stn:active { background: var(--soft); }
+.joint { margin: 6px 0 -4px 6px; height: auto; min-height: 26px; border-left: 1.5px dashed #000; padding-left: 22px; display: flex; align-items: center; }
+.joint span { display: inline; font-style: italic; font-size: 15px; color: var(--mut); }
+.quick { grid-template-columns: 1fr; gap: 0; border-top: 1px solid #000; }
+.qk { flex-direction: row; align-items: center; min-height: 52px; padding: 0; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: none; font-size: 19px; font-weight: 400; }
+.qk:hover { transform: none; background: none; color: var(--red); }
+.qk svg { display: none; }
+.qk.wide { min-height: 52px; }
+.foot { font-style: italic; }
+
+/* page d'un concours : en-tête d'énoncé */
+.c-head { justify-content: center; text-align: center; padding-bottom: 14px; border-bottom: 3px double #000; }
+.c-rail { display: none; }
+.c-id { align-items: center; }
+.c-id .h1 { margin: 0 auto; }
+.c-id .lede { text-align: left; align-self: stretch; margin-top: 6px; }
+.c-tag { justify-content: center; font-style: italic; }
+.facts { border-top: 0; border-bottom: 1px solid #000; text-align: center; margin-top: 0; }
+@media (min-width: 860px) { .c-head, .facts { max-width: 760px; margin-left: auto; margin-right: auto; } .facts { margin-top: 0; } .tabs { max-width: 760px; margin-left: auto; margin-right: auto; } .panels { max-width: 760px; margin: 0 auto; } }
+.fact, .fact:first-child { padding: 12px 6px; align-items: center; border-left-color: var(--line); }
+.fact b { font-weight: 500; font-size: 30px; }
+.fact span { font-style: italic; }
+.tabs { background: rgba(255, 255, 255, .96); border-bottom: 1px solid #000; }
+.tab { font-size: 18px; font-weight: 400; }
+.tab[aria-selected="true"] { color: #000; }
+.tabs .ind { background: var(--red); height: 2px; }
+.sel { border: 0; border-bottom: 1.5px solid #000; border-radius: 0; padding-left: 2px; font-weight: 400; font-style: italic; font-size: 16.5px; }
+.cid-h { border-bottom-color: #000; }
+.cid-h b { font-size: 18px; font-weight: 600; }
+.cid-h span, .cols-h { font-style: italic; }
+.cols-h { border-bottom-color: #000; font-size: 13.5px; }
+.srow .nm { font-size: 19px; font-weight: 600; }
+.srow .md { font-weight: 600; font-size: 21px; }
+.srow .chev { stroke: #000; width: 15px; }
+.step-h { font-weight: 600; font-size: 18px; }
+.step-h i { background: none; border: 1.5px solid #000; color: #000; font-weight: 600; }
+.eprow { font-size: 16.5px; }
+.eprow .c { font-weight: 600; }
+.ep-t { font-weight: 500; font-size: 22px; }
+.style-g h3, .ins h3 { font-weight: 600; font-size: 19px; }
+.style-g p { font-size: 17.5px; }
+
+/* fiche école */
+.chip { background: none; border: 0; padding: 0 12px 0 0; min-height: 26px; font-style: italic; font-weight: 400; font-size: 16px; }
+.voie .c-rail { display: none; }
+.voie .c-tag { font-style: italic; }
+.big b { font-weight: 500; }
+details.det summary { font-weight: 600; font-style: italic; }
+table.stats th, .byfil th { font-style: italic; font-weight: 400; }
+.byfil td:first-child { font-weight: 600; }
+.byfil tr.on td { background: none; }
+.byfil tr.on td:first-child { color: var(--red); }
+.byfil td.md { font-weight: 600; }
+.note { background: none; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); border-radius: 0; padding: 10px 0; font-style: italic; }
+.kv { font-size: 17px; }
+.e-side .h2 { font-size: 24px; }
+
+/* carte, listes, domaines, recherche */
+.map .badge text { font: 600 20px var(--font); }
+.map .rg.sel { fill: var(--red); }
+.rchip { border: 0; border-radius: 0; border-bottom: 1px solid var(--line); padding: 0 6px 0 0; font-weight: 400; font-size: 16.5px; }
+.rchip[aria-current="true"] { background: none; color: var(--red); border-bottom-color: var(--red); }
+.rchip[aria-current="true"] span { color: var(--red); }
+.row .nm { font-size: 19px; font-weight: 600; }
+.row .sw i { display: none; }
+.row .sw { font-style: italic; }
+.row .chev { stroke: #000; width: 15px; }
+.doms { gap: 0; border-top: 1px solid #000; }
+.dom { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; min-height: 76px; padding: 12px 0; }
+@media (min-width: 860px) { .doms { column-gap: 28px; } }
+.dom:hover { transform: none; color: var(--red); }
+.dom b { font-weight: 500; font-size: 18px; }
+.dom span { font-weight: 500; font-size: 30px; }
+.qbox { border: 0; border-bottom: 2px solid #000; border-radius: 0; padding: 0 2px; }
+.qbox input { font-style: italic; font-size: 19px; }
+.prose h2 { font-weight: 500; font-size: 25px; }
+
+/* feuille « Ta classe » */
+.sheet-card { border-radius: 0; border-top: 3px double #000; }
+.sheet h2 { font-weight: 500; font-style: italic; }
+@media (min-width: 860px) { .sheet-card { border-radius: 0; border: 1px solid #000; border-top: 3px double #000; box-shadow: 0 18px 40px rgba(0, 0, 0, .12); } }
+@media (max-width: 560px) {
+  .stn > span:nth-child(2) { display: block; }
+  .stn .fg { text-align: left; margin-top: 2px; }
+}
+@media (min-width: 860px) { .back:has(+ .c-head) { margin-left: max(-4px, calc(50% - 384px)); } }

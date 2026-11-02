@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr" data-theme="mix">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FFFFFF">
+<title>Écoles d'ingénieurs</title>
+<meta name="description" content="Les écoles d'ingénieurs après une prépa scientifique : concours, épreuves, places, rangs médians, frais. Chaque chiffre est sourcé.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap"><link rel="stylesheet" href="../app.css"><link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<a class="skip" href="#view">Aller au contenu</a>
+
+<header class="top" id="top">
+  <div class="top-in">
+    <a class="brand" href="#/" data-link>
+      <span class="brand-name">Écoles d'ingénieurs</span>
+      <span class="brand-cat">Prépas scientifiques</span>
+    </a>
+    <nav class="topnav" id="topnav" aria-label="Rubriques">
+      <a href="#/" data-link data-tab="concours">Concours</a>
+      <a href="#/carte" data-link data-tab="carte">Carte</a>
+      <a href="#/domaines" data-link data-tab="domaines">Domaines</a>
+      <a href="#/chercher" data-link data-tab="chercher">Chercher</a>
+      <span class="ind" aria-hidden="true"></span>
+    </nav>
+    <button class="filbtn" id="filbtn" type="button" aria-haspopup="dialog" aria-controls="sheet"><span id="filbtn-cl">MP</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+  </div>
+</header>
+
+<main id="view" tabindex="-1" aria-live="polite">
+  <div class="boot" aria-hidden="true"><span></span><span></span><span></span></div>
+</main>
+
+<nav class="tabbar" id="tabbar" aria-label="Rubriques">
+  <span class="ind" aria-hidden="true"></span>
+  <a href="#/" data-link data-tab="concours"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="12" r="2.4"/><path d="M6 8.4v7.2M8.4 6H12a4 4 0 0 1 4 4"/></svg><span>Concours</span></a>
+  <a href="#/carte" data-link data-tab="carte"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg><span>Carte</span></a>
+  <a href="#/domaines" data-link data-tab="domaines"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.6"/><rect x="13" y="4" width="7" height="7" rx="1.6"/><rect x="4" y="13" width="7" height="7" rx="1.6"/><rect x="13" y="13" width="7" height="7" rx="1.6"/></svg><span>Domaines</span></a>
+  <a href="#/chercher" data-link data-tab="chercher"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg><span>Chercher</span></a>
+</nav>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-h" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-card" tabindex="-1">
+    <span class="sheet-grip" aria-hidden="true"></span>
+    <h2 id="sheet-h">Ta classe</h2>
+    <div id="sheet-body"></div>
+  </div>
+</div>
+
+<script src="../app.js" data-base="../" defer></script>
+</body>
+</html>

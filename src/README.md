@@ -36,7 +36,8 @@ Lignes de stats : `lib, pl, int, med, moy, cl|ins, inter, iint, c25, prev`. Ordr
 
 Publié à part, dans `prototype/` (https://arkaanes.github.io/ecoles-inge/prototype/) ; le site actuel (`index.html`) n'est pas touché.
 
-- Sources : `src/proto/` (`index.html`, `app.css`, `app.js`). Données lues au chargement : `prototype/data.json` et `prototype/map.json`.
+- Trois habillages d'une même interface : `prototype/` (neutre), `prototype/b/` (« l'énoncé », maquette B : noir et blanc, Newsreader, stylo rouge), `prototype/mix/` (structure et typographie de B, tons chauds du site actuel en plus clair, une couleur par concours, Newsreader + Source Sans 3).
+- Sources : `src/proto/` (`index.html` gabarit, `app.css` commun, `app.js` commun, `theme-b.css`, `theme-mix.css`). Données lues au chargement : `prototype/data.json` et `prototype/map.json` (partagées par les trois).
 - Reconstruire : `python3 src/proto/build.py` (après `build_data.py`), puis tester : `python3 src/tests/proto.py` (toutes les pages, 5 classes, téléphone et PC ; doit finir par `pages en défaut : 0` et `errors: []`).
 - Navigation : adresses en `#/` (`#/c/mp`, `#/c/mp/epreuves`, `#/e/minesparis`, `#/carte/idf`, `#/domaines/info`, `#/chercher?q=lyon`, `#/comprendre`).
 - Transitions : View Transitions API (glissement selon le sens, titres qui se transforment d'une page à l'autre), repli animé ailleurs ; onglets animés et balayables ; `prefers-reduced-motion` respecté.

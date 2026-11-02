@@ -11,6 +11,7 @@
   function plural(n, one, many) { return fmt(n) + " " + (n > 1 ? many : one); }
   function dot(t) { t = String(t || "").trim(); return /[.!?)»]$/.test(t) ? t : t + "."; }
   function lcFirst(t) { return t ? t.charAt(0).toLowerCase() + t.slice(1) : t; }
+  var BASE = (document.currentScript && document.currentScript.getAttribute("data-base")) || "";
   var REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var SPRING = "cubic-bezier(.16, 1, .3, 1)";
   var IC = {
@@ -275,7 +276,7 @@
     var P = famPlaces(f, all), pl = "";
     if (P.own) pl = plural(P.own, "place", "places") + (P.shared ? " + " + fmt(P.shared) + " partagées" : "");
     else if (P.shared) pl = fmt(P.shared) + " places partagées";
-    return '<a class="stn" href="#/c/' + f.id + '" data-link><span class="dot"></span><span><span class="nm"' + vtn("t-" + f.id) + ">" + esc(f.nom) + '</span><span class="fg"><span>' + plural(all.length, "école", "écoles") + "</span>" + (pl ? "<span>" + pl + "</span>" : "") + "</span></span>" + IC.chev + "</a>";
+    return '<a class="stn" href="#/c/' + f.id + '" data-link style="--fc:var(--f-' + f.id + ')"><span class="dot"></span><span><span class="nm"' + vtn("t-" + f.id) + ">" + esc(f.nom) + '</span><span class="fg"><span>' + plural(all.length, "école", "écoles") + "</span>" + (pl ? "<span>" + pl + "</span>" : "") + "</span></span>" + IC.chev + "</a>";
   }
   function viewHome() {
     var h = '<div class="home"><div class="home-main" style="display:flex;flex-direction:column;gap:22px">';
@@ -285,9 +286,9 @@
     BLOCS.forEach(function (b, i) {
       var st = b.fams.map(function (fid) { return stationHTML(FAM[fid]); }).filter(Boolean);
       if (!st.length) return;
-      if (b.id === "e3a") h += '<div class="joint" aria-hidden="true"></div>';
+      if (b.id === "e3a") h += '<div class="joint"><span>écrits en partie communs</span></div>';
       var date = ecritsDate(b.fams[0]);
-      h += '<section class="bloc" style="--c:' + b.c + '" aria-label="' + esc(b.nom) + '"><div class="bloc-h"><span class="tag">' + esc(b.nom) + "</span>" + (date ? '<span class="date">' + esc(date) + "</span>" : "") + "</div>";
+      h += '<section class="bloc" style="--c:' + b.c + '" aria-label="' + esc(b.nom) + '"><div class="bloc-h"><span class="tag">' + esc(b.nom) + "</span>" + (st.length > 1 ? '<span class="bloc-note">mêmes écrits</span>' : "") + (date ? '<span class="date">' + esc(date) + "</span>" : "") + "</div>";
       h += '<div class="line">' + (st.length > 1 ? '<span class="rail" aria-hidden="true"></span>' : "") + st.join("") + "</div></section>";
     });
     h += "</div></div></div>";
@@ -316,8 +317,9 @@
     var tabs = famTabs(f);
     if (!tabs.some(function (t) { return t[0] === tab; })) tab = "ecoles";
     var h = '<a class="back" href="#/" data-link data-back>' + IC.back + "Les concours</a>";
-    h += '<div class="c-head" style="--c:' + b.c + '"><span class="c-rail" aria-hidden="true"></span><div class="c-id">';
-    h += '<div class="c-tag"><span class="tag" style="--c:' + b.c + '">' + esc(b.nom) + "</span>" + (FD.ecritsCourt ? "<span>Écrits : " + esc(lcFirst(FD.ecritsCourt)) + "</span>" : "") + "</div>";
+    var fc = ";--fc:var(--f-" + fid + ")";
+    h += '<div class="c-head" style="--c:' + b.c + fc + '"><span class="c-rail" aria-hidden="true"></span><div class="c-id">';
+    h += '<div class="c-tag"><span class="tag" style="--c:' + b.c + fc + '">' + esc(b.nom) + "</span>" + (FD.ecritsCourt ? "<span>Écrits : " + esc(lcFirst(FD.ecritsCourt)) + "</span>" : "") + "</div>";
     h += '<h1 class="h1"' + vtn("t-" + fid, "width:max-content;max-width:100%") + ">" + esc(f.nom) + "</h1>";
     h += '<p class="lede">' + esc(famIntro(f)) + "</p></div></div>";
     var f1v, f1s;
@@ -326,10 +328,10 @@
     else { f1v = "—"; f1s = "places non publiées"; }
     var third = FD.poids != null ? [FD.poids + " %", "de la note finale à l'oral"] : [FD.inscCourt || "—", "d'inscription"];
     h += '<div class="facts"><div class="fact"><b class="num">' + f1v + "</b><span>" + esc(f1s) + '</span></div><div class="fact"><b class="num">' + all.length + "</b><span>" + (all.length > 1 ? "écoles" : "école") + '</span></div><div class="fact"><b class="num">' + esc(third[0]) + "</b><span>" + esc(third[1]) + "</span></div></div>";
-    h += '<div class="tabs" style="--c:' + b.c + '"><div class="tabs-in" role="tablist" aria-label="' + esc(f.nom) + '">';
+    h += '<div class="tabs" style="--c:' + b.c + fc + '"><div class="tabs-in" role="tablist" aria-label="' + esc(f.nom) + '">';
     tabs.forEach(function (t) { h += '<button class="tab" type="button" role="tab" id="tab-' + t[0] + '" aria-controls="panel" aria-selected="' + (t[0] === tab) + '" data-tab="' + t[0] + '">' + t[1] + "</button>"; });
     h += '<span class="ind" aria-hidden="true"></span></div></div>';
-    h += '<div class="panels" data-fam="' + fid + '" data-cur="' + tab + '" style="--c:' + b.c + '"><div class="panel" id="panel" role="tabpanel" aria-labelledby="tab-' + tab + '">' + panelHTML(fid, tab) + "</div></div>";
+    h += '<div class="panels" data-fam="' + fid + '" data-cur="' + tab + '" style="--c:' + b.c + fc + '"><div class="panel" id="panel" role="tabpanel" aria-labelledby="tab-' + tab + '">' + panelHTML(fid, tab) + "</div></div>";
     return h;
   }
   function panelHTML(fid, tab) {
@@ -375,7 +377,7 @@
     return h;
   }
   function srowHTML(s, cid) {
-    var pl = placesIn(s, [cid]), h = '<a class="srow" href="#/e/' + esc(s.id) + '" data-link>';
+    var pl = placesIn(s, [cid]), h = '<a class="srow" href="#/e/' + esc(s.id) + '" data-link style="--fc:var(--f-' + FAM_OF[cid] + ')">';
     h += '<span><span class="nm"' + vtn("s-" + vtSafe(s.id)) + ">" + esc(s.nom) + '</span><span class="sub">' + esc(campusTxt(s)) + "</span></span>";
     var sc = pl.scopes.length === 1 && pl.scopes[0] !== FIL ? pl.scopes[0].replace(/\+/g, "-") : "";
     h += '<span class="pl num">' + (pl.n != null ? fmt(pl.n) + (sc ? "<small>" + esc(sc) + "</small>" : "") : "—") + "</span>";
@@ -474,8 +476,8 @@
     h += '<section><h2 class="h2" style="margin-bottom:14px">Pour y entrer</h2>';
     s.acces.forEach(function (a) {
       var fid = FAM_OF[a.c], b = BLOC_OF[fid], sc = scopeSentence(a);
-      h += '<div class="voie" style="--c:' + b.c + '"><span class="c-rail" aria-hidden="true"></span><div class="voie-c">';
-      h += '<a class="c-tag" href="#/c/' + fid + '" data-link style="text-decoration:none"><span class="tag" style="--c:' + b.c + '">' + esc(FAM[fid].nom) + "</span><span>" + esc(CONC[a.c].nom) + "</span></a>";
+      h += '<div class="voie" style="--c:' + b.c + ';--fc:var(--f-' + fid + ')"><span class="c-rail" aria-hidden="true"></span><div class="voie-c">';
+      h += '<a class="c-tag" href="#/c/' + fid + '" data-link style="text-decoration:none"><span class="tag" style="--c:' + b.c + ';--fc:var(--f-' + fid + ')">' + esc(FAM[fid].nom) + "</span><span>" + esc(CONC[a.c].nom) + "</span></a>";
       if (a.lib) h += '<b style="margin-top:-2px">' + esc(a.lib) + "</b>";
       if (sc) h += '<div class="big"><b class="num">' + sc.v + "</b><span>" + esc(sc.s) + "</span></div>";
       else h += "<p><b>Places 2026 :</b> non trouvées" + (a.txt ? ". " + esc(a.txt) : "") + "</p>";
@@ -518,7 +520,7 @@
   function level(n) { return n >= 26 ? 5 : n >= 18 ? 4 : n >= 10 ? 3 : n >= 5 ? 2 : 1; }
   function rowHTML(s) {
     return '<a class="row" href="#/e/' + esc(s.id) + '" data-link><span><span class="nm"' + vtn("s-" + vtSafe(s.id)) + ">" + esc(s.nom) + '</span><span class="sub"><span>' + esc(campusTxt(s)) + "</span>" +
-      s._fams.map(function (f) { return '<span class="sw" style="--c:' + FAM[f].c + '"><i></i>' + esc(FAM[f].nom) + "</span>"; }).join("") + "</span></span>" + IC.chev + "</a>";
+      s._fams.map(function (f) { return '<span class="sw" style="--c:' + FAM[f].c + ';--fc:var(--f-' + f + ')"><i></i>' + esc(FAM[f].nom) + "</span>"; }).join("") + "</span></span>" + IC.chev + "</a>";
   }
   function viewCarte(reg) {
     if (reg && !D.regions[reg]) reg = null;
@@ -848,7 +850,7 @@
 
   /* ---------- démarrage ---------- */
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-  Promise.all([fetch("data.json").then(function (r) { return r.json(); }), fetch("map.json").then(function (r) { return r.json(); })]).then(function (res) {
+  Promise.all([fetch(BASE + "data.json").then(function (r) { return r.json(); }), fetch(BASE + "map.json").then(function (r) { return r.json(); })]).then(function (res) {
     D = res[0]; MAP = res[1];
     ALL = D.ecoles; ALL.forEach(function (s) { ALLBY[s.id] = s; });
     applyFil(ST.fil);
