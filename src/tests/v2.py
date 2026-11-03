@@ -6,7 +6,8 @@ data = json.load(open(os.path.join(ROOT, "prototype", "data.json"), encoding="ut
 ids = [s["id"] for s in data["ecoles"]]
 srv = subprocess.Popen([sys.executable, "-m", "http.server", "8766", "--bind", "127.0.0.1"], cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 time.sleep(1)
-URL = "http://127.0.0.1:8766/prototype/v2/"
+SITE = len(sys.argv) > 1 and sys.argv[1] == "site"
+URL = "http://127.0.0.1:8766/" if SITE else "http://127.0.0.1:8766/prototype/v2/"
 errs, bad, fails = [], [], []
 CHECK = """() => {
   const vw = document.documentElement.clientWidth, v = document.getElementById('view');
@@ -20,9 +21,10 @@ def ok(cond, msg):
 try:
     with sync_playwright() as p:
         br = p.chromium.launch()
-        for style in ("", "?style=b", "?style=mix"):
+        for style in (("", "dark") if SITE else ("", "?style=b", "?style=mix")):
             for w, mob in ((390, True), (1280, False)):
-                ctx = br.new_context(viewport={"width": w, "height": 860}, is_mobile=mob, has_touch=mob, accept_downloads=True)
+                ctx = br.new_context(viewport={"width": w, "height": 860}, is_mobile=mob, has_touch=mob, accept_downloads=True, color_scheme="dark" if style == "dark" else "light")
+                style = "" if style == "dark" else style
                 pg = ctx.new_page()
                 pg.on("pageerror", lambda e: errs.append(str(e)))
                 pg.on("console", lambda m: errs.append(m.text) if m.type == "error" and "Transition was skipped" not in m.text else None)
@@ -31,7 +33,7 @@ try:
                     pg.goto(URL + style + "#/"); pg.wait_for_function("document.querySelector('#view h1')")
                     pg.evaluate("c => { localStorage.clear(); localStorage.setItem('ecoles-proto', JSON.stringify({classe: c, fil: c === 'MPSI' ? 'MP' : c})); }", classe)
                     pg.goto(URL + style + "#/"); pg.wait_for_function("document.querySelector('#view h1')")
-                    routes = ["#/", "#/carte", "#/carte/ara", "#/calendrier", "#/inscription", "#/filiere", "#/explorer", "#/explorer?c=mp,cs&r=idf", "#/domaines/info", "#/chercher?q=lyon", "#/comprendre"]
+                    routes = ["#/cote", "#comprendre", "#/", "#/carte", "#/carte/ara", "#/calendrier", "#/inscription", "#/filiere", "#/explorer", "#/explorer?c=mp,cs&r=idf", "#/domaines/info", "#/chercher?q=lyon", "#/comprendre"]
                     routes += ["#/c/" + f + t for f in ("x", "ens", "mp", "mt", "cs", "inp", "poly", "e3a", "autres") for t in ("", "/epreuves", "/style", "/inscription")]
                     routes += ["#/e/" + i for i in (ids if (not style and w == 390) else ids[:25])]
                     for r in routes:
@@ -81,7 +83,7 @@ try:
                 if style == "" or w == 390:
                     for r, n in (("#/", "home"), ("#/calendrier", "cal"), ("#/inscription", "insc"), ("#/filiere", "fil"), ("#/explorer", "expl"), ("#/comprendre", "story")):
                         pg.evaluate("h => { location.hash = h; }", r); pg.wait_for_timeout(700)
-                        pg.screenshot(path="/home/claude/shots/v2-%s%d-%s.png" % (style.replace("?style=", "") + "-" if style else "", w, n))
+                        pg.screenshot(path="/home/claude/shots/%s-%s%d-%s.png" % ("site" if SITE else "v2", ("dark-" if SITE and pg.evaluate("matchMedia('(prefers-color-scheme: dark)').matches") else "") + (style.replace("?style=", "") + "-" if style else ""), w, n))
                 print(style or "neutre", w, "ok")
                 ctx.close()
         br.close()

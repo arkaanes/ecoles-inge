@@ -1,0 +1,145 @@
+/* Habillage « actuel » : le style du site principal (crème, terre cuite, Fraunces + Source Sans 3, une couleur par concours, mode sombre),
+   appliqué à la nouvelle interface. Se charge après ../app.css et app.css (v2). */
+:root {
+  --bg: #FAF7F2; --surface: #FFFFFF; --soft: #F3ECE2; --soft-2: #EBE1D3;
+  --ink: #3A2A1F; --ink-2: #5A4637; --mut: #6B5646; --line: #EAE1D5; --line-2: #D9C6B1;
+  --accent: #B0502A; --on-accent: #FFFFFF; --accent-ink: #8F3E1E; --accent-soft: rgba(176, 80, 42, .10);
+  --inv-bg: #3A2A1F; --inv-ink: #FAF7F2;
+  --f-x: #7B2D3B; --f-ens: #94485F; --f-mp: #2E5274; --f-mt: #3F6582; --f-cs: #5B4596; --f-inp: #85590F; --f-poly: #4E6A2A; --f-e3a: #66612A; --f-autres: #6E655C;
+  --m1: #F1E2D0; --m2: #E7C9A9; --m3: #DCAA82; --m4: #CC8A5F; --m5: #B9683F;
+  --shadow: 0 1px 2px rgba(58, 42, 31, .05);
+  --font: "Source Sans 3", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --top-bg: rgba(250, 247, 242, .92);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1F1813; --surface: #2A211A; --soft: #33281F; --soft-2: #3D3026;
+    --ink: #F3E9DD; --ink-2: #D9C7B4; --mut: #BCA894; --line: #3E3128; --line-2: #56463A;
+    --accent: #DB7B4F; --on-accent: #1F1813; --accent-ink: #F0A27C; --accent-soft: rgba(219, 123, 79, .14);
+    --inv-bg: #3A2D24; --inv-ink: #F3E9DD;
+    --f-x: #E08C9B; --f-ens: #E6A6BA; --f-mp: #8DB5E0; --f-mt: #ABC8E5; --f-cs: #B9A8EC; --f-inp: #E2B35E; --f-poly: #AACB7D; --f-e3a: #D3CB80; --f-autres: #C4BAAE;
+    --m1: #3A2D24; --m2: #573D2D; --m3: #774E36; --m4: #985F40; --m5: #BA744E;
+    --shadow: none; --top-bg: rgba(31, 24, 19, .92);
+    color-scheme: dark;
+  }
+}
+body { font-size: 16px; }
+a { color: var(--accent-ink); }
+:focus-visible { outline-color: var(--accent); }
+.h1, .h2, .brand-name, .ep-t, .sheet h2, .sv-n, .sv-t, .fact b, .big b, .rc-total, .fil-c b, .dom span { font-family: var(--serif); font-weight: 600; }
+.h1 { font-size: clamp(30px, 6.4vw, 50px); letter-spacing: -.015em; line-height: 1.06; }
+.h2 { font-size: 23px; letter-spacing: 0; }
+.lede { font-size: 17.5px; color: var(--ink-2); }
+.chev { stroke: var(--mut); }
+.srcs a, .cal-src { color: var(--accent-ink); }
+
+/* en-tête, navigation */
+.top { background: var(--top-bg); }
+.brand-name { font-size: 19px; letter-spacing: -.01em; }
+.brand-cat { color: var(--accent-ink); font-weight: 600; }
+.topnav a { margin: 8px 0; padding: 0 10px; border-radius: 10px; font-size: 15.5px; color: var(--ink-2); }
+.topnav a:hover { background: var(--soft); }
+.topnav a[aria-current="page"] { background: var(--soft); color: var(--accent-ink); font-weight: 700; }
+.topnav .ind { display: none; }
+.filbtn { background: var(--soft); border: 1px solid var(--line); color: var(--ink); }
+.tabbar { background: var(--top-bg); }
+.tabbar a[aria-current="page"] { color: var(--accent-ink); }
+.tabbar .ind::before { background: var(--soft); }
+.back { color: var(--accent-ink); }
+.btnlink { color: var(--accent-ink); }
+
+/* boutons, puces, champs */
+.seg, .xchip, .rchip { border-radius: 999px; border: 1.5px solid var(--line-2); background: var(--surface); color: var(--ink); font-weight: 600; }
+.seg[aria-pressed="true"], .xchip[aria-pressed="true"], .rchip[aria-pressed="true"], .rchip[aria-current="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.rchip[aria-current="true"] span { color: var(--bg); opacity: .75; }
+.xchip[data-xfam][aria-pressed="true"] { background: var(--fc); border-color: var(--fc); color: var(--surface); }
+.xchip[data-xfam][aria-pressed="true"] i { background: var(--surface); }
+.xfd[open] > .xsum { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.vue { background: var(--soft); }
+.vue .seg[aria-pressed="true"] { background: var(--surface); color: var(--ink); border-color: var(--line-2); }
+.searchbox, .qbox { background: var(--surface); border: 1.5px solid var(--line-2); border-radius: 14px; color: var(--mut); }
+.searchbox:hover { border-color: var(--accent); box-shadow: none; }
+.qbox { border-color: var(--line-2); }
+.qbox:focus-within { border-color: var(--accent); }
+.searchbox svg, .qbox svg { stroke: var(--ink-2); }
+.sel { background-color: var(--surface); border-radius: 12px; }
+.btnp { background: var(--accent); color: var(--on-accent); border-radius: 12px; }
+.seg2 { background: var(--soft); }
+.seg2 button[aria-pressed="true"] { background: var(--surface); }
+.linkb { color: var(--accent-ink); }
+.tag { background: var(--fc, var(--c)); color: var(--surface); border-radius: 999px; padding: 3px 10px; }
+.chip { background: var(--soft); border: 0; border-radius: 999px; font-weight: 600; color: var(--ink-2); }
+.note { background: var(--soft); }
+
+/* accueil : prochaine étape en encadré doux, concours en tuiles */
+.next { background: var(--soft); border: 0; border-radius: 18px; padding: 16px 18px; }
+.next-k { color: var(--accent-ink); }
+.next-k::before { background: var(--accent); }
+.qk { background: var(--surface); border: 1.5px solid var(--line-2); border-radius: 12px; font-weight: 700; }
+.qk:hover { border-color: var(--accent); background: var(--surface); }
+.qk svg { stroke: var(--ink-2); }
+.bloc-h .tag { background: var(--soft); color: var(--ink-2); font-weight: 700; }
+.bloc-h .date { color: var(--mut); }
+.line { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
+.rail { display: none; }
+.stn { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-height: 112px; padding: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); transition: border-color .2s, transform .3s var(--spring); }
+.stn:hover { border-color: var(--fc); transform: translateY(-2px); }
+.stn:active { background: var(--surface); }
+.stn .dot { width: 22px; height: 22px; margin: 0; border: 0; border-radius: 6px; background: var(--fc); }
+.stn:hover .dot { transform: none; }
+.stn > span:nth-child(2) { display: flex; flex-direction: column; gap: 6px; flex: 1; width: 100%; }
+.stn .nm { font-size: 18px; font-weight: 700; }
+.stn .fg { margin-top: auto; display: flex; flex-direction: column; gap: 0; font-size: 14px; font-weight: 700; color: var(--fc); }
+.stn .chev { display: none; }
+.joint { border: 0; height: auto; margin: 14px 0 -8px; }
+.joint span { display: inline; font-size: 14px; color: var(--mut); }
+@media (min-width: 760px) { .line { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; } .stn { min-height: 130px; padding: 18px 20px; } .stn .nm { font-size: 19px; } }
+
+/* page d'un concours : carré de couleur, surtitre, chiffres en cartes */
+.c-head { align-items: flex-start; }
+.c-rail { width: 48px; height: 48px; border-radius: 13px; background: var(--fc); }
+.c-tag .tag { background: none; color: var(--fc); padding: 0; font-size: 13px; letter-spacing: .05em; text-transform: uppercase; }
+.facts { gap: 8px; border: 0; }
+.fact, .fact:first-child { padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+.fact b { font-size: 22px; }
+.tabs { background: var(--top-bg); }
+.tab[aria-selected="true"] { color: var(--ink); }
+.tabs .ind { background: var(--fc); }
+.srow:hover .nm { color: var(--accent-ink); }
+.step-h i { background: var(--ink); color: var(--bg); }
+
+/* fiche école : voies et frais en cartes */
+.voie { padding: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+.voie + .voie { margin-top: 12px; }
+.voie .c-rail { display: none; }
+.byfil tr.on td { background: var(--accent-soft); }
+.cost { padding: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+
+/* carte, listes */
+.map .rg.sel { fill: var(--accent); }
+.map .badge circle { fill: var(--surface); stroke: var(--ink); }
+.row:hover .nm { color: var(--accent-ink); }
+.dom { background: var(--surface); }
+.dom:hover { border-color: var(--accent); }
+
+/* calendrier, inscription, filière, récit */
+.cal-b .cal-rel, .st-w, .cal-now span, .fr-today span { color: var(--accent-ink); }
+.ins-box::after { border-color: var(--surface); }
+.recap, .fil-c, .ct { background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.ins-bar { background: var(--inv-bg); color: var(--inv-ink); }
+.ins-bar button { color: var(--inv-ink) !important; }
+.sv-n { color: var(--on-accent); }
+@media (min-width: 980px) { .sv-n { color: var(--accent); } }
+.story-vis { background: var(--top-bg); }
+@media (min-width: 980px) { .story-vis { background: none; } }
+.sheet-card { background: var(--surface); }
+/* les liens-cartes gardent la couleur du texte, comme les boutons de l'ancien site */
+.brand, .stn, .next, .qk, .srow, .row, .dom, .ct, .rchip, .searchbox, .fil-lab, .tabbar a, .topnav a, .c-tag, .ins-it { color: var(--ink); }
+.searchbox { color: var(--mut); }
+.tabbar a { color: var(--mut); }
+.topnav a { color: var(--ink-2); }
+.tabbar a[aria-current="page"], .topnav a[aria-current="page"] { color: var(--accent-ink); }
+.next-k { color: var(--accent-ink); }
+.c-tag { color: var(--mut); }

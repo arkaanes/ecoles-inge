@@ -1,14 +1,14 @@
 # Sources de l'outil « Écoles d'ingé »
 
-La page publiée est `index.html` à la racine du dépôt (GitHub Pages : https://arkaanes.github.io/ecoles-inge/). Elle est générée à partir de ce dossier.
+Le site publié est `index.html` + `site/` à la racine du dépôt (GitHub Pages : https://arkaanes.github.io/ecoles-inge/). Ils sont générés à partir de ce dossier.
 
 ## Reconstruire
 
 ```sh
 cd src/build
 python3 build_data.py data.json   # assemble et vérifie les données → data.json
-python3 build_page4.py            # injecte data.json + ../geo/out/map.json dans template4.html → ecoles.html
-cp ecoles.html ../../index.html   # page publiée
+cd ..
+python3 proto/build.py            # site principal (index.html + site/) et prototypes (prototype/, b/, mix/, v2/)
 ```
 
 `build_data.py` affiche une ligne `OK` ou `DIFF` par contrôle (totaux de places 2026 par concours et par filière, coefficients, sommes des lignes SCEI 2025). Tout doit être `OK`, sans `Error`.
@@ -17,34 +17,24 @@ cp ecoles.html ../../index.html   # page publiée
 
 ```sh
 cd src
-python3 tests/all.py    # Playwright sur ../index.html : 4 filières × 3 largeurs (390 en mode téléphone, 820, 1280), toutes les fiches, sans défilement horizontal sur téléphone ; doit finir par errors: []
-python3 tests/leak.py   # mentions d'autres filières dans chaque version (relecture manuelle)
+python3 tests/v2.py site   # site principal : toutes les pages, clair et sombre, téléphone et PC, calculs de l'inscription, export .ics ; doit finir par « pages en défaut : 0 », « contrôles en échec : [] », « errors: [] »
+python3 tests/v2.py        # prototype v2, dans les 3 habillages
+python3 tests/proto.py     # prototypes de vote (neutre, b, mix)
 ```
 
 ## Organisation
 
-- `build/template4.html` : l'interface (HTML/CSS/JS), commutateur MP / PC / PSI / MPI.
-- `build/data_common.py`, `data_concours.py`, `data_part1.py` … `data_part5.py`, `data_partA.py` : écoles, voies et stats **MP**, concours, calendrier.
-- `build/data_pc.py` : données **PC** (généré par `tools/extract_pc.py`, puis corrigé à la main).
-- `build/data_psi_acces.py`, `data_mpi_acces.py` : voies **PSI / MPI** (générées par `tools/build_psi_acces.py` et `tools/build_mpi_acces.py` à partir des relevés SCEI de `psi/` et `mpi/`).
-- `build/data_psi_fil.py`, `data_mpi_fil.py` : familles, concours, frais et variantes propres à la PSI et à la MPI.
-- `geo/` : carte des régions (`out/map.json`).
+- **Site principal** (https://arkaanes.github.io/ecoles-inge/) : `index.html` + `site/` (`app.js`, `base.css`, `v2.css`, `theme.css`, `data.json`, `map.json`), produits par `src/proto/build.py`. Même interface que le prototype v2, avec l'habillage « actuel » (`src/labo/theme-actuel.css` : crème, terre cuite, Fraunces + Source Sans 3, une couleur par concours, mode sombre).
+- `src/labo/` : l'interface (`app.js` : données, routeur, transitions, toutes les pages ; `app.css` : styles des pages v2 ; `index.html` : gabarit ; `theme-actuel.css`).
+- `src/proto/` : interface des prototypes de vote (`app.js`, `app.css` = styles de base, `theme-b.css`, `theme-mix.css`) et `build.py`.
+- `src/build/data_common.py`, `data_concours.py`, `data_part1.py` … `data_part5.py`, `data_partA.py` : écoles, voies et stats **MP**, concours, calendrier.
+- `src/build/data_pc.py` : données **PC** (généré par `tools/extract_pc.py`, puis corrigé à la main).
+- `src/build/data_psi_acces.py`, `data_mpi_acces.py` : voies **PSI / MPI** (générées par `tools/build_psi_acces.py` et `tools/build_mpi_acces.py` à partir des relevés SCEI de `psi/` et `mpi/`).
+- `src/build/data_psi_fil.py`, `data_mpi_fil.py` : familles, concours, frais et variantes propres à la PSI et à la MPI.
+- `src/geo/` : carte des régions (`out/map.json`).
+- `src/ancien/` : l'ancien site en une page (`template4.html`, `build_page4.py`) et ses tests, archivés.
 
 Lignes de stats : `lib, pl, int, med, moy, cl|ins, inter, iint, c25, prev`. Ordre des lignes brutes SCEI : nom | Intégrés | F% | 5/2% | Rg médian | Rg moyen | [interfilières] | Places.
-
-## Prototype de la refonte
-
-Publié à part, dans `prototype/` (https://arkaanes.github.io/ecoles-inge/prototype/) ; le site actuel (`index.html`) n'est pas touché.
-
-- Trois habillages d'une même interface : `prototype/` (neutre), `prototype/b/` (« l'énoncé », maquette B : noir et blanc, Newsreader, stylo rouge), `prototype/mix/` (structure et typographie de B, tons chauds du site actuel en plus clair, une couleur par concours, Newsreader + Source Sans 3).
-- Sources : `src/proto/` (`index.html` gabarit, `app.css` commun, `app.js` commun, `theme-b.css`, `theme-mix.css`). Données lues au chargement : `prototype/data.json` et `prototype/map.json` (partagées par les trois).
-- Reconstruire : `python3 src/proto/build.py` (après `build_data.py`), puis tester : `python3 src/tests/proto.py` (toutes les pages, 5 classes, téléphone et PC ; doit finir par `pages en défaut : 0` et `errors: []`).
-- Navigation : adresses en `#/` (`#/c/mp`, `#/c/mp/epreuves`, `#/e/minesparis`, `#/carte/idf`, `#/domaines/info`, `#/chercher?q=lyon`, `#/comprendre`).
-- Transitions : View Transitions API (glissement selon le sens, titres qui se transforment d'une page à l'autre), repli animé ailleurs ; onglets animés et balayables ; `prefers-reduced-motion` respecté.
-- Plus de repère de rang : seul le rang médian est affiché.
-- **Prototype v2** (`prototype/v2/`, sources `src/labo/`, isolé des pages de vote) : mêmes données, plus Préparer mon inscription (`#/inscription` : coût selon boursier, écoles et places couvertes, écrits, export .ics), Le calendrier 2027 (`#/calendrier` : frise, étapes, « mes concours », export .ics), Après la MPSI/MP2I/PCSI (`#/filiere`), Explorer (`#/explorer?c=mp,cs&r=idf&d=info&pub=1&b=1`), Comprendre en récit (`#/comprendre`). `?style=b` ou `?style=mix` pour l'habillage. Test : `python3 src/tests/v2.py`.
-- Dates 2027 (dans `src/labo/app.js`, tableau `CAL`) : officielles pour le SCEI (site de l'X), Mines-Ponts et Mines-Télécom ; secondaires et signalées pour X-ENS (ViragePrépa) et CCINP (L'Express) ; Centrale-Supélec, e3a-Polytech et propositions d'intégration pas encore publiées (2026 affiché). À mettre à jour dès publication.
-- Style provisoire, à refaire sur les références de Sami.
 
 ## Données
 
@@ -53,6 +43,7 @@ Publié à part, dans `prototype/` (https://arkaanes.github.io/ecoles-inge/proto
 
 ## Reste à faire
 
+- Dates 2027 encore manquantes : Centrale-Supélec, e3a-Polytech, propositions d'intégration (tableau `CAL` de `src/labo/app.js`) ; remplacer les sources secondaires (X-ENS, CCINP) par les sites officiels.
 - Passer aux stats SCEI 2026 dès leur publication (`scei-concours.fr/stat2026/mp.html`, `pc.html`, `psi.html`, `mpi.html`).
 - Notices 2027 (places, dates, coefficients), publiées vers décembre.
 - ENS : coefficients MPI, postes 2026 de Rennes, de Lyon en MPI, d'Ulm en PC/PSI.

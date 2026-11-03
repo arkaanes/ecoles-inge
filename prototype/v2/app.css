@@ -199,3 +199,17 @@
 .rc-ec li { grid-template-columns: 8px minmax(0, 1fr) auto; }
 .rc-ec li span { order: 2; text-align: right; }
 .rc-ec li b { order: 1; }
+
+/* ---------- côte à côte ---------- */
+.net-h { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+.cote { display: grid; gap: 12px; margin-top: 18px; }
+@media (min-width: 720px) { .cote { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .cote { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.ct { display: flex; flex-direction: column; padding: 14px 16px 8px; border: 1.5px solid var(--line); border-radius: 16px; background: var(--surface); text-decoration: none; transition: border-color .2s, transform .3s var(--spring); }
+.ct:hover { border-color: var(--fc); transform: translateY(-2px); }
+.ct-h { display: grid; grid-template-columns: 12px minmax(0, 1fr) 18px; gap: 10px; align-items: center; padding-bottom: 8px; }
+.ct-h i { width: 12px; height: 12px; border-radius: 4px; background: var(--fc); }
+.ct-h b { width: max-content; max-width: 100%; font-size: 19px; font-weight: 800; }
+.ct-r { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 12px; padding: 7px 0; border-top: 1px solid var(--line); font-size: 14.5px; }
+.ct-r > span { color: var(--mut); }
+.ct-r b { font-weight: 600; }

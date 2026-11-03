@@ -32,6 +32,7 @@
   try {
     var sv = JSON.parse(localStorage.getItem("ecoles-proto") || "null");
     if (sv && CLASSES[sv.classe] && CLASSES[sv.classe].indexOf(sv.fil) !== -1) ST = sv;
+    else { var old = localStorage.getItem("ecoles-filiere"); if (CLASSES[old] && CLASSES[old].length === 1) ST = { classe: old, fil: old }; }
   } catch (e) { /* stockage indisponible */ }
   function save() { try { localStorage.setItem("ecoles-proto", JSON.stringify(ST)); } catch (e) { /* rien */ } }
   function firstYear() { return CLASSES[ST.classe].length > 1; }
@@ -289,7 +290,7 @@
     h += classeHTML(false);
     if (firstYear()) h += '<a class="qk wide" href="#/filiere" data-link>' + IC.grid + "Comparer mes filières de 2e année</a>";
     h += '<a class="searchbox" href="#/explorer" data-link>' + IC.search + "Une école, une ville, un domaine</a>";
-    h += '<div><h1 class="h1" style="margin-top:6px">Les concours</h1><div class="net">';
+    h += '<div><div class="net-h"><h1 class="h1" style="margin-top:6px">Les concours</h1><a class="btnlink" href="#/cote" data-link>Tous côte à côte</a></div><div class="net">';
     BLOCS.forEach(function (b, i) {
       var st = b.fams.map(function (fid) { return stationHTML(FAM[fid]); }).filter(Boolean);
       if (!st.length) return;
@@ -1012,8 +1013,28 @@
     h += '<section class="st-ref"><h2 class="h2">Lire les chiffres</h2><ul>';
     h += "<li><b>Rang médian 2025</b> : la moitié des élèves de " + FIL + " admis en 2025 étaient classés avant ce rang (statistiques du SCEI, les dernières publiées).</li>";
     h += "<li><b>Un rang ne se compare qu'à l'intérieur d'une même liste de classement.</b> Mines-Ponts, le CCINP ou Polytech ont une seule liste ; à Centrale-Supélec, dans la banque CCINP ou aux ENS, chaque école a la sienne.</li>";
-    h += "<li><b>Peu de places, rangs instables</b> : avec 2 à 6 places, un rang 2025 peut beaucoup bouger.</li></ul>";
-    h += '<h2 class="h2" style="margin-top:24px">Sources principales</h2><ul>' + D.sources.map(function (x) { return '<li><a href="' + esc(x.u) + '" target="_blank" rel="noopener">' + esc(x.t) + "</a></li>"; }).join("") + "</ul></section></div></div>";
+    h += "<li><b>Peu de places, rangs instables</b> : avec 2 à 6 places, un rang 2025 peut beaucoup bouger.</li>";
+    h += "<li><b>Places 2026</b> : places offertes à la session 2026, la dernière publiée (notices des concours, L'Étudiant, Onisep). Sinon, elles sont partagées avec d'autres filières.</li>";
+    if (FIL === "MPI") h += "<li><b>Liste commune à plusieurs filières</b> (Ingéni'Up, certaines écoles indépendantes d'e3a, quelques domaines INSA) : les filières sont classées ensemble ; places et rangs ne sont pas propres à la MPI. Polytech, lui, a une liste MPI à part.</li>";
+    else h += "<li><b>Liste commune à plusieurs filières</b> (Polytech, Ingéni'Up, plusieurs domaines INSA) : MP, PC et PSI sont classés ensemble ; places et rangs ne sont pas propres à la " + FIL + ".</li>";
+    if (FIL === "PC") h += "<li><b>Deux listes au CCINP</b> : en PC, le CCINP fait deux concours sur les mêmes copies, PC-Physique et PC-Chimie, avec des coefficients inversés. Compare les rangs liste par liste.</li>";
+    h += "<li><b>« Classement 2025 … »</b> : en 2025, l'école figurait dans une autre section du SCEI (autre concours ou autre liste) ; son rang ne se compare pas directement à ceux de 2026.</li></ul>";
+    h += '<h2 class="h2" style="margin-top:24px">Le style des concours</h2><ul><li>« Les sujets » résume le rapport du jury cité en lien (le dernier publié, en général en maths). « Pour qui » est un avis, déduit de ces rapports et du poids des épreuves : à prendre comme tel.</li></ul>';
+    var fee0 = function (s) { var f = s.frais; return s.bours.cat === "remu" && f.min == null ? 0 : (f.min != null ? f.min : (f.ref != null ? f.ref : null)); };
+    var own = SCH.filter(function (s) { var v = fee0(s); return /^Public/.test(s.statut) && s.bours.cat !== "remu" && v != null && v > 700; }).sort(function (a, b) { return fee0(a) - fee0(b); });
+    h += '<h2 class="h2" style="margin-top:24px">Frais et boursiers</h2><ul><li>Frais par an pour un étudiant français, au montant le plus récent trouvé, avec son année. La CVEC (105 €) s\'ajoute en général, sauf pour les boursiers.</li>';
+    if (own.length) h += "<li>La plupart des écoles publiques appliquent le droit national (630 €/an en 2026-2027). " + own.length + " écoles publiques demandent plus, de " + fmt(fee0(own[0])) + " € (" + esc(own[0].nom) + ") à " + fmt(fee0(own[own.length - 1])) + " € (" + esc(own[own.length - 1].nom) + ").</li>";
+    h += "<li>À l'X, aux ENS et dans les écoles militaires, les élèves sont payés pendant leurs études, en échange d'un engagement à servir l'État.</li><li>« À vérifier » : source ancienne, non officielle, ambiguë ou absente. Chaque fiche donne ses sources.</li></ul>";
+    var pa = SCH.filter(function (s) { return s.acces.some(function (a) { return a.c === "e3a_ind" && a.stats.some(function (v) { return v.c25 === "Puissance Alpha"; }); }); });
+    h += '<h2 class="h2" style="margin-top:24px">Ce qui a changé en 2026</h2><ul>';
+    h += "<li>ENSTA Paris et ENSTA Bretagne ont fusionné : places à Palaiseau et à Brest via Mines-Ponts, et nouvelle formation défense et sécurité (FIDS), codélivrée avec l'ISAE-SUPAERO, via Mines-Télécom.</li>";
+    h += "<li>L'ENAC et l'ISAE-ENSMA ont quitté le CCINP pour Mines-Télécom.</li>";
+    if (pa.length) h += "<li>Les écoles de l'ex-concours Puissance Alpha recrutent maintenant les " + FIL + " via e3a-Polytech (" + esc(pa.map(function (s) { return s.nom; }).join(", ")) + ") ; l'ESIEE Paris, via la banque CCINP.</li>";
+    h += "<li>Nouvelles venues : Centrale Lyon ENISE (banque CCINP) et Aflokkat MIRA (e3a-Polytech). L'ECE n'est plus dans Avenir Prépas.</li>";
+    h += "<li>Noms récents, que la recherche reconnaît aussi sous l'ancien nom : Géodata Paris (ex-ENSG Géomatique), Centrale Méditerranée (ex-Centrale Marseille).</li></ul>";
+    h += '<h2 class="h2" style="margin-top:24px">Pas dans cette liste</h2><ul>' + D.exclus.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>";
+    h += '<h2 class="h2" style="margin-top:24px">Sources principales</h2><ul>' + D.sources.map(function (x) { return '<li><a href="' + esc(x.u) + '" target="_blank" rel="noopener">' + esc(x.t) + "</a></li>"; }).join("") + "</ul>";
+    h += '<p class="small mut">Données ' + FIL + " relevées le " + esc(dFr(D.maj, true)) + ". Places, épreuves et tarifs sont ceux de 2026 tant que les notices 2027 ne sont pas publiées.</p></section></div></div>";
     return h;
   }
   var storyObs = null;
@@ -1043,9 +1064,27 @@
     secs[0].classList.add("on");
   }
 
+  /* ---------- les concours côte à côte ---------- */
+  function viewCote() {
+    var h = '<a class="back" href="#/" data-link data-back>' + IC.back + 'Les concours</a><h1 class="h1">Côte à côte</h1><div class="cote">';
+    BLOCS.forEach(function (b) { b.fams.forEach(function (fid) {
+      var f = FAM[fid], all = famSchools(f); if (!all.length) return;
+      var P = famPlaces(f, all), FD = D.familles[fid] || {};
+      var pl = fid === "autres" ? "—" : P.own ? fmt(P.own) + (P.shared ? " + " + fmt(P.shared) + " partagées" : "") : P.shared ? fmt(P.shared) + " partagées" : "—";
+      h += '<a class="ct" href="#/c/' + fid + '" data-link style="--c:' + b.c + ";--fc:var(--f-" + fid + ')"><span class="ct-h"><i></i><b' + vtn("t-" + fid) + ">" + esc(f.nom) + "</b>" + IC.chev + "</span>";
+      [["Écoles", String(all.length)], ["Places en " + FIL + " 2026", pl], ["Inscription", FD.inscCourt || "—"], ["Écrits", FD.ecritsCourt || "—"], ["Poids de l'oral", FD.poidsCourt || "—"], ["Style", (FD.style && FD.style.mots) || "—"]].forEach(function (r) {
+        h += '<span class="ct-r"><span>' + r[0] + "</span><b>" + esc(r[1]) + "</b></span>";
+      });
+      h += "</a>";
+    }); });
+    return h + '</div><p class="small mut" style="margin:14px 0 0">Sources : notices des concours 2026 et barème du SCEI 2026, détaillés sur chaque page de concours.</p>';
+  }
+
   /* ---------- routeur ---------- */
   var view = $("#view"), hIdx = 0, cur = null, lastConcours = null;
+  var LEGACY = { "#comprendre": "#/comprendre", "#sources": "#/comprendre", "#guide": "#/explorer", "#cote": "#/cote" };
   function parse(hash) {
+    if (hash && hash.indexOf("#/") !== 0) hash = LEGACY[hash] || "#/";
     var h = String(hash || "").replace(/^#/, ""), parts = h.split("?"), p = parts[0].split("/").filter(Boolean), q = "";
     if (parts[1]) { var m = parts[1].match(/(?:^|&)q=([^&]*)/); if (m) q = decodeURIComponent(m[1].replace(/\+/g, " ")); }
     var r = { v: p[0] || "home", a: p[1] ? decodeURIComponent(p[1]) : null, b: p[2] || null, q: q, qs: parts[1] || "" };
@@ -1058,6 +1097,7 @@
     else if (r.v === "calendrier") r.sec = "calendrier", r.depth = 0;
     else if (r.v === "inscription") r.sec = "inscription", r.depth = 0;
     else if (r.v === "filiere") r.sec = "concours", r.depth = 1;
+    else if (r.v === "cote") r.sec = "concours", r.depth = 1;
     else if (r.v === "comprendre") r.sec = "concours", r.depth = 1;
     else r.v = "home", r.sec = "concours", r.depth = 0;
     return r;
@@ -1067,6 +1107,7 @@
     if (r.v === "c" && FAM[r.a]) return FAM[r.a].nom;
     if (r.v === "carte") return r.a && D.regions[r.a] ? D.regions[r.a] : "La carte";
     if (r.v === "explorer") return "Explorer";
+    if (r.v === "cote") return "Côte à côte";
     if (r.v === "calendrier") return "Le calendrier";
     if (r.v === "inscription") return "Mon inscription";
     if (r.v === "filiere") return "Après la " + (firstYear() ? ST.classe : "1re année");
@@ -1083,6 +1124,7 @@
     else if (r.v === "calendrier") h = viewCalendrier();
     else if (r.v === "inscription") h = viewInscription();
     else if (r.v === "filiere") h = viewFiliere();
+    else if (r.v === "cote") h = viewCote();
     else if (r.v === "comprendre") h = viewComprendre2();
     if (h == null) { r = parse("#/"); h = viewHome(); }
     view.innerHTML = h;
@@ -1247,6 +1289,8 @@
   /* ---------- événements ---------- */
   document.addEventListener("click", function (e) {
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var sk = e.target.closest("a.skip");
+    if (sk) { e.preventDefault(); var h1 = $("#view h1"); (h1 || view).setAttribute("tabindex", "-1"); (h1 || view).focus(); return; }
     var a = e.target.closest("a[data-link]");
     if (a) {
       e.preventDefault();
@@ -1327,7 +1371,8 @@
     D = res[0]; MAP = res[1];
     ALL = D.ecoles; ALL.forEach(function (s) { ALLBY[s.id] = s; });
     applyFil(ST.fil);
-    if (!location.hash) history.replaceState({ i: 0, y: 0 }, "", "#/"); else history.replaceState({ i: 0, y: 0 }, "", location.hash);
+    var h0 = location.hash; if (h0 && h0.indexOf("#/") !== 0) h0 = LEGACY[h0] || "#/";
+    history.replaceState({ i: 0, y: 0 }, "", h0 || "#/");
     show("fade", 0);
   }).catch(function () {
     view.innerHTML = '<p class="empty">Les données n\'ont pas pu être chargées. Recharge la page.</p>';
