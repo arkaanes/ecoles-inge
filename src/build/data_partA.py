@@ -9,7 +9,7 @@ from data_common import src, S_CCINP26, S_EP26, S_CESI26, S_UT
 # ---------- sources ----------
 N_X = src("Notice du concours 2026 (École polytechnique)",
           "https://www.polytechnique.edu/admission-cycle-ingenieur/sites/admission/files/content/Notice%20du%20concours%202026%20publi%C3%A9e.pdf")
-N_ENS = src("Notice inter-ENS 2026", "https://www.ens.psl.eu/sites/default/files/vf_notice_interens_2026_v10122025.pdf")
+N_ENS = src("Notice inter-ENS 2026", "https://ens-paris-saclay.fr/sites/default/files/CONCOURS/CONCOURS_2026/notice_interens_2026_mise_en_ligne_vf260212.pdf")
 S_ULM = src("Le concours MP de l'ENS (Ulm)",
             "https://www.ens.psl.eu/une-formation-d-exception/admission-concours/concours-voie-cpge/concours-voie-cpge-sciences/le-0")
 S_XENS_STRUCT = src("Structure des écrits MP X-ENS 2026", "https://banques-ecoles.fr/cms/wp-content/uploads/2025/12/26_structure_MP_bq.pdf")
@@ -62,7 +62,7 @@ FAMILLES = {
      ["Informatique B", "2 h", "4", "option PSI ; compte seulement pour l'admission"],
      ["Français", "4 h", "6"], ["Langue vivante", "4 h", "6"]],
     "note": "Tu choisis ton option à l'inscription, et chaque option a son propre classement."},
-   "adm": {"quand": "le 27 mai en 2026", "txt": "La barre est fixée par le jury sur le total des écrits."},
+   "adm": {"quand": "le 27 mai 2026", "txt": "La barre est fixée par le jury sur le total des écrits."},
    "oraux": {"quand": "15 juin - 5 juillet 2026", "l": [
      ["Mathématiques, 1re interrogation", "50 min", "16"], ["Mathématiques, 2e interrogation", "50 min", "16"],
      ["Physique", "50 min", "20"], ["Chimie", "40 min", "9"],
@@ -91,7 +91,7 @@ FAMILLES = {
      ["Physique", "4 h", "6"], ["Mathématiques C", "4 h", "4"], ["Mathématiques D", "6 h", "6"],
      ["Français", "4 h", "8", "compte pour l'admission"], ["Langue vivante", "4 h", "3", "compte pour l'admission"]],
     "note": "Les autres ENS, et les options informatique, prennent aussi maths A, informatique A ou informatique fondamentale, avec leurs propres coefficients."},
-   "adm": {"quand": "le 27 mai en 2026", "txt": "Chaque ENS fixe sa barre."},
+   "adm": {"quand": "le 27 mai 2026", "txt": "Chaque ENS fixe sa barre."},
    "oraux": {"quand": "8-27 juin 2026", "l": [
      ["Mathématiques I", "", "30"], ["Mathématiques II", "", "15"], ["Physique", "", "25"], ["Langue vivante", "", "3"]]},
    "classement": "Chaque ENS, et chaque option, a sa propre liste de classement.",
@@ -110,8 +110,8 @@ FAMILLES = {
    "mots": "Sujets longs, oraux lourds"},
   "blocs": [{
    "ecrits": {"quand": "27-30 avril 2026", "l": ECRITS_MINES},
-   "adm": {"quand": "le 3 juin en 2026", "txt": "Il faut atteindre deux minimums fixés par le jury : sur le total des écrits, et sur les quatre épreuves de maths et de physique. Moins de 3/20 en français : pas admissible."},
-   "oraux": {"quand": "22 juin - 12 juillet 2026 (TIPE jusqu'au 18 juillet)", "l": [
+   "adm": {"quand": "le 3 juin 2026", "txt": "Il faut atteindre deux minimums fixés par le jury : sur le total des écrits, et sur les quatre épreuves de maths et de physique. Moins de 3/20 en français : pas admissible."},
+   "oraux": {"quand": "22 juin - 18 juillet 2026", "l": [
      ["Mathématiques", "≈ 1 h 15", "12", "dont 15 min de préparation"],
      ["Physique", "≈ 1 h 15", "10", "dont 15 min de préparation"],
      ["TIPE", "30 min", "6"], ["Français", "30 min", "6", "après 30 min de préparation"],
@@ -134,7 +134,7 @@ FAMILLES = {
   "blocs": [{
    "ecrits": {"quand": "27-30 avril 2026", "l": ECRITS_MINES,
     "note": "Les mêmes copies que Mines-Ponts, avec les mêmes coefficients."},
-   "adm": {"quand": "le 4 juin en 2026", "txt": "Une barre plus basse que celle de Mines-Ponts."},
+   "adm": {"quand": "le 4 juin 2026", "txt": "Une barre plus basse que celle de Mines-Ponts."},
    "oraux": {"quand": "23 juin - 10 juillet 2026", "l": [
      ["Mathématiques", "30 min", "8", "sans préparation"], ["Physique", "30 min", "8", "sans préparation"],
      ["Anglais", "20 min", "7"], ["Entretien", "25 min", "7"]],
@@ -158,7 +158,7 @@ FAMILLES = {
      ["Mathématiques 1", "4 h", "19"], ["Mathématiques 2", "4 h", "19"], ["Physique-chimie 1", "4 h", "12"],
      ["Physique-chimie 2", "4 h", "12"], ["Informatique ou sciences de l'ingénieur", "4 h", "10"],
      ["Rédaction (français)", "4 h", "17"], ["Langue vivante", "4 h", "11"]]},
-   "adm": {"quand": "début juin en 2026", "txt": "Les « grands admissibles », très bien classés à l'écrit, sont dispensés d'oraux."},
+   "adm": {"quand": "début juin 2026", "txt": "Les « grands admissibles », très bien classés à l'écrit, sont dispensés d'oraux."},
    "oraux": {"quand": "22 juin - 19 juillet 2026", "l": [
      ["Mathématiques", "30 min", "19"], ["Mathématiques et informatique (Python)", "30 min", "19", "après 30 min de préparation"],
      ["Physique-chimie", "30 min", "13"], ["Physique-chimie et informatique", "30 min", "13", "après 30 min de préparation"],
@@ -185,7 +185,7 @@ FAMILLES = {
      ["Physique-chimie", "4 h", "7"], ["Informatique ou sciences de l'ingénieur", "4 h", "7"],
      ["Français-philosophie", "4 h", "9"], ["Langue vivante A", "3 h", "4"],
      ["Langue vivante B (facultative)", "1 h", "2", "seuls les points au-dessus de 10 comptent"]]},
-   "adm": {"quand": "le 3 juin en 2026", "txt": "La barre est fixée par le jury. Les « grands admissibles » sont dispensés d'oraux, pour les écoles du concours commun seulement."},
+   "adm": {"quand": "le 3 juin 2026", "txt": "La barre est fixée par le jury. Les « grands admissibles » sont dispensés d'oraux, pour les écoles du concours commun seulement."},
    "oraux": {"quand": "22 juin - 18 juillet 2026", "l": [
      ["Mathématiques", "30 min", "14", "après 30 min de préparation"],
      ["Physique-chimie", "30 min", "12", "après 30 min de préparation"],
@@ -213,7 +213,7 @@ FAMILLES = {
      ["Langue vivante A", "3 h", "5", "même copie que le CCINP"],
      ["Informatique ou sciences de l'ingénieur", "4 h", "4", "même copie que le CCINP"],
      ["Langue vivante B (facultative)", "1 h", "2", "seuls les points au-dessus de 10 comptent"]]},
-   "adm": {"quand": "le 3 juin en 2026", "txt": "La barre est fixée par le jury. Les « grands admissibles » sont dispensés du TIPE."},
+   "adm": {"quand": "le 3 juin 2026", "txt": "La barre est fixée par le jury. Les « grands admissibles » sont dispensés du TIPE."},
    "oraux": {"quand": "22 juin - 18 juillet 2026", "l": [["TIPE", "30 min", "8"]]},
    "classement": "Écrits (32, sans la langue B) + TIPE (8). Les MP sont ensuite classés avec les PC et les PSI sur une liste commune.",
    "notice": N_E3A}]},
@@ -235,7 +235,7 @@ FAMILLES = {
      ["Français-philosophie", "4 h", ""], ["Langue vivante A", "3 h", ""],
      ["Informatique ou sciences de l'ingénieur", "4 h", ""], ["Langue vivante B (facultative)", "1 h", ""]],
     "note": "Coefficients en maths, physique-chimie, informatique ou SI, français et langue A : Avenir Prépas 6, 4, 4, 3, 3 ; Ingéni'Up 6, 6, 2, 3, 2. Chaque école indépendante a les siens."},
-   "adm": {"quand": "le 3 juin en 2026", "txt": "Avenir Prépas, Ingéni'Up et chaque école indépendante ont leur propre jury."},
+   "adm": {"quand": "le 3 juin 2026", "txt": "Avenir Prépas, Ingéni'Up et chaque école indépendante ont leur propre jury."},
    "oraux": {"quand": "mi-juin - mi-juillet 2026", "l": [],
     "note": "Avenir Prépas : un entretien dans les écoles (coefficient 9). Ingéni'Up : entretiens dans les écoles. Écoles indépendantes : un oral ou un entretien, de coefficient 10 à 28 selon l'école ; l'EIDD et Paoli Tech n'en ont pas."},
    "notice": N_E3A}]},

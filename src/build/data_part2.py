@@ -94,7 +94,7 @@ E("epf", "EPF", "EPF École d'ingénieurs", ["EPF", "École polytechnique fémin
       V("Cachan", 8, 8, 191, 184, cl=255), V("Montpellier", 8, 1, 202, 202, cl=255),
       V("Saint-Nazaire", 8, 1, 195, 195, cl=255), V("Troyes", 10, 2, 221, 221, cl=255)], ["ccs_epf"],
      src26=src("Concours Centrale-Supélec 2026, places par filière (L'Étudiant)", "https://www.letudiant.fr/etudes/ecole-ingenieur/ecoles-d-ingenieurs-post-prepa-le-concours-centrale-supelec-mode-d-emploi.html"),
-     note="Un seul oral, non académique (d'après un habitué du forum Futura-Sciences).")]),
+     note="Oral non scientifique : deux ateliers collectifs et un entretien de motivation, sur une demi-journée (notice Centrale-Supélec 2026).")]),
 
 E("estp", "ESTP", "ESTP, grande école d'ingénieurs de la construction", ["ESTP", "ESTP Paris", "École spéciale des travaux publics"],
   "Privé", [C("Cachan", "94", "idf"), C("Dijon", "21", "bfc"), C("Orléans", "45", "cvl"), C("Troyes", "10", "ges")],

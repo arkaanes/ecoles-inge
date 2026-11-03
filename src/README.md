@@ -17,7 +17,7 @@ python3 proto/build.py            # site principal (index.html + site/) et proto
 
 ```sh
 cd src
-python3 tests/v2.py site   # site principal : toutes les pages, clair et sombre, téléphone et PC, calculs de l'inscription, export .ics ; doit finir par « pages en défaut : 0 », « contrôles en échec : [] », « errors: [] »
+python3 tests/v2.py site   # site principal (recharge la page à chaque changement de filière) : toutes les pages, clair et sombre, téléphone et PC, calculs de l'inscription, export .ics ; doit finir par « pages en défaut : 0 », « contrôles en échec : [] », « errors: [] »
 python3 tests/v2.py        # prototype v2, dans les 3 habillages
 python3 tests/proto.py     # prototypes de vote (neutre, b, mix)
 ```
@@ -44,7 +44,8 @@ Lignes de stats : `lib, pl, int, med, moy, cl|ins, inter, iint, c25, prev`. Ordr
 
 ## Reste à faire
 
-- Dates 2027 encore manquantes : Centrale-Supélec, e3a-Polytech, propositions d'intégration (tableau `CAL` de `src/labo/app.js`) ; remplacer les sources secondaires (X-ENS, CCINP) par les sites officiels.
+- Dates 2027 encore manquantes : e3a-Polytech (tableau `CAL` de `src/labo/app.js`, toutes les autres dates viennent des sites officiels).
+- Centrale-Supélec 2027 : inscription unique et barre unique pour CentraleSupélec, les Centrale et SupOptique (conseil d'administration du 18 juin 2025) ; intégrer le prix et les coefficients dès la notice 2027, et revoir les clés `ccs_*` de l'inscription.
 - Passer aux stats SCEI 2026 dès leur publication (`scei-concours.fr/stat2026/mp.html`, `pc.html`, `psi.html`, `mpi.html`).
 - Notices 2027 (places, dates, coefficients), publiées vers décembre.
 - ENS : coefficients MPI, postes 2026 de Rennes, de Lyon en MPI, d'Ulm en PC/PSI.

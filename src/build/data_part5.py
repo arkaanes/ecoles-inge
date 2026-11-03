@@ -12,7 +12,7 @@ S_ENS_LYON = src("ENS de Lyon : concours sciences (entrants 2026)",
 S_ENS_RENNES = src("ENS Rennes : concours MP 2026",
                    "https://www.ens-rennes.fr/admission/concours1a/mp")
 S_ENS_NOTICE = src("Notice inter-ENS 2026 (statut des élèves, p. 3)",
-                   "https://www.ens.psl.eu/sites/default/files/vf_notice_interens_2026_v10122025.pdf")
+                   "https://ens-paris-saclay.fr/sites/default/files/CONCOURS/CONCOURS_2026/notice_interens_2026_mise_en_ligne_vf260212.pdf")
 S_ENS_STATUT = src("Statuts à l'ENS (Diplomeo, octobre 2024)",
                    "https://diplomeo.com/actualite-statuts_etudiants_ecoles_normales_superieures")
 

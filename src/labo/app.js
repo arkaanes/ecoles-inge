@@ -268,9 +268,11 @@
     return h + "</div>";
   }
   function ecritsDate(fid) {
+    var e = CAL.filter(function (x) { return x.k === "ecrits" && evFams(x).indexOf(fid) !== -1; })[0];
+    if (e) return "Écrits 2027 : " + rangeFr(e.d1, e.d2);
     var FD = D.familles[fid] || {}, b = (FD.blocs || [])[0];
     var q = b && b.ecrits && b.ecrits.quand;
-    return q && /\d/.test(q) ? "Écrits : " + q.replace(/ 20\d\d$/, "") : "";
+    return q && /\d/.test(q) ? "Écrits 2026 : " + q.replace(/ 20\d\d$/, "") : "";
   }
   function stationHTML(f) {
     var all = famSchools(f);
@@ -422,7 +424,7 @@
       if (b.txt) h += '<p style="margin:0;color:var(--ink-2)">' + esc(b.txt) + "</p>";
       var L = "", R = "";
       if (b.ecrits) L += '<div class="step">' + step("Écrits" + (b.ecrits.quand ? ", " + esc(b.ecrits.quand) : "")) + "<div>" + epRows(b.ecrits.l, A && A.e) + "</div>" + (b.ecrits.note ? "<p>" + esc(b.ecrits.note) + "</p>" : "") + "</div>";
-      if (b.adm) R += '<div class="step">' + step("Admissibilité") + "<p>Résultats " + esc(b.adm.quand) + "." + (b.adm.txt ? " " + esc(b.adm.txt) : "") + "</p></div>";
+      if (b.adm) R += '<div class="step">' + step("Admissibilité") + "<p>" + [b.adm.quand ? "Résultats " + esc(b.adm.quand) + "." : "", b.adm.txt ? esc(b.adm.txt) : ""].filter(Boolean).join(" ") + "</p></div>";
       if (b.oraux) R += '<div class="step">' + step("Oraux" + (b.oraux.quand ? ", " + esc(b.oraux.quand) : "")) + (b.oraux.l.length ? "<div>" + epRows(b.oraux.l, A && A.o) + "</div>" : "") + (b.oraux.note ? "<p>" + esc(b.oraux.note) + "</p>" : "") + "</div>";
       if (L || R) h += '<div class="ep-grid"><div class="step-col" style="display:flex;flex-direction:column;gap:20px">' + L + '</div><div class="step-col" style="display:flex;flex-direction:column;gap:20px">' + R + "</div></div>";
       if (b.classement) h += '<div class="step">' + step("Classement final") + "<p>" + esc(b.classement) + "</p></div>";
@@ -611,7 +613,7 @@
     h += "<li>Certains concours partagent leurs écrits : X et ENS, Mines-Ponts et Mines-Télécom, et en partie e3a-Polytech et le CCINP. C'est ainsi que les concours sont regroupés sur l'accueil.</li></ul>";
     h += "<h2>Lire les chiffres</h2><ul>";
     h += "<li><b>Places 2026</b> : places offertes à la session 2026, la dernière publiée. Sinon, elles sont partagées avec d'autres filières.</li>";
-    h += "<li><b>Rang médian 2025</b> : la moitié des élèves de " + FIL + " admis en 2025 étaient classés avant ce rang (statistiques du SCEI, les dernières publiées).</li>";
+    h += "<li><b>Rang médian 2025</b> : la moitié des élèves de " + FIL + " entrés dans l'école en 2025 étaient classés avant ce rang (statistiques du SCEI, les dernières publiées).</li>";
     h += "<li><b>Un rang ne se compare qu'à l'intérieur d'une même liste de classement.</b> Mines-Ponts, le CCINP ou Polytech ont une seule liste : leurs écoles sont triées par rang. À Centrale-Supélec, dans la banque CCINP, aux ENS ou dans les écoles indépendantes d'e3a, chaque école a sa propre liste.</li>";
     h += "<li><b>Peu de places, rangs instables</b> : avec 2 à 6 places, un rang 2025 peut beaucoup bouger en 2026.</li></ul>";
     h += "<h2>Frais et boursiers</h2><ul><li>Frais par an pour un étudiant français, au montant le plus récent trouvé, avec son année. La CVEC (105 €) s'ajoute en général, sauf pour les boursiers.</li>";
@@ -628,33 +630,41 @@
   /* ---------- calendrier 2027 (sources citées ; secondaires signalées) ---------- */
   var SRC = {
     x: { t: "École polytechnique, inscription CPGE 2027", u: "https://www.polytechnique.edu/admission-cycle-ingenieur/inscription-cpge" },
+    xcal: { t: "École polytechnique, calendrier CPGE 2027", u: "https://www.polytechnique.edu/admission-cycle-ingenieur/calendrier-cpge" },
+    ccinp: { t: "CCINP, dates des écrits 2027", u: "https://www.concours-commun-inp.fr/fr/index.html" },
     ccmp: { t: "Concours Mines-Ponts, dates 2027", u: "https://concoursminesponts.fr" },
     cmt: { t: "Concours Mines-Télécom, dates clés 2027", u: "https://www.concours-mines-telecom.fr/le-concours-mines-telecom/les-dates-cles/" },
-    virage: { t: "ViragePrépa, calendrier 2027 (source non officielle)", u: "https://www.virageprepa.com/articles/calendrier-des-concours-d-ing%C3%A9nieurs-2027-inscriptions-scei-%C3%A9crits-r%C3%A9sultats-oraux" },
-    express: { t: "L'Express Éducation, CCINP 2027 (source non officielle)", u: "https://lexpress-education.com/articles/concours-ccinp/" },
-    hadamard: { t: "Hadamard, répondre à une proposition SCEI (source non officielle)", u: "https://www.hadamard.fr/actualites/accepter-ou-attendre-proposition-scei" }
+    ccs: { t: "Concours Centrale-Supélec, dates clés 2027", u: "https://www.concours-centrale-supelec.fr/" },
+    reg: { t: "Règlement 2026 du concours Mines-Ponts (procédure SCEI)", u: "https://concoursminesponts.fr/wp-content/uploads/2025/12/reglement-2026-09.12.25.pdf" }
   };
-  // k : sorte d'étape ; fam : concours concerné (null = tous) ; d1/d2 : dates ISO ; sec : source secondaire.
+  // k : sorte d'étape ; fam : concours concerné (null = tous) ; d1/d2 : dates ISO. Toutes les sources sont officielles.
   var CAL = [
     { k: "insc", t: "Inscriptions sur le SCEI", d1: "2026-12-07", d2: "2027-01-11", h: "du 7 décembre 2026 à 10 h au 11 janvier 2027 à 17 h", src: SRC.x },
     { k: "pay", t: "Paiement et pièces justificatives", d1: "2027-01-11", d2: "2027-01-19", h: "paiement à partir du 11 janvier à 17 h ; paiement et pièces avant le 19 janvier à 17 h", src: SRC.x },
     { k: "voeux", t: "Liste de vœux ouverte", d1: "2027-03-01", d2: "2027-07-23", h: "du 1er mars au 23 juillet 2027 à 12 h", src: SRC.cmt },
-    { k: "ecrits", fam: "x", t: "Écrits X-ENS", d1: "2027-04-12", d2: "2027-04-16", src: SRC.virage, sec: true, also: ["ens"] },
-    { k: "ecrits", fam: "inp", t: "Écrits CCINP", d1: "2027-04-19", d2: "2027-04-22", src: SRC.express, sec: true },
+    { k: "ecrits", fam: "x", t: "Écrits X-ENS", d1: "2027-04-12", d2: "2027-04-16", src: SRC.xcal, also: ["ens"] },
+    { k: "ecrits", fam: "inp", t: "Écrits CCINP", d1: "2027-04-19", d2: "2027-04-22", src: SRC.ccinp },
+    { k: "ecrits", fam: "cs", t: "Écrits Centrale-Supélec", d1: "2027-04-26", d2: "2027-04-29", src: SRC.ccs },
     { k: "ecrits", fam: "mp", t: "Écrits Mines-Ponts", d1: "2027-04-30", d2: "2027-05-05", h: "30 avril, 3, 4 et 5 mai 2027", src: SRC.ccmp, also: ["mt"] },
-    { k: "adm", fam: "x", t: "Admissibilité X", d1: "2027-05-26", src: SRC.virage, sec: true },
+    { k: "adm", fam: "x", t: "Admissibilité X", d1: "2027-05-26", src: SRC.xcal },
     { k: "adm", fam: "mp", t: "Admissibilité Mines-Ponts", d1: "2027-06-02", h: "à 18 h", src: SRC.ccmp },
     { k: "adm", fam: "mt", t: "Admissibilité Mines-Télécom", d1: "2027-06-03", h: "à 18 h", src: SRC.cmt },
-    { k: "oraux", fam: "x", t: "Oraux X", fil: { MP: ["2027-06-14", "2027-07-04"], PC: ["2027-06-14", "2027-07-11"], MPI: ["2027-06-07", "2027-06-13"], PSI: ["2027-06-07", "2027-06-13"] }, src: SRC.virage, sec: true },
-    { k: "oraux", fam: "mp", t: "Oraux Mines-Ponts", d1: "2027-06-21", d2: "2027-07-17", src: SRC.ccmp },
+    { k: "oraux", fam: "x", t: "Oraux X", fil: { MP: ["2027-06-14", "2027-07-04"], PC: ["2027-06-14", "2027-07-11"], MPI: ["2027-06-07", "2027-06-13"], PSI: ["2027-06-07", "2027-06-13"] }, src: SRC.xcal },
+    { k: "oraux", fam: "mp", t: "Oraux Mines-Ponts", d1: "2027-06-21", d2: "2027-07-17", h: "4 semaines ; 3 en MPI", src: SRC.ccmp },
+    { k: "oraux", fam: "cs", t: "Oraux Centrale-Supélec", d1: "2027-06-21", d2: "2027-07-18", src: SRC.ccs },
+    { k: "oraux", fam: "mt", t: "Oraux Mines-Télécom", fil: { MP: ["2027-06-22", "2027-07-09"], PC: ["2027-06-22", "2027-07-09"], PSI: ["2027-06-22", "2027-07-09"], MPI: ["2027-06-22", "2027-07-02"] }, src: SRC.cmt },
     { k: "res", fam: "mp", t: "Admission Mines-Ponts", d1: "2027-07-21", h: "à 18 h", src: SRC.ccmp },
-    { k: "res", fam: "x", t: "Admission X", d1: "2027-07-23", h: "à 14 h", src: SRC.virage, sec: true }
+    { k: "res", fam: "mt", t: "Admission Mines-Télécom", d1: "2027-07-21", h: "à 18 h (horaire indicatif)", src: SRC.cmt },
+    { k: "res", fam: "x", t: "Admission X", d1: "2027-07-23", h: "à 14 h", src: SRC.xcal },
+    { k: "prop", t: "1re proposition d'école", d1: "2027-07-27", d2: "2027-07-29", h: "le 27 juillet à 14 h ; réponse avant le 29 juillet à 12 h", src: SRC.cmt },
+    { k: "prop", t: "2e proposition d'école", d1: "2027-07-30", d2: "2027-08-01", h: "le 30 juillet à 14 h ; réponse avant le 1er août à 14 h", src: SRC.cmt },
+    { k: "prop", t: "3e proposition d'école", d1: "2027-08-24", d2: "2027-08-26", h: "le 24 août à 14 h ; réponse avant le 26 août à 14 h", src: SRC.cmt },
+    { k: "prop", t: "4e proposition d'école", d1: "2027-08-31", d2: "2027-09-02", h: "le 31 août à 14 h ; réponse avant le 2 septembre à 12 h", src: SRC.cmt },
+    { k: "prop", t: "5e proposition d'école", d1: "2027-09-03", h: "le 3 septembre à 14 h", src: SRC.cmt }
   ];
   // Pas encore publié pour 2027 : on montre 2026, présenté comme tel.
   var PENDING = [
-    { fam: "cs", t: "Centrale-Supélec" },
-    { fam: "poly", t: "e3a-Polytech", also: ["e3a"] },
-    { fam: null, t: "Propositions d'intégration", y26: "5 propositions, du 28 juillet au 4 septembre 2026", src: SRC.virage }
+    { fam: "poly", t: "e3a-Polytech", also: ["e3a"] }
   ];
   var MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
   var MOIS_C = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
@@ -718,7 +728,7 @@
     return '<a class="next" href="' + (toInsc ? "#/inscription" : "#/calendrier") + '" data-link' + st + ">" + inner + IC.chev + "</a>";
   }
   /* le parcours, étape par étape, avec son état du jour */
-  var STEP_K = { inscription: ["insc", "pay"], ecrits: ["ecrits"], adm: ["adm"], oraux: ["oraux"], voeux: ["voeux"], prop: [] };
+  var STEP_K = { inscription: ["insc", "pay"], ecrits: ["ecrits"], adm: ["adm"], oraux: ["oraux"], voeux: ["voeux"], prop: ["prop"] };
   function stepState(s) {
     var evs = visibleCal(null).filter(function (e) { return STEP_K[s.id].indexOf(e.k) !== -1; }), t = today();
     if (!evs.length) return { st: "later", lab: "Dates 2027 à venir" };
@@ -847,7 +857,7 @@
         h += "</section>";
       });
     });
-    h += '<p class="small mut" style="margin:18px 0 0">Tarifs 2026 du barème SCEI, ceux de 2027 n\'étant pas encore publiés (le concours X a confirmé 220 € pour 2027). Les frais de déplacement et d\'hébergement aux oraux ne sont pas comptés.</p>';
+    h += '<p class="small mut" style="margin:18px 0 0">Tarifs 2026 du barème SCEI, ceux de 2027 n\'étant pas encore publiés (le concours X a confirmé 220 € pour 2027). En 2027, une seule inscription Centrale-Supélec ouvrira CentraleSupélec, les quatre Centrale et SupOptique, à un prix pas encore publié. Les frais de déplacement et d\'hébergement aux oraux ne sont pas comptés.</p>';
     h += "</div>" + recapHTML(M, sel) + "</div>";
     return h;
   }
@@ -1003,22 +1013,22 @@
   var STEPS = [
     { id: "inscription", t: "Tu t'inscris", when: "7 déc. 2026 → 11 janv. 2027",
       p: ["Une seule inscription sur le site du SCEI, pour tous les concours que tu choisis. Après le 11 janvier à 17 h, plus aucun concours ne peut être ajouté.", "Paiement et pièces justificatives jusqu'au 19 janvier à 17 h : sans eux, le dossier est annulé."],
-      link: ["#/inscription", "Préparer mon inscription"], src: [SRC.x, SRC.virage] },
+      link: ["#/inscription", "Préparer mon inscription"], src: [SRC.x] },
     { id: "ecrits", t: "Les écrits", when: "avril → mai 2027",
-      p: ["Chaque concours a sa semaine d'écrits. Certains partagent leurs copies : les mêmes épreuves comptent pour l'X et les ENS, pour Mines-Ponts et Mines-Télécom.", "En 2027 : X-ENS du 12 au 16 avril, CCINP du 19 au 22 avril, Mines-Ponts du 30 avril au 5 mai. Centrale-Supélec et e3a-Polytech n'ont pas encore publié leurs dates."],
-      src: [SRC.ccmp, SRC.virage, SRC.express] },
+      p: ["Chaque concours a sa semaine d'écrits. Certains partagent leurs copies : les mêmes épreuves comptent pour l'X et les ENS, pour Mines-Ponts et Mines-Télécom.", "En 2027 : X-ENS du 12 au 16 avril, CCINP du 19 au 22 avril, Centrale-Supélec du 26 au 29 avril, Mines-Ponts du 30 avril au 5 mai. e3a-Polytech n'a pas encore publié ses dates."],
+      src: [SRC.xcal, SRC.ccinp, SRC.ccs, SRC.ccmp] },
     { id: "adm", t: "L'admissibilité", when: "fin mai → juin 2027",
       p: ["Chaque concours publie la liste de ses admissibles : ceux dont les écrits passent la barre. Seuls eux passent les oraux.", "En 2027 : l'X le 26 mai, Mines-Ponts le 2 juin, Mines-Télécom le 3 juin."],
-      src: [SRC.ccmp, SRC.cmt, SRC.virage] },
+      src: [SRC.xcal, SRC.ccmp, SRC.cmt] },
     { id: "oraux", t: "Les oraux", when: "juin → juillet 2027",
-      p: ["Planches de maths et de physique, langues, TIPE. Selon les concours, l'oral pèse de 20 % à plus de 70 % de la note finale : chaque page de concours donne son poids.", "Mines-Ponts : du 21 juin au 17 juillet 2027."],
-      src: [SRC.ccmp] },
+      p: ["Planches de maths et de physique, langues, TIPE. Selon les concours, l'oral pèse de 20 % à plus de 70 % de la note finale : chaque page de concours donne son poids.", "En 2027 : l'X à partir du 7 juin, Mines-Ponts et Centrale-Supélec à partir du 21 juin, Mines-Télécom à partir du 22 juin."],
+      src: [SRC.xcal, SRC.ccmp, SRC.ccs, SRC.cmt] },
     { id: "voeux", t: "Ta liste de vœux", when: "1er mars → 23 juillet 2027",
       p: ["Tu classes les écoles où tu veux aller, par ordre de préférence. L'ordre compte : une école placée au-dessus d'une autre passe toujours avant.", "Ne pas établir de liste de vœux vaut démission."],
-      src: [SRC.cmt, SRC.virage] },
-    { id: "prop", t: "Les propositions", when: "fin juillet → septembre",
-      p: ["À chaque phase, le SCEI te propose une école de ta liste. Tu réponds : « Oui définitif » pour t'arrêter là, ou « Oui mais » pour la garder en attendant un vœu mieux placé.", "Une absence de réponse vaut démission de toutes les écoles. En 2026, il y a eu 5 propositions, du 28 juillet au 4 septembre."],
-      src: [SRC.hadamard, SRC.virage] }
+      src: [SRC.cmt, SRC.reg] },
+    { id: "prop", t: "Les propositions", when: "27 juillet → 3 septembre 2027",
+      p: ["À chaque proposition, le SCEI t'offre la meilleure école de ta liste que ton rang permet à ce moment-là. Tu réponds « Oui définitif » pour t'arrêter là, « Oui mais » pour la garder en espérant un vœu mieux placé, ou « Non mais » pour la refuser en espérant mieux.", "Une absence de réponse dans les délais vaut démission. En 2027 : 5 propositions, du 27 juillet au 3 septembre."],
+      src: [SRC.reg, SRC.cmt] }
   ];
   function viewComprendre2() {
     var h = '<div class="story"><div class="story-vis" aria-hidden="true"><div class="sv-in"><span class="sv-n" id="sv-n">1</span><span class="sv-t" id="sv-t">' + esc(STEPS[0].t) + '</span><span class="sv-w" id="sv-w">' + esc(STEPS[0].when) + '</span><ol class="sv-steps">';
@@ -1030,7 +1040,7 @@
       h += '<div class="srcs">' + srcLinks(s.src) + "</div></section>";
     });
     h += '<section class="st-ref"><h2 class="h2">Lire les chiffres</h2><ul>';
-    h += "<li><b>Rang médian 2025</b> : la moitié des élèves de " + FIL + " admis en 2025 étaient classés avant ce rang (statistiques du SCEI, les dernières publiées).</li>";
+    h += "<li><b>Rang médian 2025</b> : la moitié des élèves de " + FIL + " entrés dans l'école en 2025 étaient classés avant ce rang (statistiques du SCEI, les dernières publiées).</li>";
     h += "<li><b>Un rang ne se compare qu'à l'intérieur d'une même liste de classement.</b> Mines-Ponts, le CCINP ou Polytech ont une seule liste ; à Centrale-Supélec, dans la banque CCINP ou aux ENS, chaque école a la sienne.</li>";
     h += "<li><b>Peu de places, rangs instables</b> : avec 2 à 6 places, un rang 2025 peut beaucoup bouger.</li>";
     h += "<li><b>Places 2026</b> : places offertes à la session 2026, la dernière publiée (notices des concours, L'Étudiant, Onisep). Sinon, elles sont partagées avec d'autres filières.</li>";

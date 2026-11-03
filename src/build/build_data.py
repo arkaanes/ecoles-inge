@@ -97,9 +97,9 @@ if errors:
 S_CAL26 = src("Calendrier SCEI 2026 (L'Étudiant, mis à jour le 7 novembre 2025)",
               "https://www.letudiant.fr/etudes/classes-prepa/ecoles-d-ingenieurs-comment-se-passe-la-procedure-d-inscription.html")
 S_CAL = src("Calendrier officiel du SCEI", "https://www.scei-concours.fr/calendrier.html")
-S_ENS_NOTICE = src("Notice inter-ENS 2026", "https://www.ens.psl.eu/sites/default/files/vf_notice_interens_2026_v10122025.pdf")
+S_ENS_NOTICE = src("Notice inter-ENS 2026", "https://ens-paris-saclay.fr/sites/default/files/CONCOURS/CONCOURS_2026/notice_interens_2026_mise_en_ligne_vf260212.pdf")
 S_MAP = src("Contours des régions : IGN Admin Express (Licence ouverte), via france-geojson", "https://github.com/gregoiredavid/france-geojson")
-SOURCES = [S_SCEI25, S_FRAIS_SCEI, S_CCMP26, S_CMT26, S_CCS26, S_CCINP26, S_E3A26, S_ENS_NOTICE, S_LOIC, S_NAT, S_HAUSSE26, S_CAL26, S_FORUM, S_MAP]
+SOURCES = [S_SCEI25, S_FRAIS_SCEI, S_CCMP26, S_CMT26, S_CCS26, S_CCINP26, S_E3A26, S_ENS_NOTICE, S_LOIC, S_NAT, S_HAUSSE26, S_CAL26, S_MAP]
 # ---- partie A : contrôle des épreuves (coefficients numériques, totaux annoncés)
 def coefs(lignes):
     return sum(float(l[2].replace(",", ".")) for l in lignes if l[2])

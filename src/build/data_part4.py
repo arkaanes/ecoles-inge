@@ -281,7 +281,7 @@ E("ecam_rennes", "ECAM Louis de Broglie", "ECAM Rennes – Louis de Broglie", ["
   B_PRIV, [A("ingeniup", 20, "MP+MPI+PC+PSI", None, [iu("ECAM Louis de Broglie", 36, 0, 697, 768, 4)], ["ccinp", "ingeniup"], src26=S_IU26, note=IU_NOTE)]),
 E("icam", "Icam Strasbourg-Europe", "Institut catholique d'arts et métiers, site de Strasbourg-Europe", ["Icam", "ICAM"], "Privé", [C("Schiltigheim (Strasbourg)", "67", "ges")],
   ["gen"], "Généraliste", "Généraliste",
-  frais("9 700 €/an (2026) + 620 € de frais de vie collective ; gratuit en apprentissage", 10320, 10320, "2026", [onisep("https://www.onisep.fr/ressources/structures-enseignement/grand-est/bas-rhin/institut-catholique-d-arts-et-metiers-site-de-strasbourg-europe/diplome-d-ingenieur-de-l-institut-catholique-d-arts-et-metiers")]),
+  frais("9 700 €/an (2026-2027) + 620 € de frais de vie collective ; gratuit en apprentissage", 10320, 10320, "2026-2027", [src("Fiche Parcoursup de l'Icam (frais du cycle ingénieur, renseignés par l'école)", "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24656")], "Officiel (fiche Parcoursup de l'école)"),
   bours("part", "Les boursiers d'État reçoivent une bourse complémentaire de l'école."),
   [A("ingeniup", 35, "MP+MPI+PC+PSI", None, [iu("Icam Strasbourg-Europe", 30, 0, 1084, 1045, 7)], ["ccinp", "ingeniup"], src26=S_IU26, note=IU_NOTE)]),
 E("unilasalle", "UniLaSalle", "Institut polytechnique UniLaSalle", ["UniLaSalle", "ESIEE Amiens", "EME"], "Privé",

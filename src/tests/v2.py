@@ -32,7 +32,8 @@ try:
                 for classe in (("MP", "MPSI") if not style else ("MP",)):
                     pg.goto(URL + style + "#/"); pg.wait_for_function("document.querySelector('#view h1')")
                     pg.evaluate("c => { localStorage.clear(); localStorage.setItem('ecoles-proto', JSON.stringify({classe: c, fil: c === 'MPSI' ? 'MP' : c})); }", classe)
-                    pg.goto(URL + style + "#/"); pg.wait_for_function("document.querySelector('#view h1')")
+                    pg.goto("about:blank"); pg.goto(URL + style + "#/"); pg.wait_for_function("document.querySelector('#view h1')")
+                    ok(pg.evaluate("JSON.parse(localStorage.getItem('ecoles-proto')).classe") == classe, f"classe {classe} non appliquée")
                     routes = ["#/cote", "#comprendre", "#/", "#/carte", "#/carte/ara", "#/calendrier", "#/inscription", "#/filiere", "#/explorer", "#/explorer?c=mp,cs&r=idf", "#/domaines/info", "#/chercher?q=lyon", "#/comprendre"]
                     routes += ["#/c/" + f + t for f in ("x", "ens", "mp", "mt", "cs", "inp", "poly", "e3a", "autres") for t in ("", "/epreuves", "/style", "/inscription")]
                     routes += ["#/e/" + i for i in (ids if (not style and w == 390) else ids[:25])]
@@ -73,7 +74,9 @@ try:
                 # sujets et rapports : chaque filière, chaque concours, liens par épreuve
                 for fil in ("MP", "PC", "PSI", "MPI"):
                     pg.evaluate("c => localStorage.setItem('ecoles-proto', JSON.stringify({classe: c, fil: c}))", fil)
-                    pg.goto(URL + style + "#/"); pg.wait_for_function("document.querySelector('#view h1')")
+                    pg.goto("about:blank"); pg.goto(URL + style + "#/"); pg.wait_for_function("document.querySelector('#view h1')")
+                    shown = pg.evaluate("document.getElementById('filbtn-cl').textContent.trim()")
+                    ok(shown == fil, f"filière affichée {shown} au lieu de {fil}")
                     for fid in ("x", "ens", "mp", "mt", "cs", "inp", "poly", "e3a"):
                         pg.evaluate("h => { location.hash = h; }", "#/c/" + fid + "/epreuves"); pg.wait_for_timeout(120)
                         res = pg.evaluate(CHECK)
@@ -82,8 +85,10 @@ try:
                                   [...v.querySelectorAll('.eprow')].filter(r => r.querySelector('.ann')).length]; }""")
                         if res["over"] or res["bad"]: bad.append((style, w, fil, "#/c/" + fid + "/epreuves", res))
                         ok(an[0] > 3 and an[1] == 0 and an[2] >= 1 and an[3] >= 3, f"annales {fil} {fid} : {an}")
+                        if fid == "inp": ok(pg.evaluate("f => !!document.querySelector('#view a[href*=\"annales-' + f + '.html\"]')", fil.lower()), f"annales CCINP de la filière {fil} absentes")
+                        ok("Résultats ." not in pg.evaluate("document.getElementById('view').innerText"), f"« Résultats . » sur {fil} {fid}")
                 pg.evaluate("() => localStorage.setItem('ecoles-proto', JSON.stringify({classe: 'MP', fil: 'MP'}))")
-                pg.goto(URL + style + "#/"); pg.wait_for_function("document.querySelector('#view h1')")
+                pg.goto("about:blank"); pg.goto(URL + style + "#/"); pg.wait_for_function("document.querySelector('#view h1')")
                 # explorateur : un filtre réduit la liste
                 pg.evaluate("() => { location.hash = '#/explorer'; }"); pg.wait_for_timeout(500)
                 n0 = pg.evaluate("document.querySelectorAll('#xres .row').length")
