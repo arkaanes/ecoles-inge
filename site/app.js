@@ -282,11 +282,7 @@
   }
   function viewHome() {
     var h = '<div class="home"><div class="home-main" style="display:flex;flex-direction:column;gap:22px">';
-    var nx = nextStep();
-    if (nx) {
-      var nn = dayDiff(today(), iso(nx.a));
-      h += '<a class="next" href="' + (nx.k === "insc" || nx.k === "pay" ? "#/inscription" : "#/calendrier") + '" data-link style="--fc:' + (nx.fam ? "var(--f-" + nx.fam + ")" : "var(--ink)") + '"><span class="next-k">' + (nn > 0 ? esc(relFr(nn).replace(/^d/, "D")) : "En ce moment") + '</span><b>' + esc(nx.t) + "</b><span>" + esc(rangeFr(nx.a, nx.b)) + "</span>" + IC.chev + "</a>";
-    }
+    h += nextCardHTML(false);
     h += classeHTML(false);
     if (firstYear()) h += '<a class="qk wide" href="#/filiere" data-link>' + IC.grid + "Comparer mes filières de 2e année</a>";
     h += '<a class="searchbox" href="#/explorer" data-link>' + IC.search + "Une école, une ville, un domaine</a>";
@@ -698,38 +694,46 @@
   /* ---------- calendrier : frise + liste ---------- */
   var calMine = false;
   var KIND = { insc: "Inscriptions", pay: "Paiement", voeux: "Vœux", ecrits: "Écrits", adm: "Admissibilité", oraux: "Oraux", res: "Admission" };
-  function fristHTML(evs) {
-    var t0 = iso("2026-11-01"), t1 = iso("2027-09-30"), span = t1 - t0;
-    var pos = function (d) { return Math.max(0, Math.min(100, (iso(d) - t0) / span * 100)); };
-    var rows = [], seen = {};
-    evs.forEach(function (e) {
-      var key = e.fam ? (BLOC_OF[e.fam] ? BLOC_OF[e.fam].id + ":" + e.fam : e.fam) : "scei";
-      if (!seen[key]) { seen[key] = { lab: e.fam ? FAM[e.fam].nom : "SCEI", c: e.fam ? "var(--f-" + e.fam + ")" : "var(--ink)", ev: [] }; rows.push(seen[key]); }
-      seen[key].ev.push(e);
+  function nextCardHTML(onCal) {
+    var nx = nextStep(); if (!nx) return "";
+    var nn = dayDiff(today(), iso(nx.a)), toInsc = nx.k === "insc" || nx.k === "pay";
+    var inner = '<span class="next-k">' + (nn > 0 ? esc(relFr(nn).replace(/^d/, "D")) : "En ce moment") + '</span><b>' + esc(nx.t) + "</b><span>" + esc(rangeFr(nx.a, nx.b)) + "</span>";
+    var st = ' style="--fc:' + (nx.fam ? "var(--f-" + nx.fam + ")" : "var(--ink)") + '"';
+    if (onCal && !toInsc) return '<div class="next"' + st + ">" + inner + "</div>";
+    return '<a class="next" href="' + (toInsc ? "#/inscription" : "#/calendrier") + '" data-link' + st + ">" + inner + IC.chev + "</a>";
+  }
+  /* le parcours, étape par étape, avec son état du jour */
+  var STEP_K = { inscription: ["insc", "pay"], ecrits: ["ecrits"], adm: ["adm"], oraux: ["oraux"], voeux: ["voeux"], prop: [] };
+  function stepState(s) {
+    var evs = visibleCal(null).filter(function (e) { return STEP_K[s.id].indexOf(e.k) !== -1; }), t = today();
+    if (!evs.length) return { st: "later", lab: "Dates 2027 à venir" };
+    var a = evs.map(function (e) { return e.a; }).sort()[0], b = evs.map(function (e) { return e.b; }).sort().pop();
+    if (iso(b) < t) return { st: "done", lab: "Terminé" };
+    if (iso(a) <= t) return { st: "now", lab: "En cours" };
+    return { st: "soon", lab: relFr(dayDiff(t, iso(a))).replace(/^d/, "D") };
+  }
+  function parcoursHTML() {
+    var h = '<ol class="pc">', nextDone = false, all = visibleCal(null);
+    var first = function (s) { var d = all.filter(function (e) { return STEP_K[s.id].indexOf(e.k) !== -1; }).map(function (e) { return e.a; }).sort()[0]; return d || "9999"; };
+    STEPS.slice().sort(function (p, q) { return first(p) < first(q) ? -1 : first(p) > first(q) ? 1 : 0; }).forEach(function (s, i) {
+      var S = stepState(s), isNext = !nextDone && (S.st === "now" || S.st === "soon");
+      if (isNext) nextDone = true;
+      h += '<li class="pc-s" data-st="' + S.st + '"' + (isNext ? " data-next" : "") + '><details' + (S.st === "now" ? " open" : "") + '><summary><span class="pc-n">' + (i + 1) + '</span><span class="pc-t"><b>' + esc(s.t) + "</b><small>" + esc(s.when) + '</small></span><span class="pc-st">' + esc(S.lab) + "</span>" + IC.down + "</summary>";
+      h += '<div class="pc-in">' + s.p.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("");
+      if (s.link) h += '<a class="btnlink" href="' + s.link[0] + '" data-link>' + esc(s.link[1]) + "</a>";
+      h += '<div class="srcs">' + srcLinks(s.src) + "</div></div></details></li>";
     });
-    var h = '<div class="frise" aria-hidden="true"><div class="fr-months">';
-    for (var m = 10; m <= 20; m++) { var mm = m % 12; h += '<span style="left:' + pos((m < 12 ? 2026 : 2027) + "-" + String(mm + 1).padStart(2, "0") + "-01") + '%">' + MOIS_C[mm].replace(".", "") + "</span>"; }
-    h += "</div>";
-    rows.forEach(function (r) {
-      h += '<div class="fr-row"><span class="fr-lab">' + esc(r.lab) + '</span><div class="fr-track">';
-      r.ev.forEach(function (e) {
-        var a = pos(e.a), b = pos(e.b), w = Math.max(b - a, .9);
-        h += '<i class="fr-bar k-' + e.k + '" style="left:' + a + "%;width:" + w + "%;--fc:" + r.c + '"></i>';
-      });
-      h += "</div></div>";
-    });
-    var tp = pos(today().toISOString().slice(0, 10));
-    h += '<div class="fr-today" style="left:calc(var(--lab-w) + (100% - var(--lab-w)) * ' + (tp / 100) + ')"><span>aujourd\'hui</span></div>';
-    return h + "</div>";
+    return h + "</ol>";
   }
   function viewCalendrier() {
     var mine = calMine && INSC.keys().length ? mineFams() : null;
     var evs = visibleCal(mine), t = today();
-    var h = '<div class="cal"><div class="cal-head"><h1 class="h1">Le calendrier 2027</h1>';
-    h += '<div class="cal-tools"><div class="seg2" role="group" aria-label="Concours affichés"><button type="button" data-calmine="0" aria-pressed="' + !calMine + '">Tous les concours</button><button type="button" data-calmine="1" aria-pressed="' + calMine + '">Mes concours</button></div>';
+    var h = '<div class="cal"><h1 class="h1">Le calendrier 2027</h1>';
+    h += '<div class="cal-top">' + nextCardHTML(true) + "</div>";
+    h += '<h2 class="h2 cal-sec">Le parcours</h2>' + parcoursHTML();
+    h += '<div class="cal-head"><h2 class="h2 cal-sec">Toutes les dates</h2><div class="cal-tools"><div class="seg2" role="group" aria-label="Concours affichés"><button type="button" data-calmine="0" aria-pressed="' + !calMine + '">Tous les concours</button><button type="button" data-calmine="1" aria-pressed="' + calMine + '">Mes concours</button></div>';
     h += '<button class="btnp" type="button" data-ics="1">' + IC.cal + "Ajouter à mon calendrier</button></div></div>";
     if (calMine && !INSC.keys().length) h += '<p class="empty" style="padding:8px 0 0">Coche tes concours dans <a href="#/inscription" data-link>Préparer mon inscription</a> : le calendrier ne montrera que les leurs.</p>';
-    h += fristHTML(evs);
     var cur = null, placedToday = false;
     h += '<ol class="cal-list">';
     evs.forEach(function (e) {

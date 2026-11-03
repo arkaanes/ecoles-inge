@@ -61,6 +61,8 @@ try:
                 # calendrier : mes concours + export .ics
                 pg.evaluate("() => { location.hash = '#/calendrier'; }"); pg.wait_for_timeout(500)
                 n_all = pg.evaluate("document.querySelectorAll('.cal-ev').length")
+                pcs = pg.evaluate("[document.querySelectorAll('.pc-s').length, !!document.querySelector('.cal-top .next'), document.querySelectorAll('.frise').length, (document.querySelector('.pc-s[data-next] .pc-t b') || {}).textContent]")
+                ok(pcs[0] == 6 and pcs[1] and pcs[2] == 0 and pcs[3], f"calendrier : parcours {pcs}")
                 pg.click('[data-calmine="1"]'); pg.wait_for_timeout(600)
                 n_mine = pg.evaluate("document.querySelectorAll('.cal-ev').length")
                 ok(0 < n_mine < n_all, f"calendrier : {n_all} étapes, {n_mine} pour mes concours")

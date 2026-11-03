@@ -143,3 +143,7 @@ a { color: var(--accent-ink); }
 .tabbar a[aria-current="page"], .topnav a[aria-current="page"] { color: var(--accent-ink); }
 .next-k { color: var(--accent-ink); }
 .c-tag { color: var(--mut); }
+.pc-t b { font-family: var(--font); }
+.pc-s[data-next] .pc-st { color: var(--accent-ink); }
+.pc-n { background: var(--bg); }
+.next.cal-next, .cal-top .next { color: var(--ink); }

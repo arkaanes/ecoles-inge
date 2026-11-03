@@ -213,3 +213,31 @@
 .ct-r { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 12px; padding: 7px 0; border-top: 1px solid var(--line); font-size: 14.5px; }
 .ct-r > span { color: var(--mut); }
 .ct-r b { font-weight: 600; }
+
+/* ---------- calendrier : prochaine étape et parcours (à la place de la frise) ---------- */
+.cal-top { margin-top: 16px; max-width: 820px; }
+.cal-sec { margin: 30px 0 4px; }
+.cal-head .cal-sec { margin-bottom: 0; }
+.cal-head { margin-top: 30px; margin-bottom: 26px; }
+.pc { list-style: none; margin: 12px 0 0; padding: 0; max-width: 820px; position: relative; }
+.pc::before { content: ""; position: absolute; left: 15px; top: 28px; bottom: 28px; width: 2px; background: var(--line); }
+.pc-s { position: relative; }
+.pc-s summary { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto 18px; gap: 12px; align-items: center; min-height: 64px; padding: 6px 0; cursor: pointer; list-style: none; }
+.pc-s summary::-webkit-details-marker { display: none; }
+.pc-s summary svg { width: 18px; height: 18px; fill: none; stroke: var(--mut); stroke-width: 2.4; stroke-linecap: round; transition: transform .35s var(--spring); }
+.pc-s details[open] summary svg { transform: rotate(180deg); }
+.pc-n { position: relative; z-index: 1; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--line-2); background: var(--bg); font-size: 14px; font-weight: 800; color: var(--mut); transition: background .3s, border-color .3s, color .3s; }
+.pc-s[data-st="done"] .pc-n { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.pc-s[data-st="now"] .pc-n { background: var(--accent); border-color: var(--accent); color: var(--on-accent, #fff); box-shadow: 0 0 0 0 var(--accent); animation: ring 2.2s ease-out infinite; }
+@keyframes ring { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); } 70%, 100% { box-shadow: 0 0 0 10px transparent; } }
+.pc-t { display: flex; flex-direction: column; min-width: 0; }
+.pc-t b { font-size: 17px; font-weight: 800; line-height: 1.25; }
+.pc-t small { font-size: 14px; color: var(--mut); }
+.pc-st { font-size: 13.5px; font-weight: 700; color: var(--mut); white-space: nowrap; }
+.pc-s[data-next] .pc-st { color: var(--accent); }
+.pc-s[data-st="done"] .pc-t b { color: var(--mut); }
+.pc-in { padding: 2px 0 14px 44px; }
+.pc-s details[open] .pc-in { animation: pcin .45s var(--spring); }
+@keyframes pcin { from { opacity: 0; transform: translateY(-6px); } }
+.pc-in p { margin: 0 0 10px; font-size: 16px; line-height: 1.55; color: var(--ink-2); max-width: 62ch; }
+@media (max-width: 560px) { .pc-s summary { grid-template-columns: 32px minmax(0, 1fr) 18px; } .pc-n { grid-row: 1 / span 2; } .pc-st { grid-column: 2; grid-row: 2; margin-top: -4px; } .pc-s summary svg { grid-column: 3; grid-row: 1 / span 2; } }
