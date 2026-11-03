@@ -241,3 +241,21 @@
 @keyframes pcin { from { opacity: 0; transform: translateY(-6px); } }
 .pc-in p { margin: 0 0 10px; font-size: 16px; line-height: 1.55; color: var(--ink-2); max-width: 62ch; }
 @media (max-width: 560px) { .pc-s summary { grid-template-columns: 32px minmax(0, 1fr) 18px; } .pc-n { grid-row: 1 / span 2; } .pc-st { grid-column: 2; grid-row: 2; margin-top: -4px; } .pc-s summary svg { grid-column: 3; grid-row: 1 / span 2; } }
+
+/* ---------- sujets et rapports par épreuve ---------- */
+.eprow .ann { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; margin-top: -1px; }
+.an, .an-doc { display: inline-flex; align-items: center; min-height: 30px; padding: 0 11px; border: 1px solid var(--line-2); border-radius: 999px; background: var(--surface); color: var(--ink); font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: border-color .2s, background .2s, transform .2s var(--spring); }
+.an.r, .an-doc { background: none; color: var(--ink-2); font-weight: 500; }
+.an:hover, .an-doc:hover { border-color: var(--c, var(--ink)); transform: translateY(-1px); }
+.an:focus-visible, .an-doc:focus-visible { outline: 2px solid var(--c, var(--ink)); outline-offset: 2px; }
+.ann-foot { display: flex; flex-direction: column; gap: 10px; }
+.ann-links { display: flex; flex-wrap: wrap; column-gap: 26px; }
+.ann-docs { display: flex; flex-wrap: wrap; gap: 8px; }
+.an-doc { min-height: 38px; padding: 0 14px; font-size: 14px; }
+@media (min-width: 760px) {
+  .eprow:has(.ann) { grid-template-columns: minmax(0, 1fr) auto auto 44px; align-items: center; }
+  .eprow:has(.ann) > span:first-child { grid-column: 1; grid-row: 1; }
+  .eprow .ann { grid-column: 2; grid-row: 1; justify-content: flex-end; max-width: 52vw; margin: 0; }
+  .eprow:has(.ann) .d { grid-column: 3; grid-row: 1; }
+  .eprow:has(.ann) .c { grid-column: 4; grid-row: 1; }
+}

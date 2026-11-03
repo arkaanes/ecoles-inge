@@ -31,6 +31,7 @@ python3 tests/proto.py     # prototypes de vote (neutre, b, mix)
 - `src/build/data_pc.py` : données **PC** (généré par `tools/extract_pc.py`, puis corrigé à la main).
 - `src/build/data_psi_acces.py`, `data_mpi_acces.py` : voies **PSI / MPI** (générées par `tools/build_psi_acces.py` et `tools/build_mpi_acces.py` à partir des relevés SCEI de `psi/` et `mpi/`).
 - `src/build/data_psi_fil.py`, `data_mpi_fil.py` : familles, concours, frais et variantes propres à la PSI et à la MPI.
+- `src/build/data_annales.py` : sujets et rapports du jury, épreuve par épreuve (écrits et oraux), pour chaque filière et chaque concours, relevés sur les pages officielles ; `build_data.py` vérifie que chaque épreuve existe et que chaque lien est en https. `python3 data_annales.py` liste toutes les URL pour les revérifier.
 - `src/geo/` : carte des régions (`out/map.json`).
 - `src/ancien/` : l'ancien site en une page (`template4.html`, `build_page4.py`) et ses tests, archivés.
 
@@ -50,3 +51,4 @@ Lignes de stats : `lib, pl, int, med, moy, cl|ins, inter, iint, c25, prev`. Ordr
 - Frais et bourses école par école (non revérifiés ; `build_data.py` liste les écoles sans frais trouvés).
 - Citations de jury en MP : celle de Centrale vient du rapport PC ; CCINP et Polytech citent des rapports 2023-2024.
 - Barres d'admissibilité quand elles sont publiées.
+- Annales (`data_annales.py`) : rapports 2026 encore absents au 3 novembre 2026 pour Centrale-Supélec (rapport 2025 affiché), les épreuves propres aux ENS et la banque X-ENS PSI (rapports 2025 affichés), l'informatique B de l'X en PC et les oraux d'informatique MPI du CCINP. Sujet ENS de physique MPI non relié (épreuve à confirmer). Passer aux sujets 2027 après les écrits.

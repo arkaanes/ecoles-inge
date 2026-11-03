@@ -397,22 +397,37 @@
     }
     return h + IC.chev + "</a>";
   }
-  function epRows(l) {
-    return l.map(function (e) { return '<div class="eprow"><span>' + esc(e[0]) + (e[3] ? "<small>" + esc(e[3]) + "</small>" : "") + '</span><span class="d">' + esc(e[1] || "") + '</span><span class="c">' + (e[2] ? "× " + esc(e[2]) : "") + "</span></div>"; }).join("");
+  function annLink(it, cls) {
+    return '<a class="' + cls + (/^Rapport|^Corrigé/.test(it[0]) ? " r" : "") + '" href="' + esc(it[2]) + '" target="_blank" rel="noopener">' + esc(it[0]) + " " + it[1] + "</a>";
+  }
+  function epRows(l, ann) {
+    return l.map(function (e) {
+      var a = ann && ann[e[0]];
+      return '<div class="eprow"><span>' + esc(e[0]) + (e[3] ? "<small>" + esc(e[3]) + "</small>" : "") + '</span><span class="d">' + esc(e[1] || "") + '</span><span class="c">' + (e[2] ? "× " + esc(e[2]) : "") + "</span>" +
+        (a && a.length ? '<span class="ann">' + a.map(function (it) { return annLink(it, "an"); }).join("") + "</span>" : "") + "</div>";
+    }).join("");
+  }
+  function annFootHTML(A, notice) {
+    var bl = function (t, u, c) { return '<a class="btnlink' + (c || "") + '" href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(t) + "</a>"; };
+    var links = (notice ? bl(notice.t, notice.u) : "") + (A ? A.pages.map(function (p) { return bl(p[0], p[1], " ann-page"); }).join("") : "");
+    if (!A) return links;
+    return '<div class="ann-foot">' + (A.docs.length ? '<div class="ann-docs">' + A.docs.map(function (it) { return annLink(it, "an-doc"); }).join("") + "</div>" : "") +
+      '<div class="ann-links">' + links + "</div></div>";
   }
   function epreuvesHTML(fid) {
-    var FD = D.familles[fid] || {}, h = '<div class="ep">';
-    (FD.blocs || []).forEach(function (b) {
+    var FD = D.familles[fid] || {}, h = '<div class="ep">', A = FD.annales;
+    (FD.blocs || []).forEach(function (b, bi) {
       var n = 0, step = function (t) { n++; return '<div class="step-h"><i>' + n + "</i>" + t + "</div>"; };
       if (b.titre) h += '<h2 class="ep-t">' + esc(b.titre) + "</h2>";
       if (b.txt) h += '<p style="margin:0;color:var(--ink-2)">' + esc(b.txt) + "</p>";
       var L = "", R = "";
-      if (b.ecrits) L += '<div class="step">' + step("Écrits" + (b.ecrits.quand ? ", " + esc(b.ecrits.quand) : "")) + "<div>" + epRows(b.ecrits.l) + "</div>" + (b.ecrits.note ? "<p>" + esc(b.ecrits.note) + "</p>" : "") + "</div>";
+      if (b.ecrits) L += '<div class="step">' + step("Écrits" + (b.ecrits.quand ? ", " + esc(b.ecrits.quand) : "")) + "<div>" + epRows(b.ecrits.l, A && A.e) + "</div>" + (b.ecrits.note ? "<p>" + esc(b.ecrits.note) + "</p>" : "") + "</div>";
       if (b.adm) R += '<div class="step">' + step("Admissibilité") + "<p>Résultats " + esc(b.adm.quand) + "." + (b.adm.txt ? " " + esc(b.adm.txt) : "") + "</p></div>";
-      if (b.oraux) R += '<div class="step">' + step("Oraux" + (b.oraux.quand ? ", " + esc(b.oraux.quand) : "")) + (b.oraux.l.length ? "<div>" + epRows(b.oraux.l) + "</div>" : "") + (b.oraux.note ? "<p>" + esc(b.oraux.note) + "</p>" : "") + "</div>";
+      if (b.oraux) R += '<div class="step">' + step("Oraux" + (b.oraux.quand ? ", " + esc(b.oraux.quand) : "")) + (b.oraux.l.length ? "<div>" + epRows(b.oraux.l, A && A.o) + "</div>" : "") + (b.oraux.note ? "<p>" + esc(b.oraux.note) + "</p>" : "") + "</div>";
       if (L || R) h += '<div class="ep-grid"><div class="step-col" style="display:flex;flex-direction:column;gap:20px">' + L + '</div><div class="step-col" style="display:flex;flex-direction:column;gap:20px">' + R + "</div></div>";
       if (b.classement) h += '<div class="step">' + step("Classement final") + "<p>" + esc(b.classement) + "</p></div>";
-      if (b.notice) h += '<a class="btnlink" href="' + esc(b.notice.u) + '" target="_blank" rel="noopener">' + esc(b.notice.t) + "</a>";
+      if (bi === FD.blocs.length - 1) h += annFootHTML(A, b.notice);
+      else if (b.notice) h += annFootHTML(null, b.notice);
       if (b.src && b.src.length) h += '<div class="srcs">' + srcLinks(b.src) + "</div>";
     });
     return h + "</div>";

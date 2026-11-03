@@ -285,6 +285,26 @@ for fid, fam in FIL_PC["familles"].items():
             for l in (b.get(part) or {}).get("l", []):
                 if len(l) not in (3, 4) or (l[2] and not l[2].replace(" / ", "").replace(",", "").isdigit()):
                     errors.append(f"PC {fid}: ligne d'épreuve mal formée {l}")
+from data_annales import ANNALES
+FIL_FAMS = {"MP": FAMILLES, "PC": FIL_PC["familles"], "PSI": FIL_PSI["familles"], "MPI": FIL_MPI["familles"]}
+n_ann = 0
+for fil, fams in ANNALES.items():
+    for fid, ann in fams.items():
+        fam = FIL_FAMS[fil].get(fid)
+        if not fam:
+            errors.append(f"annales {fil} {fid}: famille inconnue")
+            continue
+        for part in ("e", "o"):
+            noms = {l[0] for b in fam["blocs"] for l in (b.get({"e": "ecrits", "o": "oraux"}[part]) or {}).get("l", [])}
+            for nom, items in ann[part].items():
+                n_ann += len(items)
+                if nom not in noms:
+                    errors.append(f"annales {fil} {fid}: épreuve « {nom} » absente des lignes")
+                for it in items:
+                    if len(it) != 3 or not isinstance(it[1], int) or not it[2].startswith("https://"):
+                        errors.append(f"annales {fil} {fid}: lien mal formé {it}")
+        fam["annales"] = ann
+print("Annales :", n_ann, "liens d'épreuves")
 if errors:
     print("\nERRORS:")
     for e in errors:

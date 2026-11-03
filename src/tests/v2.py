@@ -70,6 +70,20 @@ try:
                     pg.click('[data-ics="1"]')
                 ics = open(dl.value.path(), encoding="utf-8").read()
                 ok(ics.count("BEGIN:VEVENT") == n_mine and "DTSTART;VALUE=DATE:20270430" in ics, f"ics : {ics.count('BEGIN:VEVENT')} évènements")
+                # sujets et rapports : chaque filière, chaque concours, liens par épreuve
+                for fil in ("MP", "PC", "PSI", "MPI"):
+                    pg.evaluate("c => localStorage.setItem('ecoles-proto', JSON.stringify({classe: c, fil: c}))", fil)
+                    pg.goto(URL + style + "#/"); pg.wait_for_function("document.querySelector('#view h1')")
+                    for fid in ("x", "ens", "mp", "mt", "cs", "inp", "poly", "e3a"):
+                        pg.evaluate("h => { location.hash = h; }", "#/c/" + fid + "/epreuves"); pg.wait_for_timeout(120)
+                        res = pg.evaluate(CHECK)
+                        an = pg.evaluate("""() => { const v = document.getElementById('view'), a = [...v.querySelectorAll('.ann a, .an-doc')];
+                          return [a.length, a.filter(x => !/^https:/.test(x.href) || x.target !== '_blank').length, v.querySelectorAll('.ann-foot .ann-page').length,
+                                  [...v.querySelectorAll('.eprow')].filter(r => r.querySelector('.ann')).length]; }""")
+                        if res["over"] or res["bad"]: bad.append((style, w, fil, "#/c/" + fid + "/epreuves", res))
+                        ok(an[0] > 3 and an[1] == 0 and an[2] >= 1 and an[3] >= 3, f"annales {fil} {fid} : {an}")
+                pg.evaluate("() => localStorage.setItem('ecoles-proto', JSON.stringify({classe: 'MP', fil: 'MP'}))")
+                pg.goto(URL + style + "#/"); pg.wait_for_function("document.querySelector('#view h1')")
                 # explorateur : un filtre réduit la liste
                 pg.evaluate("() => { location.hash = '#/explorer'; }"); pg.wait_for_timeout(500)
                 n0 = pg.evaluate("document.querySelectorAll('#xres .row').length")
