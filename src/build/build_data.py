@@ -58,7 +58,7 @@ def tot(cid, scope=None):
 checks = {
     "CCMP 2026 (579 attendu)": (tot("ccmp"), 579),
     "CMT 2026 hors IMT-BS (827-15=812 attendu)": (tot("cmt"), 812),
-    "CCINP 2026 (1079 attendu)": (tot("ccinp"), 1079),
+    "CCINP 2026 (1080 attendu, somme de la page officielle des places MP)": (tot("ccinp"), 1080),
     "Polytech MP/PC/PSI 2026 (793 attendu)": (tot("e3a_poly"), 793),
     "Avenir MP 2026 hors Casablanca (154-1=153 attendu)": (tot("avenir"), 153),
     "Ingéni'Up 2026 (145 attendu)": (tot("ingeniup"), 145),

@@ -3,14 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1F1813" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" id="tc-l" content="#FAF7F2" media="(prefers-color-scheme: light)"><meta name="theme-color" id="tc-d" content="#1F1813" media="(prefers-color-scheme: dark)">
 <title>Écoles d'ingénieurs</title>
 <meta name="description" content="Les écoles d'ingénieurs après une prépa scientifique : concours, épreuves, places, rangs médians, frais. Chaque chiffre est sourcé.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap">
 <link rel="stylesheet" href="site/base.css">
 <link rel="stylesheet" href="site/v2.css">
-<link rel="stylesheet" href="site/theme.css">
+<link rel="stylesheet" href="site/theme.css" id="st-actuel">
+<link rel="stylesheet" href="site/theme-neutre.css" id="st-neutre">
+<script>
+(function () {
+  var s = "actuel";
+  try { if (localStorage.getItem("ecoles-style") === "neutre") s = "neutre"; } catch (e) { /* rien */ }
+  document.documentElement.setAttribute("data-style", s);
+  document.getElementById(s === "actuel" ? "st-neutre" : "st-actuel").media = "not all";
+  if (s === "neutre") { document.getElementById("tc-l").setAttribute("content", "#FFFFFF"); document.getElementById("tc-d").setAttribute("content", "#0F1115"); }
+})();
+</script>
 </head>
 <body>
 <a class="skip" href="#view">Aller au contenu</a>
@@ -30,6 +40,7 @@
       <span class="ind" aria-hidden="true"></span>
     </nav>
     <button class="filbtn" id="filbtn" type="button" aria-haspopup="dialog" aria-controls="sheet"><span id="filbtn-cl">MP</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+    <button class="stylebtn" id="stylebtn" type="button" aria-label="Changer de style"><span aria-hidden="true">Aa</span></button>
   </div>
 </header>
 

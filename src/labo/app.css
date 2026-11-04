@@ -17,6 +17,19 @@
 .seg2 button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(20, 23, 30, .12); }
 .linkb { min-height: 40px; padding: 0; border: 0; background: none; font-size: 14px; font-weight: 700; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent); }
 
+/* choix du style (site principal seulement : data-style est posé dans l'en-tête de la page) */
+.stylebtn { display: none; flex: none; place-items: center; width: 40px; height: 40px; margin-left: -12px; padding: 0; border: 1.5px solid var(--line-2); border-radius: 50%; background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1; transition: transform .15s, border-color .2s; }
+:root[data-style] .stylebtn { display: inline-grid; }
+.stylebtn:hover { border-color: var(--ink); }
+.stylebtn:active { transform: scale(.94); }
+:root[data-style="actuel"] .stylebtn span { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-weight: 800; letter-spacing: -.02em; }
+:root[data-style="neutre"] .stylebtn span { font-family: "Fraunces", Georgia, "Times New Roman", serif; font-weight: 600; }
+html[data-dir="style"]::view-transition-group(*) { animation: none; }
+html[data-dir="style"]::view-transition-old(*) { animation: vt-st-out .3s ease both; }
+html[data-dir="style"]::view-transition-new(*) { animation: vt-st-in .3s ease both; }
+@keyframes vt-st-out { to { opacity: 0; } }
+@keyframes vt-st-in { from { opacity: 0; } }
+
 /* accueil : prochaine étape */
 .next { display: grid; grid-template-columns: minmax(0, 1fr) 18px; column-gap: 12px; align-items: center; padding: 14px 16px; border: 1.5px solid var(--line); border-radius: 16px; background: var(--soft); text-decoration: none; transition: border-color .2s, transform .3s var(--spring); }
 .next:hover { border-color: var(--line-2); transform: translateY(-1px); }

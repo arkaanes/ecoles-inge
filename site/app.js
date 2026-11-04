@@ -1316,6 +1316,22 @@
   }
 
   /* ---------- événements ---------- */
+  // Style du site : « actuel » (crème, terre cuite) ou « neutre » (celui de la v2). Le mode sombre suit l'appareil dans les deux.
+  // Le style choisi est appliqué avant l'affichage par le script de l'en-tête de la page ; ici, seulement le bouton.
+  var TC = { actuel: ["#FAF7F2", "#1F1813"], neutre: ["#FFFFFF", "#0F1115"] };
+  function setStyle(s) {
+    var root = document.documentElement;
+    root.setAttribute("data-style", s);
+    ["actuel", "neutre"].forEach(function (k) { var l = document.getElementById("st-" + k); if (l) l.media = k === s ? "all" : "not all"; });
+    var l = document.getElementById("tc-l"), d = document.getElementById("tc-d");
+    if (l) l.setAttribute("content", TC[s][0]);
+    if (d) d.setAttribute("content", TC[s][1]);
+  }
+  function toggleStyle() {
+    var s = document.documentElement.getAttribute("data-style") === "neutre" ? "actuel" : "neutre";
+    try { localStorage.setItem("ecoles-style", s); } catch (e) { /* rien */ }
+    transition("style", function () { setStyle(s); });
+  }
   document.addEventListener("click", function (e) {
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     var sk = e.target.closest("a.skip");
@@ -1337,6 +1353,7 @@
     if (!b) { if (e.target.closest("[data-close]")) closeSheet(); return; }
     var d = b.dataset;
     if (b.id === "filbtn") { sheetOpen ? closeSheet() : openSheet(); return; }
+    if (b.id === "stylebtn") { toggleStyle(); return; }
     if (d.classe) { setClasse(d.classe); if (sheetOpen && CLASSES[d.classe].length === 1) setTimeout(closeSheet, 260); return; }
     if (d.fil) { setClasse(ST.classe, d.fil); return; }
     if (d.tab && b.classList.contains("tab")) { switchTab(d.tab); return; }

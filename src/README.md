@@ -17,15 +17,15 @@ python3 proto/build.py            # site principal (index.html + site/) et proto
 
 ```sh
 cd src
-python3 tests/v2.py site   # site principal (recharge la page à chaque changement de filière) : toutes les pages, clair et sombre, téléphone et PC, calculs de l'inscription, export .ics ; doit finir par « pages en défaut : 0 », « contrôles en échec : [] », « errors: [] »
+python3 tests/v2.py site   # site principal (recharge la page à chaque changement de filière) : toutes les pages, styles actuel et neutre, clair et sombre, contraste du texte, bouton de style, téléphone et PC, calculs de l'inscription, export .ics ; doit finir par « pages en défaut : 0 », « contrôles en échec : [] », « errors: [] »
 python3 tests/v2.py        # prototype v2, dans les 3 habillages
 python3 tests/proto.py     # prototypes de vote (neutre, b, mix)
 ```
 
 ## Organisation
 
-- **Site principal** (https://arkaanes.github.io/ecoles-inge/) : `index.html` + `site/` (`app.js`, `base.css`, `v2.css`, `theme.css`, `data.json`, `map.json`), produits par `src/proto/build.py`. Même interface que le prototype v2, avec l'habillage « actuel » (`src/labo/theme-actuel.css` : crème, terre cuite, Fraunces + Source Sans 3, une couleur par concours, mode sombre).
-- `src/labo/` : l'interface (`app.js` : données, routeur, transitions, toutes les pages ; `app.css` : styles des pages v2 ; `index.html` : gabarit ; `theme-actuel.css`).
+- **Site principal** (https://arkaanes.github.io/ecoles-inge/) : `index.html` + `site/` (`app.js`, `base.css`, `v2.css`, `theme.css`, `theme-neutre.css`, `data.json`, `map.json`), produits par `src/proto/build.py`. Même interface que le prototype v2, en deux styles au choix (bouton « Aa » de l'en-tête, mémorisé dans `localStorage` sous `ecoles-style`, appliqué avant l'affichage par un script de l'en-tête) : « actuel » par défaut (`src/labo/theme-actuel.css` : crème, terre cuite, Fraunces + Source Sans 3, une couleur par concours) et « neutre », celui de la v2 (`base.css` + `v2.css`, mode sombre dans `src/labo/theme-neutre.css`). Dans les deux, le mode sombre suit le réglage de l'appareil.
+- `src/labo/` : l'interface (`app.js` : données, routeur, transitions, toutes les pages ; `app.css` : styles des pages v2 ; `index.html` : gabarit ; `theme-actuel.css`, `theme-neutre.css`).
 - `src/proto/` : interface des prototypes de vote (`app.js`, `app.css` = styles de base, `theme-b.css`, `theme-mix.css`) et `build.py`.
 - `src/build/data_common.py`, `data_concours.py`, `data_part1.py` … `data_part5.py`, `data_partA.py` : écoles, voies et stats **MP**, concours, calendrier.
 - `src/build/data_pc.py` : données **PC** (généré par `tools/extract_pc.py`, puis corrigé à la main).

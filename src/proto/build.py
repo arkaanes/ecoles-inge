@@ -49,6 +49,7 @@ os.makedirs(SITE, exist_ok=True)
 shutil.copyfile(os.path.join(HERE, "app.css"), os.path.join(SITE, "base.css"))
 shutil.copyfile(os.path.join(LABO, "app.css"), os.path.join(SITE, "v2.css"))
 shutil.copyfile(os.path.join(LABO, "theme-actuel.css"), os.path.join(SITE, "theme.css"))
+shutil.copyfile(os.path.join(LABO, "theme-neutre.css"), os.path.join(SITE, "theme-neutre.css"))
 shutil.copyfile(os.path.join(LABO, "app.js"), os.path.join(SITE, "app.js"))
 shutil.copyfile(os.path.join(OUT, "data.json"), os.path.join(SITE, "data.json"))
 shutil.copyfile(os.path.join(OUT, "map.json"), os.path.join(SITE, "map.json"))
@@ -56,10 +57,16 @@ lab = open(os.path.join(LABO, "index.html"), encoding="utf-8").read()
 i0 = lab.index('<link rel="stylesheet" href="../app.css">'); i1 = lab.index("</script>", i0) + len("</script>")
 FONT = "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
 head = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-        '<link rel="stylesheet" href="%s">\n<link rel="stylesheet" href="site/base.css">\n<link rel="stylesheet" href="site/v2.css">\n<link rel="stylesheet" href="site/theme.css">' % FONT.replace("&", "&amp;"))
+        '<link rel="stylesheet" href="%s">\n<link rel="stylesheet" href="site/base.css">\n<link rel="stylesheet" href="site/v2.css">\n'
+        '<link rel="stylesheet" href="site/theme.css" id="st-actuel">\n<link rel="stylesheet" href="site/theme-neutre.css" id="st-neutre">\n'
+        # style choisi (bouton Aa) : appliqué avant le premier affichage ; « actuel » par défaut
+        '<script>\n(function () {\n  var s = "actuel";\n  try { if (localStorage.getItem("ecoles-style") === "neutre") s = "neutre"; } catch (e) { /* rien */ }\n'
+        '  document.documentElement.setAttribute("data-style", s);\n  document.getElementById(s === "actuel" ? "st-neutre" : "st-actuel").media = "not all";\n'
+        '  if (s === "neutre") { document.getElementById("tc-l").setAttribute("content", "#FFFFFF"); document.getElementById("tc-d").setAttribute("content", "#0F1115"); }\n'
+        '})();\n</script>' % FONT.replace("&", "&amp;"))
 main = lab[:i0] + head + lab[i1:]
 main = main.replace('<script src="app.js" data-base="../" defer></script>', '<script src="site/app.js" data-base="site/" defer></script>')
-main = main.replace('<meta name="theme-color" content="#FFFFFF">', '<meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1F1813" media="(prefers-color-scheme: dark)">')
+main = main.replace('<meta name="theme-color" content="#FFFFFF">', '<meta name="theme-color" id="tc-l" content="#FAF7F2" media="(prefers-color-scheme: light)"><meta name="theme-color" id="tc-d" content="#1F1813" media="(prefers-color-scheme: dark)">')
 assert "../" not in main and 'data-base="site/"' in main
 open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(main)
 print("site principal : index.html + site/")

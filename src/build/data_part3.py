@@ -58,7 +58,7 @@ E("ensai", "ENSAI", "École nationale de la statistique et de l'analyse de l'inf
   "Public", [C("Bruz (Rennes)", "35", "bre")], ["math", "info"], "Spécialisée", "Statistique, data science, IA",
   frais("Environ 2 650 €/an (indicatif, Campus France) ; voie fonctionnaire (attachés de l'Insee) à part", 2650, 2650, "?", [src("Campus France, fiche ENSAI", "https://ressources.campusfrance.org/pratique/etablissements/fr/ing_ensai_fr.pdf")], "Secondaire, à vérifier"),
   bours("nd", "Non indiqué."),
-  [A("ccinp", 64, "MP", None, [cc("Civils", 45, 47, 1801, 1715), cc("Fonctionnaires (attachés de l'Insee)", 20, 20, 2350, 2221)], ["ccinp"], src26=S_CCINP26)]),
+  [A("ccinp", 65, "MP", "45 civils + 20 fonctionnaires (attachés de l'Insee)", [cc("Civils", 45, 47, 1801, 1715), cc("Fonctionnaires (attachés de l'Insee)", 20, 20, 2350, 2221)], ["ccinp"], src26=S_CCINP26)]),
 
 E("enscl", "ENSCL", "École nationale supérieure de chimie de Lille (Centrale Lille Institut)", ["ENSC Lille", "Chimie Lille", "Centrale Lille Institut"],
   "Public", [C("Villeneuve-d'Ascq", "59", "hdf")], ["chimie"], "Spécialisée", "Chimie, génie chimique",
@@ -143,7 +143,7 @@ E("ensiacet", "Toulouse INP - ENSIACET", "École nationale supérieure des ingé
 E("enise", "Centrale Lyon ENISE", "École nationale d'ingénieurs de Saint-Étienne de Centrale Lyon", ["ENISE", "Centrale Lyon"],
   "Public", [C("Saint-Étienne", "42", "ara")], ["meca", "btp", "physique"], "Spécialisée", "Génie mécanique, génie civil, génie physique",
   frais("Non trouvé", None, None, "", [], "À vérifier"), bours("nd", "Non trouvé."),
-  [A("bccinp", 10, "MP", None, [], ["ccinp", "b_enise"], src26=S_CCINP26, note="Nouveau en banque CCINP pour les MP en 2026 : pas de ligne dans les stats 2025.")]),
+  [A("bccinp", 8, "MP", "génie mécanique 2, génie civil 3, génie sensoriel 3", [], ["ccinp", "b_enise"], src26=S_CCINP26, note="Nouveau en banque CCINP pour les MP en 2026 : pas de ligne dans les stats 2025.")]),
 
 E("air", "École de l'air et de l'espace", "École de l'air et de l'espace (Salon-de-Provence)", ["EAE", "École de l'air", "Salon"],
   "Public (militaire)", [C("Salon-de-Provence", "13", "pac")], ["aero", "defense"], "Spécialisée", "Officier de l'armée de l'air et de l'espace : aéronautique, spatial",

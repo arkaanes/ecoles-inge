@@ -1,0 +1,38 @@
+/* Habillage « neutre » (celui de la v2) : mode sombre, qui suit le réglage de l'appareil.
+   Le mode clair est celui de ../app.css et app.css ; ce fichier ne change rien en clair. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0F1115; --surface: #171A20; --soft: #1C2027; --soft-2: #252A32;
+    --ink: #ECEEF2; --ink-2: #C8CDD5; --mut: #9AA2AE; --line: #262B33; --line-2: #3B424D;
+    --accent: #F2775E; --on-accent: #0F1115;
+    --c-xens: #F28B83; --c-mines: #7FAEEE; --c-cs: #B89BE8; --c-inp: #E5AE5C; --c-e3a: #74C08B; --c-autres: #A6ADB9;
+    --f-x: #E08C9B; --f-ens: #E6A6BA; --f-mp: #8DB5E0; --f-mt: #ABC8E5; --f-cs: #B9A8EC; --f-inp: #E2B35E; --f-poly: #AACB7D; --f-e3a: #D3CB80; --f-autres: #C4BAAE;
+    --m1: #1B2433; --m2: #22385A; --m3: #2D5488; --m4: #4273B7; --m5: #71A0E6;
+    color-scheme: dark;
+  }
+  :focus-visible { outline-color: #7FAEEE; }
+
+  /* barres translucides */
+  .top, .tabbar { background: rgba(15, 17, 21, .86); }
+  .tabs, .story-vis { background: rgba(15, 17, 21, .94); }
+  @media (min-width: 980px) { .story-vis { background: none; } }
+
+  /* éléments pleins : le texte prend la couleur du fond */
+  .skip, .tag, .step-h i, .btnp,
+  .seg[aria-pressed="true"], .rchip[aria-current="true"], .xchip[aria-pressed="true"], .xfd[open] > .xsum { color: var(--bg); }
+  .rchip[aria-current="true"] span { color: var(--bg); opacity: .75; }
+  .xchip[data-xfam][aria-pressed="true"] i { background: var(--bg); }
+  .ins-box::after { border-color: var(--bg); }
+  .sv-n { color: var(--on-accent); }
+  @media (min-width: 980px) { .sv-n { color: var(--accent); } }
+
+  /* éléments surélevés : plus clairs que le fond */
+  .vue .seg[aria-pressed="true"], .seg2 button[aria-pressed="true"] { background: #2C323C; color: var(--ink); box-shadow: none; }
+  .sheet-card { background: var(--surface); }
+  .sheet-bg { background: rgba(0, 0, 0, .55); }
+  .ins-bar { background: #2A2F38; color: var(--ink); }
+  .joint { border-left-color: var(--line-2); }
+  .chev { stroke: var(--mut); }
+  .sel { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ECEEF2' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+  .searchbox:hover { box-shadow: none; }
+}
